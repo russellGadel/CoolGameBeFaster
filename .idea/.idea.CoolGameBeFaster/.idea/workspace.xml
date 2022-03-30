@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerMovementSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerMovementSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Position.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Systems.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Camera.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +77,7 @@
       <workItem from="1648394509867" duration="2411000" />
       <workItem from="1648639144411" duration="117000" />
       <workItem from="1648639290434" duration="376000" />
-      <workItem from="1648639692838" duration="1758000" />
+      <workItem from="1648639692838" duration="2521000" />
     </task>
     <servers />
   </component>
