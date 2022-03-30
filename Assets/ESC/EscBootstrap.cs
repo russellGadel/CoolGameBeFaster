@@ -1,50 +1,55 @@
 ﻿using System;
+using ESC.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
 
 namespace ESC
 {
-    public class EscBootstrap : MonoBehaviour
+    public sealed class EscBootstrap : MonoBehaviour
     {
-        private EcsWorld world;
-        private EcsSystems systems;
+        private EcsWorld _world;
+        private EcsSystems _systems;
 
-        public void Load()
+        public void Awake()
         {
-            world = new EcsWorld();
-            systems = new EcsSystems(world);
+            _world = new EcsWorld();
+            _systems = new EcsSystems(_world);
 
-            systems.ConvertScene();
+            _systems.ConvertScene();
 
             AddInjections();
             AddOneFrames();
             AddSystems();
 
-            systems.Init();
+            _systems.Init();
         }
 
-        private static void AddInjections()
+        private void AddInjections()
         {
         }
 
-        private static void AddOneFrames()
+        private void AddOneFrames()
         {
         }
 
-        private static void AddSystems()
+        private void AddSystems()
         {
+            _systems
+                .Add(new PlayerInputSystem())
+                .Add(new PlayerMovementSystem())
+                ;
         }
 
 
         private void Update()
         {
-            systems.Run();
+            _systems.Run();
         }
 
         private void OnDestroy()
         {
-            if (systems == null) return;
+            if (_systems == null) return;
 
             DestroySystems();
             DestroyWorld();
@@ -52,14 +57,14 @@ namespace ESC
 
         private void DestroySystems()
         {
-            systems.Destroy();
-            systems = null;
+            _systems.Destroy();
+            _systems = null;
         }
 
         private void DestroyWorld()
         {
-            world.Destroy();
-            world = null;
+            _world.Destroy();
+            _world = null;
         }
     }
 }

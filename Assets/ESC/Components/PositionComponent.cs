@@ -2,9 +2,9 @@
 
 namespace ESC.Components
 {
-    public struct Position
+    internal struct PositionComponent
     {
-        public  float2 position;
+        public  float2 Position;
     }
 }
 

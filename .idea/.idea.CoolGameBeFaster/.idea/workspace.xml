@@ -2,8 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/DirectionComponent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/DirectionComponent/DirectionComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/DirectionComponent/DirectionComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/DirectionComponent/DirectionProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/DirectionComponent/DirectionProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/MovableComponent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/MovableComponent/MovableComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/MovableComponent/MovableComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/MovableComponent/MovableProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/MovableComponent/MovableProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerTagComponent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerTagComponent/PlayerTagComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerTagComponent/PlayerTagComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerTagComponent/PlayerTagProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerTagComponent/PlayerTagProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/TransformComponent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/TransformComponent/TransformComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/TransformComponent/TransformComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/TransformComponent/TransformProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/TransformComponent/TransformProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Systems/PlayerInputSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Systems/PlayerInputSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Systems/PlayerMovementSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ESC/Components/PositionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Position.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ESC/Components/PositionComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +53,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraPresenter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ESC/Components/Position.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/MonoProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ESC/Components/PositionComponent.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,7 +110,7 @@
       <workItem from="1648394509867" duration="2411000" />
       <workItem from="1648639144411" duration="117000" />
       <workItem from="1648639290434" duration="376000" />
-      <workItem from="1648639692838" duration="2521000" />
+      <workItem from="1648639692838" duration="10304000" />
     </task>
     <servers />
   </component>
