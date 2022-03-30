@@ -2,20 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ESC.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Direction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerMovementSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/PlayerMovementSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Position.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Components/Speed.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/EscBootstrap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ESC/Systems.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraPresenter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ESC/Components/Position.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,6 +86,8 @@
       <updated>1648394448776</updated>
       <workItem from="1648394509867" duration="2411000" />
       <workItem from="1648639144411" duration="117000" />
+      <workItem from="1648639290434" duration="376000" />
+      <workItem from="1648639692838" duration="1758000" />
     </task>
     <servers />
   </component>
