@@ -20,13 +20,12 @@ namespace ESC
             AddInjections();
             AddOneFrames();
             AddSystems();
-            
+
             systems.Init();
         }
 
         private static void AddInjections()
         {
-            
         }
 
         private static void AddOneFrames()
@@ -35,7 +34,6 @@ namespace ESC
 
         private static void AddSystems()
         {
-            
         }
 
 
@@ -48,7 +46,7 @@ namespace ESC
         {
             if (systems == null) return;
 
-                DestroySystems();
+            DestroySystems();
             DestroyWorld();
         }
 
