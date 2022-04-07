@@ -35,7 +35,7 @@ namespace ScenesBootstrapper.MainScene
             yield return null;
         }
 
-        
+
         [Inject] private IPlayerControllerPresenter _playerController;
 
         private void AddInjections()
@@ -50,6 +50,10 @@ namespace ScenesBootstrapper.MainScene
         private void AddSystems()
         {
             _systems
+                    // init
+                .Add(new LoadRandomMapSystem())
+                    
+                    //Run
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
                 ;
