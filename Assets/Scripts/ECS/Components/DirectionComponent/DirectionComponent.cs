@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ESC.Components.DirectionComponent
+namespace ECS.Components.DirectionComponent
 {
     public struct DirectionComponent
     {

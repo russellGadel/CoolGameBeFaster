@@ -1,11 +1,11 @@
-﻿using ESC.Components.DirectionComponent;
-using ESC.Components.MovableComponent;
-using ESC.Components.PlayerTagComponent;
-using ESC.Components.TransformComponent;
+﻿using ECS.Components.DirectionComponent;
+using ECS.Components.MovableComponent;
+using ECS.Components.PlayerTagComponent;
+using ECS.Components.TransformComponent;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ESC.Systems
+namespace ECS.Systems
 {
     public sealed class PlayerMovementSystem : IEcsRunSystem
     {

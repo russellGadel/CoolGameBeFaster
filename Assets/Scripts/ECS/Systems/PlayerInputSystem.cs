@@ -1,11 +1,10 @@
 ﻿using CustomUI.PlayerController;
-using CustomUI.PlayerController.Mobile;
-using ESC.Components.DirectionComponent;
-using ESC.Components.PlayerTagComponent;
+using ECS.Components.DirectionComponent;
+using ECS.Components.PlayerTagComponent;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ESC.Systems
+namespace ECS.Systems
 {
     public sealed class PlayerInputSystem : IEcsRunSystem
     {

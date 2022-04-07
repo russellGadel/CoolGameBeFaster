@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ESC.Components.MovableComponent
+namespace ECS.Components.MovableComponent
 {
     [Serializable]
     public struct MovableComponent

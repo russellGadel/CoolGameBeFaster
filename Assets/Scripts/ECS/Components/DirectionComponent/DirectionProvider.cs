@@ -1,6 +1,6 @@
 using Voody.UniLeo;
 
-namespace ESC.Components.DirectionComponent
+namespace ECS.Components.DirectionComponent
 {
     public sealed class DirectionProvider : MonoProvider<DirectionComponent>
     {

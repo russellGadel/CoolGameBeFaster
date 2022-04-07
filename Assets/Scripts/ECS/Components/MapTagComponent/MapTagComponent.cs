@@ -1,7 +1,7 @@
 ﻿using System;
 using Leopotam.Ecs;
 
-namespace ESC.Components.MapTagComponent
+namespace ECS.Components.MapTagComponent
 {
     [Serializable]
     public struct MapTagComponent : IEcsIgnoreInFilter

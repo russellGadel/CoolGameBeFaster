@@ -1,11 +1,10 @@
-﻿using ESC.Components;
-using ESC.Components.MapTagComponent;
-using ESC.Components.ObjectsPoolComponent;
-using ESC.Components.TransformComponent;
+﻿using ECS.Components.MapTagComponent;
+using ECS.Components.ObjectsPoolComponent;
+using ECS.Components.TransformComponent;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ESC.Systems
+namespace ECS.Systems
 {
     public class LoadRandomMapSystem : IEcsInitSystem
     {

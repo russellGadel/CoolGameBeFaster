@@ -1,6 +1,6 @@
 using Voody.UniLeo;
 
-namespace ESC.Components.PlayerTagComponent
+namespace ECS.Components.PlayerTagComponent
 {
     public sealed class PlayerTagProvider : MonoProvider<PlayerTagComponent>
     {

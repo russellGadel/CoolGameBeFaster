@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 
-namespace ESC.Components.PlayerTagComponent
+namespace ECS.Components.PlayerTagComponent
 {
     public struct PlayerTagComponent : IEcsIgnoreInFilter
     {

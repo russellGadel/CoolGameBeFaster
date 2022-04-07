@@ -1,6 +1,6 @@
 ﻿using Voody.UniLeo;
 
-namespace ESC.Components.MapTagComponent
+namespace ECS.Components.MapTagComponent
 {
     public class MapTagProvider : MonoProvider<MapTagComponent>
     {

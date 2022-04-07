@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ESC.Components.ObjectsPoolComponent
+namespace ECS.Components.ObjectsPoolComponent
 {
     [Serializable]
     public struct ObjectsPoolComponent

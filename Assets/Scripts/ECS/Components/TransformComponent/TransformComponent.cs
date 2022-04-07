@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ESC.Components.TransformComponent
+namespace ECS.Components.TransformComponent
 {
     [Serializable]
     public struct TransformComponent

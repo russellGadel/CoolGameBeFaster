@@ -1,4 +1,5 @@
 ﻿using Core.BootstrapExecutor;
+using ScenesBootstrapper.MainScene.Ecs;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene
@@ -17,13 +18,13 @@ namespace ScenesBootstrapper.MainScene
 
         [Inject] private IBootstrapExecutor _executor;
         [Inject] private UIBootstrapperMainScene _uiBootstrapperMainScene;
-        [Inject] private EscBootstrapperMainScene _escBootstrapperMainScene;
+        [Inject] private EcsBootstrapperMainScene _ecsBootstrapperMainScene;
 
         private void AddEnterItems()
         {
             _executor.Clear();
             _executor.Add(_uiBootstrapperMainScene);
-            _executor.Add(_escBootstrapperMainScene);
+            _executor.Add(_ecsBootstrapperMainScene);
         }
     }
 }

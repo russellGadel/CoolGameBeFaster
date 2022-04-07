@@ -1,6 +1,6 @@
 ﻿using Voody.UniLeo;
 
-namespace ESC.Components.ObjectsPoolComponent
+namespace ECS.Components.ObjectsPoolComponent
 {
     public class ObjectsPoolProvider : MonoProvider<ObjectsPoolComponent>
     {

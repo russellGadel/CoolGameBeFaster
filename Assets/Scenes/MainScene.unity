@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 51167837}
   - component: {fileID: 51167841}
   - component: {fileID: 51167838}
+  - component: {fileID: 51167840}
+  - component: {fileID: 51167839}
   m_Layer: 0
   m_Name: MainSceneBootstrapper
   m_TagString: Untagged
@@ -167,6 +169,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5b3068e2f84aed85bf55913a5d355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fixedUpdateSystem: {fileID: 51167840}
+  _updateSystem: {fileID: 51167839}
+--- !u!114 &51167839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51167836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c41f8f05da24648be648bddba73a3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51167840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51167836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a212a96540414bb7578ab887cfd034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &51167841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e07508df3ff429e8f05418c6fe409c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _escBootstrapper: {fileID: 51167838}
+  ecsBootstrapper: {fileID: 51167838}
 --- !u!1 &221621990
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScenesBootstrapper.MainScene.Ecs;
+using UnityEngine;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene
@@ -22,13 +23,13 @@ namespace ScenesBootstrapper.MainScene
         }
 
 
-        [SerializeField] private EscBootstrapperMainScene _escBootstrapper;
+        [SerializeField] private EcsBootstrapperMainScene ecsBootstrapper;
 
         private void BindEscBootstrapper()
         {
             Container
-                .Bind<EscBootstrapperMainScene>()
-                .FromInstance(_escBootstrapper)
+                .Bind<EcsBootstrapperMainScene>()
+                .FromInstance(ecsBootstrapper)
                 .AsSingle();
         }
 
