@@ -28,7 +28,9 @@ namespace ESC.Systems
                 ref float speed = ref movableComponent.speed;
 
                 ref Vector3 direction = ref directionComponent.direction;
-                
+
+                 
+
                 rigidbody.AddForce(direction * speed);
             }
         }
