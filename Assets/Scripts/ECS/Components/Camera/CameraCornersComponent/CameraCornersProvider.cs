@@ -2,7 +2,7 @@
 
 namespace ECS.Components.Camera.CameraCornersComponent
 {
-    public class CameraCornersProvider : MonoProvider<Components.CameraCornersComponent>
+    public class CameraCornersProvider : MonoProvider<CameraBorderCornersComponent>
     {
         
     }
