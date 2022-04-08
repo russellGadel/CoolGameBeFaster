@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using System;
+using Leopotam.Ecs;
 
 namespace ECS.Components.InterferingObjectsAppearingPositionsGridTag
 {
