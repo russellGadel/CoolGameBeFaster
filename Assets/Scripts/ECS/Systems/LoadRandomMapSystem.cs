@@ -20,11 +20,11 @@ namespace ECS.Systems
                 ref ObjectsPoolComponent objectsPool = ref _ecsFilter.Get2(entity);
                 ref TransformComponent mapsPoolTransform = ref _ecsFilter.Get3(entity);
 
-                GameObject[] pool = objectsPool.pool;
+                ref GameObject[] pool = ref objectsPool.pool;
                 GameObject randomMap = pool[RandomMapIndex(pool)];
 
 
-                Transform mapsPool = mapsPoolTransform.transform;
+                ref Transform mapsPool = ref mapsPoolTransform.transform;
                 Object.Instantiate(randomMap, mapsPool);
             }
         }
