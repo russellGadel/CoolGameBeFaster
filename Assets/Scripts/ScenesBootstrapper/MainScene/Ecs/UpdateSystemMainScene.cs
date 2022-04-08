@@ -56,7 +56,8 @@ namespace ScenesBootstrapper.MainScene.Ecs
             _systems
                 // init
                 .Add(new LoadRandomMapSystem())
-
+                
+                .Add(new LoadCameraCornersSystem())
                 //Run
                 ;
         }

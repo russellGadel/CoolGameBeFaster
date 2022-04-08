@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraBorderCornersComponent.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadCameraCornersSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraBorderCornersComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadRandomMapSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadRandomMapSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <workItem from="1649257644215" duration="19654000" />
       <workItem from="1649316498467" duration="3813000" />
       <workItem from="1649327085833" duration="12291000" />
-      <workItem from="1649407828241" duration="7939000" />
+      <workItem from="1649407828241" duration="11550000" />
     </task>
     <servers />
   </component>
