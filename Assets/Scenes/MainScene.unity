@@ -1360,6 +1360,8 @@ GameObject:
   - component: {fileID: 6804535631111256178}
   - component: {fileID: 6804535631111256182}
   - component: {fileID: 6804535631111256181}
+  - component: {fileID: 6804535631111256184}
+  - component: {fileID: 6804535631111256183}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1394,3 +1396,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convertMode: 0
+--- !u!114 &6804535631111256183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804535631111256180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7349486afaa84491b380527f843d81a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6804535631111256184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804535631111256180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7505a8dc13864f79a03211400a04ee6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    topLeftCorner:
+      x: 0
+      y: 0
+      z: 0
+    topRightCorner:
+      x: 0
+      y: 0
+      z: 0
+    bottomLeftCorner:
+      x: 0
+      y: 0
+      z: 0
+    bottomRightCorner:
+      x: 0
+      y: 0
+      z: 0
