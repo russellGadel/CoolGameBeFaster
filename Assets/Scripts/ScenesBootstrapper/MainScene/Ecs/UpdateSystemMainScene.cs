@@ -58,6 +58,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new LoadRandomMapSystem())
                 
                 .Add(new LoadCameraCornersSystem())
+                .Add(new LoadPositionsPoolSystem())
                 //Run
                 ;
         }

@@ -24,9 +24,9 @@ namespace ScenesBootstrapper.MainScene.Ecs
         public IEnumerator Execute()
         {
             _world = new EcsWorld();
-
-            _fixedUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
+            
             _updateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
+            _fixedUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
 
             _ecsLoaded = true;
 
