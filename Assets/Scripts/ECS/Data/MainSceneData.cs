@@ -5,6 +5,6 @@ namespace ECS.Data
 {
     public class MainSceneData : MonoBehaviour
     {
-        public CameraData cameraData;
+        public InterferingObjectsAppearingPositionData interferingObjectsAppearingPositionData;
     }
 }

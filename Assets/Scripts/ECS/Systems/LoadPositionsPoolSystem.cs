@@ -12,89 +12,89 @@ namespace ECS.Systems
     {
         private readonly EcsWorld _world = null;
 
-        private readonly EcsFilter<CameraBorderCornersComponent, PositionsPoolComponent>
-            _ecsFilter = null;
+        private readonly EcsFilter<CameraBorderCornersComponent> _camera = null;
+        private readonly EcsFilter<PositionsPoolComponent> _objectsPositionsPool = null;
 
         private readonly MainSceneData _mainSceneData;
 
         public void Init()
         {
-            foreach (var entity in _ecsFilter)
+            foreach (var entity in _camera)
             {
-                ref CameraBorderCornersComponent cameraBorderCornersComponent = ref _ecsFilter.Get1(entity);
-                ref PositionsPoolComponent positionsPoolComponent = ref _ecsFilter.Get2(entity);
+                ref CameraBorderCornersComponent cameraBorderCornersComponent = ref _camera.Get1(entity);
+                ref PositionsPoolComponent positionsPoolComponent = ref _objectsPositionsPool.Get1(entity);
 
                 ref List<float3> positionsPool = ref positionsPoolComponent.Positions;
-                ref CameraData cameraData = ref _mainSceneData.cameraData;
+                ref InterferingObjectsAppearingPositionData positionsData = ref _mainSceneData.interferingObjectsAppearingPositionData;
 
                 FillLeftBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, ref positionsPool,
-                    ref cameraData);
+                    ref positionsData);
                 FillTopBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, ref positionsPool,
-                    ref cameraData);
+                    ref positionsData);
                 FillBottomBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, ref positionsPool,
-                    ref cameraData);
+                    ref positionsData);
                 FillRightBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, ref positionsPool,
-                    ref cameraData);
+                    ref positionsData);
             }
         }
 
         private void FillLeftBorderSidePositions(float3 topLeftCorner, ref List<float3> positionsPool,
-            ref CameraData cameraData)
+            ref InterferingObjectsAppearingPositionData positionData)
         {
-            float startXPoint = topLeftCorner.x - cameraData.indentOutOfCameraBorder;
+            float startXPoint = topLeftCorner.x - positionData.indentOutOfCameraBorder;
 
             float startYPoint = topLeftCorner.y;
-            float endYPoint = topLeftCorner.y - cameraData.lengthOfSides;
+            float endYPoint = topLeftCorner.y - positionData.lengthOfSides;
 
             while (startYPoint >= endYPoint)
             {
                 positionsPool.Add(new float3(startXPoint, startYPoint, 0));
-                startYPoint -= cameraData.distanceBetweenPositions;
+                startYPoint -= positionData.distanceBetweenPositions;
             }
         }
 
         private void FillTopBorderSidePositions(float3 topLeftCorner, ref List<float3> positionsPool,
-            ref CameraData cameraData)
+            ref InterferingObjectsAppearingPositionData positionData)
         {
-            float startYPoint = topLeftCorner.y + cameraData.indentOutOfCameraBorder;
+            float startYPoint = topLeftCorner.y + positionData.indentOutOfCameraBorder;
 
             float startXPoint = topLeftCorner.x;
-            float endXPoint = topLeftCorner.x + cameraData.lengthOfSides;
+            float endXPoint = topLeftCorner.x + positionData.lengthOfSides;
 
             while (startXPoint <= endXPoint)
             {
                 positionsPool.Add(new float3(startXPoint, startYPoint, 0));
-                startXPoint += cameraData.distanceBetweenPositions;
+                startXPoint += positionData.distanceBetweenPositions;
             }
         }
 
         private void FillBottomBorderSidePositions(float3 bottomRightCorner, ref List<float3> positionsPool,
-            ref CameraData cameraData)
+            ref InterferingObjectsAppearingPositionData positionData)
         {
-            float startYPoint = bottomRightCorner.y - cameraData.indentOutOfCameraBorder;
+            float startYPoint = bottomRightCorner.y - positionData.indentOutOfCameraBorder;
 
-            float startXPoint = bottomRightCorner.x - cameraData.lengthOfSides;
+            float startXPoint = bottomRightCorner.x - positionData.lengthOfSides;
             float endXPoint = bottomRightCorner.x;
 
             while (startXPoint <= endXPoint)
             {
                 positionsPool.Add(new float3(startXPoint, startYPoint, 0));
-                startXPoint += cameraData.distanceBetweenPositions;
+                startXPoint += positionData.distanceBetweenPositions;
             }
         }
 
         private void FillRightBorderSidePositions(float3 bottomRightCorner, ref List<float3> positionsPool,
-            ref CameraData cameraData)
+            ref InterferingObjectsAppearingPositionData positionData)
         {
-            float startXPoint = bottomRightCorner.x + cameraData.indentOutOfCameraBorder;
+            float startXPoint = bottomRightCorner.x + positionData.indentOutOfCameraBorder;
 
             float startYPoint = bottomRightCorner.y;
-            float endYPoint = bottomRightCorner.y + cameraData.lengthOfSides;
+            float endYPoint = bottomRightCorner.y + positionData.lengthOfSides;
 
             while (startYPoint <= endYPoint)
             {
                 positionsPool.Add(new float3(startXPoint, startYPoint, 0));
-                startYPoint += cameraData.distanceBetweenPositions;
+                startYPoint += positionData.distanceBetweenPositions;
             }
         }
     }
