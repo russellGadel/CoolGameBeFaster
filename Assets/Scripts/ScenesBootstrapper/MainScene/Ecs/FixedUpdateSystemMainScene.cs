@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using CustomUI.PlayerController;
+﻿using CustomUI.PlayerController;
+using ECS.Data;
 using ECS.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -13,9 +13,18 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private EcsWorld _world;
         private EcsSystems _system;
 
-        public void Construct(ref EcsWorld world)
+        private StaticData _staticData;
+        private MainSceneData _mainSceneData;
+        private RuntimeData _runtimeData;
+
+        public void Construct(ref EcsWorld world, ref StaticData staticData, ref MainSceneData mainSceneData,
+            ref RuntimeData runtimeData)
         {
             _world = world;
+
+            _staticData = staticData;
+            _mainSceneData = mainSceneData;
+            _runtimeData = runtimeData;
 
             _system = new EcsSystems(_world);
             _system.ConvertScene();
@@ -32,12 +41,16 @@ namespace ScenesBootstrapper.MainScene.Ecs
             _system.Run();
         }
 
-        
+
         [Inject] private IPlayerControllerPresenter _playerController;
 
         private void AddInjections()
         {
-            _system.Inject(_playerController);
+            _system
+                .Inject(_playerController)
+                .Inject(_staticData)
+                .Inject(_mainSceneData)
+                .Inject(_runtimeData);
         }
 
         private void AddOneFrames()
@@ -52,7 +65,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new PlayerMovementSystem())
                 ;
         }
-        
+
         private void OnDestroy()
         {
             DestroySystems();

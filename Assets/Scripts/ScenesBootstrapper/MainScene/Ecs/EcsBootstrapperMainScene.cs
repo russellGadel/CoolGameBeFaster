@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
 using CustomUI.PlayerController;
+using ECS.Data;
 using ECS.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -12,6 +13,10 @@ namespace ScenesBootstrapper.MainScene.Ecs
     public sealed class EcsBootstrapperMainScene : MonoBehaviour, IBootstrapper
     {
         private EcsWorld _world;
+        [SerializeField] private StaticData _staticData;
+        [SerializeField] private MainSceneData _mainSceneData;
+        private RuntimeData _runtimeData = new RuntimeData();
+
         [SerializeField] private FixedUpdateSystemMainScene _fixedUpdateSystem;
         [SerializeField] private UpdateSystemMainScene _updateSystem;
         private bool _ecsLoaded = false;
@@ -20,8 +25,8 @@ namespace ScenesBootstrapper.MainScene.Ecs
         {
             _world = new EcsWorld();
 
-            _fixedUpdateSystem.Construct(ref _world);
-            _updateSystem.Construct(ref _world);
+            _fixedUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
+            _updateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
 
             _ecsLoaded = true;
 
