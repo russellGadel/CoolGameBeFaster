@@ -55,10 +55,13 @@ namespace ScenesBootstrapper.MainScene.Ecs
         {
             _systems
                 // init
+                .Add(new FillPoolsWithPrefabsSystem())
+                //
                 .Add(new LoadRandomMapSystem())
-                
+                //
                 .Add(new LoadCameraCornersSystem())
                 .Add(new LoadPositionsPoolSystem())
+                //
                 //Run
                 ;
         }

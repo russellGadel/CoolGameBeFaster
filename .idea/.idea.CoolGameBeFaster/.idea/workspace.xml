@@ -2,12 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/GameObjectComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/GameObjectComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/InterferingObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/InterferingObjects/arrowPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/InterferingObjects/arrowPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectTag.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectTag/InterferingObjectProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectTag/InterferingObjectProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectTag/InterferingObjectTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectTag/InterferingObjectTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Pool.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Pool/PoolComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Pool/PoolComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Pool/PoolProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Pool/PoolProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/SetPool/SetPoolComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/FillPoolsWithPrefabsSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/FillPoolsWithPrefabsSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraComponent.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraComponent/CameraComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraComponent/CameraComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraComponent/CameraComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraComponent/CameraComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraComponent/CameraProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraComponent/CameraProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraComponent/CameraProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraComponent/CameraProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraCornersComponent.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraBorderCornersComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraCornersComponent/CameraBorderCornersComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraBorderCornersComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraCornersComponent/CameraBorderCornersComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraCornersComponent/CameraCornersProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Camera/CameraCornersComponent/CameraCornersProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/CameraComponent/CameraCornersComponent/CameraCornersProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/DirectionComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Direction.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/DirectionComponent/DirectionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Direction/DirectionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/DirectionComponent/DirectionComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Direction/DirectionComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/DirectionComponent/DirectionProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Direction/DirectionProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/DirectionComponent/DirectionProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Direction/DirectionProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectsAppearingPositionsGridTag.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/InterferingObjectsTags/InterferingObjectsAppearingPositionsGridTag/InterferingObjectsAppearingPositionsGridTag.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag/MapTagComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag/MapTagComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag/MapTagProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag/MapTagProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MovableComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Movable.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MovableComponent/MovableComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Movable/MovableComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MovableComponent/MovableComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Movable/MovableComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MovableComponent/MovableProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Movable/MovableProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/MovableComponent/MovableProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/Movable/MovableProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/ObjectsPoolComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/SetPool.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/ObjectsPoolComponent/ObjectsPoolComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/ObjectsPoolComponent/ObjectsPoolComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/SetPool/SetPoolComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/ObjectsPoolComponent/ObjectsPoolProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/SetPool/SetPoolProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/ObjectsPoolComponent/ObjectsPoolProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/SetPool/SetPoolProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent/PlayerTagComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag/PlayerTagComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent/PlayerTagComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag/PlayerTagComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent/PlayerTagProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag/PlayerTagProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent/PlayerTagProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag/PlayerTagProvider.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PositionsPool/PositionsPoolComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PositionsPool/PositionsPoolComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadCameraCornersSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadCameraCornersSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadPositionsPoolSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadPositionsPoolSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadRandomMapSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/LoadRandomMapSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/PlayerInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/PlayerInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/PlayerMovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/PlayerMovementSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +86,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTagComponent/PlayerTagComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTagComponent/MapTagComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/PlayerTag/PlayerTagComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/MapTag/MapTagComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/TransformComponent/TransformComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraPresenter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/ConversionSystemExtension.cs" root0="SKIP_HIGHLIGHTING" />
@@ -100,7 +162,8 @@
       <workItem from="1649257644215" duration="19654000" />
       <workItem from="1649316498467" duration="3813000" />
       <workItem from="1649327085833" duration="12291000" />
-      <workItem from="1649407828241" duration="20726000" />
+      <workItem from="1649407828241" duration="25285000" />
+      <workItem from="1649667801494" duration="7261000" />
     </task>
     <servers />
   </component>

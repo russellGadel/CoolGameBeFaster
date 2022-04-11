@@ -1,5 +1,5 @@
-﻿using ECS.Components.Camera.CameraComponent;
-using ECS.Components.Camera.CameraCornersComponent;
+﻿using ECS.Components.CameraComponent.CameraComponent;
+using ECS.Components.CameraComponent.CameraCornersComponent;
 using Leopotam.Ecs;
 using Unity.Mathematics;
 using UnityEngine;

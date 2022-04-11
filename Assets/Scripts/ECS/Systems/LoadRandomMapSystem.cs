@@ -1,5 +1,5 @@
-﻿using ECS.Components.MapTagComponent;
-using ECS.Components.ObjectsPoolComponent;
+﻿using ECS.Components.MapTag;
+using ECS.Components.SetPool;
 using ECS.Components.TransformComponent;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -10,17 +10,17 @@ namespace ECS.Systems
     {
         private readonly EcsWorld _world = null;
 
-        private readonly EcsFilter<MapTagComponent, ObjectsPoolComponent, TransformComponent>
+        private readonly EcsFilter<MapTagComponent, SetPoolComponent, TransformComponent>
             _ecsFilter = null;
 
         public void Init()
         {
             foreach (var entity in _ecsFilter)
             {
-                ref ObjectsPoolComponent objectsPool = ref _ecsFilter.Get2(entity);
+                ref SetPoolComponent setPool = ref _ecsFilter.Get2(entity);
                 ref TransformComponent mapsPoolTransform = ref _ecsFilter.Get3(entity);
 
-                ref GameObject[] pool = ref objectsPool.pool;
+                ref GameObject[] pool = ref setPool.pool;
                 GameObject randomMap = pool[RandomMapIndex(pool)];
 
 

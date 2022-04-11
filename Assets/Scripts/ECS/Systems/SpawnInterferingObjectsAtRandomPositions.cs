@@ -1,20 +1,18 @@
-﻿using ECS.Components.Direction;
-using ECS.Components.Movable;
-using ECS.Components.PlayerTag;
-using ECS.Components.TransformComponent;
+﻿using ECS.Components.InterferingObjectsTags.InterferingObjectsAppearingPositionsGridTag;
+using ECS.Components.PositionsPool;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace ECS.Systems
 {
-    public sealed class PlayerMovementSystem : IEcsRunSystem
+    public class SpawnInterferingObjectsAtRandomPositions //: IEcsRunSystem
     {
         private readonly EcsWorld _world = null;
 
-        private readonly EcsFilter<PlayerTagComponent, TransformComponent, MovableComponent, DirectionComponent>
-            _ecsFilter = null;
+        private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag, PositionsPoolComponent>
+            _spawnPositionsGrid = null;
 
-        public void Run()
+        
+       /* public void Run()
         {
             foreach (var entity in _ecsFilter)
             {
@@ -27,12 +25,12 @@ namespace ECS.Systems
                 ref Rigidbody2D rigidbody = ref movableComponent.rigidbody;
                 ref float speed = ref movableComponent.speed;
 
-                ref Vector3 direction = ref directionComponent.Direction;
+                ref Vector3 direction = ref directionComponent.direction;
 
                  
 
                 rigidbody.AddForce(direction * speed);
             }
-        }
+        }*/
     }
 }

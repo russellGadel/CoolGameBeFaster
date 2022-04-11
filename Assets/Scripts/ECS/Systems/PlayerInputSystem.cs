@@ -1,6 +1,6 @@
 ﻿using CustomUI.PlayerController;
-using ECS.Components.DirectionComponent;
-using ECS.Components.PlayerTagComponent;
+using ECS.Components.Direction;
+using ECS.Components.PlayerTag;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ namespace ECS.Systems
             foreach (var entity in _ecsFilter)
             {
                 ref DirectionComponent directionComponent = ref _ecsFilter.Get2(entity);
-                ref Vector3 direction = ref directionComponent.direction;
+                ref Vector3 direction = ref directionComponent.Direction;
 
                 direction.x = _playerController.GetInputVector().x;
                 direction.y = _playerController.GetInputVector().y;

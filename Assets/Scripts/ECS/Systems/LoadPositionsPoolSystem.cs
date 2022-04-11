@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using ECS.Components.Camera.CameraCornersComponent;
+using ECS.Components.CameraComponent.CameraCornersComponent;
+using ECS.Components.InterferingObjectsTags.InterferingObjectsAppearingPositionsGridTag;
 using ECS.Components.PositionsPool;
 using ECS.Data;
 using ECS.Data.Camera;
@@ -13,19 +14,23 @@ namespace ECS.Systems
         private readonly EcsWorld _world = null;
 
         private readonly EcsFilter<CameraBorderCornersComponent> _camera = null;
-        private readonly EcsFilter<PositionsPoolComponent> _objectsPositionsPool = null;
+
+        private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag, PositionsPoolComponent>
+            _objectsPositionsPool = null;
 
         private readonly MainSceneData _mainSceneData;
 
         public void Init()
         {
-            foreach (var entity in _camera)
+            ref CameraBorderCornersComponent cameraBorderCornersComponent = ref _camera.Get1(0);
+
+            foreach (var entity in _objectsPositionsPool)
             {
-                ref CameraBorderCornersComponent cameraBorderCornersComponent = ref _camera.Get1(entity);
-                ref PositionsPoolComponent positionsPoolComponent = ref _objectsPositionsPool.Get1(entity);
+                ref PositionsPoolComponent positionsPoolComponent = ref _objectsPositionsPool.Get2(entity);
 
                 ref List<float3> positionsPool = ref positionsPoolComponent.Positions;
-                ref InterferingObjectsAppearingPositionData positionsData = ref _mainSceneData.interferingObjectsAppearingPositionData;
+                ref InterferingObjectsAppearingPositionData positionsData =
+                    ref _mainSceneData.interferingObjectsAppearingPositionData;
 
                 FillLeftBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, ref positionsPool,
                     ref positionsData);
