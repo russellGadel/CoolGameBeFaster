@@ -63,6 +63,8 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //Run
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
+                //
+                .Add(new KinematicRigidbody2DMovementSystem())
                 ;
         }
 

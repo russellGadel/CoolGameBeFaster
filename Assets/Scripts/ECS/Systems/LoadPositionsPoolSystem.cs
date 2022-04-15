@@ -9,10 +9,8 @@ using Unity.Mathematics;
 
 namespace ECS.Systems
 {
-    public class LoadPositionsPoolSystem : IEcsInitSystem
+    public sealed class LoadPositionsPoolSystem : IEcsInitSystem
     {
-        private readonly EcsWorld _world = null;
-
         private readonly EcsFilter<CameraBorderCornersComponent> _camera = null;
 
         private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag, PositionsPoolComponent>

@@ -6,10 +6,8 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-    public class LoadRandomMapSystem : IEcsInitSystem
+    public sealed class LoadRandomMapSystem : IEcsInitSystem
     {
-        private readonly EcsWorld _world = null;
-
         private readonly EcsFilter<MapTagComponent, SetPoolComponent, TransformComponent>
             _ecsFilter = null;
 
@@ -24,7 +22,7 @@ namespace ECS.Systems
                 GameObject randomMap = pool[RandomMapIndex(pool)];
 
 
-                ref Transform mapsPool = ref mapsPoolTransform.transform;
+                ref Transform mapsPool = ref mapsPoolTransform.value;
                 Object.Instantiate(randomMap, mapsPool);
             }
         }

@@ -8,8 +8,6 @@ namespace ECS.Systems
 {
     public sealed class PlayerInputSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
-
         private readonly EcsFilter<PlayerTagComponent, DirectionComponent>
             _ecsFilter = null;
 

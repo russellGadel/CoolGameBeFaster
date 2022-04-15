@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace ECS.Components.TransformComponent
@@ -6,6 +6,6 @@ namespace ECS.Components.TransformComponent
     [Serializable]
     public struct TransformComponent
     {
-        public Transform transform;
+        public Transform value;
     }
 }

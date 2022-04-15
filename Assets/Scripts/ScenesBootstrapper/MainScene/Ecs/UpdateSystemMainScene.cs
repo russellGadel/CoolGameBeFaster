@@ -1,5 +1,8 @@
 ﻿using ECS.Data;
+using ECS.Events;
 using ECS.Systems;
+using ECS.Systems.Events;
+using ECS.Systems.Events.ObjectsActivitySystem;
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
@@ -54,15 +57,40 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private void AddSystems()
         {
             _systems
-                // init
-                .Add(new FillPoolsWithPrefabsSystem())
+                // INIT
+                .Add(new InitPoolComponentSystem())
+                //
+                .Add(new InitPositionsPoolComponentSystem())
                 //
                 .Add(new LoadRandomMapSystem())
                 //
                 .Add(new LoadCameraCornersSystem())
                 .Add(new LoadPositionsPoolSystem())
                 //
+                .Add(new InitPointsEntitySystem())
+                //
+                .Add(new PrepareInterferingObjectsPoolSystem())
+                //
+                .Add(new InitGameEntitySystem())
+
                 //Run
+                //
+                .Add(new SpawnInterferingObjectsAtRandomPositionSystem())
+                //
+
+                //Run OneFrame
+                .Add(new BlockSpawnObjectsSystem())
+                //
+                .Add(new ActivateObjectsSystem())
+                .Add(new DeactivateObjectsSystem())
+                //
+                .Add(new LookAtPlayerSystem())
+                //
+                .Add(new SetRandomSpeedSystem())
+                //
+                //
+                //
+                .Add(new StartGameSystem())
                 ;
         }
 
