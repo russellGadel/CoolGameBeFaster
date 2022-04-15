@@ -55,17 +55,15 @@ namespace ECS.Systems.Events
                     ref TransformComponent interferingObjectsTransform =
                         ref _inactiveInterferingObjectsElements.Get4(idxElements);
 
-                   // interferingObjectsTransform.value.position = GetRandomPosition();
-                    Debug.Log(
-                        "interferingObjectsTransform.value.position " + interferingObjectsTransform.value.position);
+                    interferingObjectsTransform.value.position = GetRandomPosition();
                     interferingObjectEntity
-                       // .Replace(new SetRandomSpeedEvent())
-                        //.Replace(new LookAtPlayerEvent())
+                        .Replace(new SetRandomSpeedEvent())
+                        .Replace(new LookAtPlayerEvent())
                         .Replace(new ActivateObjectEvent())
-                        /*.Replace(new MoveToComponent()
+                        .Replace(new MoveToComponent()
                         {
                             Value = interferingObjectsTransform.value.up
-                        })*/;
+                        });
 
                     spawnedObjectsCounter += 1;
                     if (spawnedObjectsCounter == spawnObjectsAmountAtSameTime)

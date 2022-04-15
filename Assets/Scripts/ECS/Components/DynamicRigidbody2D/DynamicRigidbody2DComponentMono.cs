@@ -1,5 +1,4 @@
 ﻿using ECS.Components.Entity;
-using ECS.Components.KinematicRigidbody2D;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -23,7 +22,7 @@ namespace ECS.Components.DynamicRigidbody2D
                 value = _rigidbody2D
             };
             
-            _entity.Entity.Replace<DynamicRigidbody2DComponent>(rigidbody2DComponent);
+            _entity.Entity.Replace(rigidbody2DComponent);
         }
     }
 }

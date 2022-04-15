@@ -1,7 +1,7 @@
 ﻿using System;
 using Leopotam.Ecs;
 using UnityEngine;
-using Voody.UniLeo;
+
 namespace ECS.Components.Entity
 {
     public class EntityMono : MonoBehaviour

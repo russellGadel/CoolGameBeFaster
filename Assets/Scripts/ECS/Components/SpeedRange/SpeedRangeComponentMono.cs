@@ -24,7 +24,7 @@ namespace ECS.Components.SpeedRange
                 MaxSpeed = _maxSpeed
             };
             
-            _entity.Entity.Replace<SpeedRangeComponent>(component);
+            _entity.Entity.Replace(component);
         }
     }
 }

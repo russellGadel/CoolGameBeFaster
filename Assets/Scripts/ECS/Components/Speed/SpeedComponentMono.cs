@@ -23,7 +23,7 @@ namespace ECS.Components.Speed
             value = _defaultSpeed
         };
 
-        _entity.Entity.Replace<SpeedComponent>(component);
+        _entity.Entity.Replace(component);
     }
     }
 }

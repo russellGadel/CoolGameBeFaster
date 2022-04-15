@@ -23,7 +23,7 @@ namespace ECS.Components.TransformComponent
                 value = _transform
             };
 
-            _entity.Entity.Replace<TransformComponent>(transformComponent);
+            _entity.Entity.Replace(transformComponent);
         }
     }
 }

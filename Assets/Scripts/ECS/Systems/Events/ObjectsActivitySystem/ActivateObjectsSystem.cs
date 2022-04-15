@@ -2,7 +2,6 @@
 using ECS.Components.GameObjectComponent;
 using ECS.Events;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace ECS.Systems.Events.ObjectsActivitySystem
 {
@@ -21,11 +20,7 @@ namespace ECS.Systems.Events.ObjectsActivitySystem
                 
                 ref GameObjectComponent gameObjectComponent = ref _objects.Get2(idx);
                 gameObjectComponent.gameObject.SetActive(true);
-                gameObjectComponent.gameObject.transform.position = new Vector3(
-                    gameObjectComponent.gameObject.transform.position.x,
-                    gameObjectComponent.gameObject.transform.position.y, 0);
                 
-                Debug   .Log("Activate " + gameObjectComponent.gameObject.transform.position);
                 entity.Del<ActivateObjectEvent>();
             }
         }

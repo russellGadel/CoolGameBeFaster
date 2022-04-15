@@ -24,7 +24,7 @@ namespace ECS.Components.LevelDifficultyComponent
                 value = _levelDifficultyNaming
             };
             
-            _entity.Entity.Replace<LevelDifficultyComponent>(levelDifficultyComponent);
+            _entity.Entity.Replace(levelDifficultyComponent);
         }
     }
 }

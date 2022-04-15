@@ -23,7 +23,7 @@ namespace ECS.Components.GameObjectComponent
             gameObject = _gameObject
             };
             
-            _entity.Entity.Replace<GameObjectComponent>(gameObjectComponent);
+            _entity.Entity.Replace(gameObjectComponent);
         }
     }
 }

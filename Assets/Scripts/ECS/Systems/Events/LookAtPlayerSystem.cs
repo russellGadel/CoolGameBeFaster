@@ -18,7 +18,6 @@ namespace ECS.Systems.Events
         {
             foreach (var idx in _objects)
             {
-                Debug.Log("Look At Player idx " + idx);
                 ref TransformComponent objectsTransform = ref _objects.Get2(idx);
                 ref TransformComponent playerTransformComponent = ref _player.Get2(0);
                 
@@ -26,7 +25,6 @@ namespace ECS.Systems.Events
                     objectsTransform.value.transform.up
                     , playerTransformComponent.value);
 
-                Debug.Log("objectsTransform " + objectsTransform.value.position);
                 ref EcsEntity objectEntity = ref _objects.GetEntity(idx);
                 objectEntity.Del<LookAtPlayerEvent>();
             }

@@ -24,7 +24,6 @@ namespace ECS.Systems
                 ref TransformComponent transformComponent = ref _bodies.Get3(idx);
                 ref SpeedComponent speedComponent = ref _bodies.Get4(idx);
 
-                Debug.Log("Kinematic Movement system" + moveToComponent.Value);
                 transformComponent
                     .value
                     .Translate(moveToComponent.Value * speedComponent.value * Time.fixedDeltaTime);

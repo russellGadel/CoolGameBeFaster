@@ -25,7 +25,6 @@ namespace Extensions
                 dir = -1;
             }
 
-            Debug.Log("Vector3.forward " + Vector3.forward);
             me.rotation *= Quaternion.AngleAxis(angle * dir, Vector3.forward);
         }
     }

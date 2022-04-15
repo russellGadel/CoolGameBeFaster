@@ -12,7 +12,6 @@ namespace ECS.Systems
        
         public void Init()
         {
-            Debug.Log("Init Positions pool");
             foreach (var idx in _positions)
             {
                 ref PositionsPoolComponent positionsPoolComponent = ref _positions.Get1(idx);

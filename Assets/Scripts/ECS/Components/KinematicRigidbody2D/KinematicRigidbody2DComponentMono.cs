@@ -22,7 +22,7 @@ namespace ECS.Components.KinematicRigidbody2D
                 value = _rigidbody2D
             };
             
-            _entity.Entity.Replace<KinematicRigidbody2DComponent>(rigidbody2DComponent);
+            _entity.Entity.Replace(rigidbody2DComponent);
         }
     }
 }
