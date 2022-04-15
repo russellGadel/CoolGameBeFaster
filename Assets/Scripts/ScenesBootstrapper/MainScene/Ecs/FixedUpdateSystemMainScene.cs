@@ -1,6 +1,7 @@
 ﻿using CustomUI.PlayerController;
 using ECS.Data;
 using ECS.Systems;
+using ECS.Systems.Events;
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
@@ -64,6 +65,9 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
                 //
+
+                //
+                .Add(new LookAtPlayerSystem()) // One Frame
                 .Add(new KinematicRigidbody2DMovementSystem())
                 ;
         }

@@ -1,6 +1,4 @@
-﻿using System;
-using ECS.Components.Direction;
-using ECS.Components.KinematicRigidbody2DTag;
+﻿using ECS.Components.KinematicRigidbody2DTag;
 using ECS.Components.MoveTo;
 using ECS.Components.Speed;
 using ECS.Components.TransformComponent;

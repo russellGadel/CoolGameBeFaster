@@ -2,7 +2,6 @@
 using ECS.Components.PositionsPool;
 using Leopotam.Ecs;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace ECS.Systems
 {

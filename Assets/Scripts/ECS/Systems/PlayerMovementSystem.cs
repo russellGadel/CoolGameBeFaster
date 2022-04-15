@@ -32,6 +32,7 @@ namespace ECS.Systems
 
 
                 rigidbody.AddForce(direction * speed);
+
             }
         }
     }

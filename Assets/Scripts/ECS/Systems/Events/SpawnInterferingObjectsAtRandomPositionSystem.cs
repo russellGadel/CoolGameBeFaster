@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using ECS.Components;
 using ECS.Components.BlockSpawnDuration;
-using ECS.Components.GameObjectComponent;
 using ECS.Components.InterferingObjectsTags.InterferingObjectsAppearingPositionsGridTag;
 using ECS.Components.InterferingObjectsTags.InterferingObjectsTag;
 using ECS.Components.InterferingObjectsTags.InterferingObjectTag;
@@ -9,12 +8,12 @@ using ECS.Components.LevelDifficultyComponent;
 using ECS.Components.MoveTo;
 using ECS.Components.PointsComponents;
 using ECS.Components.PositionsPool;
+using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.TransformComponent;
 using ECS.Data;
 using ECS.Events;
 using Leopotam.Ecs;
 using Unity.Mathematics;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -32,7 +31,8 @@ namespace ECS.Systems.Events
         private readonly EcsFilter<InterferingObjectTag
             , LevelDifficultyComponent
             , InactiveObjectTag
-            , TransformComponent> _inactiveInterferingObjectsElements = null;
+            , TransformComponent
+            , Rigidbody2DComponent> _inactiveInterferingObjectsElements = null;
 
         private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag
             , PositionsPoolComponent> _spawnPositions = null;
@@ -56,6 +56,9 @@ namespace ECS.Systems.Events
                         ref _inactiveInterferingObjectsElements.Get4(idxElements);
 
                     interferingObjectsTransform.value.position = GetRandomPosition();
+
+                    ZeroingInterferingObjectRotation(idxElements);
+
                     interferingObjectEntity
                         .Replace(new SetRandomSpeedEvent())
                         .Replace(new LookAtPlayerEvent())
@@ -97,6 +100,13 @@ namespace ECS.Systems.Events
             ref PositionsPoolComponent positionsPoolComponent = ref _spawnPositions.Get2(0);
             ref List<float3> positions = ref positionsPoolComponent.Positions;
             return positions[Random.Range(0, positions.Count)];
+        }
+
+        private void ZeroingInterferingObjectRotation(int idxElements)
+        {
+            ref Rigidbody2DComponent interferingObjectsRigidbody =
+                ref _inactiveInterferingObjectsElements.Get5(idxElements);
+            interferingObjectsRigidbody.value.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         private float GetBlockSpawnDuration(double spawnedPointsAmount)

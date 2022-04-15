@@ -84,8 +84,6 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new ActivateObjectsSystem())
                 .Add(new DeactivateObjectsSystem())
                 //
-                .Add(new LookAtPlayerSystem())
-                //
                 .Add(new SetRandomSpeedSystem())
                 //
                 //
