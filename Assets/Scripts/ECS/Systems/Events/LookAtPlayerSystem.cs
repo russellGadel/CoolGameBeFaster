@@ -20,9 +20,10 @@ namespace ECS.Systems.Events
             {
                 ref TransformComponent objectsTransform = ref _objects.Get2(idx);
                 ref TransformComponent playerTransformComponent = ref _player.Get2(0);
-                
+             
+               
                 objectsTransform.value.LookAt2D(
-                    objectsTransform.value.transform.up
+                    objectsTransform.value.up
                     , playerTransformComponent.value);
 
                 ref EcsEntity objectEntity = ref _objects.GetEntity(idx);
