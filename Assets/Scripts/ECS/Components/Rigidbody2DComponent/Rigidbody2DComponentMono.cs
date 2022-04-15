@@ -2,27 +2,27 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ECS.Components.DynamicRigidbody2D
+namespace ECS.Components.Rigidbody2DComponent
 {
-    public class DynamicRigidbody2DComponentMono : MonoBehaviour
+    public class Rigidbody2DComponentMono : MonoBehaviour
     {
         private EntityMono _entity;
         
         private void Awake()
         {
             _entity = GetComponent<EntityMono>();
-            _entity.AddObserverToEndInitializeEvent(AddComponents);
+            _entity.AddObserverToEndInitializeEvent(AddComponent);
         }
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
-        private void AddComponents()
+        private void AddComponent()
         {
-            DynamicRigidbody2DComponent rigidbody2DComponent = new DynamicRigidbody2DComponent()
+            Rigidbody2DComponent component = new Rigidbody2DComponent()
             {
                 value = _rigidbody2D
             };
             
-            _entity.Entity.Replace(rigidbody2DComponent);
+            _entity.Entity.Replace(component);
         }
     }
 }

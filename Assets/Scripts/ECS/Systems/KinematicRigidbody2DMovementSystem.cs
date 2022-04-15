@@ -1,6 +1,6 @@
 ﻿using System;
 using ECS.Components.Direction;
-using ECS.Components.KinematicRigidbody2D;
+using ECS.Components.KinematicRigidbody2DTag;
 using ECS.Components.MoveTo;
 using ECS.Components.Speed;
 using ECS.Components.TransformComponent;
@@ -12,7 +12,7 @@ namespace ECS.Systems
     // Fixed Update
     public class KinematicRigidbody2DMovementSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<KinematicRigidbody2DComponent, MoveToComponent
+        private readonly EcsFilter<KinematicRigidbody2DTag, MoveToComponent
                 , TransformComponent, SpeedComponent>
             _bodies;
 

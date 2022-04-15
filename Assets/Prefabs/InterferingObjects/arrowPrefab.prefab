@@ -15,11 +15,12 @@ GameObject:
   - component: {fileID: 8092450079182163992}
   - component: {fileID: 8112838906441953719}
   - component: {fileID: 3281077575341677975}
-  - component: {fileID: 7483291752266146010}
   - component: {fileID: 5457407143893832088}
   - component: {fileID: -4678668280446154858}
   - component: {fileID: 4390578020334466395}
   - component: {fileID: 8201072911068815404}
+  - component: {fileID: 5306679111716997477}
+  - component: {fileID: 6385251682963653207}
   m_Layer: 0
   m_Name: arrowPrefab
   m_TagString: Untagged
@@ -177,19 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 8410411771327769080}
---- !u!114 &7483291752266146010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4315189319269684326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b65d9612a24aa198b657296d100b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody2D: {fileID: 3268933394466406034}
 --- !u!114 &5457407143893832088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +230,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSpeed: 2
   _maxSpeed: 4
+--- !u!114 &5306679111716997477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315189319269684326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8eeefc3f2f248508a1eb80e08b3a55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6385251682963653207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315189319269684326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484405360ea2499d84b950a16f6ed81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 3268933394466406034}

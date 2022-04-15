@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ECS.Components.DynamicRigidbody2D
+namespace ECS.Components.Rigidbody2DComponent
 {
     [Serializable]
-    public struct DynamicRigidbody2DComponent
+    public struct Rigidbody2DComponent
     {
         public Rigidbody2D value;
     }
