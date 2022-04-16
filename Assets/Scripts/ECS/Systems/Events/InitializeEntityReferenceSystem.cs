@@ -4,11 +4,11 @@ using UnityEngine.WSA;
 
 namespace ECS.Systems.Events
 {
-    public class InitializeEntityReferenceSystem : IEcsRunSystem
+    public class InitializeEntityReferenceSystem : IEcsInitSystem
     {
         private readonly EcsFilter<InitializeEntityRequest> _filter = null;
 
-        public void Run()
+        public void Init()
         {
             foreach (var idx in _filter)
             {
