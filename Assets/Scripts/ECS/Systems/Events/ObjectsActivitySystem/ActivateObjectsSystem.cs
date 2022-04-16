@@ -1,6 +1,7 @@
 ﻿using ECS.Components;
 using ECS.Components.GameObjectComponent;
 using ECS.Events;
+using ECS.Tags;
 using Leopotam.Ecs;
 
 namespace ECS.Systems.Events.ObjectsActivitySystem

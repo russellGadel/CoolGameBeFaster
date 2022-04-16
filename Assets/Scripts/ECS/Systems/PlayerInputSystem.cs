@@ -1,6 +1,6 @@
 ﻿using CustomUI.PlayerController;
 using ECS.Components.Direction;
-using ECS.Components.PlayerTag;
+using ECS.Tags.Player;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ namespace ECS.Systems
 {
     public sealed class PlayerInputSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerTagComponent, DirectionComponent>
+        private readonly EcsFilter<PlayerTag, DirectionComponent>
             _ecsFilter = null;
 
         private readonly IPlayerControllerPresenter _playerController;

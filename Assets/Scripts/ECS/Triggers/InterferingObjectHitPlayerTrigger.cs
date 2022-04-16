@@ -1,6 +1,6 @@
 ﻿using ECS.Components.EntityReference;
-using ECS.Components.InterferingObjectsTags.InterferingObjectTag;
 using ECS.Events;
+using ECS.Tags.InterferingObjects.InterferingObjectTag;
 using Leopotam.Ecs;
 using UnityEngine;
 

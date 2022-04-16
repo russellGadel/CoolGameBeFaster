@@ -1,8 +1,8 @@
 ﻿using ECS.Components.GameObjectComponent;
-using ECS.Components.PlayerTag;
 using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.TransformComponent;
 using ECS.Events;
+using ECS.Tags.Player;
 using Extensions;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace ECS.Systems.Events
     // one Frame
     public class LookAtPlayerSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerTagComponent, TransformComponent> _player = null;
+        private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
         private readonly EcsFilter<LookAtPlayerEvent, TransformComponent, Rigidbody2DComponent> _objects = null;
 
         public void Run()

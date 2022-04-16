@@ -1,5 +1,5 @@
-﻿using ECS.Components.InterferingObjectsTags.InterferingObjectsTag;
-using ECS.Events;
+﻿using ECS.Events;
+using ECS.Tags.InterferingObjects.InterferingObjectsTag;
 using Leopotam.Ecs;
 
 namespace ECS.Systems.Events

@@ -1,8 +1,8 @@
 ﻿using ECS.Components.Direction;
-using ECS.Components.DynamicRigidbody2DTag;
-using ECS.Components.PlayerTag;
 using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.Speed;
+using ECS.Tags.DynamicRigidbody2D;
+using ECS.Tags.Player;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ namespace ECS.Systems
 {
     public sealed class PlayerMovementSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerTagComponent
+        private readonly EcsFilter<PlayerTag
                 , DynamicRigidbody2DTag
                 , Rigidbody2DComponent
                 , SpeedComponent

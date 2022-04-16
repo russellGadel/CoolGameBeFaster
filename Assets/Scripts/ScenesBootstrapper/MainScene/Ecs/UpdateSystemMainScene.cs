@@ -3,6 +3,7 @@ using ECS.Events;
 using ECS.Systems;
 using ECS.Systems.Events;
 using ECS.Systems.Events.ObjectsActivitySystem;
+using ECS.Systems.Init;
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;

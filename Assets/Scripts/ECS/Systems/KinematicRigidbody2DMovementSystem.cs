@@ -1,7 +1,7 @@
-﻿using ECS.Components.KinematicRigidbody2DTag;
-using ECS.Components.MoveTo;
+﻿using ECS.Components.MoveTo;
 using ECS.Components.Speed;
 using ECS.Components.TransformComponent;
+using ECS.Tags.KinematicRigidbody2D;
 using Leopotam.Ecs;
 using UnityEngine;
 
