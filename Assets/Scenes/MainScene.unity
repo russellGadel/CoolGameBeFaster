@@ -596,7 +596,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 942680076}
-  - component: {fileID: 942680078}
   - component: {fileID: 942680077}
   m_Layer: 0
   m_Name: Arrows
@@ -628,27 +627,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 942680075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c39c14e804c87a811abc1e7476862, type: 3}
+  m_Script: {fileID: 11500000, guid: e9effc985d954691aab25ff837001d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value:
-    transform: {fileID: 942680076}
-    prefab: {fileID: 4315189319269684326, guid: 1b120d2d348c0694296617da01dcbff9, type: 3}
-    pool: []
-    elementsAmount: 3
---- !u!114 &942680078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942680075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  convertMode: 0
+  _transform: {fileID: 942680076}
+  _prefab: {fileID: 4315189319269684326, guid: 98ca553d53470a14a92d9dd0097c1b72, type: 3}
+  _elementsAmount: 3
 --- !u!1 &979240936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    entityRef: {fileID: 2119167952}
+    monoEntityRef: {fileID: 2119167952}
 --- !u!114 &2119167954
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ECS.Components.EntityReference
 {
-    public class EntityReferenceComponent : MonoBehaviour
+    public class MonoEntity : MonoBehaviour
     {
         public EcsEntity Entity;
     }

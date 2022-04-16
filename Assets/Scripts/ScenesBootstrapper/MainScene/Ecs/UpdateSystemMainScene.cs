@@ -60,8 +60,6 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 // INIT
                 .Add(new InitializeEntityReferenceSystem())
                 //
-                .Add(new InitPoolComponentSystem())
-                //
                 .Add(new InitPositionsPoolComponentSystem())
                 //
                 .Add(new LoadRandomMapSystem())

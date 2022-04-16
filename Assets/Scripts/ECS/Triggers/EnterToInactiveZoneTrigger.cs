@@ -1,5 +1,4 @@
-﻿using System;
-using ECS.Components.Entity;
+﻿using ECS.Components.EntityReference;
 using ECS.Events;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -11,8 +10,8 @@ namespace ECS.Triggers
         private void OnTriggerEnter2D(Collider2D col)
         {
             Debug.Log("Enter to inactive Zone");
-            EntityMono entityMono = col.gameObject.GetComponent<EntityMono>();
-            entityMono.Entity.Replace(new DeactivateObjectEvent());
+            MonoEntity monoEntity = col.gameObject.GetComponent<MonoEntity>();
+            monoEntity.Entity.Replace(new DeactivateObjectEvent());
         }
     }
 }
