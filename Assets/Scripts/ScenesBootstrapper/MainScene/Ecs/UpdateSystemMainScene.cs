@@ -57,6 +57,11 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private void AddSystems()
         {
             _systems
+                //Run
+                //
+                .Add(new InitializeEntityReferenceSystem())
+                //
+                    
                 // INIT
                 .Add(new InitPoolComponentSystem())
                 //
