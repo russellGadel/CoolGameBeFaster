@@ -1,6 +1,8 @@
 ﻿using ECS.Components.MoveTo;
+using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.Speed;
 using ECS.Components.TransformComponent;
+using ECS.Tags;
 using ECS.Tags.KinematicRigidbody2D;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -11,7 +13,7 @@ namespace ECS.Systems
     public class KinematicRigidbody2DMovementSystem : IEcsRunSystem
     {
         private readonly EcsFilter<KinematicRigidbody2DTag, MoveToComponent
-                , TransformComponent, SpeedComponent>
+                , TransformComponent, SpeedComponent, ActiveObjectTag>
             _bodies;
 
         public void Run()
