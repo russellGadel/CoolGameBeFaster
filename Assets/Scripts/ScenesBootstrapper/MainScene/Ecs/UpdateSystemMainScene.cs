@@ -72,6 +72,8 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new PrepareInterferingObjectsPoolSystem())
                 //
+                .Add(new PreparePointsSystem())
+                //
                 .Add(new InitGameEntitySystem())
 
                 //Run
