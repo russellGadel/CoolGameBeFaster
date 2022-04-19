@@ -1,6 +1,4 @@
-﻿using ECS.Components.LevelDifficultyComponent;
-
-namespace Services.LevelDifficulty
+﻿namespace Services.LevelDifficulty
 {
     public interface ILevelDifficultyService
     {

@@ -42,10 +42,10 @@ namespace ECS.Systems.Events
                 ref SpawnedPointsCounterComponent spawnedPoints = ref _spawnedPointsCounter.Get1(0);
 
                 int spawnPointsAmountAtSameTime = GetSpawnObjectsAmountAtSameTime(spawnedPoints.Value);
-                int spawnedPointsCounter = 0;
 
+
+                int spawnedPointsAtSameTimeCounter = 0;
                 int attemptsToFindPosition = 3;
-
                 foreach (var idxElements in _inactivePointsElements)
                 {
                     ref EcsEntity pointEntity = ref _inactivePointsElements.GetEntity(idxElements);
@@ -66,12 +66,13 @@ namespace ECS.Systems.Events
                             pointEntity
                                 .Replace(new ActivateObjectEvent());
 
-                            spawnedPointsCounter += 1;
+                            spawnedPointsAtSameTimeCounter += 1;
+                            spawnedPoints.Value += 1;
                             break;
                         }
                     }
 
-                    if (spawnedPointsCounter == spawnPointsAmountAtSameTime)
+                    if (spawnedPointsAtSameTimeCounter == spawnPointsAmountAtSameTime)
                     {
                         break;
                     }

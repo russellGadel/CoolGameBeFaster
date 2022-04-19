@@ -1,5 +1,4 @@
-﻿using ECS.Components.GameObjectComponent;
-using ECS.Components.Rigidbody2DComponent;
+﻿using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.TransformComponent;
 using ECS.Events;
 using ECS.Tags.Player;

@@ -1,5 +1,4 @@
 ﻿using System;
-using Leopotam.Ecs;
 
 namespace ECS.Components.EntityReference
 {

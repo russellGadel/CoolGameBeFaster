@@ -1,6 +1,4 @@
-﻿using Leopotam.Ecs;
-
-namespace ECS.Components.PointsComponents
+﻿namespace ECS.Components.PointsComponents
 {
     public struct SpawnedPointsCounterComponent
     {

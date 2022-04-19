@@ -1,5 +1,4 @@
 ﻿using ECS.Components.MoveTo;
-using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.Speed;
 using ECS.Components.TransformComponent;
 using ECS.Tags;

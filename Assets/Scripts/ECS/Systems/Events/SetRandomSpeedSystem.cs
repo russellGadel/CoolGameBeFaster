@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using ECS.Components.Speed;
+﻿using ECS.Components.Speed;
 using ECS.Components.SpeedRange;
+using UnityEngine;
 using ECS.Events;
 using Leopotam.Ecs;
 
