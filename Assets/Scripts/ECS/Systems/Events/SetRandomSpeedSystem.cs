@@ -7,7 +7,7 @@ using Leopotam.Ecs;
 namespace ECS.Systems.Events
 {
     // One Frame
-    public class SetRandomSpeedSystem : IEcsRunSystem
+    public sealed class SetRandomSpeedSystem : IEcsRunSystem
     {
         private readonly EcsFilter<SetRandomSpeedEvent, SpeedRangeComponent, SpeedComponent> _filter = null;
 

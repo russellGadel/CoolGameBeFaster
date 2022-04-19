@@ -63,8 +63,6 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new InitPositionsPoolComponentSystem())
                 //
-                .Add(new LoadRandomMapSystem())
-                //
                 .Add(new LoadCameraCornersSystem())
                 .Add(new LoadPositionsPoolSystem())
                 //
@@ -74,11 +72,17 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new PreparePointsSystem())
                 //
+                .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
+                //
+                //Last System at INIT
                 .Add(new InitGameEntitySystem())
+                // 
 
                 //Run
                 //
                 .Add(new SpawnInterferingObjectsAtRandomPositionSystem())
+                //
+                .Add(new SpawnPointsAtRandomPositionSystem())
                 //
 
                 //Run OneFrame

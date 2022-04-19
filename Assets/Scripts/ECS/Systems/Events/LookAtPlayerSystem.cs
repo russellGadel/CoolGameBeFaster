@@ -10,7 +10,7 @@ using UnityEngine;
 namespace ECS.Systems.Events
 {
     // one Frame
-    public class LookAtPlayerSystem : IEcsRunSystem
+    public sealed class LookAtPlayerSystem : IEcsRunSystem
     {
         private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
         private readonly EcsFilter<LookAtPlayerEvent, TransformComponent, Rigidbody2DComponent> _objects = null;

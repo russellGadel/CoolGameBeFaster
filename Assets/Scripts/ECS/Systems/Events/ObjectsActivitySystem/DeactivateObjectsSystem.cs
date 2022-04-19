@@ -8,7 +8,7 @@ using UnityEngine;
 namespace ECS.Systems.Events.ObjectsActivitySystem
 {
     // One Frame System
-    public class DeactivateObjectsSystem : IEcsRunSystem
+    public sealed class DeactivateObjectsSystem : IEcsRunSystem
     {
         private readonly EcsFilter<DeactivateObjectEvent, GameObjectComponent> _objects = null;
 

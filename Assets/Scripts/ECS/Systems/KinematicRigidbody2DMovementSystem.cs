@@ -10,7 +10,7 @@ using UnityEngine;
 namespace ECS.Systems
 {
     // Fixed Update
-    public class KinematicRigidbody2DMovementSystem : IEcsRunSystem
+    public sealed class KinematicRigidbody2DMovementSystem : IEcsRunSystem
     {
         private readonly EcsFilter<KinematicRigidbody2DTag, MoveToComponent
                 , TransformComponent, SpeedComponent, ActiveObjectTag>

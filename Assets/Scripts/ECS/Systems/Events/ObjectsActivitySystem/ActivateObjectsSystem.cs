@@ -6,7 +6,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Events.ObjectsActivitySystem
 {
-    public class ActivateObjectsSystem : IEcsRunSystem
+    public sealed class ActivateObjectsSystem : IEcsRunSystem
     {
         private readonly EcsFilter<ActivateObjectEvent, GameObjectComponent> _objects = null;
 

@@ -5,7 +5,7 @@ using Unity.Mathematics;
 
 namespace ECS.Systems.Init
 {
-    public class InitPositionsPoolComponentSystem : IEcsInitSystem
+    public sealed class InitPositionsPoolComponentSystem : IEcsInitSystem
     {
         private readonly EcsFilter<PositionsPoolComponent> _positions = null;
        
