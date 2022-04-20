@@ -6,8 +6,8 @@ using ECS.Components.PointsComponents;
 using ECS.Components.PositionsPool;
 using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.TransformComponent;
-using ECS.Data;
 using ECS.Events;
+using ECS.References.MainScene;
 using ECS.Tags;
 using ECS.Tags.InterferingObjects.InterferingObjectsAppearingPositionsGridTag;
 using ECS.Tags.InterferingObjects.InterferingObjectsTag;
@@ -26,7 +26,7 @@ namespace ECS.Systems.Events
 
         private readonly EcsFilter<SpawnedPointsCounterComponent> _spawnedPointsCounter = null;
 
-        private MainSceneData _mainSceneData;
+        private MainSceneServices _mainSceneServices;
 
         private readonly EcsFilter<InterferingObjectTag
             , LevelDifficultyComponent
@@ -88,7 +88,7 @@ namespace ECS.Systems.Events
 
         private int GetSpawnObjectsAmountAtSameTime(double points)
         {
-            return _mainSceneData
+            return _mainSceneServices
                 .LevelDifficultyService
                 .GetDifficulty(points)
                 .spawnInterferingObjectsAmountAtSameTime;
@@ -111,7 +111,7 @@ namespace ECS.Systems.Events
 
         private float GetBlockSpawnDuration(double spawnedPointsAmount)
         {
-            return _mainSceneData
+            return _mainSceneServices
                 .LevelDifficultyService
                 .GetDifficulty(spawnedPointsAmount)
                 .interferingObjectsSpawnDelay;

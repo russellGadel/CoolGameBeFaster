@@ -1,5 +1,9 @@
-﻿using Core.BootstrapExecutor;
+﻿using System.Runtime.InteropServices;
+using Core.BootstrapExecutor;
+using Core.EventsExecutor;
 using ScenesBootstrapper.MainScene.Ecs;
+using ScenesBootstrapper.MainScene.Events;
+using ScenesBootstrapper.MainScene.Events.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene
@@ -8,23 +12,25 @@ namespace ScenesBootstrapper.MainScene
     {
         public void Enter()
         {
-            AddEnterItems();
-            _executor.Execute();
+            AddBootstrapItems();
+            _bootstrapsExecutor.Execute();
         }
 
         public void Exit()
         {
         }
 
-        [Inject] private IBootstrapExecutor _executor;
-        [Inject] private UIBootstrapperMainScene _uiBootstrapperMainScene;
-        [Inject] private EcsBootstrapperMainScene _ecsBootstrapperMainScene;
+        [Inject] private IBootstrapExecutor _bootstrapsExecutor;
+        [Inject] private MainSceneLoadersBootstrapper _mainSceneLoadersBootstrapper;
+        [Inject] private MainSceneEventsBootstrapper _mainSceneEventsBootstrapper;
+        [Inject] private MainSceneEcsBootstrapper _mainSceneEcsBootstrapper;
 
-        private void AddEnterItems()
+        private void AddBootstrapItems()
         {
-            _executor.Clear();
-            _executor.Add(_uiBootstrapperMainScene);
-            _executor.Add(_ecsBootstrapperMainScene);
+            _bootstrapsExecutor.Clear();
+            _bootstrapsExecutor.Add(_mainSceneLoadersBootstrapper);
+            _bootstrapsExecutor.Add(_mainSceneEventsBootstrapper);
+            _bootstrapsExecutor.Add(_mainSceneEcsBootstrapper);
         }
     }
 }

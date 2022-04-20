@@ -1,13 +1,12 @@
-﻿using ECS.Data.Camera;
+﻿using ECS.References.Camera;
 using Services.LevelDifficulty;
 using UnityEngine;
 using Zenject;
 
-namespace ECS.Data
+namespace ECS.References.MainScene
 {
     public class MainSceneData : MonoBehaviour
     {
         public InterferingObjectsAppearingPositionData interferingObjectsAppearingPositionData;
-        [Inject] public ILevelDifficultyService LevelDifficultyService;
     }
 }

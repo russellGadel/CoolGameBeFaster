@@ -13,9 +13,13 @@ namespace ECS.Triggers
             if (col.tag == "InterferingObject")
             {
                 Debug.Log("Player Hit By InterferingObject");
+                
 
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
-                playerMonoEntity.Entity.Get<InterferingObjectHitPlayerEvent>();
+                playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
+
+                MonoEntity interferingObjectEntity = col.GetComponent<MonoEntity>();
+                interferingObjectEntity.Entity.Replace(new DeactivateObjectEvent());
             }
         }
     }

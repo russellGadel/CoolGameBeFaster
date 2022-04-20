@@ -1,6 +1,8 @@
 ﻿using CustomUI;
 using ECS.Components.PointsComponents;
 using ECS.Events;
+using ECS.References;
+using ECS.References.MainScene;
 using Leopotam.Ecs;
 
 namespace ECS.Systems.Events

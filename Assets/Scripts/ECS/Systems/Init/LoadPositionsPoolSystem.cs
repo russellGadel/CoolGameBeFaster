@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using ECS.Components.CameraComponent.CameraCornersComponent;
 using ECS.Components.PositionsPool;
-using ECS.Data;
-using ECS.Data.Camera;
+using ECS.References;
+using ECS.References.Camera;
+using ECS.References.MainScene;
 using ECS.Tags.InterferingObjects.InterferingObjectsAppearingPositionsGridTag;
 using Leopotam.Ecs;
 using Unity.Mathematics;

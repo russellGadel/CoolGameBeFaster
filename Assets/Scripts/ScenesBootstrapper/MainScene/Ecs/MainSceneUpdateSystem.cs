@@ -1,6 +1,7 @@
 ﻿using CustomUI;
-using ECS.Data;
 using ECS.Events;
+using ECS.References;
+using ECS.References.MainScene;
 using ECS.Systems;
 using ECS.Systems.Events;
 using ECS.Systems.Events.ObjectsActivitySystem;
@@ -11,19 +12,22 @@ using Voody.UniLeo;
 
 namespace ScenesBootstrapper.MainScene.Ecs
 {
-    public class UpdateSystemMainScene : MonoBehaviour
+    public class MainSceneUpdateSystem : MonoBehaviour
     {
         private EcsWorld _world;
         private EcsSystems _systems;
         private StaticData _staticData;
         private MainSceneData _mainSceneData;
         private RuntimeData _runtimeData;
+        private MainSceneServices _mainSceneServices;
         private MainSceneUIViews _mainSceneUIViews;
 
+        
         public void Construct(ref EcsWorld world
             , ref StaticData staticData
             , ref MainSceneData mainSceneData
             , ref MainSceneUIViews mainSceneUIViews
+            , ref MainSceneServices mainSceneServices
             , ref RuntimeData runtimeData)
         {
             _world = world;
@@ -31,6 +35,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
             _staticData = staticData;
             _mainSceneData = mainSceneData;
             _mainSceneUIViews = mainSceneUIViews;
+            _mainSceneServices = mainSceneServices;
             _runtimeData = runtimeData;
 
             _systems = new EcsSystems(_world);
@@ -55,6 +60,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Inject(_staticData)
                 .Inject(_mainSceneData)
                 .Inject(_mainSceneUIViews)
+                .Inject(_mainSceneServices)
                 .Inject(_runtimeData);
         }
 
@@ -102,6 +108,9 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new PlayerGetPointSystem())
                 //
+                .Add(new InterferingObjectHitPlayerSystem())
+                //
+                
                 //
                 .Add(new StartGameSystem())
                 ;

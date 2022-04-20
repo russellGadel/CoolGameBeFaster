@@ -3,8 +3,8 @@ using ECS.Components.PointsComponents;
 using ECS.Components.PolygonCollider2DComponent;
 using ECS.Components.SpawnAreaSize;
 using ECS.Components.TransformComponent;
-using ECS.Data;
 using ECS.Events;
+using ECS.References.MainScene;
 using ECS.Tags;
 using ECS.Tags.ObjectsSpawnOnPolygonCollider2DAreaTag;
 using ECS.Tags.Point;
@@ -25,7 +25,7 @@ namespace ECS.Systems.Events
             , SpawnAreaSizeComponent
             , PolygonCollider2DComponent> _spawnPositions = null;
 
-        private MainSceneData _mainSceneData;
+        private MainSceneServices _mainSceneData;
 
         private readonly EcsFilter<PointTag
             , InactiveObjectTag

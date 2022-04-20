@@ -1,5 +1,6 @@
 ﻿using CustomUI.PlayerController;
-using ECS.Data;
+using ECS.References;
+using ECS.References.MainScene;
 using ECS.Systems;
 using ECS.Systems.Events;
 using Leopotam.Ecs;
@@ -9,7 +10,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Ecs
 {
-    public class FixedUpdateSystemMainScene : MonoBehaviour
+    public class MainSceneFixedUpdateSystem : MonoBehaviour
     {
         private EcsWorld _world;
         private EcsSystems _system;

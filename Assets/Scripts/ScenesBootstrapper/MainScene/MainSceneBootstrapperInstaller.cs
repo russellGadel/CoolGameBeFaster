@@ -1,4 +1,6 @@
-﻿using ScenesBootstrapper.MainScene.Ecs;
+﻿using System.ComponentModel;
+using ScenesBootstrapper.MainScene.Ecs;
+using ScenesBootstrapper.MainScene.Events;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +13,7 @@ namespace ScenesBootstrapper.MainScene
             BindMainSceneBootstrapper();
             BindEscBootstrapper();
             BindUIInstaller();
+            BindEvents();
         }
 
 
@@ -23,20 +26,27 @@ namespace ScenesBootstrapper.MainScene
         }
 
 
-        [SerializeField] private EcsBootstrapperMainScene ecsBootstrapper;
+        [SerializeField] private MainSceneEcsBootstrapper mainSceneEcsBootstrapper;
 
         private void BindEscBootstrapper()
         {
             Container
-                .Bind<EcsBootstrapperMainScene>()
-                .FromInstance(ecsBootstrapper)
+                .Bind<MainSceneEcsBootstrapper>()
+                .FromInstance(mainSceneEcsBootstrapper)
                 .AsSingle();
         }
 
         private void BindUIInstaller()
         {
             Container
-                .Bind<UIBootstrapperMainScene>()
+                .Bind<MainSceneLoadersBootstrapper>()
+                .AsSingle();
+        }
+
+        private void BindEvents()
+        {
+            Container
+                .Bind<MainSceneEventsBootstrapper>()
                 .AsSingle();
         }
     }

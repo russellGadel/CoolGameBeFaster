@@ -1,4 +1,4 @@
-﻿namespace ECS.Data
+﻿namespace ECS.References
 {
     public class RuntimeData
     {

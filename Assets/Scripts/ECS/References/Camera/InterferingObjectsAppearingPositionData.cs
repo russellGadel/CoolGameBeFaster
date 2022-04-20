@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ECS.Data.Camera
+namespace ECS.References.Camera
 {
     public class InterferingObjectsAppearingPositionData : MonoBehaviour
     {
