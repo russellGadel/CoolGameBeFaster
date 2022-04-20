@@ -232,9 +232,21 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 18
     m_Data: {fileID: -7635356268976036439, guid: a36a4e5df5cfec24b8c97f4a276c0cc3, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -300,8 +312,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -9, y: -5, z: 0}
-  m_Size: {x: 19, y: 8, z: 1}
+  m_Origin: {x: -9, y: -10, z: 0}
+  m_Size: {x: 36, y: 15, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7689,11 +7701,31 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.21405, y: 4.410166}
+    - - {x: 8.541017, y: 1.9904175}
+      - {x: 0.3669691, y: 2.0837324}
+      - {x: 0.40132737, y: 3.030686}
+      - {x: 8.521389, y: 3.3243794}
+      - {x: 8.585517, y: 4.610186}
       - {x: -8.37109, y: 4.459481}
-      - {x: -8.250391, y: -4.1444736}
+      - {x: -8.4996605, y: 1.2203586}
+      - {x: -5.776364, y: 3.8219607}
+      - {x: -5.2095556, y: 3.1224773}
+      - {x: -8.600851, y: -0.5369195}
+      - {x: -8.742332, y: -2.0317137}
+      - {x: -6.671055, y: -0.24279737}
+      - {x: -6.2916636, y: -0.7019931}
+      - {x: -8.60352, y: -3.3295608}
+      - {x: -8.699061, y: -4.418049}
+      - {x: -6.000203, y: -4.569747}
+      - {x: -5.971575, y: -3.6046147}
+      - {x: -4.780553, y: -3.5953279}
+      - {x: -4.920393, y: -4.5945063}
+      - {x: -0.21339294, y: -4.509539}
+      - {x: -0.022455752, y: -1.374197}
+      - {x: 1.0484619, y: -1.4435359}
+      - {x: 1.1050498, y: -4.495305}
       - {x: 5.074422, y: -4.3604608}
-      - {x: 5.2828164, y: -0.9858956}
+      - {x: 5.3113904, y: -1.4430847}
       - {x: 8.364459, y: -1.1736634}
 --- !u!114 &1053483997595297544
 MonoBehaviour:

@@ -10,11 +10,10 @@ namespace ECS.Triggers
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Debug.Log("Player Hit By InterferingObject");
-            MonoEntity interferingObjectMonoEntity = col.gameObject.GetComponent<MonoEntity>();
-
-            if (interferingObjectMonoEntity.Entity.Has<InterferingObjectTag>())
+            if (col.tag == "InterferingObject")
             {
+                Debug.Log("Player Hit By InterferingObject");
+
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
                 playerMonoEntity.Entity.Get<InterferingObjectHitPlayerEvent>();
             }

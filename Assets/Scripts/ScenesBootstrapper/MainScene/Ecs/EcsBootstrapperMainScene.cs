@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
+using CustomUI;
 using CustomUI.PlayerController;
 using ECS.Data;
 using ECS.Systems;
@@ -15,6 +16,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private EcsWorld _world;
         [SerializeField] private StaticData _staticData;
         [SerializeField] private MainSceneData _mainSceneData;
+        [SerializeField] private MainSceneUIViews _mainSceneUIViews;
         private RuntimeData _runtimeData = new RuntimeData();
 
         [SerializeField] private FixedUpdateSystemMainScene _fixedUpdateSystem;
@@ -24,8 +26,9 @@ namespace ScenesBootstrapper.MainScene.Ecs
         public IEnumerator Execute()
         {
             _world = new EcsWorld();
-            
-            _updateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
+
+            _updateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _mainSceneUIViews
+                , ref _runtimeData);
             _fixedUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
 
             _ecsLoaded = true;

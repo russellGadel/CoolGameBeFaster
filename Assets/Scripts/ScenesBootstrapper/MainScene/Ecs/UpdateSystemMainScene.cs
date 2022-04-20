@@ -1,4 +1,5 @@
-﻿using ECS.Data;
+﻿using CustomUI;
+using ECS.Data;
 using ECS.Events;
 using ECS.Systems;
 using ECS.Systems.Events;
@@ -17,14 +18,19 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private StaticData _staticData;
         private MainSceneData _mainSceneData;
         private RuntimeData _runtimeData;
+        private MainSceneUIViews _mainSceneUIViews;
 
-        public void Construct(ref EcsWorld world, ref StaticData staticData, ref MainSceneData mainSceneData,
-            ref RuntimeData runtimeData)
+        public void Construct(ref EcsWorld world
+            , ref StaticData staticData
+            , ref MainSceneData mainSceneData
+            , ref MainSceneUIViews mainSceneUIViews
+            , ref RuntimeData runtimeData)
         {
             _world = world;
 
             _staticData = staticData;
             _mainSceneData = mainSceneData;
+            _mainSceneUIViews = mainSceneUIViews;
             _runtimeData = runtimeData;
 
             _systems = new EcsSystems(_world);
@@ -48,6 +54,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
             _systems
                 .Inject(_staticData)
                 .Inject(_mainSceneData)
+                .Inject(_mainSceneUIViews)
                 .Inject(_runtimeData);
         }
 
@@ -93,6 +100,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new SetRandomSpeedSystem())
                 //
+                .Add(new PlayerGetPointSystem())
                 //
                 //
                 .Add(new StartGameSystem())
