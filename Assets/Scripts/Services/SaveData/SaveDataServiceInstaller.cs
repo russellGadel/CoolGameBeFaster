@@ -6,9 +6,25 @@ namespace Services.SaveData
     {
         public override void InstallBindings()
         {
+            BindSaveService();
+            BindSaveServiceFoEvents();
+        }
+        
+        private readonly SaveDataService _saveDataService = new SaveDataService();
+        
+        private void BindSaveService()
+        {
             Container
                 .Bind<ISaveDataService>()
-                .To<SaveDataService>()
+                .FromInstance(_saveDataService)
+                .AsSingle();
+        }
+        
+        private void BindSaveServiceFoEvents()
+        {
+            Container
+                .Bind<ISaveDataServiceForEvents>()
+                .FromInstance(_saveDataService)
                 .AsSingle();
         }
     }

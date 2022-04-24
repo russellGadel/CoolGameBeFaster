@@ -2,27 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveDataService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedDataReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedDataReader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataServiceInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataServiceInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PointsComponents/MaxPointsAmountGotByPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/PointsComponents/MaxPointsAmountGotByPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/SaveDataEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/SaveDataEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/InterferingObjectHitPlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/InterferingObjectHitPlayerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/InitPointsEntitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/InitPointsEntitySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedDataReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISavedDataReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataServiceInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/SaveData/SaveDataServiceInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Tags/Player/PlayerTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.leopotam.ecs@1966a4c1fd/src/EcsWorld.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntityReference/MonoEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Events/ActivateObjectEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/TransformComponent/TransformComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Tags/Point/PointTag.cs" root0="FORCE_HIGHLIGHTING" />
@@ -140,7 +138,7 @@
       <workItem from="1650260623904" duration="2989000" />
       <workItem from="1650350263495" duration="24990000" />
       <workItem from="1650442650682" duration="19165000" />
-      <workItem from="1650798760883" duration="11859000" />
+      <workItem from="1650798760883" duration="16834000" />
     </task>
     <servers />
   </component>

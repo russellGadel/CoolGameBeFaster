@@ -1,6 +1,6 @@
 ﻿namespace Services.SaveData
 {
-    public interface ISavedDataReader
+    public interface ISaveData
     {
     }
 }

@@ -1,40 +1,47 @@
 ﻿using System;
 using Core;
+using UnityEngine;
 
 namespace Services.SaveData
 {
-    public class SaveDataService : DataHandler<SaveData>, ISaveDataService
+    public interface ISaveDataServiceForEvents
+    {
+        void Save();
+        void Load();
+    }
+
+    public class SaveDataService : DataHandler<SaveData>
+        , ISaveDataService
+        , ISaveDataServiceForEvents
     {
         private SaveData _data = new SaveData();
         private const string SaveFileName = "saveData.ggsSave";
 
         public void Save()
         {
-            _saveObservers?.Invoke(ref _data);
+            _saveObservers?.Invoke();
             base.Save(_data, SaveFileName);
+            Debug.Log("Saved data");
         }
 
-        private delegate void Observer(ref SaveData saveData);
+        private delegate void Observer();
 
         private event Observer _saveObservers = null;
 
-        public void AddSaveEventObservers(Action<SaveData> observer)
+        public void AddSaveEventObservers(Action observer)
         {
-            _saveObservers += (ref SaveData data) => observer(_data);
+            _saveObservers += () => observer();
         }
-
 
         public void Load()
         {
             base.Load(ref _data, SaveFileName);
-            loadObservers?.Invoke(ref _data);
+            Debug.Log("LoadData");
         }
 
-        private event Observer loadObservers = null;
-
-        public void AddLoadEventObservers(Action<SaveData> observer)
+        public ref SaveData GetData()
         {
-            loadObservers += (ref SaveData data) => observer(_data);
+            return ref _data;
         }
     }
 }

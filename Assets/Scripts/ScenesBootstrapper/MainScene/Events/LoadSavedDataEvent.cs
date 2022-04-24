@@ -7,10 +7,10 @@ namespace ScenesBootstrapper.MainScene.Events
 {
     public class LoadSavedDataEvent : ICustomEventLoader
     {
-        private readonly ISaveDataService _saveDataService;
+        private readonly ISaveDataServiceForEvents _saveDataService;
 
         [Inject]
-        public LoadSavedDataEvent(ISaveDataService saveDataService)
+        public LoadSavedDataEvent(ISaveDataServiceForEvents saveDataService)
         {
             _saveDataService = saveDataService;
         }
