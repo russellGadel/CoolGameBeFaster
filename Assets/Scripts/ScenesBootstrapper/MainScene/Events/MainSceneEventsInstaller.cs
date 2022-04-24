@@ -10,6 +10,9 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             BindPauseEvent();
             BindUnpauseEvent();
+            
+            BindLoadSavedDataEvent();
+            
             BindMainSceneEventsService();
         }
 
@@ -23,7 +26,12 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             Container.Bind<PlayerUnpauseEvent>().AsSingle();
         }
-        
+
+        private void BindLoadSavedDataEvent()
+        {
+            Container.Bind<LoadSavedDataEvent>().AsSingle();
+        }
+
         private void BindMainSceneEventsService()
         {
             Container.Bind<MainSceneEventsService>().AsSingle();
