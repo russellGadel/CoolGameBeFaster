@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.EventsExecutor
+namespace Core.EventsLoader
 {
-    public class CustomEventsExecutor : MonoBehaviour, ICustomEventsExecutor
+    public class CustomEventsLoader : MonoBehaviour, ICustomEventsLoader
     {
-        private readonly List<ICustomEvent> _events = new List<ICustomEvent>();
+        private readonly List<ICustomEventLoader> _events = new List<ICustomEventLoader>();
 
-        public void AddEvent(ICustomEvent customEvent)
+        public void AddEvent(ICustomEventLoader customEventLoader)
         {
-            _events.Add(customEvent);
+            _events.Add(customEventLoader);
         }
 
-        public void Execute()
+        public void Load()
         {
             StartCoroutine(ExecuteCoroutine());
         }
@@ -36,7 +36,7 @@ namespace Core.EventsExecutor
         {
             for (int i = 0; i < _events.Count; i++)
             {
-                yield return StartCoroutine(_events[i].Execute());
+                yield return StartCoroutine(_events[i].Load());
             }
 
             _isDone = true;
