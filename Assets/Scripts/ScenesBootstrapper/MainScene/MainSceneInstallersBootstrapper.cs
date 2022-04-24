@@ -6,7 +6,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene
 {
-    public sealed class MainSceneLoadersBootstrapper : IBootstrapper
+    public sealed class MainSceneInstallersBootstrapper : IBootstrapper
     {
         [Inject] private readonly ICustomInstallersExecutor _executor;
 

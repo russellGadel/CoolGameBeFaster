@@ -39,7 +39,7 @@ namespace ScenesBootstrapper.MainScene
         private void BindUIInstaller()
         {
             Container
-                .Bind<MainSceneLoadersBootstrapper>()
+                .Bind<MainSceneInstallersBootstrapper>()
                 .AsSingle();
         }
 

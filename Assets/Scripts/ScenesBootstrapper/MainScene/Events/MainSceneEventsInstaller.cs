@@ -10,8 +10,9 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             BindPauseEvent();
             BindUnpauseEvent();
+            BindMainSceneEventsService();
         }
-        
+
         
         private void BindPauseEvent()
         {
@@ -21,6 +22,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindUnpauseEvent()
         {
             Container.Bind<PlayerUnpauseEvent>().AsSingle();
+        }
+        
+        private void BindMainSceneEventsService()
+        {
+            Container.Bind<MainSceneEventsService>().AsSingle();
         }
     }
 }

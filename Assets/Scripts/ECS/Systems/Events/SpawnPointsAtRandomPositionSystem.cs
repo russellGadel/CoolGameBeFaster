@@ -54,11 +54,7 @@ namespace ECS.Systems.Events
                     for (int i = 0; i < attemptsToFindPosition; i++)
                     {
                         Vector3 position = GetRandomPosition(ref spawnAreaSize);
-
-                        Debug.Log("position " + position);
-                        Debug.Log("spawnAreaCollider.value.OverlapPoint(position) " +
-                                  spawnAreaCollider.value.OverlapPoint(position));
-
+                        
                         if (spawnAreaCollider.value.OverlapPoint(position))
                         {
                             pointTransform.value.position = position;

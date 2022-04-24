@@ -1,15 +1,15 @@
 ﻿using System.Collections;
-using Core.EventsExecutor;
+using Core.EventsLoader;
 using ScenesLoader;
 
 namespace ScenesBootstrapper.LoadingScene.Events
 {
-    public sealed class LoadMainSceneEvent : ICustomEvent
+    public sealed class LoadMainSceneEventLoader : ICustomEventLoader
     {
         private readonly ICustomScenesLoader _scenesLoader;
         private readonly LoadingSceneBootstrapper _loadingSceneBootstrapper;
         
-        public LoadMainSceneEvent(ICustomScenesLoader scenesLoader,
+        public LoadMainSceneEventLoader(ICustomScenesLoader scenesLoader,
             LoadingSceneBootstrapper loadingSceneBootstrapper)
         {
             _scenesLoader = scenesLoader;
@@ -18,7 +18,7 @@ namespace ScenesBootstrapper.LoadingScene.Events
             
         }
 
-        public IEnumerator Execute()
+        public IEnumerator Load()
         {
             yield return _scenesLoader.LoadSceneAsync(ScenesNaming.MainScene, _loadingSceneBootstrapper);
         }

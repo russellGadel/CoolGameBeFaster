@@ -1,4 +1,5 @@
-﻿using Services.GameTime;
+﻿using ScenesBootstrapper.MainScene.Events;
+using Services.GameTime;
 using Services.LevelDifficulty;
 using UnityEngine;
 using Zenject;
@@ -9,5 +10,6 @@ namespace ECS.References.MainScene
     {
         [Inject] public ILevelDifficultyService LevelDifficultyService;
         [Inject] public IGameTimeService GameTimeService;
+        [Inject] public MainSceneEventsService MainSceneEventsService;
     }
 }

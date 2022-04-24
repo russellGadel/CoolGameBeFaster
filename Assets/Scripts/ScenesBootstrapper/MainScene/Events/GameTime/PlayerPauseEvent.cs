@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Core.EventsExecutor;
+using Core.EventsLoader;
 using Services.GameTime;
 using Zenject;
 
@@ -15,25 +15,9 @@ namespace ScenesBootstrapper.MainScene.Events.GameTime
             _gameTimeService = gameTimeService;
         }
 
-        
-        public IEnumerator Execute()
+        public void Execute()
         {
-            AddPauseObservers();
-
-            yield return null;
+            _gameTimeService.Pause();
         }
-
-        
-        private void AddPauseObservers()
-        {
-            _gameTimeService.AddPlayerPauseObservers(PauseObservers);
-        }
-
-        private void PauseObservers()
-        {
-        }
-
-        
-      
     }
 }

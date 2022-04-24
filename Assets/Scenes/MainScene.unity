@@ -181,7 +181,6 @@ GameObject:
   - component: {fileID: 51167840}
   - component: {fileID: 51167839}
   - component: {fileID: 51167842}
-  - component: {fileID: 51167843}
   - component: {fileID: 51167844}
   m_Layer: 0
   m_Name: MainSceneBootstrapper
@@ -272,18 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interferingObjectsAppearingPositionData: {fileID: 1445364992}
---- !u!114 &51167843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51167836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ef7cf3b54243d2a35925d816c9c09e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &51167844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d382a36f134db496a695981b6c9890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventsExecutor: {fileID: 1384661384}
+  eventsLoader: {fileID: 1384661384}
 --- !u!1 &1445364988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10700001, y: 0.30933338}
   m_AnchorMax: {x: 0.4202291, y: 0.4962963}
-  m_AnchoredPosition: {x: 453.86002, y: 1}
+  m_AnchoredPosition: {x: 453.86, y: 1}
   m_SizeDelta: {x: -1, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3599251133694041177

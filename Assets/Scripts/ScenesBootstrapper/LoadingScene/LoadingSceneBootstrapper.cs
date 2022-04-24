@@ -1,4 +1,4 @@
-﻿using Core.EventsExecutor;
+﻿using Core.EventsLoader;
 using ScenesBootstrapper.LoadingScene.Events;
 using ScenesLoader;
 using UnityEngine;
@@ -9,7 +9,7 @@ namespace ScenesBootstrapper.LoadingScene
     public sealed class LoadingSceneBootstrapper : ISceneBootstrapper
     {
         //   private ILoadingWindowPresenter _loadingWindow;
-        [Inject] private readonly ICustomEventsExecutor _executor;
+        [Inject] private readonly ICustomEventsLoader _loader;
         [Inject] private readonly ICustomScenesLoader _scenesLoader;
 
         public void Enter()
@@ -20,7 +20,7 @@ namespace ScenesBootstrapper.LoadingScene
 
             AddEnterItems();
 
-            _executor.Execute();
+            _loader.Load();
         }
 
         public void Exit()
@@ -29,8 +29,8 @@ namespace ScenesBootstrapper.LoadingScene
 
         private void AddEnterItems()
         {
-            _executor.Clear();
-            _executor.AddEvent(new LoadMainSceneEvent(_scenesLoader, this));
+            _loader.Clear();
+            _loader.AddEvent(new LoadMainSceneEventLoader(_scenesLoader, this));
         }
     }
 }

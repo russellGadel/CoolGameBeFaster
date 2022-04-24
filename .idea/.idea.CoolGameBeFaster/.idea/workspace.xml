@@ -2,67 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayViewInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayViewInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/IAttemptToPlayView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/IAttemptToPlayView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/InterferingObjectHitPlayerSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/InterferingObjectHitPlayerSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/IGameTimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/IGameTimeService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoaderInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventsLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/attempToPlayLevelWindow.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/attempToPlayLevelWindow.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MainSceneUIViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneUIViews.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MainSceneUIViews.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneUIViews.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/Camera.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/Camera.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/Camera/InterferingObjectsAppearingPositionData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/Camera/InterferingObjectsAppearingPositionData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/Camera/InterferingObjectsAppearingPositionData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/Camera/InterferingObjectsAppearingPositionData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/MainSceneData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/MainSceneData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/RuntimeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/RuntimeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/RuntimeData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/RuntimeData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/StaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/StaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Data/StaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/StaticData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/PlayerGetPointSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/PlayerGetPointSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/CustomEventsExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/CustomEventsExecutor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/CustomEventsExecutorInstaller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/CustomEventsExecutorInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoaderInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/ICustomEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/ICustomEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/ICustomEventsExecutor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsExecutor/ICustomEventsExecutor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventsLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnPointsAtRandomPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnPointsAtRandomPositionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/LoadPositionsPoolSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/LoadPositionsPoolSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/InterferingObjectHitPlayerTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/InterferingObjectHitPlayerTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/EcsBootstrapperMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneEcsBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/EcsBootstrapperMainScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneEcsBootstrapper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/FixedUpdateSystemMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneFixedUpdateSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/FixedUpdateSystemMainScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneFixedUpdateSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/UpdateSystemMainScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEventLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEventLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapperInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapperInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/UIBootstrapperMainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneLoadersBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/UIBootstrapperMainScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneLoadersBootstrapper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneLoadersBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneInstallersBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneLoadersBootstrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneInstallersBootstrapper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/GameTimeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/IGameTimeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameTime/IGameTimeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +150,8 @@
       <workItem from="1650090836283" duration="7876000" />
       <workItem from="1650260623904" duration="2989000" />
       <workItem from="1650350263495" duration="24990000" />
-      <workItem from="1650442650682" duration="18571000" />
+      <workItem from="1650442650682" duration="19165000" />
+      <workItem from="1650798760883" duration="4552000" />
     </task>
     <servers />
   </component>
