@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using ScenesBootstrapper.MainScene.Events.GameTime;
-using Services.SaveData;
+﻿using ScenesBootstrapper.MainScene.Events.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
@@ -12,6 +10,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindPauseEvent();
             BindUnpauseEvent();
             BindSaveDataEvent();
+            BindAttemptToPlayEvent();
             
             BindLoadSavedDataEvent();
             
@@ -28,7 +27,12 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             Container.Bind<PlayerUnpauseEvent>().AsSingle();
         }
-        
+
+        private void BindAttemptToPlayEvent()
+        {
+            Container.Bind<AttemptToPlayEvent>().AsSingle();
+        }
+
         private void BindSaveDataEvent()
         {
             Container.Bind<SaveDataEvent>().AsSingle();

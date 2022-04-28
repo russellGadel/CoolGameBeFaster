@@ -10,14 +10,15 @@ namespace ECS.Systems.Events
     {
         private readonly EcsFilter<InterferingObjectHitPlayerEvent> _hitPlayerEvent = null;
         private readonly MainSceneServices _mainSceneServices;
-        private readonly MainSceneUIViews _mainSceneUIViews;
+       
         
         public void Run()
         {
             foreach (var idx in _hitPlayerEvent)
             {
              _mainSceneServices.GameTimeService.Pause();
-             _mainSceneUIViews.AttemptToPlayView.Open();
+             
+             _mainSceneServices.MainSceneEventsService.AttemptToPlayEvent.Execute();
              
              _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
              
