@@ -35,7 +35,7 @@ namespace Core.InstallersExecutor
         {
             for (int i = 0; i < _events.Count; i++)
             {
-                yield return StartCoroutine(_events[i].Execute());
+                yield return StartCoroutine(_events[i].Install());
             }
 
             _isDone = true;

@@ -1,8 +1,6 @@
-﻿using System.Runtime.InteropServices;
-using Core.BootstrapExecutor;
+﻿using Core.BootstrapExecutor;
 using ScenesBootstrapper.MainScene.Ecs;
 using ScenesBootstrapper.MainScene.Events;
-using ScenesBootstrapper.MainScene.Events.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene

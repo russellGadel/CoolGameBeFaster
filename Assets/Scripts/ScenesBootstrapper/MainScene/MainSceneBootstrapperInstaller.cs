@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using ScenesBootstrapper.MainScene.Ecs;
+﻿using ScenesBootstrapper.MainScene.Ecs;
 using ScenesBootstrapper.MainScene.Events;
 using UnityEngine;
 using Zenject;

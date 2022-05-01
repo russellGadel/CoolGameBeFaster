@@ -1,6 +1,4 @@
-﻿using CustomUI;
-using ECS.Events;
-using ECS.References;
+﻿using ECS.References;
 using ECS.References.MainScene;
 using ECS.Systems;
 using ECS.Systems.Events;
@@ -22,7 +20,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private MainSceneServices _mainSceneServices;
         private MainSceneUIViews _mainSceneUIViews;
 
-        
+
         public void Construct(ref EcsWorld world
             , ref StaticData staticData
             , ref MainSceneData mainSceneData
@@ -107,10 +105,15 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new SetRandomSpeedSystem())
                 //
                 .Add(new PlayerGetPointSystem())
+                .Add(new DeactivateActivePointsSystem())
                 //
                 .Add(new InterferingObjectHitPlayerSystem())
+                .Add(new DeactivateActiveInterferingObjectsSystem())
                 //
-                
+                .Add(new GameOverSystem())
+                //
+                .Add(new ContinueGameAfterGameOverSystem())
+
                 //
                 .Add(new StartGameSystem())
                 ;

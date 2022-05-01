@@ -1,8 +1,14 @@
-﻿namespace CustomUI.AttemptToPlay
+﻿using System;
+using System.Collections;
+using Core.InstallersExecutor;
+
+namespace CustomUI.AttemptToPlay
 {
-    public interface IAttemptToPlayView
+    public interface IAttemptToPlayView : ICustomInstaller
     {
         void Open();
-        void CLose();
+        void Close();
+        void AddObserverToRepeatButton(Action observer);
+        void AddObserverToAdvertisingButton(Action observer);
     }
 }

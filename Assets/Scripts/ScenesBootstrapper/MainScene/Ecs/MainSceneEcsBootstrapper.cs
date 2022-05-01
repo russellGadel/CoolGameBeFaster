@@ -1,14 +1,9 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
-using CustomUI;
-using CustomUI.PlayerController;
 using ECS.References;
 using ECS.References.MainScene;
-using ECS.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
-using Voody.UniLeo;
-using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Ecs
 {

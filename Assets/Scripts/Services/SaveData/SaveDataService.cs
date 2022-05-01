@@ -4,12 +4,6 @@ using UnityEngine;
 
 namespace Services.SaveData
 {
-    public interface ISaveDataServiceForEvents
-    {
-        void Save();
-        void Load();
-    }
-
     public class SaveDataService : DataHandler<SaveData>
         , ISaveDataService
         , ISaveDataServiceForEvents

@@ -11,18 +11,19 @@ namespace ScenesBootstrapper.MainScene.Events
             BindUnpauseEvent();
             BindSaveDataEvent();
             BindAttemptToPlayEvent();
-            
+            BindGameOver();
+
             BindLoadSavedDataEvent();
-            
+
             BindMainSceneEventsService();
         }
 
-        
+
         private void BindPauseEvent()
         {
             Container.Bind<PlayerPauseEvent>().AsSingle();
         }
-        
+
         private void BindUnpauseEvent()
         {
             Container.Bind<PlayerUnpauseEvent>().AsSingle();
@@ -31,6 +32,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindAttemptToPlayEvent()
         {
             Container.Bind<AttemptToPlayEvent>().AsSingle();
+        }
+
+        private void BindGameOver()
+        {
+            Container.Bind<GameOverEvent>().AsSingle();
         }
 
         private void BindSaveDataEvent()

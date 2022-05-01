@@ -2,6 +2,8 @@
 {
     public enum GameStatusNaming
     {
+        Play,
+        Attempt,
         GameOver,
         Win
     }

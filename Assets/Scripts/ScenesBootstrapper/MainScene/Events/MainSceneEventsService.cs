@@ -8,6 +8,7 @@ namespace ScenesBootstrapper.MainScene.Events
         [Inject] public PlayerPauseEvent PlayerPauseEvent;
         [Inject] public PlayerUnpauseEvent PlayerUnpauseEvent;
         [Inject] public AttemptToPlayEvent AttemptToPlayEvent;
+        [Inject] public GameOverEvent GameOverEvent;
         [Inject] public SaveDataEvent SaveDataEvent;
     }
 }

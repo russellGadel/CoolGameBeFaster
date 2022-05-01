@@ -14,6 +14,7 @@ namespace ECS.Systems.Init
         public void Init()
         {
             EcsEntity points = _world.NewEntity()
+                .Replace(new PointsTag())
                 .Replace(new CurrentPointsGotByPlayerCounterComponent())
                 .Replace(new SpawnedPointsCounterComponent())
                 .Replace(new MaxPointsAmountGotByPlayer());

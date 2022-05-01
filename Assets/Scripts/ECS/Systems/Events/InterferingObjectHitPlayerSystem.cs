@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ECS.Components;
 using ECS.Events;
-using ECS.References.MainScene;
+using ECS.Tags;
 using Leopotam.Ecs;
 using Services.SaveData;
 
@@ -9,21 +9,17 @@ namespace ECS.Systems.Events
     public class InterferingObjectHitPlayerSystem : IEcsRunSystem, ISaveData
     {
         private readonly EcsFilter<InterferingObjectHitPlayerEvent> _hitPlayerEvent = null;
-        private readonly MainSceneServices _mainSceneServices;
-       
-        
+        private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game = null;
+
         public void Run()
         {
             foreach (var idx in _hitPlayerEvent)
             {
-             _mainSceneServices.GameTimeService.Pause();
-             
-             _mainSceneServices.MainSceneEventsService.AttemptToPlayEvent.Execute();
-             
-             _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
-             
-             ref EcsEntity playerEntity = ref _hitPlayerEvent.GetEntity(idx);
-             playerEntity.Del<InterferingObjectHitPlayerEvent>();
+                ref EcsEntity gameEntity = ref _game.GetEntity(0);
+                gameEntity.Replace(new GameOverComponentEvent());
+
+                ref EcsEntity playerEntity = ref _hitPlayerEvent.GetEntity(idx);
+                playerEntity.Del<InterferingObjectHitPlayerEvent>();
             }
         }
     }

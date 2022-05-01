@@ -4,7 +4,6 @@ using ECS.Events;
 using ECS.Tags.Player;
 using Extensions;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace ECS.Systems.Events
 {
