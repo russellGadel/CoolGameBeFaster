@@ -2,7 +2,6 @@
 using Core.BootstrapExecutor;
 using Core.InstallersExecutor;
 using CustomUI.AttemptToPlay;
-using ECS.References.MainScene;
 using UnityEngine;
 using Zenject;
 
