@@ -3,6 +3,7 @@ using Core.EventsLoader;
 using CustomUI.AttemptToPlay;
 using ECS.Events;
 using Leopotam.Ecs;
+using Services.GameTime;
 using UnityEngine;
 using Voody.UniLeo;
 using Zenject;
@@ -12,11 +13,14 @@ namespace ScenesBootstrapper.MainScene.Events
     public class AttemptToPlayEvent : ICustomEventLoader
     {
         private readonly IAttemptToPlayView _attemptToPlayView;
+        private readonly IGameTimeService _gameTimeService;
 
         [Inject]
-        public AttemptToPlayEvent(IAttemptToPlayView attemptToPlayView)
+        public AttemptToPlayEvent(IAttemptToPlayView attemptToPlayView
+            , IGameTimeService gameTimeService)
         {
             _attemptToPlayView = attemptToPlayView;
+            _gameTimeService = gameTimeService;
         }
 
         public void Execute()
@@ -36,7 +40,6 @@ namespace ScenesBootstrapper.MainScene.Events
         private void AddObserverToContinueGameEvent()
         {
             _attemptToPlayView.AddObserverToAdvertisingButton(AdvertisingButtonObservers);
-            _attemptToPlayView.AddObserverToAdvertisingButton(_attemptToPlayView.Close);
         }
 
         private void AdvertisingButtonObservers()
@@ -44,20 +47,22 @@ namespace ScenesBootstrapper.MainScene.Events
             Debug.Log("AdvertisingButtonObservers");
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new ContinueGameAfterGameOverEvent());
+
+            _attemptToPlayView.Close();
         }
 
         private void AddObserverToRepeatGameButton()
         {
             _attemptToPlayView.AddObserverToRepeatButton(RepeatGameButtonObservers);
-            _attemptToPlayView.AddObserverToAdvertisingButton(_attemptToPlayView.Close);
         }
 
         private void RepeatGameButtonObservers()
         {
             Debug.Log("RepeatGameButtonObservers");
-
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
-            entity.Replace(new ContinueGameAfterGameOverEvent());
+            entity.Replace(new StartGameEvent());
+            
+            _attemptToPlayView.Close();
         }
     }
 }

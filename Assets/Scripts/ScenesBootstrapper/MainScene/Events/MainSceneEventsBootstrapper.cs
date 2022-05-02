@@ -19,12 +19,14 @@ namespace ScenesBootstrapper.MainScene.Events
         [Inject] private readonly ICustomEventsLoader _eventsLoader;
         [Inject] private readonly LoadSavedDataEvent _loadSavedDataEvent;
         [Inject] private AttemptToPlayEvent _attemptToPlayView;
+        [Inject] private GameOverEvent _gameOverEvent;
 
         private void AddEvents()
         {
             _eventsLoader.Clear();
             _eventsLoader.AddEvent(_loadSavedDataEvent);
             _eventsLoader.AddEvent(_attemptToPlayView);
+            _eventsLoader.AddEvent(_gameOverEvent);
         }
     }
 }

@@ -1,8 +1,13 @@
-﻿namespace CustomUI.GameOverView
+﻿using System;
+using Core.EventsLoader;
+using Core.InstallersExecutor;
+
+namespace CustomUI.GameOverView
 {
-    public interface IGameOverView
+    public interface IGameOverView : ICustomInstaller
     {
         void Open();
-        void CLose();
+        void Close();
+        void AddObserverToRepeatButton(Action observer);
     }
 }

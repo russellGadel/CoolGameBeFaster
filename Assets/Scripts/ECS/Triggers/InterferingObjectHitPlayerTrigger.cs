@@ -15,6 +15,9 @@ namespace ECS.Triggers
 
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
                 playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
+
+                MonoEntity interferingObjectEntity = col.gameObject.GetComponent<MonoEntity>();
+                interferingObjectEntity.Entity.Replace(new DeactivateObjectEvent());
             }
         }
     }

@@ -1,10 +1,14 @@
-﻿using Core.EventsLoader;
+﻿using System.Collections;
+using Core.EventsLoader;
 using CustomUI.GameOverView;
+using ECS.Events;
+using Leopotam.Ecs;
+using Voody.UniLeo;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class GameOverEvent : ICustomEvent
+    public class GameOverEvent : ICustomEventLoader
     {
         private readonly IGameOverView _gameOverView;
 
@@ -14,9 +18,29 @@ namespace ScenesBootstrapper.MainScene.Events
             _gameOverView = gameOverView;
         }
 
+
+        public IEnumerator Load()
+        {
+            AddObserversToRepeatButton();
+            yield return null;
+        }
+
         public void Execute()
         {
             _gameOverView.Open();
+        }
+
+        private void AddObserversToRepeatButton()
+        {
+            _gameOverView.AddObserverToRepeatButton(RepeatButtonObservers);
+        }
+
+        private void RepeatButtonObservers()
+        {
+            EcsEntity entity = WorldHandler.GetWorld().NewEntity();
+            entity.Replace(new StartGameEvent());
+
+            _gameOverView.Close();
         }
     }
 }

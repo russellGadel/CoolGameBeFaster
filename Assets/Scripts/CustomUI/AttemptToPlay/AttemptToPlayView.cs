@@ -25,6 +25,7 @@ namespace CustomUI.AttemptToPlay
 
         public void Close()
         {
+            Debug.Log("Close Attempt window");
             gameObject.SetActive(false);
         }
 

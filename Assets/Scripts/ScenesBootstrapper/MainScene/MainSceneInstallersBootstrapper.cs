@@ -2,6 +2,7 @@
 using Core.BootstrapExecutor;
 using Core.InstallersExecutor;
 using CustomUI.AttemptToPlay;
+using CustomUI.GameOverView;
 using UnityEngine;
 using Zenject;
 
@@ -19,12 +20,15 @@ namespace ScenesBootstrapper.MainScene
         }
 
         [Inject] private IAttemptToPlayView _attemptToPlayView;
+        [Inject] private IGameOverView _gameOverView;
+
 
         private void AddItems()
         {
             _executor.Clear();
 
             _executor.AddInstaller(_attemptToPlayView);
+            _executor.AddInstaller(_gameOverView);
         }
     }
 }
