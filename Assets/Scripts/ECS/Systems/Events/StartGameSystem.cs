@@ -60,6 +60,9 @@ namespace ECS.Systems.Events
             pointsCounter.Value = 0;
             _mainSceneUIViews.PlayerPointsViewsGroup.UpdatePoints(pointsCounter.Value);
 
+            ref SpawnedPointsCounterComponent spawnedPointsCounter = ref _pointsTag.Get3(0);
+            spawnedPointsCounter.Value = 0;
+            
             pointsEntity.Replace(new SpawnEvent());
         }
 
