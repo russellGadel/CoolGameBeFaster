@@ -1,4 +1,5 @@
-﻿using ScenesBootstrapper.MainScene.Events;
+﻿using Core.CustomInvoker;
+using ScenesBootstrapper.MainScene.Events;
 using Services.GameTime;
 using Services.LevelDifficulty;
 using Services.SaveData;
@@ -13,5 +14,6 @@ namespace ECS.References.MainScene
         [Inject] public IGameTimeService GameTimeService;
         [Inject] public MainSceneEventsService MainSceneEventsService;
         [Inject] public ISaveDataService SaveDataService;
+        [Inject] public ICustomInvokerService CustomInvokerService;
     }
 }

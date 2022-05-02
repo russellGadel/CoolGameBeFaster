@@ -1,7 +1,9 @@
 ﻿using ECS.Components.EntityReference;
 using ECS.Events;
 using Leopotam.Ecs;
+using Services.GameTime;
 using UnityEngine;
+using Zenject;
 
 namespace ECS.Triggers
 {
@@ -12,7 +14,6 @@ namespace ECS.Triggers
             if (col.tag == "InterferingObject")
             {
                 Debug.Log("Player Hit By InterferingObject");
-
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
                 playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
 

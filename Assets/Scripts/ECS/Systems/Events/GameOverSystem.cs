@@ -21,34 +21,44 @@ namespace ECS.Systems.Events
         {
             foreach (var idx in _gameOverEvent)
             {
-                _mainSceneServices.GameTimeService.Pause();
-
-                ref AttemptToPlayGameCounter attemptCounter = ref _game.Get2(0);
-                attemptCounter.Value += 1;
-
-                OffInterferingObjects();
-                OffPoints();
-
-                ref CurrentPointsGotByPlayerCounterComponent currentPoints = ref _points.Get2(0);
-                ref MaxPointsAmountGotByPlayer maxPoints = ref _points.Get3(0);
-
-                SetMaxPoints(ref currentPoints.Value, ref maxPoints.Value);
-
-                if (IsCanTakeAttemptToPlay(ref attemptCounter))
-                {
-                    ExecuteAttemptToPlayEvent(ref currentPoints.Value, ref maxPoints.Value);
-                }
-                else
-                {
-                    _mainSceneServices.MainSceneEventsService.GameOverEvent.Execute();
-                }
-
-                _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
-
                 ref EcsEntity gameOverEvent = ref _gameOverEvent.GetEntity(idx);
                 gameOverEvent.Del<GameOverComponentEvent>();
+
+                float delayTime = _mainSceneData.gameSettings.timeDelayBeforeGameOverPlayer;
+
+                _mainSceneServices
+                    .CustomInvokerService
+                    .CustomInvoke(() => DelayGameOver(idx), delayTime);
             }
         }
+
+        private void DelayGameOver(int idx)
+        {
+            _mainSceneServices.GameTimeService.Pause();
+
+            ref AttemptToPlayGameCounter attemptCounter = ref _game.Get2(0);
+            attemptCounter.Value += 1;
+
+            OffInterferingObjects();
+            OffPoints();
+
+            ref CurrentPointsGotByPlayerCounterComponent currentPoints = ref _points.Get2(0);
+            ref MaxPointsAmountGotByPlayer maxPoints = ref _points.Get3(0);
+
+            SetMaxPoints(ref currentPoints.Value, ref maxPoints.Value);
+
+            if (IsCanTakeAttemptToPlay(ref attemptCounter))
+            {
+                ExecuteAttemptToPlayEvent(ref currentPoints.Value, ref maxPoints.Value);
+            }
+            else
+            {
+                _mainSceneServices.MainSceneEventsService.GameOverEvent.Execute();
+            }
+
+            _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
+        }
+
 
         private void SetMaxPoints(ref double currentPoints, ref double maxPoints)
         {
