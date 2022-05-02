@@ -4,7 +4,6 @@ using CustomUI.AttemptToPlay;
 using ECS.Events;
 using Leopotam.Ecs;
 using Services.GameTime;
-using UnityEngine;
 using Voody.UniLeo;
 using Zenject;
 
@@ -33,7 +32,6 @@ namespace ScenesBootstrapper.MainScene.Events
 
         public IEnumerator Load()
         {
-            Debug.Log("Load attempt to Play");
             AddObserverToContinueGameEvent();
             AddObserverToRepeatGameButton();
 
@@ -47,7 +45,6 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void AdvertisingButtonObservers()
         {
-            Debug.Log("AdvertisingButtonObservers");
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new ContinueGameAfterGameOverEvent());
 
@@ -61,7 +58,6 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void RepeatGameButtonObservers()
         {
-            Debug.Log("RepeatGameButtonObservers");
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new StartGameEvent());
 

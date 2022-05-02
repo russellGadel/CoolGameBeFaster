@@ -9,7 +9,6 @@ namespace ECS.Triggers
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Debug.Log("Enter to inactive Zone");
             MonoEntity monoEntity = col.gameObject.GetComponent<MonoEntity>();
             monoEntity.Entity.Replace(new DeactivateObjectEvent());
         }
