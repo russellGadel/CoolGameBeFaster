@@ -1796,7 +1796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8047918, y: 0.04170371}
   m_AnchorMax: {x: 0.966125, y: 0.32318524}
-  m_AnchoredPosition: {x: 45.80005, y: -18.301025}
+  m_AnchoredPosition: {x: 45.80005, y: -18.30127}
   m_SizeDelta: {x: -10, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754272756
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfAttemptToPlayGame: 2
-  timeDelayBeforeGameOverPlayer: 1
+  timeDelayBeforeGameOverPlayer: 0.2
 --- !u!4 &1905795952
 Transform:
   m_ObjectHideFlags: 0
@@ -2758,6 +2758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _repeatButton: {fileID: 8539811574559324958}
+  _currentPointsText: {fileID: 1587949638842214155}
+  _maxPointsText: {fileID: 1587949640397727243}
 --- !u!224 &1070879709113203639
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2854,8 +2856,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283722109
-  m_fontColor: {r: 0.49056602, g: 0.4133086, b: 0.33090067, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2878,7 +2880,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 400
-  m_fontStyle: 65
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4569,7 +4571,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level
+  m_Text: Current
 --- !u!224 &8539811574921143175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4726,7 +4728,7 @@ GameObject:
   - component: {fileID: 8539811575343872346}
   - component: {fileID: 8539811575343872345}
   m_Layer: 5
-  m_Name: commonPoints
+  m_Name: maxPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4810,7 +4812,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Common
+  m_Text: Max
 --- !u!222 &8539811575902135621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4851,7 +4853,7 @@ GameObject:
   - component: {fileID: 8539811575902135622}
   - component: {fileID: 8539811575902135621}
   m_Layer: 5
-  m_Name: currentLevelPointsAmount
+  m_Name: currentPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

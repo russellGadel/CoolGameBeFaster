@@ -53,7 +53,7 @@ namespace ECS.Systems.Events
             }
             else
             {
-                _mainSceneServices.MainSceneEventsService.GameOverEvent.Execute();
+                ExecuteGameOverEvent(ref currentPoints, ref maxPoints);
             }
 
             _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
@@ -78,6 +78,12 @@ namespace ECS.Systems.Events
             _mainSceneServices
                 .MainSceneEventsService
                 .AttemptToPlayEvent.Execute(currentPoints, maxPoints);
+        }
+
+        private void ExecuteGameOverEvent(ref CurrentPointsGotByPlayerCounterComponent currentPoints,
+            ref MaxPointsAmountGotByPlayer maxPoints)
+        {
+            _mainSceneServices.MainSceneEventsService.GameOverEvent.Execute(currentPoints.Value, maxPoints.Value);
         }
 
         private bool IsCanTakeAttemptToPlay(ref AttemptToPlayGameCounter attemptCounter)

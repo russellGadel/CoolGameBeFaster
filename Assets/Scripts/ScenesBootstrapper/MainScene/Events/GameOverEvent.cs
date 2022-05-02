@@ -9,7 +9,6 @@ using Zenject;
 namespace ScenesBootstrapper.MainScene.Events
 {
     public class GameOverEvent : ICustomEventLoader
-        , ICustomEvent
     {
         private readonly IGameOverView _gameOverView;
 
@@ -26,8 +25,11 @@ namespace ScenesBootstrapper.MainScene.Events
             yield return null;
         }
 
-        public void Execute()
+        public void Execute(double currentPoints, double maxPoints)
         {
+            _gameOverView.SetCurrentPointsAmount(currentPoints);
+            _gameOverView.SetMaxPointsAmount(maxPoints);
+            
             _gameOverView.Open();
         }
 
