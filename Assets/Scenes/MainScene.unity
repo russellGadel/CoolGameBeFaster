@@ -2064,7 +2064,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 102.65
+  m_fontSize: 130.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 102.65
+  m_fontSize: 130.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3773,7 +3773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3599251135264634331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3788,6 +3788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _repeatButton: {fileID: 3599251133927617758}
   _advertisingButton: {fileID: 3599251133694041191}
+  _currentPointsText: {fileID: 2043734079}
+  _maxPointsText: {fileID: 1931964644}
 --- !u!222 &3599251135264634342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4339,7 +4341,7 @@ GameObject:
   - component: {fileID: 1070879709113203639}
   - component: {fileID: 7587735739153086141}
   m_Layer: 5
-  m_Name: LoseLevelPointsAmount
+  m_Name: currentPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

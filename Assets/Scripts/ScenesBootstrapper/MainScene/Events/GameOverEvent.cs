@@ -9,6 +9,7 @@ using Zenject;
 namespace ScenesBootstrapper.MainScene.Events
 {
     public class GameOverEvent : ICustomEventLoader
+        , ICustomEvent
     {
         private readonly IGameOverView _gameOverView;
 

@@ -23,8 +23,11 @@ namespace ScenesBootstrapper.MainScene.Events
             _gameTimeService = gameTimeService;
         }
 
-        public void Execute()
+        public void Execute(double currentPoints, double maxPoints)
         {
+            _attemptToPlayView.SetCurrentPointsAmount(currentPoints);
+            _attemptToPlayView.SetMaxPointsAmount(maxPoints);
+
             _attemptToPlayView.Open();
         }
 
@@ -61,7 +64,7 @@ namespace ScenesBootstrapper.MainScene.Events
             Debug.Log("RepeatGameButtonObservers");
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new StartGameEvent());
-            
+
             _attemptToPlayView.Close();
         }
     }

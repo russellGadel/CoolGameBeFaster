@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Core.InstallersExecutor;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +18,7 @@ namespace CustomUI.AttemptToPlay
             yield return null;
         }
 
+
         public void Open()
         {
             gameObject.SetActive(true);
@@ -29,6 +30,7 @@ namespace CustomUI.AttemptToPlay
             gameObject.SetActive(false);
         }
 
+
         public void AddObserverToRepeatButton(Action observer)
         {
             _repeatButton.onClick.AddListener(() => observer());
@@ -37,6 +39,22 @@ namespace CustomUI.AttemptToPlay
         public void AddObserverToAdvertisingButton(Action observer)
         {
             _advertisingButton.onClick.AddListener(() => observer());
+        }
+
+
+        [SerializeField] private TextMeshProUGUI _currentPointsText;
+
+        public void SetCurrentPointsAmount(double points)
+        {
+            _currentPointsText.SetText(points.ToString());
+        }
+
+
+        [SerializeField] private TextMeshProUGUI _maxPointsText;
+
+        public void SetMaxPointsAmount(double points)
+        {
+            _maxPointsText.SetText(points.ToString());
         }
     }
 }

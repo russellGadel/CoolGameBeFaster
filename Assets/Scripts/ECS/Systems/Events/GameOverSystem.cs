@@ -1,4 +1,5 @@
 ﻿using ECS.Components;
+using ECS.Components.PointsComponents;
 using ECS.Events;
 using ECS.References.MainScene;
 using ECS.Tags;
@@ -28,10 +29,14 @@ namespace ECS.Systems.Events
                 OffInterferingObjects();
                 OffPoints();
 
+                ref CurrentPointsGotByPlayerCounterComponent currentPoints = ref _points.Get2(0);
+                ref MaxPointsAmountGotByPlayer maxPoints = ref _points.Get3(0);
+
+                SetMaxPoints(ref currentPoints.Value, ref maxPoints.Value);
 
                 if (IsCanTakeAttemptToPlay(ref attemptCounter))
                 {
-                    _mainSceneServices.MainSceneEventsService.AttemptToPlayEvent.Execute();
+                    ExecuteAttemptToPlayEvent(ref currentPoints.Value, ref maxPoints.Value);
                 }
                 else
                 {
@@ -43,6 +48,26 @@ namespace ECS.Systems.Events
                 ref EcsEntity gameOverEvent = ref _gameOverEvent.GetEntity(idx);
                 gameOverEvent.Del<GameOverComponentEvent>();
             }
+        }
+
+        private void SetMaxPoints(ref double currentPoints, ref double maxPoints)
+        {
+            if (currentPoints > maxPoints)
+            {
+                maxPoints = currentPoints;
+            }
+        }
+
+
+        private readonly EcsFilter<PointsTag
+            , CurrentPointsGotByPlayerCounterComponent
+            , MaxPointsAmountGotByPlayer> _points = null;
+
+        private void ExecuteAttemptToPlayEvent(ref double currentPoints, ref double maxPoints)
+        {
+            _mainSceneServices
+                .MainSceneEventsService
+                .AttemptToPlayEvent.Execute(currentPoints, maxPoints);
         }
 
         private bool IsCanTakeAttemptToPlay(ref AttemptToPlayGameCounter attemptCounter)

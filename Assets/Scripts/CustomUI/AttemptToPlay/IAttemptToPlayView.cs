@@ -10,5 +10,7 @@ namespace CustomUI.AttemptToPlay
         void Close();
         void AddObserverToRepeatButton(Action observer);
         void AddObserverToAdvertisingButton(Action observer);
+        void SetCurrentPointsAmount(double points);
+        void SetMaxPointsAmount(double points);
     }
 }
