@@ -1,9 +1,13 @@
 ﻿using ECS.Components;
+using ECS.Components.GameObjectComponent;
 using ECS.Components.PointsComponents;
+using ECS.Components.TransformComponent;
 using ECS.Events;
+using ECS.Events.SpawnPlayer;
 using ECS.References.MainScene;
 using ECS.Tags;
 using ECS.Tags.InterferingObjects.InterferingObjectsTag;
+using ECS.Tags.Player;
 using ECS.Tags.Points;
 using Leopotam.Ecs;
 
@@ -17,10 +21,12 @@ namespace ECS.Systems.Events
         private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game;
 
         private const int _firstAttempt = 1;
+
         public void Run()
         {
             foreach (var idx in _startGameEvent)
             {
+                SpawnPlayerAtInitPosition();
                 _mainSceneServices.GameTimeService.Unpause();
                 PrepareInterferingObjects();
                 PreparePoints();
@@ -41,7 +47,9 @@ namespace ECS.Systems.Events
             interferingObjectsEntity.Replace(new SpawnEvent());
         }
 
-        private readonly EcsFilter<PointsTag, CurrentPointsGotByPlayerCounterComponent> _pointsTag = null;
+        private readonly EcsFilter<PointsTag
+            , CurrentPointsGotByPlayerCounterComponent
+            , SpawnedPointsCounterComponent> _pointsTag = null;
         private readonly MainSceneUIViews _mainSceneUIViews = null;
 
         private void PreparePoints()
@@ -53,6 +61,14 @@ namespace ECS.Systems.Events
             _mainSceneUIViews.PlayerPointsViewsGroup.UpdatePoints(pointsCounter.Value);
 
             pointsEntity.Replace(new SpawnEvent());
+        }
+
+        private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
+
+        private void SpawnPlayerAtInitPosition()
+        {
+            ref EcsEntity playerEntity = ref _player.GetEntity(0);
+            playerEntity.Replace(new SpawnPlayerAtInitPositionEvent());
         }
     }
 }

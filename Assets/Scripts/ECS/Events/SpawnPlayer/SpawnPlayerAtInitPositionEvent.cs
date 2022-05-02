@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 
-namespace ECS.Events
+namespace ECS.Events.SpawnPlayer
 {
     public struct SpawnPlayerAtInitPositionEvent : IEcsIgnoreInFilter
     {

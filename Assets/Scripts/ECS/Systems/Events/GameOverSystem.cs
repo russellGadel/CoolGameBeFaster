@@ -83,7 +83,10 @@ namespace ECS.Systems.Events
         private void ExecuteGameOverEvent(ref CurrentPointsGotByPlayerCounterComponent currentPoints,
             ref MaxPointsAmountGotByPlayer maxPoints)
         {
-            _mainSceneServices.MainSceneEventsService.GameOverEvent.Execute(currentPoints.Value, maxPoints.Value);
+            _mainSceneServices
+                .MainSceneEventsService
+                .GameOverEvent
+                .Execute(currentPoints.Value, maxPoints.Value);
         }
 
         private bool IsCanTakeAttemptToPlay(ref AttemptToPlayGameCounter attemptCounter)

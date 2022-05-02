@@ -2,6 +2,7 @@
 using ECS.Components.SpawnPoint;
 using ECS.Components.TransformComponent;
 using ECS.Events;
+using ECS.Events.SpawnPlayer;
 using ECS.Tags.Player;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -9,19 +10,18 @@ using UnityEngine;
 namespace ECS.Systems.Events
 {
     // One frame
-    public class SpawnPlayerAtInitPositionSystem : IEcsRunSystem
+    public sealed class SpawnPlayerAtInitPositionSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<SpawnPlayerAtInitPositionEvent> _spawnPlayerEvent;
-        private readonly EcsFilter<PlayerTag, TransformComponent, GameObjectComponent> _player;
-        private readonly EcsFilter<PlayerTag, SpawnPointComponent> _playerSpawnPoint;
+        private readonly EcsFilter<SpawnPlayerAtInitPositionEvent> _spawnPlayerEvent = null;
+        private readonly EcsFilter<PlayerTag, TransformComponent, GameObjectComponent> _player = null;
+        private readonly EcsFilter<PlayerTag, SpawnPointComponent> _playerSpawnPoint = null;
 
         public void Run()
         {
             foreach (var idx in _spawnPlayerEvent)
             {
-                Debug.Log("SpawnPlayer at Init Position Run");
-                
                 ref GameObjectComponent playerObject = ref _player.Get3(0);
+                DeactivatePlayer(ref playerObject);
 
                 SetForPlayerSpawnPosition();
 
