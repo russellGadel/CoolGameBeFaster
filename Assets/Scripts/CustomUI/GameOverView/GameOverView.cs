@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace CustomUI.GameOverView
 {
-    public class GameOverView : MonoBehaviour, IGameOverView
+    public sealed class GameOverView : MonoBehaviour, IGameOverView
     {
         [SerializeField] private Button _repeatButton;
 

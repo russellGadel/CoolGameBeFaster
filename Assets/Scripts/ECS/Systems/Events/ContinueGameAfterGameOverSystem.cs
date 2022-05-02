@@ -7,7 +7,7 @@ using Leopotam.Ecs;
 namespace ECS.Systems.Events
 {
     //One Frame
-    public class ContinueGameAfterGameOverSystem : IEcsRunSystem
+    public sealed class ContinueGameAfterGameOverSystem : IEcsRunSystem
     {
         private readonly EcsFilter<ContinueGameAfterGameOverEvent> _continueGameEvent = null;
         private readonly MainSceneServices _mainSceneServices = null;

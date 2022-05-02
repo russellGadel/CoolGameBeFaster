@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Events
 {
-    public class DeactivateActivePointsSystem : IEcsRunSystem
+    public sealed class DeactivateActivePointsSystem : IEcsRunSystem
     {
         private readonly EcsFilter<DeactivateActivePointsEvent> _deactivatePointsEvent = null;
         private readonly EcsFilter<PointTag, ActiveObjectTag> _points = null;

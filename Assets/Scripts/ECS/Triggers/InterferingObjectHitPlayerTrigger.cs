@@ -1,9 +1,7 @@
 ﻿using ECS.Components.EntityReference;
 using ECS.Events;
 using Leopotam.Ecs;
-using Services.GameTime;
 using UnityEngine;
-using Zenject;
 
 namespace ECS.Triggers
 {

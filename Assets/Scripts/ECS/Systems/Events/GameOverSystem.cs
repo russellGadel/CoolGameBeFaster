@@ -9,7 +9,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Events
 {
-    public class GameOverSystem : IEcsRunSystem
+    public sealed class GameOverSystem : IEcsRunSystem
     {
         private readonly EcsFilter<GameOverComponentEvent> _gameOverEvent = null;
         private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game = null;

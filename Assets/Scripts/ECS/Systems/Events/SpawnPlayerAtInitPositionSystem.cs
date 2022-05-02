@@ -1,11 +1,9 @@
 ﻿using ECS.Components.GameObjectComponent;
 using ECS.Components.SpawnPoint;
 using ECS.Components.TransformComponent;
-using ECS.Events;
 using ECS.Events.SpawnPlayer;
 using ECS.Tags.Player;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace ECS.Systems.Events
 {

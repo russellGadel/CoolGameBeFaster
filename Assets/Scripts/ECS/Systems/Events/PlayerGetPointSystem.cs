@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Events
 {
-    public class PlayerGetPointSystem : IEcsRunSystem
+    public sealed class PlayerGetPointSystem : IEcsRunSystem
     {
         private readonly EcsFilter<PlayerGetPointEvent> _playerGetPointEvents = null;
         private readonly EcsFilter<CurrentPointsGotByPlayerCounterComponent> _points;

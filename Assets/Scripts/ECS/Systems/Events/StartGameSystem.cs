@@ -1,5 +1,4 @@
 ﻿using ECS.Components;
-using ECS.Components.GameObjectComponent;
 using ECS.Components.PointsComponents;
 using ECS.Components.TransformComponent;
 using ECS.Events;

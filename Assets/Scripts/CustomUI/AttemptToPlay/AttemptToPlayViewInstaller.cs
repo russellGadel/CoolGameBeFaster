@@ -1,10 +1,9 @@
-﻿using System.ComponentModel;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace CustomUI.AttemptToPlay
 {
-    public class AttemptToPlayViewInstaller : MonoInstaller
+    public sealed class AttemptToPlayViewInstaller : MonoInstaller
     {
         [SerializeField] private AttemptToPlayView _view;
 

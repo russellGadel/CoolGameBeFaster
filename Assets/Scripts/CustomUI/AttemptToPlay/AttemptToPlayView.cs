@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace CustomUI.AttemptToPlay
 {
-    public class AttemptToPlayView : MonoBehaviour, IAttemptToPlayView
+    public sealed class AttemptToPlayView : MonoBehaviour, IAttemptToPlayView
     {
         [SerializeField] private Button _repeatButton;
         [SerializeField] private Button _advertisingButton;

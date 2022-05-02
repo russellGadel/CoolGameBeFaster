@@ -6,7 +6,7 @@ using Services.SaveData;
 
 namespace ECS.Systems.Events
 {
-    public class InterferingObjectHitPlayerSystem : IEcsRunSystem, ISaveData
+    public sealed class InterferingObjectHitPlayerSystem : IEcsRunSystem, ISaveData
     {
         private readonly EcsFilter<InterferingObjectHitPlayerEvent> _hitPlayerEvent = null;
         private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game = null;

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Core.InstallersExecutor;
 
 namespace CustomUI.AttemptToPlay

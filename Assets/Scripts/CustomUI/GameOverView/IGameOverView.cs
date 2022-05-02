@@ -1,5 +1,4 @@
 ﻿using System;
-using Core.EventsLoader;
 using Core.InstallersExecutor;
 
 namespace CustomUI.GameOverView

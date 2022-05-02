@@ -3,7 +3,7 @@ using Zenject;
 
 namespace CustomUI.GameOverView
 {
-    public class GameOverViewInstaller : MonoInstaller
+    public sealed class GameOverViewInstaller : MonoInstaller
     {
         [SerializeField] private GameOverView _view;
 

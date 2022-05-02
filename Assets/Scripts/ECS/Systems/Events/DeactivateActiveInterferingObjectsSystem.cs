@@ -6,7 +6,7 @@ using Leopotam.Ecs;
 namespace ECS.Systems.Events
 {
     //One Frame
-    public class DeactivateActiveInterferingObjectsSystem : IEcsRunSystem
+    public sealed class DeactivateActiveInterferingObjectsSystem : IEcsRunSystem
     {
         private readonly EcsFilter<DeactivateInterferingObjectsEvent> _deactivateInterferingObjectsEvent = null;
         private readonly EcsFilter<InterferingObjectTag, ActiveObjectTag> _interferingObjects = null;
