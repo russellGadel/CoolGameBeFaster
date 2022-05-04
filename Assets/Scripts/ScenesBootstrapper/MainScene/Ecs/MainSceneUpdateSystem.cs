@@ -84,7 +84,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new PreparePointsSystem())
                 //
                 .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
-                
+
                 //Last System at INIT
                 .Add(new InitGameEntitySystem())
                 // 
@@ -101,11 +101,12 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new ActivateObjectsSystem())
                 .Add(new DeactivateObjectsSystem())
+                .Add(new DelayDeactivateObjectSystem())
                 //
                 .Add(new SetRandomSpeedSystem())
                 //
                 .Add(new PlayerGetPointSystem())
-                .Add(new DeactivateActivePointsSystem())
+                .Add(new DeactivateAllActivePointsSystem())
                 //
                 .Add(new InterferingObjectHitPlayerSystem())
                 .Add(new DeactivateActiveInterferingObjectsSystem())

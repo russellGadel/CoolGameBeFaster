@@ -2,7 +2,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ECS.Systems
+namespace ECS.Systems.Events
 {
     public sealed class BlockSpawnObjectsSystem : IEcsRunSystem
     {
@@ -17,7 +17,7 @@ namespace ECS.Systems
                 ref BlockSpawnDurationComponent block = ref _ecsFilter.Get1(i);
 
                 ref float timer = ref block.Timer;
-                
+
                 timer -= Time.deltaTime;
 
                 if (timer <= 0)

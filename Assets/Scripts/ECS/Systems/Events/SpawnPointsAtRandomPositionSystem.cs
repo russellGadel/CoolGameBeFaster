@@ -1,4 +1,5 @@
-﻿using ECS.Components.BlockSpawnDuration;
+﻿using ECS.Components;
+using ECS.Components.BlockSpawnDuration;
 using ECS.Components.PointsComponents;
 using ECS.Components.PolygonCollider2DComponent;
 using ECS.Components.SpawnAreaSize;
@@ -10,6 +11,7 @@ using ECS.Tags.ObjectsSpawnOnPolygonCollider2DAreaTag;
 using ECS.Tags.Point;
 using ECS.Tags.Points;
 using Leopotam.Ecs;
+using Services.LevelDifficulty;
 using UnityEngine;
 
 namespace ECS.Systems.Events
@@ -40,8 +42,10 @@ namespace ECS.Systems.Events
                 ref PolygonCollider2DComponent spawnAreaCollider = ref _spawnPositions.Get3(0);
 
                 ref SpawnedPointsCounterComponent spawnedPoints = ref _spawnedPointsCounter.Get2(0);
+                LevelDifficulty levelDifficulty = GetLevelDifficulty(spawnedPoints.Value);
 
-                int spawnPointsAmountAtSameTime = GetSpawnObjectsAmountAtSameTime(spawnedPoints.Value);
+
+                int spawnPointsAmountAtSameTime = levelDifficulty.spawnedPointsAmountAtSameTime;
 
 
                 int spawnedPointsAtSameTimeCounter = 0;
@@ -60,7 +64,12 @@ namespace ECS.Systems.Events
                             pointTransform.value.position = position;
 
                             pointEntity
-                                .Replace(new ActivateObjectEvent());
+                                .Replace(new ActivateObjectEvent())
+                                .Replace(new DelayDeactivateObjectComponent()
+                                {
+                                    Timer = GetRandomPointLifeTime(ref levelDifficulty)
+                                });
+
 
                             spawnedPointsAtSameTimeCounter += 1;
                             spawnedPoints.Value += 1;
@@ -76,7 +85,7 @@ namespace ECS.Systems.Events
                 }
 
                 ref EcsEntity mainEntity = ref _pointsMain.GetEntity(mainIdx);
-                float timer = GetBlockSpawnDuration(spawnedPoints.Value);
+                float timer = levelDifficulty.pointsSpawnDelay;
                 mainEntity.Get<BlockSpawnDurationComponent>().Timer = timer;
             }
         }
@@ -89,20 +98,16 @@ namespace ECS.Systems.Events
             return new Vector3(randomX, randomY, 0);
         }
 
-        private int GetSpawnObjectsAmountAtSameTime(double points)
+        private LevelDifficulty GetLevelDifficulty(double points)
         {
             return _mainSceneData
                 .LevelDifficultyService
-                .GetDifficulty(points)
-                .spawnedPointsAmountAtSameTime;
+                .GetDifficulty(points);
         }
 
-        private float GetBlockSpawnDuration(double spawnedPointsAmount)
+        private static float GetRandomPointLifeTime(ref LevelDifficulty levelDifficulty)
         {
-            return _mainSceneData
-                .LevelDifficultyService
-                .GetDifficulty(spawnedPointsAmount)
-                .pointsSpawnDelay;
+            return Random.Range(levelDifficulty.pointsLifeTimeMin, levelDifficulty.pointsLifeTimeMax);
         }
     }
 }
