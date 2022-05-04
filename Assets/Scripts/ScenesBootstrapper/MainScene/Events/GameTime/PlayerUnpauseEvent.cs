@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Core.EventsLoader;
+﻿using Core.EventsLoader;
 using CustomUI.PauseButton;
 using CustomUI.PauseWindow;
 using Services.GameTime;
