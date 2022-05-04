@@ -3,6 +3,7 @@ using Core.BootstrapExecutor;
 using Core.InstallersExecutor;
 using CustomUI.AttemptToPlay;
 using CustomUI.GameOverView;
+using CustomUI.PauseButton;
 using UnityEngine;
 using Zenject;
 
@@ -21,6 +22,7 @@ namespace ScenesBootstrapper.MainScene
 
         [Inject] private IAttemptToPlayView _attemptToPlayView;
         [Inject] private IGameOverView _gameOverView;
+        [Inject] private IPauseButtonView _pauseButtonView;
 
 
         private void AddItems()
@@ -29,6 +31,7 @@ namespace ScenesBootstrapper.MainScene
 
             _executor.AddInstaller(_attemptToPlayView);
             _executor.AddInstaller(_gameOverView);
+            _executor.AddInstaller(_pauseButtonView);
         }
     }
 }

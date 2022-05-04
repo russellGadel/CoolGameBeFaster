@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
 using Core.EventsLoader;
-using CustomUI.AttemptToPlay;
+using ScenesBootstrapper.MainScene.Events.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
@@ -20,6 +20,7 @@ namespace ScenesBootstrapper.MainScene.Events
         [Inject] private readonly LoadSavedDataEvent _loadSavedDataEvent;
         [Inject] private AttemptToPlayEvent _attemptToPlayView;
         [Inject] private GameOverEvent _gameOverEvent;
+        [Inject] private PauseButtonEvent _pauseButtonEvent;
 
         private void AddEvents()
         {
@@ -27,6 +28,7 @@ namespace ScenesBootstrapper.MainScene.Events
             _eventsLoader.AddEvent(_loadSavedDataEvent);
             _eventsLoader.AddEvent(_attemptToPlayView);
             _eventsLoader.AddEvent(_gameOverEvent);
+            _eventsLoader.AddEvent(_pauseButtonEvent);
         }
     }
 }
