@@ -26,13 +26,14 @@ namespace ECS.Systems.Events
             foreach (var idx in _startGameEvent)
             {
                 SpawnPlayerAtInitPosition();
-                _mainSceneServices.GameTimeService.Unpause();
                 PreparePoints();
                 PrepareInterferingObjects();
                 
                 ref AttemptToPlayGameCounter attemptCounter = ref _game.Get2(0);
                 attemptCounter.Value = _firstAttempt;
 
+                _mainSceneServices.GameTimeService.Unpause();
+                
                 ref EcsEntity startGameEntity = ref _startGameEvent.GetEntity(idx);
                 startGameEntity.Del<StartGameEvent>();
             }

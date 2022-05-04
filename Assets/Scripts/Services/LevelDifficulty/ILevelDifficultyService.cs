@@ -2,6 +2,6 @@
 {
     public interface ILevelDifficultyService
     {
-        LevelDifficulty GetDifficulty(double spawnedPointersAmount);
+        LevelDifficulty GetDifficulty(double spawnedPointsAmount);
     }
 }

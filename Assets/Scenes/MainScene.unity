@@ -1243,14 +1243,14 @@ MonoBehaviour:
     spawnInterferingObjectsAmountAtSameTime: 2
     spawnedPointsAmount: 30
     interferingObjectsSpawnDelay: 5
-    spawnedPointsAmountAtSameTime: 1
+    spawnedPointsAmountAtSameTime: 5
     pointsSpawnDelay: 3
   - name: 1
     spawnInterferingObjectsAmountAtSameTime: 2
     spawnedPointsAmount: 200
     interferingObjectsSpawnDelay: 5
-    spawnedPointsAmountAtSameTime: 5
-    pointsSpawnDelay: 0.1
+    spawnedPointsAmountAtSameTime: 10
+    pointsSpawnDelay: 0.5
 --- !u!1 &1089421322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,7 +1918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8047918, y: 0.04170371}
   m_AnchorMax: {x: 0.966125, y: 0.32318524}
-  m_AnchoredPosition: {x: 45.80005, y: -18.301514}
+  m_AnchoredPosition: {x: 45.80005, y: -18.301636}
   m_SizeDelta: {x: -10, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754272756
@@ -3299,7 +3299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.6600037, y: 1.5}
+  m_AnchoredPosition: {x: 3.6599731, y: 1.5}
   m_SizeDelta: {x: -48.78, y: -20.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3599251133436908875
@@ -4885,7 +4885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -364.20996, y: -39.669983}
+  m_AnchoredPosition: {x: -364.20996, y: -39.670044}
   m_SizeDelta: {x: 728.41, y: 79.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8912427107865991537

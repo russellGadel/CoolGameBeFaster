@@ -9,13 +9,21 @@
             _settings = settings;
         }
 
-        private int _lastDifficultyIndex = 0;
+        private const int FirstDifficultyIndex = 0;
+        private int _lastDifficultyIndex = FirstDifficultyIndex;
 
-        public LevelDifficulty GetDifficulty(double spawnedPointersAmount)
+        public LevelDifficulty GetDifficulty(double spawnedPointsAmount)
         {
-            if (_settings.settings[_lastDifficultyIndex].spawnedPointsAmount < spawnedPointersAmount)
+            if (spawnedPointsAmount > _settings.settings[_lastDifficultyIndex].spawnedPointsAmount)
             {
                 IncreaseLastDifficultyIndex();
+            }
+            else
+            {
+                if (spawnedPointsAmount == 0)
+                {
+                    _lastDifficultyIndex = FirstDifficultyIndex;
+                }
             }
 
             return _settings.settings[_lastDifficultyIndex];
