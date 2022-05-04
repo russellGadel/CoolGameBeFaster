@@ -11,7 +11,10 @@ namespace ECS.Systems.Events
     public sealed class LookAtPlayerSystem : IEcsRunSystem
     {
         private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
-        private readonly EcsFilter<LookAtPlayerEvent, TransformComponent, Rigidbody2DComponent> _objects = null;
+
+        private readonly EcsFilter<LookAtPlayerEvent
+            , TransformComponent
+            , Rigidbody2DComponent> _objects = null;
 
         public void Run()
         {

@@ -27,9 +27,9 @@ namespace ECS.Systems.Events
             {
                 SpawnPlayerAtInitPosition();
                 _mainSceneServices.GameTimeService.Unpause();
-                PrepareInterferingObjects();
                 PreparePoints();
-
+                PrepareInterferingObjects();
+                
                 ref AttemptToPlayGameCounter attemptCounter = ref _game.Get2(0);
                 attemptCounter.Value = _firstAttempt;
 

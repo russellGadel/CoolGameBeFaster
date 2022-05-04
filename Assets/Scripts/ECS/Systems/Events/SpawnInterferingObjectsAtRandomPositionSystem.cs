@@ -12,6 +12,7 @@ using ECS.Tags;
 using ECS.Tags.InterferingObjects.InterferingObjectsAppearingPositionsGridTag;
 using ECS.Tags.InterferingObjects.InterferingObjectsTag;
 using ECS.Tags.InterferingObjects.InterferingObjectTag;
+using ECS.Tags.Points;
 using Leopotam.Ecs;
 using Unity.Mathematics;
 using UnityEngine;
@@ -24,9 +25,9 @@ namespace ECS.Systems.Events
         private readonly EcsFilter<InterferingObjectsTag, SpawnEvent>
             .Exclude<BlockSpawnDurationComponent> _interferingObjectsMain = null;
 
-        private readonly EcsFilter<SpawnedPointsCounterComponent> _spawnedPointsCounter = null;
+        private readonly EcsFilter<PointsTag, SpawnedPointsCounterComponent> _spawnedPointsCounter = null;
 
-        private MainSceneServices _mainSceneServices;
+        private readonly MainSceneServices _mainSceneServices = null;
 
         private readonly EcsFilter<InterferingObjectTag
             , LevelDifficultyComponent
@@ -82,7 +83,7 @@ namespace ECS.Systems.Events
 
         private double GetSpawnedPointsAmount()
         {
-            ref SpawnedPointsCounterComponent pointsComponent = ref _spawnedPointsCounter.Get1(0);
+            ref SpawnedPointsCounterComponent pointsComponent = ref _spawnedPointsCounter.Get2(0);
             return pointsComponent.Value;
         }
 

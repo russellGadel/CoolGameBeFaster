@@ -9,7 +9,7 @@ namespace ECS.Systems.Init
     public sealed class InitPointsEntitySystem : IEcsInitSystem, ISavedDataReader, ISaveData
     {
         private readonly EcsWorld _world = null;
-        private readonly MainSceneServices _mainSceneServices;
+        private readonly MainSceneServices _mainSceneServices = null;
 
         public void Init()
         {
@@ -41,7 +41,7 @@ namespace ECS.Systems.Init
         }
 
 
-        private readonly EcsFilter<PointsTag, MaxPointsAmountGotByPlayer> _points;
+        private readonly EcsFilter<PointsTag, MaxPointsAmountGotByPlayer> _points = null;
 
         private void Save()
         {

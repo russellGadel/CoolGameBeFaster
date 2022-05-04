@@ -9,7 +9,7 @@ namespace ECS.Systems.Events
     {
         private readonly EcsFilter<PlayerGetPointEvent> _playerGetPointEvents = null;
         private readonly EcsFilter<CurrentPointsGotByPlayerCounterComponent> _points;
-        private MainSceneUIViews _mainSceneUIViews;
+        private readonly MainSceneUIViews _mainSceneUIViews = null;
 
         public void Run()
         {
