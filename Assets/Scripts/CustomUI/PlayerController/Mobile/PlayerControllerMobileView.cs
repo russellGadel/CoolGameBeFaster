@@ -17,6 +17,16 @@ namespace CustomUI.PlayerController.Mobile
             _mobileSettings = mobileSettings;
         }
 
+        public void Open()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Close()
+        {
+            gameObject.SetActive(false);
+        }
+
 
         private Vector2 _inputVector = Vector2.zero;
 

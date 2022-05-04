@@ -6,6 +6,16 @@ namespace CustomUI.PlayerController.PC
     {
         private Vector2 _inputVector;
 
+        public void OpenView()
+        {
+            //
+        }
+
+        public void CloseView()
+        {
+            //
+        }
+
         public Vector2 GetInputVector()
         {
             _inputVector.x = Input.GetAxis("Horizontal");

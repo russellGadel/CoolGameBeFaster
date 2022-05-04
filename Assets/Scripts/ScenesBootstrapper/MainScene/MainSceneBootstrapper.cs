@@ -17,10 +17,12 @@ namespace ScenesBootstrapper.MainScene
         {
         }
 
-        [Inject] private IBootstrapExecutor _bootstrapsExecutor;
-        [Inject] private MainSceneInstallersBootstrapper _mainSceneInstallersBootstrapper;
-        [Inject] private MainSceneEventsBootstrapper _mainSceneEventsBootstrapper;
-        [Inject] private MainSceneEcsBootstrapper _mainSceneEcsBootstrapper;
+
+        [Inject] private readonly IBootstrapExecutor _bootstrapsExecutor;
+        [Inject] private readonly MainSceneInstallersBootstrapper _mainSceneInstallersBootstrapper;
+        [Inject] private readonly MainSceneEventsBootstrapper _mainSceneEventsBootstrapper;
+        [Inject] private readonly MainSceneEcsBootstrapper _mainSceneEcsBootstrapper;
+        [Inject] private readonly StartGameEvent _startGameEvent;
 
         private void AddBootstrapItems()
         {
@@ -28,6 +30,7 @@ namespace ScenesBootstrapper.MainScene
             _bootstrapsExecutor.Add(_mainSceneInstallersBootstrapper);
             _bootstrapsExecutor.Add(_mainSceneEventsBootstrapper);
             _bootstrapsExecutor.Add(_mainSceneEcsBootstrapper);
+            _bootstrapsExecutor.Add(_startGameEvent);
         }
     }
 }

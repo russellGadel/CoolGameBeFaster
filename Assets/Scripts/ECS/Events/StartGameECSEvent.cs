@@ -2,7 +2,7 @@
 
 namespace ECS.Events
 {
-    public struct StartGameEvent : IEcsIgnoreInFilter
+    public struct StartGameECSEvent : IEcsIgnoreInFilter
     {
     }
 }

@@ -22,7 +22,7 @@ namespace ECS.Systems.Init
                 .Replace(new GameStatusComponent())
                 .Replace(attemptToPlayGameCounter)
                 
-                .Replace(new StartGameEvent());
+                .Replace(new StartGameECSEvent());
         }
     }
 }

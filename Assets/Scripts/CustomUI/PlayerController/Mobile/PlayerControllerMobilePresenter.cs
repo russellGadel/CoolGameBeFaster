@@ -12,6 +12,16 @@ namespace CustomUI.PlayerController.Mobile
             _mobileView = mobileView;
         }
 
+        public void OpenView()
+        {
+            _mobileView.Open();
+        }
+
+        public void CloseView()
+        {
+            _mobileView.Close();
+        }
+
         public Vector2 GetInputVector()
         {
             return _mobileView.GetInputVector();
