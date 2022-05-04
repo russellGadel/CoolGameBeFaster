@@ -41,9 +41,7 @@ namespace ECS.Systems.Events
 
                 ref SpawnedPointsCounterComponent spawnedPoints = ref _spawnedPointsCounter.Get2(0);
 
-                Debug.Log("Spawned Points Counter before " + spawnedPoints.Value);
                 int spawnPointsAmountAtSameTime = GetSpawnObjectsAmountAtSameTime(spawnedPoints.Value);
-                Debug.Log("spawnPointsAmountAtSameTime " + spawnPointsAmountAtSameTime);
 
 
                 int spawnedPointsAtSameTimeCounter = 0;
@@ -66,7 +64,6 @@ namespace ECS.Systems.Events
 
                             spawnedPointsAtSameTimeCounter += 1;
                             spawnedPoints.Value += 1;
-                            Debug.Log("Spawned Points Counter " + spawnedPoints.Value);
 
                             break;
                         }
@@ -80,7 +77,6 @@ namespace ECS.Systems.Events
 
                 ref EcsEntity mainEntity = ref _pointsMain.GetEntity(mainIdx);
                 float timer = GetBlockSpawnDuration(spawnedPoints.Value);
-                Debug.Log("timer " + timer);
                 mainEntity.Get<BlockSpawnDurationComponent>().Timer = timer;
             }
         }
