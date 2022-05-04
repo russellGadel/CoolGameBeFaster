@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class SaveDataEvent : ICustomEvent
+    public sealed class SaveDataEvent : ICustomEvent
     {
         private readonly ISaveDataServiceForEvents _saveDataService;
 

@@ -3,7 +3,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class MainSceneEventsInstaller : MonoInstaller
+    public sealed class MainSceneEventsInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
@@ -17,6 +17,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindLoadSavedDataEvent();
 
             BindMainSceneEventsService();
+            BindStartGameEvent();
         }
 
 
@@ -58,6 +59,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindMainSceneEventsService()
         {
             Container.Bind<MainSceneEventsService>().AsSingle();
+        }
+
+        private void BindStartGameEvent()
+        {
+            Container.Bind<StartGameEvent>().AsSingle();
         }
     }
 }

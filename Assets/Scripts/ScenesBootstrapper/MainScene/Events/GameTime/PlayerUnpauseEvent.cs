@@ -7,7 +7,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events.GameTime
 {
-    public class PlayerUnpauseEvent : ICustomEvent
+    public sealed class PlayerUnpauseEvent : ICustomEvent
     {
         private readonly IPauseButtonView _pauseButton;
         private readonly IGameTimeService _gameTimeService;

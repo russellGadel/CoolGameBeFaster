@@ -6,7 +6,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class MainSceneEventsBootstrapper : IBootstrapper
+    public sealed class MainSceneEventsBootstrapper : IBootstrapper
     {
         public IEnumerator Execute()
         {

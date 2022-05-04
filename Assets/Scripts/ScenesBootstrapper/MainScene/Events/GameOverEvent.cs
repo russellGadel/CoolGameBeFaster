@@ -8,7 +8,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class GameOverEvent : ICustomEventLoader
+    public sealed class GameOverEvent : ICustomEventLoader
     {
         private readonly IGameOverView _gameOverView;
 
@@ -41,7 +41,7 @@ namespace ScenesBootstrapper.MainScene.Events
         private void RepeatButtonObservers()
         {
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
-            entity.Replace(new StartGameEvent());
+            entity.Replace(new StartGameECSEvent());
 
             _gameOverView.Close();
         }

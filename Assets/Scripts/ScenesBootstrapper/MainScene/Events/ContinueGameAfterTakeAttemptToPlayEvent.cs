@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class ContinueGameAfterTakeAttemptToPlayEvent : ICustomEvent
+    public sealed class ContinueGameAfterTakeAttemptToPlayEvent : ICustomEvent
     {
         [Inject] private readonly IAttemptToPlayView _attemptToPlayView;
 

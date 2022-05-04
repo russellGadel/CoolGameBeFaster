@@ -3,7 +3,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class MainSceneEventsService
+    public sealed class MainSceneEventsService
     {
         [Inject] public PlayerPauseEvent PlayerPauseEvent;
         [Inject] public PlayerUnpauseEvent PlayerUnpauseEvent;

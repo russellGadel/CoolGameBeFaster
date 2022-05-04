@@ -9,7 +9,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
-    public class AttemptToPlayEvent : ICustomEventLoader
+    public sealed class AttemptToPlayEvent : ICustomEventLoader
     {
         private readonly IAttemptToPlayView _attemptToPlayView;
         private readonly IGameTimeService _gameTimeService;
@@ -59,7 +59,7 @@ namespace ScenesBootstrapper.MainScene.Events
         private void RepeatGameButtonObservers()
         {
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
-            entity.Replace(new StartGameEvent());
+            entity.Replace(new StartGameECSEvent());
 
             _attemptToPlayView.Close();
         }

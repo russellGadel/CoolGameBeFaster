@@ -5,7 +5,7 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events.GameTime
 {
-    public class PauseButtonEvent : ICustomEventLoader
+    public sealed class PauseButtonEvent : ICustomEventLoader
     {
         private readonly IPauseButtonView _pauseButton;
         private readonly PlayerPauseEvent _playerPauseEvent;
