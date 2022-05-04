@@ -27,7 +27,7 @@ namespace ECS.Systems.Events
             , SpawnAreaSizeComponent
             , PolygonCollider2DComponent> _spawnPositions = null;
 
-        private MainSceneServices _mainSceneData;
+        private MainSceneServices _mainSceneServices;
 
         private readonly EcsFilter<PointTag
             , InactiveObjectTag
@@ -45,8 +45,7 @@ namespace ECS.Systems.Events
                 LevelDifficulty levelDifficulty = GetLevelDifficulty(spawnedPoints.Value);
 
 
-                int spawnPointsAmountAtSameTime = levelDifficulty.spawnedPointsAmountAtSameTime;
-
+                int spawnPointsAmountAtSameTime = GetSpawnPointsRandomAmountAtSameTime(ref levelDifficulty);
 
                 int spawnedPointsAtSameTimeCounter = 0;
                 int attemptsToFindPosition = 3;
@@ -85,12 +84,26 @@ namespace ECS.Systems.Events
                 }
 
                 ref EcsEntity mainEntity = ref _pointsMain.GetEntity(mainIdx);
-                float timer = levelDifficulty.pointsSpawnDelay;
+                float timer = GetPointsRandomSpawnDelay(ref levelDifficulty);
                 mainEntity.Get<BlockSpawnDurationComponent>().Timer = timer;
             }
         }
 
-        private Vector3 GetRandomPosition(ref SpawnAreaSizeComponent spawnAreaSize)
+
+        private LevelDifficulty GetLevelDifficulty(double points)
+        {
+            return _mainSceneServices
+                .LevelDifficultyService
+                .GetDifficulty(points);
+        }
+
+        private static int GetSpawnPointsRandomAmountAtSameTime(ref LevelDifficulty levelDifficulty)
+        {
+            return Random.Range(levelDifficulty.spawnedPointsAmountAtSameTimeMin,
+                levelDifficulty.spawnedPointsAmountAtSameTimeMax);
+        }
+
+        private static Vector3 GetRandomPosition(ref SpawnAreaSizeComponent spawnAreaSize)
         {
             float randomX = Random.Range(spawnAreaSize.MinX, spawnAreaSize.MaxX);
             float randomY = Random.Range(spawnAreaSize.MinY, spawnAreaSize.MaxY);
@@ -98,16 +111,14 @@ namespace ECS.Systems.Events
             return new Vector3(randomX, randomY, 0);
         }
 
-        private LevelDifficulty GetLevelDifficulty(double points)
-        {
-            return _mainSceneData
-                .LevelDifficultyService
-                .GetDifficulty(points);
-        }
-
         private static float GetRandomPointLifeTime(ref LevelDifficulty levelDifficulty)
         {
             return Random.Range(levelDifficulty.pointsLifeTimeMin, levelDifficulty.pointsLifeTimeMax);
+        }
+
+        private static float GetPointsRandomSpawnDelay(ref LevelDifficulty levelDifficulty)
+        {
+            return Random.Range(levelDifficulty.pointsSpawnDelayMin, levelDifficulty.pointsSpawnDelayMax);
         }
     }
 }

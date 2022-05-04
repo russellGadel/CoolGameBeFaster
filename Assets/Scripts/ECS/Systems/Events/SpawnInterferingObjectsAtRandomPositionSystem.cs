@@ -14,6 +14,7 @@ using ECS.Tags.InterferingObjects.InterferingObjectsTag;
 using ECS.Tags.InterferingObjects.InterferingObjectTag;
 using ECS.Tags.Points;
 using Leopotam.Ecs;
+using Services.LevelDifficulty;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -43,9 +44,11 @@ namespace ECS.Systems.Events
         {
             foreach (var idxMain in _interferingObjectsMain)
             {
-                var points = GetSpawnedPointsAmount();
+                double points = GetSpawnedPointsAmount();
+                LevelDifficulty levelDifficulty = GetLevelDifficulty(points);
 
-                int spawnObjectsAmountAtSameTime = GetSpawnObjectsAmountAtSameTime(points);
+                int spawnObjectsAmountAtSameTime =
+                    GetSpawnObjectsRandomAmountAtSameTime(ref levelDifficulty);
 
                 int spawnedObjectsCounter = 0;
                 foreach (var idxElements in _inactiveInterferingObjectsElements)
@@ -77,22 +80,27 @@ namespace ECS.Systems.Events
                 }
 
                 ref EcsEntity entity = ref _interferingObjectsMain.GetEntity(idxMain);
-                entity.Get<BlockSpawnDurationComponent>().Timer = GetBlockSpawnDuration(points);
+                entity.Get<BlockSpawnDurationComponent>().Timer =
+                    GetInterferingObjectsRandomSpawnDelay(ref levelDifficulty);
             }
+        }
+
+        private static float GetInterferingObjectsRandomSpawnDelay(ref LevelDifficulty levelDifficulty)
+        {
+            return Random.Range(levelDifficulty.interferingObjectsSpawnDelayMin,
+                levelDifficulty.interferingObjectsSpawnDelayMax);
+        }
+
+        private static int GetSpawnObjectsRandomAmountAtSameTime(ref LevelDifficulty levelDifficulty)
+        {
+            return Random.Range(levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMin,
+                levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMax);
         }
 
         private double GetSpawnedPointsAmount()
         {
             ref SpawnedPointsCounterComponent pointsComponent = ref _spawnedPointsCounter.Get2(0);
             return pointsComponent.Value;
-        }
-
-        private int GetSpawnObjectsAmountAtSameTime(double points)
-        {
-            return _mainSceneServices
-                .LevelDifficultyService
-                .GetDifficulty(points)
-                .spawnInterferingObjectsAmountAtSameTime;
         }
 
 
@@ -110,12 +118,11 @@ namespace ECS.Systems.Events
             interferingObjectsRigidbody.value.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        private float GetBlockSpawnDuration(double spawnedPointsAmount)
+        private LevelDifficulty GetLevelDifficulty(double points)
         {
             return _mainSceneServices
                 .LevelDifficultyService
-                .GetDifficulty(spawnedPointsAmount)
-                .interferingObjectsSpawnDelay;
+                .GetDifficulty(points);
         }
     }
 }

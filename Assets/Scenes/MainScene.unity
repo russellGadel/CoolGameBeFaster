@@ -1241,18 +1241,26 @@ MonoBehaviour:
   settings:
   - name: 0
     spawnedPointsAmount: 30
-    spawnInterferingObjectsAmountAtSameTime: 2
-    interferingObjectsSpawnDelay: 4
-    spawnedPointsAmountAtSameTime: 5
-    pointsSpawnDelay: 2
+    spawnInterferingObjectsAmountAtSameTimeMin: 1
+    spawnInterferingObjectsAmountAtSameTimeMax: 2
+    interferingObjectsSpawnDelayMin: 4
+    interferingObjectsSpawnDelayMax: 5
+    spawnedPointsAmountAtSameTimeMin: 4
+    spawnedPointsAmountAtSameTimeMax: 5
+    pointsSpawnDelayMin: 1
+    pointsSpawnDelayMax: 2
     pointsLifeTimeMin: 1
     pointsLifeTimeMax: 3
-  - name: 1
+  - name: 0
     spawnedPointsAmount: 200
-    spawnInterferingObjectsAmountAtSameTime: 2
-    interferingObjectsSpawnDelay: 4
-    spawnedPointsAmountAtSameTime: 10
-    pointsSpawnDelay: 2
+    spawnInterferingObjectsAmountAtSameTimeMin: 1
+    spawnInterferingObjectsAmountAtSameTimeMax: 2
+    interferingObjectsSpawnDelayMin: 4
+    interferingObjectsSpawnDelayMax: 5
+    spawnedPointsAmountAtSameTimeMin: 5
+    spawnedPointsAmountAtSameTimeMax: 10
+    pointsSpawnDelayMin: 1
+    pointsSpawnDelayMax: 2
     pointsLifeTimeMin: 1
     pointsLifeTimeMax: 3
 --- !u!1 &1089421322
