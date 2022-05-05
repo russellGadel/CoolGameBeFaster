@@ -18,6 +18,7 @@ namespace ScenesBootstrapper.MainScene.Events
 
             BindMainSceneEventsService();
             BindStartGameEvent();
+            BindStartWindowEvent();
         }
 
 
@@ -64,6 +65,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindStartGameEvent()
         {
             Container.Bind<StartGameEvent>().AsSingle();
+        }
+
+        private void BindStartWindowEvent()
+        {
+            Container.Bind<StartWindowEvent>().AsSingle();
         }
     }
 }

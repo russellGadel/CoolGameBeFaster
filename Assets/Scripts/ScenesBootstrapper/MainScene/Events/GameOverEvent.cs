@@ -41,7 +41,7 @@ namespace ScenesBootstrapper.MainScene.Events
         private void RepeatButtonObservers()
         {
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
-            entity.Replace(new StartGameECSEvent());
+            entity.Replace(new StartGameEcsEvent());
 
             _gameOverView.Close();
         }

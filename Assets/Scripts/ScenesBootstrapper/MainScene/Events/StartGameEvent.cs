@@ -1,28 +1,23 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
-using CustomUI.PlayerController;
-using CustomUI.UpperGamePlayPanel;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
     public sealed class StartGameEvent : IBootstrapper
     {
-        private readonly IUpperGamePlayPanelView _upperGamePlayPanelView;
-        private readonly IPlayerControllerPresenter _playerControllerPresenter;
+        private readonly StartWindowEvent _startWindowEvent;
 
         [Inject]
-        private StartGameEvent(IUpperGamePlayPanelView upperGamePlayPanelView,
-            IPlayerControllerPresenter playerControllerPresenter)
+        private StartGameEvent(StartWindowEvent startWindowEvent)
         {
-            _upperGamePlayPanelView = upperGamePlayPanelView;
-            _playerControllerPresenter = playerControllerPresenter;
+            _startWindowEvent = startWindowEvent;
         }
 
         IEnumerator IBootstrapper.Execute()
         {
-            _upperGamePlayPanelView.Open();
-            _playerControllerPresenter.OpenView();
+            _startWindowEvent.Execute();
+
             yield return null;
         }
     }

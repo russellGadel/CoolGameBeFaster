@@ -16,13 +16,11 @@ namespace ECS.Systems.Init
             {
                 Value = 1
             };
-            
+
             EcsEntity game = _world.NewEntity()
                 .Replace(new GameTag())
                 .Replace(new GameStatusComponent())
-                .Replace(attemptToPlayGameCounter)
-                
-                .Replace(new StartGameECSEvent());
+                .Replace(attemptToPlayGameCounter);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ECS.Systems.Events
     // One Frame 
     public sealed class StartGameSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<StartGameECSEvent> _startGameEvent = null;
+        private readonly EcsFilter<StartGameEcsEvent> _startGameEvent = null;
         private readonly MainSceneServices _mainSceneServices;
         private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game;
 
@@ -35,7 +35,7 @@ namespace ECS.Systems.Events
                 _mainSceneServices.GameTimeService.Unpause();
                 
                 ref EcsEntity startGameEntity = ref _startGameEvent.GetEntity(idx);
-                startGameEntity.Del<StartGameECSEvent>();
+                startGameEntity.Del<StartGameEcsEvent>();
             }
         }
 
