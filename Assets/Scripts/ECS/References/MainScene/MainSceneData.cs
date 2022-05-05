@@ -1,5 +1,7 @@
 ﻿using ECS.References.Camera;
 using Services.Game;
+using Services.Player;
+using UnityEditor;
 using UnityEngine;
 
 namespace ECS.References.MainScene
@@ -8,5 +10,6 @@ namespace ECS.References.MainScene
     {
         public GameSettings gameSettings;
         public InterferingObjectsAppearingPositionSettings interferingObjectsAppearingPositionSettings;
+        public PlayerCustomSettings playerSettings;
     }
 }

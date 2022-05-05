@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Core.EventsLoader;
+using CustomUI.PlayerAccelerationButton;
 using CustomUI.PlayerController;
 using CustomUI.StartWindow;
 using CustomUI.UpperGamePlayPanel;
@@ -15,15 +16,18 @@ namespace ScenesBootstrapper.MainScene.Events
         private readonly IStartWindowView _startWindowView;
         private readonly IUpperGamePlayPanelView _upperGamePlayPanelView;
         private readonly IPlayerControllerPresenter _playerControllerPresenter;
+        private readonly IPlayerAccelerationButtonView _playerAccelerationButtonView;
 
 
         [Inject]
         private StartWindowEvent(IUpperGamePlayPanelView upperGamePlayPanelView,
-            IPlayerControllerPresenter playerControllerPresenter, IStartWindowView startWindowView)
+            IPlayerControllerPresenter playerControllerPresenter, IStartWindowView startWindowView,
+            IPlayerAccelerationButtonView playerAccelerationButtonView)
         {
             _startWindowView = startWindowView;
             _upperGamePlayPanelView = upperGamePlayPanelView;
             _playerControllerPresenter = playerControllerPresenter;
+            _playerAccelerationButtonView = playerAccelerationButtonView;
         }
 
         public IEnumerator Load()
@@ -40,13 +44,14 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void AddObserversToStartButton()
         {
-            _startWindowView.AddObserversToPressStartGameButton(ObserversStartWindowView);
+            _startWindowView.AddObserversToPressStartGameButton(ObserversPressStartButtonEvent);
         }
 
-        private void ObserversStartWindowView()
+        private void ObserversPressStartButtonEvent()
         {
             _upperGamePlayPanelView.Open();
             _playerControllerPresenter.OpenView();
+            _playerAccelerationButtonView.Open();
 
             StartEcsGame();
 

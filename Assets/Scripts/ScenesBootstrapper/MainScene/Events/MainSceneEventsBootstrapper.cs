@@ -22,6 +22,7 @@ namespace ScenesBootstrapper.MainScene.Events
         [Inject] private GameOverEvent _gameOverEvent;
         [Inject] private PauseButtonEvent _pauseButtonEvent;
         [Inject] private StartWindowEvent _startWindowEvent;
+        [Inject] private PlayerAccelerationButtonEvent _playerAccelerationButtonEvent;
 
         private void AddEvents()
         {
@@ -31,6 +32,7 @@ namespace ScenesBootstrapper.MainScene.Events
             _eventsLoader.AddEvent(_gameOverEvent);
             _eventsLoader.AddEvent(_pauseButtonEvent);
             _eventsLoader.AddEvent(_startWindowEvent);
+            _eventsLoader.AddEvent(_playerAccelerationButtonEvent);
         }
     }
 }

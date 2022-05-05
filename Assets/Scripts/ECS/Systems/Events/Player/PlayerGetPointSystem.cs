@@ -3,7 +3,7 @@ using ECS.Events;
 using ECS.References.MainScene;
 using Leopotam.Ecs;
 
-namespace ECS.Systems.Events
+namespace ECS.Systems.Events.Player
 {
     public sealed class PlayerGetPointSystem : IEcsRunSystem
     {

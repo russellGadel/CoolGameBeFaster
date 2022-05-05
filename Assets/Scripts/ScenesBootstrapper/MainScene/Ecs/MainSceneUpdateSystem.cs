@@ -1,8 +1,8 @@
 ﻿using ECS.References;
 using ECS.References.MainScene;
-using ECS.Systems;
 using ECS.Systems.Events;
 using ECS.Systems.Events.ObjectsActivitySystem;
+using ECS.Systems.Events.Player;
 using ECS.Systems.Init;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -84,6 +84,9 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new InitPointsSystem())
                 //
                 .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
+                //
+                .Add(new InitPlayer())
+                //
 
                 //Last System at INIT
                 .Add(new InitGameEntitySystem())
@@ -106,6 +109,11 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new SetRandomSpeedSystem())
                 //
                 .Add(new PlayerGetPointSystem())
+                .Add(new SpawnPlayerAtInitPositionSystem())
+                .Add(new PlayerNormalSpeedSystem())
+                .Add(new PlayerFirstAccelerationSpeedSystem())
+                .Add(new PlayerSecondAccelerationSpeedSystem())
+                //
                 .Add(new DeactivateAllActivePointsSystem())
                 //
                 .Add(new InterferingObjectHitPlayerSystem())
@@ -115,7 +123,6 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new ContinueGameAfterGameOverSystem())
                 //
-                .Add(new SpawnPlayerAtInitPositionSystem())
 
                 //
                 .Add(new StartGameSystem())

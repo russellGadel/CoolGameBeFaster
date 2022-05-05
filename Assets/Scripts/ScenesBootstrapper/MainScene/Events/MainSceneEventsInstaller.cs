@@ -13,6 +13,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindSaveDataEvent();
             BindAttemptToPlayEvent();
             BindGameOver();
+            BindPlayerAccelerationButton();
 
             BindLoadSavedDataEvent();
 
@@ -45,6 +46,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindGameOver()
         {
             Container.Bind<GameOverEvent>().AsSingle();
+        }
+
+        private void BindPlayerAccelerationButton()
+        {
+            Container.Bind<PlayerAccelerationButtonEvent>().AsSingle();
         }
 
         private void BindSaveDataEvent()

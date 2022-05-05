@@ -5,7 +5,7 @@ using ECS.Events.SpawnPlayer;
 using ECS.Tags.Player;
 using Leopotam.Ecs;
 
-namespace ECS.Systems.Events
+namespace ECS.Systems.Events.Player
 {
     // One frame
     public sealed class SpawnPlayerAtInitPositionSystem : IEcsRunSystem

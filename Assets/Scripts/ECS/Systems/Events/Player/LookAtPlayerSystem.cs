@@ -5,7 +5,7 @@ using ECS.Tags.Player;
 using Extensions;
 using Leopotam.Ecs;
 
-namespace ECS.Systems.Events
+namespace ECS.Systems.Events.Player
 {
     // one Frame
     public sealed class LookAtPlayerSystem : IEcsRunSystem

@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    value: 6
+    value: 0
 --- !u!114 &264303794364136773
 MonoBehaviour:
   m_ObjectHideFlags: 0
