@@ -11,7 +11,6 @@ namespace ECS.Triggers
         {
             if (col.tag == "InterferingObject")
             {
-                Debug.Log("Player Hit By InterferingObject");
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
                 playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
 

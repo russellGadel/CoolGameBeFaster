@@ -8,6 +8,5 @@ namespace ECS.References.MainScene
     public class MainSceneUIViews : MonoBehaviour
     {
         [Inject] public IPlayerPointsViewsGroup PlayerPointsViewsGroup;
-        [Inject] public IAttemptToPlayView AttemptToPlayView;
     }
 }

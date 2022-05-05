@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="" />
+    <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneUIViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneUIViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/InterferingObjectHitPlayerTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/InterferingObjectHitPlayerTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/PlayerGetPointTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Triggers/PlayerGetPointTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +132,7 @@
       <workItem from="1651476703552" duration="24095000" />
       <workItem from="1651648923228" duration="16481000" />
       <workItem from="1651734516269" duration="3942000" />
-      <workItem from="1651739207341" duration="9232000" />
+      <workItem from="1651739207341" duration="10317000" />
     </task>
     <servers />
   </component>

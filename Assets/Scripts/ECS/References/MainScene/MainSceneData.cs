@@ -1,7 +1,6 @@
 ﻿using ECS.References.Camera;
 using Services.Game;
 using Services.Player;
-using UnityEditor;
 using UnityEngine;
 
 namespace ECS.References.MainScene

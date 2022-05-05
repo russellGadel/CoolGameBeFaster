@@ -11,12 +11,9 @@ namespace ECS.Triggers
         {
             if (col.CompareTag("Point"))
             {
-                Debug.Log("Player got Point");
-                //Point
                 MonoEntity pointMonoEntity = col.gameObject.GetComponent<MonoEntity>();
                 pointMonoEntity.Entity.Replace(new DeactivateObjectEvent());
 
-                //Player
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
                 playerMonoEntity.Entity.Replace(new PlayerGetPointEvent());
             }
