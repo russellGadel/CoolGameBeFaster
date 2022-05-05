@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using ECS.Components.CameraComponent.CameraCornersComponent;
 using ECS.Components.PositionsPool;
-using ECS.References;
 using ECS.References.Camera;
 using ECS.References.MainScene;
 using ECS.Tags.InterferingObjects.InterferingObjectsAppearingPositionsGridTag;
@@ -10,7 +9,7 @@ using Unity.Mathematics;
 
 namespace ECS.Systems.Init
 {
-    public sealed class LoadPositionsPoolSystem : IEcsInitSystem
+    public sealed class InitPositionsPoolSystem : IEcsInitSystem
     {
         private readonly EcsFilter<CameraBorderCornersComponent> _camera = null;
 

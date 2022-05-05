@@ -3,7 +3,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Init
 {
-    public sealed class InitializeEntityReferenceSystem : IEcsInitSystem
+    public sealed class InitEntityReferenceSystem : IEcsInitSystem
     {
         private readonly EcsFilter<InitializeEntityMonoRequest> _filter = null;
 

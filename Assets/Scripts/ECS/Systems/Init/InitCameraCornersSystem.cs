@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ECS.Systems.Init
 {
-    public sealed class LoadCameraCornersSystem : IEcsInitSystem
+    public sealed class InitCameraCornersSystem : IEcsInitSystem
     {
         private readonly EcsFilter<CameraComponent, CameraBorderCornersComponent>
             _ecsFilter = null;

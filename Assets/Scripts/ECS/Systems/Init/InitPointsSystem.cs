@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Init
 {
-    public sealed class PreparePointsSystem : IEcsInitSystem
+    public sealed class InitPointsSystem : IEcsInitSystem
     {
         private readonly EcsFilter<PointTag, GameObjectComponent> _points = null;
 

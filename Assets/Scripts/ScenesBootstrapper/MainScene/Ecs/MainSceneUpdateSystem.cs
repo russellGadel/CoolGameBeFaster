@@ -70,18 +70,18 @@ namespace ScenesBootstrapper.MainScene.Ecs
         {
             _systems
                 // INIT
-                .Add(new InitializeEntityReferenceSystem())
+                .Add(new InitEntityReferenceSystem())
                 //
                 .Add(new InitPositionsPoolComponentSystem())
                 //
-                .Add(new LoadCameraCornersSystem())
-                .Add(new LoadPositionsPoolSystem())
+                .Add(new InitCameraCornersSystem())
+                .Add(new InitPositionsPoolSystem())
                 //
                 .Add(new InitPointsEntitySystem())
                 //
-                .Add(new PrepareInterferingObjectsPoolSystem())
+                .Add(new InitInterferingObjectsPoolSystem())
                 //
-                .Add(new PreparePointsSystem())
+                .Add(new InitPointsSystem())
                 //
                 .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
 

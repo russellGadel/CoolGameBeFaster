@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Init
 {
-    public sealed class PrepareInterferingObjectsPoolSystem : IEcsInitSystem
+    public sealed class InitInterferingObjectsPoolSystem : IEcsInitSystem
     {
         private readonly EcsFilter<InterferingObjectTag, GameObjectComponent> _interferingObjects = null;
 
