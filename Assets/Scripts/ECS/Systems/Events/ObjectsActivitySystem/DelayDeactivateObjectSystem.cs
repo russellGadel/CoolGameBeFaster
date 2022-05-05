@@ -8,7 +8,7 @@ namespace ECS.Systems.Events.ObjectsActivitySystem
 {
     public sealed class DelayDeactivateObjectSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<DelayDeactivateObjectComponent> _filter = null;
+        private readonly EcsFilter<DelayTimeDeactivateObjectComponent> _filter = null;
 
         public void Run()
         {
@@ -16,14 +16,14 @@ namespace ECS.Systems.Events.ObjectsActivitySystem
             {
                 ref EcsEntity entity = ref _filter.GetEntity(idx);
 
-                ref DelayDeactivateObjectComponent delayDeactivateComponent = ref _filter.Get1(idx);
-                ref float timer = ref delayDeactivateComponent.Timer;
+                ref DelayTimeDeactivateObjectComponent delayTimeDeactivateComponent = ref _filter.Get1(idx);
+                ref float timer = ref delayTimeDeactivateComponent.Timer;
                 timer -= Time.deltaTime;
 
                 if (timer <= 0)
                 {
                     entity.Replace(new DeactivateObjectEvent());
-                    entity.Del<DelayDeactivateObjectComponent>();
+                    entity.Del<DelayTimeDeactivateObjectComponent>();
                 }
             }
         }

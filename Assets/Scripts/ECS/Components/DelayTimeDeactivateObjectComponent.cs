@@ -1,6 +1,6 @@
 ﻿namespace ECS.Components
 {
-    public struct DelayDeactivateObjectComponent
+    public struct DelayTimeDeactivateObjectComponent
     {
         public float Timer;
     }

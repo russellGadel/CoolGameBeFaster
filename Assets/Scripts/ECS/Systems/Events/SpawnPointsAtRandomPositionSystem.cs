@@ -64,7 +64,7 @@ namespace ECS.Systems.Events
 
                             pointEntity
                                 .Replace(new ActivateObjectEvent())
-                                .Replace(new DelayDeactivateObjectComponent()
+                                .Replace(new DelayTimeDeactivateObjectComponent()
                                 {
                                     Timer = GetRandomPointLifeTime(ref levelDifficulty)
                                 });
