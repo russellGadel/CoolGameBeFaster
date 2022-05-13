@@ -1,5 +1,6 @@
 ﻿using ECS.Components.EntityReference;
 using ECS.Events;
+using ECS.Tags;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace ECS.Triggers
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.tag == "InterferingObject")
+            if (col.CompareTag(UnityTags.InterferingObject.ToString()))
             {
                 Debug.Log("Player Hit By InterferingObject");
                 MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();

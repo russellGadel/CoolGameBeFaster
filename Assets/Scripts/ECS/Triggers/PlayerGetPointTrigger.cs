@@ -1,5 +1,6 @@
 ﻿using ECS.Components.EntityReference;
 using ECS.Events;
+using ECS.Tags;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace ECS.Triggers
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("Point"))
+            if (col.CompareTag(UnityTags.Point.ToString()))
             {
                 Debug.Log("Player got Point");
                 //Point
