@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,14 @@ namespace CustomUI.StartWindow
         {
             _startGameButton.onClick.AddListener(() => observer());
         }
+
+        
+        [SerializeField] private TextMeshProUGUI _maxPointsTable;
+        public void SetMaxPoints(string maxPoints)
+        {
+            _maxPointsTable.SetText(maxPoints);
+        }
+
 
         private void LoadStartGameButton()
         {

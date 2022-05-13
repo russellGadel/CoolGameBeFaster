@@ -8,5 +8,6 @@ namespace CustomUI.StartWindow
         void Open();
         void Close();
         void AddObserversToPressStartGameButton(Action observer);
+        void SetMaxPoints(string maxPoints);
     }
 }

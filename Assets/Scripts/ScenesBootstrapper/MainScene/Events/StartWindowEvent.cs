@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Globalization;
 using Core.EventsLoader;
 using CustomUI.PlayerAccelerationButton;
 using CustomUI.PlayerController;
@@ -6,6 +7,7 @@ using CustomUI.StartWindow;
 using CustomUI.UpperGamePlayPanel;
 using ECS.Events;
 using Leopotam.Ecs;
+using Services.SaveData;
 using Voody.UniLeo;
 using Zenject;
 
@@ -17,22 +19,27 @@ namespace ScenesBootstrapper.MainScene.Events
         private readonly IUpperGamePlayPanelView _upperGamePlayPanelView;
         private readonly IPlayerControllerPresenter _playerControllerPresenter;
         private readonly IPlayerAccelerationButtonView _playerAccelerationButtonView;
+        private readonly ISaveDataService _saveDataService;
 
 
         [Inject]
         private StartWindowEvent(IUpperGamePlayPanelView upperGamePlayPanelView,
             IPlayerControllerPresenter playerControllerPresenter, IStartWindowView startWindowView,
-            IPlayerAccelerationButtonView playerAccelerationButtonView)
+            IPlayerAccelerationButtonView playerAccelerationButtonView,
+            ISaveDataService saveDataService)
         {
             _startWindowView = startWindowView;
             _upperGamePlayPanelView = upperGamePlayPanelView;
             _playerControllerPresenter = playerControllerPresenter;
             _playerAccelerationButtonView = playerAccelerationButtonView;
+            _saveDataService = saveDataService;
         }
 
         public IEnumerator Load()
         {
             AddObserversToStartButton();
+            SetMaxPointsAtStartView();
+
             yield return null;
         }
 
@@ -62,6 +69,20 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             EcsEntity startGameEntity = WorldHandler.GetWorld().NewEntity();
             startGameEntity.Replace(new StartGameEcsEvent());
+        }
+
+
+        private void SetMaxPointsAtStartView()
+        {
+            _startWindowView.SetMaxPoints(GetSavedMaxPoints());
+        }
+
+        private string GetSavedMaxPoints()
+        {
+            return _saveDataService
+                .GetData()
+                .maxPointsAmountGotByPlayer
+                .ToString(CultureInfo.CurrentCulture);
         }
     }
 }
