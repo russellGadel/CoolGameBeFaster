@@ -3,6 +3,7 @@ using System.Globalization;
 using Core.EventsLoader;
 using CustomUI.PlayerAccelerationButton;
 using CustomUI.PlayerController;
+using CustomUI.ReferencesList;
 using CustomUI.StartWindow;
 using CustomUI.UpperGamePlayPanel;
 using ECS.Events;
@@ -20,24 +21,29 @@ namespace ScenesBootstrapper.MainScene.Events
         private readonly IPlayerControllerPresenter _playerControllerPresenter;
         private readonly IPlayerAccelerationButtonView _playerAccelerationButtonView;
         private readonly ISaveDataService _saveDataService;
+        private readonly IReferencesListWindowViewModel _referencesListWindowViewModel;
 
 
         [Inject]
-        private StartWindowEvent(IUpperGamePlayPanelView upperGamePlayPanelView,
-            IPlayerControllerPresenter playerControllerPresenter, IStartWindowView startWindowView,
-            IPlayerAccelerationButtonView playerAccelerationButtonView,
-            ISaveDataService saveDataService)
+        private StartWindowEvent(IUpperGamePlayPanelView upperGamePlayPanelView
+            , IPlayerControllerPresenter playerControllerPresenter
+            , IStartWindowView startWindowView
+            , IPlayerAccelerationButtonView playerAccelerationButtonView
+            , ISaveDataService saveDataService
+            , IReferencesListWindowViewModel referencesListWindowViewModel)
         {
             _startWindowView = startWindowView;
             _upperGamePlayPanelView = upperGamePlayPanelView;
             _playerControllerPresenter = playerControllerPresenter;
             _playerAccelerationButtonView = playerAccelerationButtonView;
             _saveDataService = saveDataService;
+            _referencesListWindowViewModel = referencesListWindowViewModel;
         }
 
         public IEnumerator Load()
         {
             AddObserversToStartButton();
+            AddObserversToPressOnReferencesListButtonEvent();
             SetMaxPointsAtStartView();
 
             yield return null;
@@ -69,6 +75,15 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             EcsEntity startGameEntity = WorldHandler.GetWorld().NewEntity();
             startGameEntity.Replace(new StartGameEcsEvent());
+        }
+
+        private void AddObserversToPressOnReferencesListButtonEvent()
+        {
+            _startWindowView
+                .AddObserversToFirstPressOnReferencesListButton(_referencesListWindowViewModel.Open);
+
+            _startWindowView
+                .AddObserversToSecondPressOnReferencesListButton(_referencesListWindowViewModel.Close);
         }
 
 
