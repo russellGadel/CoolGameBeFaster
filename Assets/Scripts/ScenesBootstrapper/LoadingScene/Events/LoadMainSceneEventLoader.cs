@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Core.EventsLoader;
 using ScenesLoader;
-using UnityEngine;
 
 namespace ScenesBootstrapper.LoadingScene.Events
 {
