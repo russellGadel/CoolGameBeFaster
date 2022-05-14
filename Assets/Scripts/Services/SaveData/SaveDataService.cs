@@ -32,7 +32,7 @@ namespace Services.SaveData
             base.Load(ref _data, SaveFileName);
             Debug.Log("LoadData");
         }
-
+        
         public ref SaveData GetData()
         {
             return ref _data;

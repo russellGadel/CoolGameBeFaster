@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections;
+using CustomUI.DualButton;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace CustomUI.StartWindow
 {
-    public sealed class StartWindowView : MonoBehaviour, IStartWindowView
+    public sealed class StartWindowView : MonoBehaviour
+        , IStartWindowView
     {
-        public void Load()
+        public IEnumerator Install()
         {
-            LoadStartGameButton();
+            _referencesListDualButton.Construct();
+            yield return null;
         }
+
 
         public void Open()
         {
@@ -21,6 +27,7 @@ namespace CustomUI.StartWindow
             gameObject.SetActive(false);
         }
 
+
         [SerializeField] private Button _startGameButton;
 
         public void AddObserversToPressStartGameButton(Action observer)
@@ -28,9 +35,25 @@ namespace CustomUI.StartWindow
             _startGameButton.onClick.AddListener(() => observer());
         }
 
-        private void LoadStartGameButton()
+
+        [SerializeField] private DualButtonView _referencesListDualButton;
+
+        public void AddObserversToFirstPressOnReferencesListButton(Action observer)
         {
-            _startGameButton.onClick.RemoveAllListeners();
+            _referencesListDualButton.AddObserverToFirstKeyStroke(observer);
+        }
+
+        public void AddObserversToSecondPressOnReferencesListButton(Action observer)
+        {
+            _referencesListDualButton.AddObserverToSecondKeyStroke(observer);
+        }
+
+        [SerializeField] private TextMeshProUGUI _maxPointsTable;
+
+
+        public void SetMaxPoints(string maxPoints)
+        {
+            _maxPointsTable.SetText(maxPoints);
         }
     }
 }

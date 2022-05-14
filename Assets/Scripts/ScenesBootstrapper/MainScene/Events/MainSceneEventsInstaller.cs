@@ -22,7 +22,6 @@ namespace ScenesBootstrapper.MainScene.Events
             BindStartWindowEvent();
         }
 
-
         private void BindPauseEvent()
         {
             Container.Bind<PlayerPauseEvent>().AsSingle();
@@ -52,6 +51,7 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             Container.Bind<PlayerAccelerationButtonEvent>().AsSingle();
         }
+
 
         private void BindSaveDataEvent()
         {
