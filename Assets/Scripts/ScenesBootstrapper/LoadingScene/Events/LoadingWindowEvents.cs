@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Text;
-using Core.EventsLoader;
+﻿using Core.EventsLoader;
 using CustomUI.LoadingWindow;
 using UnityEngine;
 using ViewObjects.LoadingIndicator;
