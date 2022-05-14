@@ -8,23 +8,23 @@ namespace ScenesBootstrapper.LoadingScene
 {
     public sealed class LoadingSceneBootstrapper : ISceneBootstrapper
     {
-        //   private ILoadingWindowPresenter _loadingWindow;
+        [Inject] private readonly LoadingWindowEvents _loadingWindowEvents;
         [Inject] private readonly ICustomEventsLoader _loader;
         [Inject] private readonly ICustomScenesLoader _scenesLoader;
 
         public void Enter()
         {
-            //   _loadingWindow.Open();
+            _loadingWindowEvents.Execute();
 
             Debug.Log("LoadingScene Enter");
 
             AddEnterItems();
-
             _loader.Load();
         }
 
         public void Exit()
         {
+            _loadingWindowEvents.Undo();
         }
 
         private void AddEnterItems()
