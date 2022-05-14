@@ -1,3 +1,5 @@
+using System;
+
 namespace Core.BootstrapExecutor
 {
     public interface IBootstrapExecutor
@@ -6,5 +8,6 @@ namespace Core.BootstrapExecutor
         void Execute();
         bool IsDone();
         void Clear();
+        void AddObserverToEndBootstrapEvent(Action observer);
     }
 }

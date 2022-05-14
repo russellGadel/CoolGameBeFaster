@@ -1,4 +1,5 @@
 ﻿using Core.BootstrapExecutor;
+using ScenesBootstrapper.LoadingScene.Events;
 using ScenesBootstrapper.MainScene.Ecs;
 using ScenesBootstrapper.MainScene.Events;
 using Zenject;
@@ -7,9 +8,15 @@ namespace ScenesBootstrapper.MainScene
 {
     public sealed class MainSceneBootstrapper : ISceneBootstrapper
     {
+        [Inject] private readonly LoadingWindowEvents _loadingWindowEvents;
+
         public void Enter()
         {
+            _loadingWindowEvents.Execute();
+
             AddBootstrapItems();
+            AddObserversToEndBootstrap();
+
             _bootstrapsExecutor.Execute();
         }
 
@@ -31,6 +38,18 @@ namespace ScenesBootstrapper.MainScene
             _bootstrapsExecutor.Add(_mainSceneEventsBootstrapper);
             _bootstrapsExecutor.Add(_mainSceneEcsBootstrapper);
             _bootstrapsExecutor.Add(_startGameEvent);
+        }
+
+
+        private void AddObserversToEndBootstrap()
+        {
+            _bootstrapsExecutor
+                .AddObserverToEndBootstrapEvent(EndBootstrapEventObservers);
+        }
+
+        private void EndBootstrapEventObservers()
+        {
+            _loadingWindowEvents.Undo();
         }
     }
 }

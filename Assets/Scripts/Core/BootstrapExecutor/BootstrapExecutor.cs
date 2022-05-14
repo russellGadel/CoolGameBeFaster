@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.BootstrapExecutor
 {
-    public class BootstrapExecutor : MonoBehaviour, IBootstrapExecutor
+    public class BootstrapExecutor : MonoBehaviour
+        , IBootstrapExecutor
     {
         private readonly List<IBootstrapper> _events = new List<IBootstrapper>();
 
@@ -31,6 +33,15 @@ namespace Core.BootstrapExecutor
             return _isDone;
         }
 
+        private delegate void Observers();
+
+        private event Observers _thenEndLoading;
+
+        public void AddObserverToEndBootstrapEvent(Action observer)
+        {
+            _thenEndLoading += () => observer();
+        }
+
         private IEnumerator ExecuteCoroutine()
         {
             for (int i = 0; i < _events.Count; i++)
@@ -39,6 +50,7 @@ namespace Core.BootstrapExecutor
             }
 
             _isDone = true;
+            _thenEndLoading?.Invoke();
         }
     }
 }

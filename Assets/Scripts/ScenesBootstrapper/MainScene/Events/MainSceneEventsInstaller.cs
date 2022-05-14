@@ -1,4 +1,5 @@
-﻿using ScenesBootstrapper.MainScene.Events.GameTime;
+﻿using ScenesBootstrapper.LoadingScene.Events;
+using ScenesBootstrapper.MainScene.Events.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
@@ -14,6 +15,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindAttemptToPlayEvent();
             BindGameOver();
             BindPlayerAccelerationButton();
+            BindLoadingWindowEvents();
 
             BindLoadSavedDataEvent();
 
@@ -21,7 +23,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindStartGameEvent();
             BindStartWindowEvent();
         }
-
+        
         private void BindPauseEvent()
         {
             Container.Bind<PlayerPauseEvent>().AsSingle();
@@ -50,6 +52,11 @@ namespace ScenesBootstrapper.MainScene.Events
         private void BindPlayerAccelerationButton()
         {
             Container.Bind<PlayerAccelerationButtonEvent>().AsSingle();
+        }
+        
+        private void BindLoadingWindowEvents()
+        {
+            Container.Bind<LoadingWindowEvents>().AsSingle();
         }
 
 
