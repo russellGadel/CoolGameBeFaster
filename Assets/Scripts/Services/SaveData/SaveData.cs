@@ -6,5 +6,6 @@ namespace Services.SaveData
     public class SaveData
     {
         public double maxPointsAmountGotByPlayer;
+        public bool isAgreedPrivacyPolicy = false;
     }
 }

@@ -1,10 +1,12 @@
-﻿using Core.EventsLoader;
+﻿using System.Collections;
+using Core.EventsLoader;
 using Services.SaveData;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events
 {
     public sealed class SaveDataEvent : ICustomEvent
+        , ICustomEventLoader
     {
         private readonly ISaveDataServiceForEvents _saveDataService;
 
@@ -17,6 +19,12 @@ namespace ScenesBootstrapper.MainScene.Events
         public void Execute()
         {
             _saveDataService.Save();
+        }
+
+        public IEnumerator Load()
+        {
+            Execute();
+            yield return null;
         }
     }
 }
