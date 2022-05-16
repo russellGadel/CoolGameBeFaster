@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Services.InternetConnection
@@ -16,6 +17,12 @@ namespace Services.InternetConnection
         }
 
         private int _attemptsToConnectToServerCounter;
+
+        public IEnumerator CheckInternetConnectionWithDelay()
+        {
+            yield return new WaitForSeconds(_settings.delayTimeForNextCheckConnectionAfterFailedAttempt);
+            yield return CheckInternetConnection();
+        }
 
         public IEnumerator CheckInternetConnection()
         {
@@ -36,12 +43,15 @@ namespace Services.InternetConnection
 
             if (request.result == UnityWebRequest.Result.Success)
             {
+                Debug.Log("Has internet Connection");
+
                 _attemptsToConnectToServerCounter = 0;
 
                 HasInternetConnectionEvent?.Invoke();
             }
             else
             {
+                Debug.Log("Has  not internet Connection");
                 HasNotInternetConnectionEvent?.Invoke();
             }
         }

@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attemptAmountToConnectToFirstURL: 2
+  delayTimeForNextCheckConnectionAfterFailedAttempt: 1
   firstURLForCheckInternetConnection: https://gadelgamestudio.com/MainData/ChekConnection.json
   secondURLForCheckInternetConnection: https://www.google.com
 --- !u!114 &82869823
@@ -649,6 +650,7 @@ GameObject:
   - component: {fileID: 215505357}
   - component: {fileID: 215505359}
   - component: {fileID: 215505358}
+  - component: {fileID: 215505360}
   m_Layer: 5
   m_Name: UpperGamePanelVIew
   m_TagString: Untagged
@@ -697,6 +699,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215505356}
   m_CullTransparentMesh: 1
+--- !u!210 &215505360
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215505356}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
 --- !u!1 &221621990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1037799149}
+  - component: {fileID: 1037799150}
   m_Layer: 5
   m_Name: InternetConnection
   m_TagString: Untagged
@@ -2299,6 +2313,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!210 &1037799150
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037799148}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 101
 --- !u!1 &1070867914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2336,7 @@ GameObject:
   - component: {fileID: 1070867917}
   - component: {fileID: 1070867916}
   - component: {fileID: 1070867918}
+  - component: {fileID: 1070867919}
   m_Layer: 5
   m_Name: PauseWindow
   m_TagString: Untagged
@@ -2388,6 +2414,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b011096584ee081c8439bd7241ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &1070867919
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070867914}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
 --- !u!1 &1089421322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3417,6 +3454,7 @@ GameObject:
   - component: {fileID: 1590306271}
   - component: {fileID: 1590306270}
   - component: {fileID: 1590306273}
+  - component: {fileID: 1590306274}
   m_Layer: 5
   m_Name: PlayerAccelerationButton
   m_TagString: Untagged
@@ -3539,6 +3577,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!210 &1590306274
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590306268}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
 --- !u!1 &1590424057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,6 +3846,7 @@ GameObject:
   - component: {fileID: 1754272758}
   - component: {fileID: 1754272757}
   - component: {fileID: 1754272756}
+  - component: {fileID: 1754272759}
   m_Layer: 5
   m_Name: PlayerControllerView
   m_TagString: Untagged
@@ -3876,6 +3926,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754272754}
   m_CullTransparentMesh: 1
+--- !u!210 &1754272759
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754272754}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
 --- !u!1 &1798676429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,7 +4218,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 100
 --- !u!1 &1905795949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4114792, y: 0.716}
   m_AnchorMax: {x: 1, y: 0.82600003}
-  m_AnchoredPosition: {x: -845.01996, y: -217.67908}
+  m_AnchoredPosition: {x: -845.02, y: -217.67908}
   m_SizeDelta: {x: -420.01, y: 20.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1093240140826535084

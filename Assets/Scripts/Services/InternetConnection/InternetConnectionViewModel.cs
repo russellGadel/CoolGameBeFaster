@@ -23,6 +23,7 @@ namespace Services.InternetConnection
         {
             void HasInternetConnectionObservers()
             {
+                _hasNotConnectionView.Close();
                 thenHasInternetConnection?.Invoke();
             }
 
@@ -33,6 +34,7 @@ namespace Services.InternetConnection
             void HasNotInternetConnectionObservers()
             {
                 _hasNotConnectionView.Open();
+                StartCoroutine(_model.CheckInternetConnectionWithDelay());
                 thenHasNotInternetConnection?.Invoke();
             }
 

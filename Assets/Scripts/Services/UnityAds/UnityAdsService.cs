@@ -24,19 +24,8 @@ namespace Services.UnityAds
 
         public IEnumerator Install()
         {
-            try
-            {
-                InitializeUnityAds();
-            }
-            catch (Exception)
-            {
-                _internetConnectionService
-                    .CheckInternetConnection(InitializeUnityAds
-                        , null);
-            }
-
+            InitializeUnityAds();
             yield return new WaitWhile(() => Advertisement.isInitialized == false);
-
             LoadAdvertisements(_settings.PlacementId);
 
             yield return null;
@@ -46,18 +35,6 @@ namespace Services.UnityAds
         {
             Advertisement.Show(_settings.PlacementId, this);
         }
-
-
-        public bool GetAdvertisementStatus(string placementId)
-        {
-            /* if (placementId == _myPlacementId1)
-             {
-                 return Advertisement.IsReady(placementId);
-             }*/
-
-            return false;
-        }
-
 
         private void InitializeUnityAds()
         {
@@ -71,6 +48,9 @@ namespace Services.UnityAds
 
         void IUnityAdsInitializationListener.OnInitializationFailed(UnityAdsInitializationError error, string message)
         {
+            _internetConnectionService
+                .CheckInternetConnection(InitializeUnityAds
+                    , null);
         }
 
 
@@ -85,11 +65,17 @@ namespace Services.UnityAds
 
         void IUnityAdsLoadListener.OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
         {
+            _internetConnectionService
+                .CheckInternetConnection(() => LoadAdvertisements(placementId)
+                    , null);
         }
 
 
         void IUnityAdsShowListener.OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
         {
+            _internetConnectionService
+                .CheckInternetConnection(ShowRewardedVideo
+                    , null);
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowStart(string placementId)
