@@ -7,7 +7,9 @@ using UnityEngine.Advertisements;
 namespace Services.UnityAds
 {
     public sealed class UnityAdsService : MonoBehaviour
-        , IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+        , IUnityAdsInitializationListener
+        , IUnityAdsLoadListener
+        , IUnityAdsShowListener
         , IUnityAdsService
     {
         private UnityAdsSettings _settings;
@@ -22,28 +24,27 @@ namespace Services.UnityAds
 
         public IEnumerator Install()
         {
-            Debug.Log("Ads Initialized");
             try
             {
                 InitializeUnityAds();
             }
             catch (Exception)
             {
-                Debug.Log("Has Error then Initialize UnityAds");
                 _internetConnectionService
                     .CheckInternetConnection(InitializeUnityAds
                         , null);
             }
 
             yield return new WaitWhile(() => Advertisement.isInitialized == false);
-            LoadAdvertisements();
+
+            LoadAdvertisements(_settings.PlacementId);
+
             yield return null;
         }
 
-
         public void ShowRewardedVideo()
         {
-            Advertisement.Show(_settings.PlacementId);
+            Advertisement.Show(_settings.PlacementId, this);
         }
 
 
@@ -60,66 +61,65 @@ namespace Services.UnityAds
 
         private void InitializeUnityAds()
         {
-            Debug.Log("ads loaded");
-            Advertisement.Initialize(_settings.GameId, _settings.isTestMode);
+            Advertisement.Initialize(_settings.GameId, _settings.isTestMode, this);
         }
 
 
         void IUnityAdsInitializationListener.OnInitializationComplete()
         {
-            throw new System.NotImplementedException();
         }
 
         void IUnityAdsInitializationListener.OnInitializationFailed(UnityAdsInitializationError error, string message)
         {
-            throw new System.NotImplementedException();
         }
 
 
-        private void LoadAdvertisements()
+        private void LoadAdvertisements(string placementId)
         {
-            Advertisement.Load(_settings.PlacementId);
+            Advertisement.Load(placementId, this);
         }
 
         void IUnityAdsLoadListener.OnUnityAdsAdLoaded(string placementId)
         {
-            throw new System.NotImplementedException();
         }
 
         void IUnityAdsLoadListener.OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
         {
-            throw new System.NotImplementedException();
         }
 
 
         void IUnityAdsShowListener.OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
         {
-            throw new System.NotImplementedException();
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowStart(string placementId)
         {
-            throw new System.NotImplementedException();
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowClick(string placementId)
         {
-            throw new System.NotImplementedException();
+        }
+
+        private delegate void Observer();
+
+        private event Observer ThenFullCompletedWatchingRewardedVideo;
+
+        public void AddObserverToThenFullCompletedWatchingRewardedVideoEvent(Action observer)
+        {
+            ThenFullCompletedWatchingRewardedVideo += () => observer();
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowComplete(string placementId,
             UnityAdsShowCompletionState showCompletionState)
         {
-            Debug.Log("OnUnityAdsDidFinish");
             if (placementId == _settings.PlacementId)
             {
-                Debug.Log("_myPlacementId1");
-
                 switch (showCompletionState)
                 {
                     case UnityAdsShowCompletionState.SKIPPED:
                         break;
                     case UnityAdsShowCompletionState.COMPLETED:
+                        ThenFullCompletedWatchingRewardedVideo?.Invoke();
                         break;
                     case UnityAdsShowCompletionState.UNKNOWN:
                         break;
@@ -128,7 +128,7 @@ namespace Services.UnityAds
                 }
             }
 
-            Advertisement.Load(placementId);
+            LoadAdvertisements(placementId);
         }
     }
 }

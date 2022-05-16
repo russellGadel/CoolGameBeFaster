@@ -56,5 +56,10 @@ namespace CustomUI.AttemptToPlay
         {
             _maxPointsText.SetText(points.ToString());
         }
+
+        public void SetAdvertisementButtonInteractableValue(bool value)
+        {
+            _advertisingButton.interactable = value;
+        }
     }
 }

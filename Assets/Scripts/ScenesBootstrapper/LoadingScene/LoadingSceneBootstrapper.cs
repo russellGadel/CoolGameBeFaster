@@ -37,10 +37,10 @@ namespace ScenesBootstrapper.LoadingScene
             _loader.Clear();
             _loader.AddEvent(_loadSavedDataEvent);
             _loader.AddEvent(_privacyPolicyWindowEvent);
-            // here load privacy policy
-            _loader.AddEvent(new LoadMainSceneEventLoader(_scenesLoader, this));
 
             _loader.AddEvent(_saveDataEvent);
+
+            _loader.AddEvent(new LoadMainSceneEventLoader(_scenesLoader, this));
         }
     }
 }

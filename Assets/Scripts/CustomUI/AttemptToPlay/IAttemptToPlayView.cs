@@ -11,5 +11,6 @@ namespace CustomUI.AttemptToPlay
         void AddObserverToAdvertisingButton(Action observer);
         void SetCurrentPointsAmount(double points);
         void SetMaxPointsAmount(double points);
+        void SetAdvertisementButtonInteractableValue(bool value);
     }
 }

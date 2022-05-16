@@ -38,7 +38,7 @@ namespace Services.UnityAds
             {
                 RuntimePlatform.Android => _androidPlacementId,
                 RuntimePlatform.IPhonePlayer => _IOSPlacementId,
-                _ => _androidGameId
+                _ => _androidPlacementId
             };
         }
     }
