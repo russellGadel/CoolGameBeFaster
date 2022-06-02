@@ -29,15 +29,27 @@ namespace ScenesBootstrapper.LoadingScene
         }
 
         [Inject] private readonly LoadSavedDataEvent _loadSavedDataEvent;
+        [Inject] private readonly RemoteConfigDataEvents _remoteConfigDataEvents;
+        [Inject] private readonly UpdateGameWindowEvents _updateGameWindowEvents;
         [Inject] private readonly SaveDataEvent _saveDataEvent;
         [Inject] private readonly PrivacyPolicyWindowEvent _privacyPolicyWindowEvent;
 
         private void AddEnterItems()
         {
             _loader.Clear();
-            _loader.AddEvent(_loadSavedDataEvent);
-            _loader.AddEvent(_privacyPolicyWindowEvent);
 
+            // boot order hard
+            // start
+            _loader.AddEvent(_loadSavedDataEvent);
+            _loader.AddEvent(_remoteConfigDataEvents);
+
+            _loader.AddEvent(_updateGameWindowEvents);
+
+            _loader.AddEvent(_privacyPolicyWindowEvent);
+            // start part ended
+
+
+            // end
             _loader.AddEvent(_saveDataEvent);
 
             _loader.AddEvent(new LoadMainSceneEventLoader(_scenesLoader, this));

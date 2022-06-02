@@ -4,17 +4,19 @@ using System.IO;
 
 namespace Core
 {
-    public class DataHandler <T>
+    public class DataHandler<T>
     {
         protected void Save(T savingData, string fileName)
         {
             string path = Path.Combine(Application.persistentDataPath + "/" + fileName);
-
+            
             BinaryFormatter bfFlow = new BinaryFormatter();
+
             if (File.Exists(path))
             {
                 File.Delete(path);
             }
+
             FileStream saveFile = File.Create(path);
 
             bfFlow.Serialize(saveFile, savingData);
@@ -30,7 +32,7 @@ namespace Core
                 BinaryFormatter bfFlowAutomatically = new BinaryFormatter();
                 FileStream automaticallySaveFile = File.Open(path, FileMode.Open);
 
-                savedGameData = (T)bfFlowAutomatically.Deserialize(automaticallySaveFile);
+                savedGameData = (T) bfFlowAutomatically.Deserialize(automaticallySaveFile);
                 automaticallySaveFile.Close();
             }
         }

@@ -23,7 +23,7 @@ namespace ScenesBootstrapper.MainScene.Events
             BindStartGameEvent();
             BindStartWindowEvent();
         }
-        
+
         private void BindPauseEvent()
         {
             Container.Bind<PlayerPauseEvent>().AsSingle();
@@ -53,7 +53,7 @@ namespace ScenesBootstrapper.MainScene.Events
         {
             Container.Bind<PlayerAccelerationButtonEvent>().AsSingle();
         }
-        
+
         private void BindLoadingWindowEvents()
         {
             Container.Bind<LoadingWindowEvents>().AsSingle();

@@ -11,7 +11,10 @@ namespace ScenesBootstrapper.LoadingScene.Events
             BindSaveDataEvent();
             BindLoadSavedDataEvent();
             BindPrivacyPolicyWindowEvent();
+            BindRemoteConfigDataEvent();
+            BindUpdateGameWindowEvents();
         }
+
 
         private void BindLoadingWindowEvents()
         {
@@ -39,6 +42,20 @@ namespace ScenesBootstrapper.LoadingScene.Events
         {
             Container
                 .Bind<PrivacyPolicyWindowEvent>()
+                .AsSingle();
+        }
+
+        private void BindRemoteConfigDataEvent()
+        {
+            Container
+                .Bind<RemoteConfigDataEvents>()
+                .AsSingle();
+        }
+
+        private void BindUpdateGameWindowEvents()
+        {
+            Container
+                .Bind<UpdateGameWindowEvents>()
                 .AsSingle();
         }
     }
