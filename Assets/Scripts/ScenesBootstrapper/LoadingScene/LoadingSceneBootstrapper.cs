@@ -29,6 +29,7 @@ namespace ScenesBootstrapper.LoadingScene
         }
 
         [Inject] private readonly LoadSavedDataEvent _loadSavedDataEvent;
+        [Inject] private readonly SetGameTypeEvent _setGameTypeEvent;
         [Inject] private readonly RemoteConfigDataEvents _remoteConfigDataEvents;
         [Inject] private readonly UpdateGameWindowEvents _updateGameWindowEvents;
         [Inject] private readonly SaveDataEvent _saveDataEvent;
@@ -41,13 +42,13 @@ namespace ScenesBootstrapper.LoadingScene
             // boot order hard
             // start
             _loader.AddEvent(_loadSavedDataEvent);
+            _loader.AddEvent(_setGameTypeEvent);
             _loader.AddEvent(_remoteConfigDataEvents);
-
+            //
             _loader.AddEvent(_updateGameWindowEvents);
-
+            //
             _loader.AddEvent(_privacyPolicyWindowEvent);
-            // start part ended
-
+            // start part end
 
             // end
             _loader.AddEvent(_saveDataEvent);

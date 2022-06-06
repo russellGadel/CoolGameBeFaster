@@ -24,7 +24,7 @@ namespace ECS.Systems.Events
                 ref EcsEntity gameOverEvent = ref _gameOverEvent.GetEntity(idx);
                 gameOverEvent.Del<GameOverComponentEvent>();
 
-                float delayTime = _mainSceneData.gameSettings.timeDelayBeforeGameOverPlayer;
+                float delayTime = _mainSceneData.gamePlaySettings.timeDelayBeforeGameOverPlayer;
 
                 _mainSceneServices
                     .CustomInvokerService
@@ -91,7 +91,7 @@ namespace ECS.Systems.Events
 
         private bool IsCanTakeAttemptToPlay(ref AttemptToPlayGameCounter attemptCounter)
         {
-            return attemptCounter.Value == _mainSceneData.gameSettings.amountOfAttemptToPlayGame;
+            return attemptCounter.Value == _mainSceneData.gamePlaySettings.amountOfAttemptToPlayGame;
         }
 
 

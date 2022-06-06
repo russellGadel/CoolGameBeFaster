@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using UnityEngine;
+using Zenject;
 
 namespace Services.RemoteConfigData
 {
@@ -6,12 +7,21 @@ namespace Services.RemoteConfigData
     {
         public override void InstallBindings()
         {
+            InstallRemoteConfigData();
             BindRemoteConfigData();
             BindRemoteConfigDataForLoader();
+            BindSettings();
         }
 
+        private readonly RemoteConfigSettings _settings = new RemoteConfigSettings();
 
-        private readonly RemoteConfigData _remoteConfigData = new RemoteConfigData();
+        private RemoteConfigData _remoteConfigData;
+
+        private void InstallRemoteConfigData()
+        {
+            _remoteConfigData = new RemoteConfigData(in _settings);
+        }
+
 
         private void BindRemoteConfigData()
         {
@@ -26,6 +36,15 @@ namespace Services.RemoteConfigData
             Container
                 .Bind<IRemoteConfigDataForLoader>()
                 .FromInstance(_remoteConfigData)
+                .AsSingle();
+        }
+
+
+        private void BindSettings()
+        {
+            Container
+                .Bind<RemoteConfigSettings>()
+                .FromInstance(_settings)
                 .AsSingle();
         }
     }

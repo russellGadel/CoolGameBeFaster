@@ -17,12 +17,25 @@ namespace Services.RemoteConfigData
         {
         }
 
+
+        private readonly RemoteConfigSettings _settings;
+
+        public RemoteConfigData(in RemoteConfigSettings settings)
+        {
+            _settings = settings;
+        }
+
+
+        private bool _isGetAllConfigData = false;
+
         public IEnumerator Load()
         {
+            ConfigManager.SetEnvironmentID(_settings.CurrentEnvironmentId);
             ConfigManager.FetchCompleted += OnFetchCompleted;
             ConfigManager.FetchConfigs(new UserAttributes(), new AppAttributes());
-
-            yield return new WaitUntil(() => ConfigManager.requestStatus == ConfigRequestStatus.Success);
+            
+            yield return new WaitUntil(() =>
+                ConfigManager.requestStatus == ConfigRequestStatus.Success && _isGetAllConfigData == true);
         }
 
         public void Reload()
@@ -37,8 +50,6 @@ namespace Services.RemoteConfigData
 
         private void OnFetchCompleted(ConfigResponse response)
         {
-            Debug.Log($"On fetch completed ConfigRequestStatus: {response.status}");
-
             if (response.status == ConfigRequestStatus.Failed)
             {
                 OnConfigRequestStatusFailed();
@@ -46,6 +57,7 @@ namespace Services.RemoteConfigData
             else
             {
                 GetRemoteConfigData();
+                _isGetAllConfigData = true;
             }
         }
 
@@ -61,7 +73,7 @@ namespace Services.RemoteConfigData
             GameVersion = GetGameVersion();
         }
 
-        private static string GetGameVersion()
+        private string GetGameVersion()
         {
             return ConfigManager
                 .appConfig

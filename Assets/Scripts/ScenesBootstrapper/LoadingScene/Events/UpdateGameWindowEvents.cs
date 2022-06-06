@@ -16,10 +16,12 @@ namespace ScenesBootstrapper.LoadingScene.Events
 
         [Inject]
         public UpdateGameWindowEvents(IUpdateGameViewModel updateGameViewModel
-            , IApplicationService applicationService)
+            , IApplicationService applicationService
+            , IRemoteConfigData remoteConfigData)
         {
             _updateGameViewModel = updateGameViewModel;
             _applicationService = applicationService;
+            _remoteConfigData = remoteConfigData;
         }
 
         public IEnumerator Load()

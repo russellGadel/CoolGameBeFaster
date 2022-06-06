@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66cae80fd9a472599872e33714acc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSettings: {fileID: 1905795951}
+  gamePlaySettings: {fileID: 0}
   interferingObjectsAppearingPositionSettings: {fileID: 1445364992}
   playerSettings: {fileID: 1654138387}
 --- !u!114 &51167844
@@ -4098,7 +4098,7 @@ GameObject:
   - component: {fileID: 1905795952}
   - component: {fileID: 1905795951}
   m_Layer: 0
-  m_Name: GameSettings
+  m_Name: GamePlaySettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
