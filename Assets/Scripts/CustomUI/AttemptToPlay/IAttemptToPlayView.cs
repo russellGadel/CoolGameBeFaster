@@ -13,7 +13,7 @@ namespace CustomUI.AttemptToPlay
         void UnsubscribeFromRepeatButton(UnityAction observer);
 
         void SubscribeToAdvertisingButton(UnityAction observer);
-        void UnsubscribeToAdvertisingButton(UnityAction observer);
+        void UnsubscribeFromAdvertisingButton(UnityAction observer);
 
 
         void SetCurrentPointsAmount(double points);

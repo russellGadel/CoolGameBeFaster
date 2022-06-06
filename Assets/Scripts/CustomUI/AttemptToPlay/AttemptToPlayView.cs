@@ -47,7 +47,7 @@ namespace CustomUI.AttemptToPlay
             _advertisingButton.onClick.AddListener(observer);
         }
 
-        public void UnsubscribeToAdvertisingButton(UnityAction observer)
+        public void UnsubscribeFromAdvertisingButton(UnityAction observer)
         {
             _advertisingButton.onClick.RemoveListener(observer);
         }

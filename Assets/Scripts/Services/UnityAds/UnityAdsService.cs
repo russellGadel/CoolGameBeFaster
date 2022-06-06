@@ -86,13 +86,16 @@ namespace Services.UnityAds
         {
         }
 
-        private delegate void Observer();
+        private event Action CompletedWatchingRewardedVideoEvent;
 
-        private event Observer ThenFullCompletedWatchingRewardedVideo;
-
-        public void AddObserverToThenFullCompletedWatchingRewardedVideoEvent(Action observer)
+        public void SubscribeToCompletedWatchingRewardedVideoEvent(Action observer)
         {
-            ThenFullCompletedWatchingRewardedVideo += () => observer();
+            CompletedWatchingRewardedVideoEvent += observer;
+        }
+
+        public void UnsubscribeFromCompletedWatchingRewardedVideoEvent(Action observer)
+        {
+            CompletedWatchingRewardedVideoEvent += observer;
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowComplete(string placementId,
@@ -105,7 +108,7 @@ namespace Services.UnityAds
                     case UnityAdsShowCompletionState.SKIPPED:
                         break;
                     case UnityAdsShowCompletionState.COMPLETED:
-                        ThenFullCompletedWatchingRewardedVideo?.Invoke();
+                        CompletedWatchingRewardedVideoEvent?.Invoke();
                         break;
                     case UnityAdsShowCompletionState.UNKNOWN:
                         break;

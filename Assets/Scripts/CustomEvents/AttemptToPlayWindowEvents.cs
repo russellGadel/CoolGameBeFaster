@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.EventsLoader;
 using CustomUI.AttemptToPlay;
 using ECS.Events;
@@ -10,6 +11,7 @@ using Zenject;
 namespace CustomEvents
 {
     public sealed class AttemptToPlayWindowEvents : ICustomEventLoader
+        , IDisposable
     {
         private readonly IAttemptToPlayView _attemptToPlayView;
         private readonly IUnityAdsService _unityAdsService;
@@ -32,17 +34,29 @@ namespace CustomEvents
 
         public IEnumerator Load()
         {
-            AddObserversToAdvertisementButton();
-            AddObserverToRepeatGameButton();
-            AddObserversToThenCompletedWatchingRewardedVideoEvent();
+            SubscribeToAdvertisementButton();
+            SubscribeToRepeatGameButton();
+            SubscribeToCompletedWatchingRewardedVideoEvent();
 
             yield return null;
         }
 
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromAdvertisementButton();
+            UnsubscribeFromRepeatGameButton();
+            UnsubscribeFromCompletedWatchingRewardedVideoEvent();
+        }
 
-        private void AddObserversToAdvertisementButton()
+
+        private void SubscribeToAdvertisementButton()
         {
             _attemptToPlayView.SubscribeToAdvertisingButton(AdvertisingButtonObservers);
+        }
+
+        private void UnsubscribeFromAdvertisementButton()
+        {
+            _attemptToPlayView.UnsubscribeFromAdvertisingButton(AdvertisingButtonObservers);
         }
 
         private void AdvertisingButtonObservers()
@@ -51,9 +65,14 @@ namespace CustomEvents
         }
 
 
-        private void AddObserverToRepeatGameButton()
+        private void SubscribeToRepeatGameButton()
         {
             _attemptToPlayView.SubscribeToRepeatButton(RepeatGameButtonObservers);
+        }
+
+        private void UnsubscribeFromRepeatGameButton()
+        {
+            _attemptToPlayView.UnsubscribeFromRepeatButton(RepeatGameButtonObservers);
         }
 
         private void RepeatGameButtonObservers()
@@ -65,14 +84,21 @@ namespace CustomEvents
         }
 
 
-        private void AddObserversToThenCompletedWatchingRewardedVideoEvent()
+        private void SubscribeToCompletedWatchingRewardedVideoEvent()
         {
             _unityAdsService
-                .AddObserverToThenFullCompletedWatchingRewardedVideoEvent
-                    (ObserversOfThenCompletedWatchingRewardedVideoEvent);
+                .SubscribeToCompletedWatchingRewardedVideoEvent
+                    (ObserversOfCompletedWatchingRewardedVideoEvent);
         }
 
-        private void ObserversOfThenCompletedWatchingRewardedVideoEvent()
+        private void UnsubscribeFromCompletedWatchingRewardedVideoEvent()
+        {
+            _unityAdsService
+                .UnsubscribeFromCompletedWatchingRewardedVideoEvent
+                    (ObserversOfCompletedWatchingRewardedVideoEvent);
+        }
+
+        private void ObserversOfCompletedWatchingRewardedVideoEvent()
         {
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new ContinueGameAfterGameOverEvent());
