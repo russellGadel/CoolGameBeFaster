@@ -9,7 +9,10 @@ namespace CustomUI.AttemptToPlay
 
         public override void InstallBindings()
         {
-            Container.Bind<IAttemptToPlayView>().FromInstance(_view).AsSingle();
+            Container
+                .Bind<IAttemptToPlayView>()
+                .FromInstance(_view)
+                .AsSingle();
         }
     }
 }

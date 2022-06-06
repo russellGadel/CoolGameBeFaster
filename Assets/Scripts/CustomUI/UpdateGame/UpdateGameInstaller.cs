@@ -8,17 +8,17 @@ namespace CustomUI.UpdateGame
         public override void InstallBindings()
         {
             Container
-                .Bind<IUpdateGameViewModel>()
-                .FromInstance(InstallViewModel())
+                .Bind<IUpdateGamePresenter>()
+                .FromInstance(InstallPresenter())
                 .AsSingle();
         }
 
         [SerializeField] private UpdateGameView _view;
 
-        private IUpdateGameViewModel InstallViewModel()
+        private IUpdateGamePresenter InstallPresenter()
         {
-            IUpdateGameViewModel viewModel = new UpdateGameViewModel(_view, InstallModel());
-            return viewModel;
+            IUpdateGamePresenter presenter = new UpdateGamePresenter(_view, InstallModel());
+            return presenter;
         }
 
 

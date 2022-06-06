@@ -10,16 +10,16 @@ namespace CustomEvents
     public sealed class PrivacyPolicyWindowEvents : ICustomDualEvent
         , ICustomEventLoader
     {
-        private readonly IPrivacyPolicyViewModel _privacyPolicyViewModel;
+        private readonly IPrivacyPolicyPresenter _privacyPolicyPresenter;
         private readonly LoadingWindowDualEvents _loadingWindowDualEvents;
         private readonly ISaveDataService _saveDataService;
 
         [Inject]
-        public PrivacyPolicyWindowEvents(IPrivacyPolicyViewModel privacyPolicyViewModel
+        public PrivacyPolicyWindowEvents(IPrivacyPolicyPresenter privacyPolicyPresenter
             , LoadingWindowDualEvents loadingWindowDualEvents
             , ISaveDataService saveDataService)
         {
-            _privacyPolicyViewModel = privacyPolicyViewModel;
+            _privacyPolicyPresenter = privacyPolicyPresenter;
             _loadingWindowDualEvents = loadingWindowDualEvents;
             _saveDataService = saveDataService;
         }
@@ -34,7 +34,7 @@ namespace CustomEvents
                 _loadingWindowDualEvents.Undo();
                 Execute();
 
-                yield return new WaitWhile(() => _privacyPolicyViewModel.IsAcceptAgreement() == false);
+                yield return new WaitWhile(() => _privacyPolicyPresenter.IsAcceptAgreement() == false);
 
                 _loadingWindowDualEvents.Execute();
             }
@@ -44,12 +44,12 @@ namespace CustomEvents
 
         public void Execute()
         {
-            _privacyPolicyViewModel.Open();
+            _privacyPolicyPresenter.Open();
         }
 
         public void Undo()
         {
-            _privacyPolicyViewModel.Close();
+            _privacyPolicyPresenter.Close();
         }
 
 
@@ -61,22 +61,22 @@ namespace CustomEvents
 
         private void AddObserversToAcceptButton()
         {
-            _privacyPolicyViewModel
+            _privacyPolicyPresenter
                 .AddObserverToAcceptButton(AcceptButtonObservers);
         }
 
         private void AcceptButtonObservers()
         {
-            _privacyPolicyViewModel.Close();
+            _privacyPolicyPresenter.Close();
             _saveDataService.GetData().isAgreedPrivacyPolicy = true;
 
-            _privacyPolicyViewModel.UserAcceptPrivacyPolicy();
+            _privacyPolicyPresenter.UserAcceptPrivacyPolicy();
         }
 
 
         private void AddObserversToDeclineButton()
         {
-            _privacyPolicyViewModel.AddObserverToDeclineButton(DeclineButtonObservers);
+            _privacyPolicyPresenter.AddObserverToDeclineButton(DeclineButtonObservers);
         }
 
         private void DeclineButtonObservers()

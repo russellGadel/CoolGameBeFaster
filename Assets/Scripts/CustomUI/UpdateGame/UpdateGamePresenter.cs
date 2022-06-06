@@ -2,12 +2,12 @@
 
 namespace CustomUI.UpdateGame
 {
-    public sealed class UpdateGameViewModel : IUpdateGameViewModel
+    public sealed class UpdateGamePresenter : IUpdateGamePresenter
     {
         private readonly IUpdateGameView _view;
         private readonly IUpdateGameModel _model;
 
-        public UpdateGameViewModel(IUpdateGameView view, IUpdateGameModel model)
+        public UpdateGamePresenter(IUpdateGameView view, IUpdateGameModel model)
         {
             _view = view;
             _model = model;

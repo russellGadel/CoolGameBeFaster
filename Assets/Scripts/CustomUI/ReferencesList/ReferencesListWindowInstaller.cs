@@ -7,19 +7,20 @@ namespace CustomUI.ReferencesList
     {
         public override void InstallBindings()
         {
-            BindViewModel();
+            BindPresenter();
         }
 
         [SerializeField] private ReferencesListWindowView _view;
 
-        private void BindViewModel()
+        private void BindPresenter()
         {
             Container
-                .Bind<IReferencesListWindowViewModel>()
-                .To<ReferencesListWindowViewModel>()
-                .FromInstance(new ReferencesListWindowViewModel(InstallModel(), _view))
+                .Bind<IReferencesListWindowPresenter>()
+                .To<ReferencesListWindowPresenter>()
+                .FromInstance(new ReferencesListWindowPresenter(InstallModel(), _view))
                 .AsSingle();
         }
+
 
         [SerializeField] private ReferencesListSettings settings;
 

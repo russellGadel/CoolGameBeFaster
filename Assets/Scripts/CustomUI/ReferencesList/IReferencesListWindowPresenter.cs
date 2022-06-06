@@ -1,6 +1,6 @@
 ﻿namespace CustomUI.ReferencesList
 {
-    public interface IReferencesListWindowViewModel
+    public interface IReferencesListWindowPresenter
     {
         void Open();
         void Close();

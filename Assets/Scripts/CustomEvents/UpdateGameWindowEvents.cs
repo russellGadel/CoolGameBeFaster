@@ -10,16 +10,16 @@ namespace CustomEvents
 {
     public sealed class UpdateGameWindowEvents : ICustomEventLoader
     {
-        private readonly IUpdateGameViewModel _updateGameViewModel;
+        private readonly IUpdateGamePresenter _updateGamePresenter;
         private readonly IApplicationService _applicationService;
         private readonly IRemoteConfigData _remoteConfigData;
 
         [Inject]
-        public UpdateGameWindowEvents(IUpdateGameViewModel updateGameViewModel
+        public UpdateGameWindowEvents(IUpdateGamePresenter updateGamePresenter
             , IApplicationService applicationService
             , IRemoteConfigData remoteConfigData)
         {
-            _updateGameViewModel = updateGameViewModel;
+            _updateGamePresenter = updateGamePresenter;
             _applicationService = applicationService;
             _remoteConfigData = remoteConfigData;
         }
@@ -29,7 +29,7 @@ namespace CustomEvents
             if (UnityEngine.Application.version != _remoteConfigData.GameVersion)
             {
                 AddObserversToUpdateButton();
-                _updateGameViewModel.OpenView();
+                _updateGamePresenter.OpenView();
 
                 bool exitFromGame = true;
                 yield return new WaitUntil(() => exitFromGame == true);
@@ -40,12 +40,12 @@ namespace CustomEvents
 
         private void AddObserversToUpdateButton()
         {
-            _updateGameViewModel.AddObserverToUpdateButton(UpdateButtonObservers);
+            _updateGamePresenter.AddObserverToUpdateButton(UpdateButtonObservers);
         }
 
         private void UpdateButtonObservers()
         {
-            _updateGameViewModel.GoToAppStore();
+            _updateGamePresenter.GoToAppStore();
             _applicationService.Quit();
         }
     }

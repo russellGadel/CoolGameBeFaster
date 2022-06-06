@@ -2,12 +2,13 @@
 
 namespace CustomUI.PrivacyPolicy
 {
-    public sealed class PrivacyPolicyViewModel : IPrivacyPolicyViewModel
+    public sealed class PrivacyPolicyPresenter : IPrivacyPolicyPresenter
     {
         private readonly IPrivacyPolicyView _view;
         private readonly IPrivacyPolicyModel _model;
 
-        public PrivacyPolicyViewModel(IPrivacyPolicyView view, IPrivacyPolicyModel model)
+        public PrivacyPolicyPresenter(IPrivacyPolicyView view
+            , IPrivacyPolicyModel model)
         {
             _view = view;
             _model = model;

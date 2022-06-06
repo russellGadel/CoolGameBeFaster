@@ -1,11 +1,11 @@
 ﻿namespace CustomUI.ReferencesList
 {
-    public sealed class ReferencesListWindowViewModel : IReferencesListWindowViewModel
+    public sealed class ReferencesListWindowPresenter : IReferencesListWindowPresenter
     {
         private IReferencesListWindowView _view;
         private IReferencesListWindowModel _model;
 
-        public ReferencesListWindowViewModel(IReferencesListWindowModel model
+        public ReferencesListWindowPresenter(IReferencesListWindowModel model
             , IReferencesListWindowView view)
         {
             _view = view;

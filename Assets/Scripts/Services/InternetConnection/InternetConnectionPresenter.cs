@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Services.InternetConnection
 {
-    public class InternetConnectionViewModel : MonoBehaviour
+    public class InternetConnectionPresenter : MonoBehaviour
         , IInternetConnectionService
     {
         private IInternetConnectionModel _model;

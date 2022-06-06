@@ -2,7 +2,7 @@
 
 namespace CustomUI.PrivacyPolicy
 {
-    public interface IPrivacyPolicyViewModel
+    public interface IPrivacyPolicyPresenter
     {
         void Open();
         void Close();

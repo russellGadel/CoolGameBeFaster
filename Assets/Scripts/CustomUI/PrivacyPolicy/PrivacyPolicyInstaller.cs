@@ -7,25 +7,25 @@ namespace CustomUI.PrivacyPolicy
     {
         public override void InstallBindings()
         {
-            BindViewModel();
+            BindPresenter();
         }
 
         [SerializeField] private PrivacyPolicyView _view;
 
-        private void BindViewModel()
+        private void BindPresenter()
         {
             Container
-                .Bind<IPrivacyPolicyViewModel>()
-                .To<PrivacyPolicyViewModel>()
-                .FromMethod(() => InstallViewModel(_view, InstallModel(_settings)))
+                .Bind<IPrivacyPolicyPresenter>()
+                .To<PrivacyPolicyPresenter>()
+                .FromMethod(() => InstallPresenter(_view, InstallModel(_settings)))
                 .AsSingle();
         }
 
 
-        private PrivacyPolicyViewModel InstallViewModel(IPrivacyPolicyView view
+        private PrivacyPolicyPresenter InstallPresenter(IPrivacyPolicyView view
             , IPrivacyPolicyModel model)
         {
-            return new PrivacyPolicyViewModel(view, model);
+            return new PrivacyPolicyPresenter(view, model);
         }
 
     

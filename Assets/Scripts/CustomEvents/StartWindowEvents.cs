@@ -21,7 +21,7 @@ namespace CustomEvents
         private readonly IPlayerControllerPresenter _playerControllerPresenter;
         private readonly IPlayerAccelerationButtonView _playerAccelerationButtonView;
         private readonly ISaveDataService _saveDataService;
-        private readonly IReferencesListWindowViewModel _referencesListWindowViewModel;
+        private readonly IReferencesListWindowPresenter _referencesListWindowPresenter;
 
 
         [Inject]
@@ -30,14 +30,14 @@ namespace CustomEvents
             , IStartWindowView startWindowView
             , IPlayerAccelerationButtonView playerAccelerationButtonView
             , ISaveDataService saveDataService
-            , IReferencesListWindowViewModel referencesListWindowViewModel)
+            , IReferencesListWindowPresenter referencesListWindowPresenter)
         {
             _startWindowView = startWindowView;
             _upperGamePlayPanelView = upperGamePlayPanelView;
             _playerControllerPresenter = playerControllerPresenter;
             _playerAccelerationButtonView = playerAccelerationButtonView;
             _saveDataService = saveDataService;
-            _referencesListWindowViewModel = referencesListWindowViewModel;
+            _referencesListWindowPresenter = referencesListWindowPresenter;
         }
 
         public IEnumerator Load()
@@ -80,10 +80,10 @@ namespace CustomEvents
         private void AddObserversToPressOnReferencesListButtonEvent()
         {
             _startWindowView
-                .AddObserversToFirstPressOnReferencesListButton(_referencesListWindowViewModel.Open);
+                .AddObserversToFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
 
             _startWindowView
-                .AddObserversToSecondPressOnReferencesListButton(_referencesListWindowViewModel.Close);
+                .AddObserversToSecondPressOnReferencesListButton(_referencesListWindowPresenter.Close);
         }
 
 

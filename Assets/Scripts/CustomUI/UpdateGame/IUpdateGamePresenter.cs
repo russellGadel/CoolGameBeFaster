@@ -2,7 +2,7 @@
 
 namespace CustomUI.UpdateGame
 {
-    public interface IUpdateGameViewModel
+    public interface IUpdateGamePresenter
     {
         void OpenView();
         void CloseView();
