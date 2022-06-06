@@ -3,21 +3,27 @@ using Core.EventsLoader;
 using Services.SaveData;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events
+namespace CustomEvents
 {
-    public sealed class LoadSavedDataEvent : ICustomEventLoader
+    public sealed class SaveDataEvent : ICustomEvent
+        , ICustomEventLoader
     {
         private readonly ISaveDataServiceForEvents _saveDataService;
 
         [Inject]
-        public LoadSavedDataEvent(ISaveDataServiceForEvents saveDataService)
+        public SaveDataEvent(ISaveDataServiceForEvents saveDataService)
         {
             _saveDataService = saveDataService;
         }
 
+        public void Execute()
+        {
+            _saveDataService.Save();
+        }
+
         public IEnumerator Load()
         {
-            _saveDataService.Load();
+            Execute();
             yield return null;
         }
     }

@@ -5,7 +5,7 @@ using Services.SaveData;
 using UnityEngine;
 using Zenject;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class PrivacyPolicyWindowEvent : ICustomDualEvent
         , ICustomEventLoader

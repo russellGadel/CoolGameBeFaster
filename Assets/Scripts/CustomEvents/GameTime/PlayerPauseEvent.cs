@@ -4,7 +4,7 @@ using CustomUI.PauseWindow;
 using Services.GameTime;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events.GameTime
+namespace CustomEvents.GameTime
 {
     public sealed class PlayerPauseEvent : ICustomEvent
     {

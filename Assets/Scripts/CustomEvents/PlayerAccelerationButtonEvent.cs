@@ -8,7 +8,7 @@ using Leopotam.Ecs;
 using Voody.UniLeo;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events
+namespace CustomEvents
 {
     public sealed class PlayerAccelerationButtonEvent : ICustomEventLoader
     {

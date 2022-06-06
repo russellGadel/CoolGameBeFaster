@@ -3,7 +3,7 @@ using Core.EventsLoader;
 using CustomUI.PauseButton;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events.GameTime
+namespace CustomEvents.GameTime
 {
     public sealed class PauseButtonEvent : ICustomEventLoader
     {

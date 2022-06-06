@@ -1,9 +1,9 @@
-﻿using ScenesBootstrapper.MainScene.Events;
+﻿using CustomEvents;
 using Zenject;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace ScenesBootstrapper.LoadingScene
 {
-    public sealed class LoadingSceneCustomEventsInstaller : MonoInstaller
+    public sealed class LoadingSceneEventsInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {

@@ -12,7 +12,7 @@ using Services.SaveData;
 using Voody.UniLeo;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events
+namespace CustomEvents
 {
     public sealed class StartWindowEvent : ICustomEventLoader
     {

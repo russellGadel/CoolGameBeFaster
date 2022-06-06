@@ -1,5 +1,5 @@
 ﻿using Core.BootstrapExecutor;
-using ScenesBootstrapper.LoadingScene.Events;
+using CustomEvents;
 using ScenesBootstrapper.MainScene.Ecs;
 using ScenesBootstrapper.MainScene.Events;
 using Zenject;

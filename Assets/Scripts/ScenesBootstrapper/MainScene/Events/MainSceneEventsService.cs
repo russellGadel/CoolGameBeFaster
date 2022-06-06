@@ -1,4 +1,5 @@
-﻿using ScenesBootstrapper.MainScene.Events.GameTime;
+﻿using CustomEvents;
+using CustomEvents.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events

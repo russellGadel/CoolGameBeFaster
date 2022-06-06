@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using Core.EventsLoader;
+using ScenesBootstrapper.LoadingScene;
 using ScenesLoader;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class LoadMainSceneEventLoader : ICustomEventLoader
     {

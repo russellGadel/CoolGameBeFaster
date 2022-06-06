@@ -2,7 +2,7 @@
 using Core.BootstrapExecutor;
 using Zenject;
 
-namespace ScenesBootstrapper.MainScene.Events
+namespace CustomEvents
 {
     public sealed class StartGameEvent : IBootstrapper
     {

@@ -6,7 +6,7 @@ using Services.RemoteConfigData;
 using UnityEngine;
 using Zenject;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class UpdateGameWindowEvents : ICustomEventLoader
     {

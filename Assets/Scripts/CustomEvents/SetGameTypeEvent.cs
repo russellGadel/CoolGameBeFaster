@@ -4,7 +4,7 @@ using Services.Game;
 using Zenject;
 using RemoteConfigSettings = Services.RemoteConfigData.RemoteConfigSettings;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class SetGameTypeEvent : ICustomEventLoader
     {

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using Core.BootstrapExecutor;
 using Core.EventsLoader;
-using ScenesBootstrapper.MainScene.Events.GameTime;
+using CustomEvents;
+using CustomEvents.GameTime;
 using Zenject;
 
 namespace ScenesBootstrapper.MainScene.Events

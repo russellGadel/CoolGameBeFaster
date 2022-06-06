@@ -4,7 +4,7 @@ using Services.InternetConnection;
 using Services.RemoteConfigData;
 using Zenject;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class RemoteConfigDataEvents : ICustomEventLoader
     {

@@ -1,6 +1,5 @@
 ﻿using Core.EventsLoader;
-using ScenesBootstrapper.LoadingScene.Events;
-using ScenesBootstrapper.MainScene.Events;
+using CustomEvents;
 using ScenesLoader;
 using UnityEngine;
 using Zenject;

@@ -4,7 +4,7 @@ using UnityEngine;
 using ViewObjects.LoadingIndicator;
 using Zenject;
 
-namespace ScenesBootstrapper.LoadingScene.Events
+namespace CustomEvents
 {
     public sealed class LoadingWindowEvents : ICustomDualEvent
     {
