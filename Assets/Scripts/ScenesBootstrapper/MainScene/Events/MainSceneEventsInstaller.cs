@@ -36,12 +36,12 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void BindPauseButtonEvent()
         {
-            Container.Bind<PauseButtonEvent>().AsSingle();
+            Container.Bind<PauseButtonEvents>().AsSingle();
         }
 
         private void BindAttemptToPlayEvent()
         {
-            Container.Bind<AttemptToPlayEvent>().AsSingle();
+            Container.Bind<AttemptToPlayWindowEvents>().AsSingle();
         }
 
         private void BindGameOver()
@@ -51,12 +51,12 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void BindPlayerAccelerationButton()
         {
-            Container.Bind<PlayerAccelerationButtonEvent>().AsSingle();
+            Container.Bind<PlayerAccelerationButtonEvents>().AsSingle();
         }
 
         private void BindLoadingWindowEvents()
         {
-            Container.Bind<LoadingWindowEvents>().AsSingle();
+            Container.Bind<LoadingWindowDualEvents>().AsSingle();
         }
 
 
@@ -82,7 +82,7 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void BindStartWindowEvent()
         {
-            Container.Bind<StartWindowEvent>().AsSingle();
+            Container.Bind<StartWindowEvents>().AsSingle();
         }
     }
 }

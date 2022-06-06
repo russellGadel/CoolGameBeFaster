@@ -5,7 +5,7 @@ using Zenject;
 
 namespace CustomEvents.GameTime
 {
-    public sealed class PauseButtonEvent : ICustomEventLoader
+    public sealed class PauseButtonEvents : ICustomEventLoader
     {
         private readonly IPauseButtonView _pauseButton;
         private readonly PlayerPauseEvent _playerPauseEvent;
@@ -13,7 +13,7 @@ namespace CustomEvents.GameTime
 
 
         [Inject]
-        public PauseButtonEvent(IPauseButtonView pauseButton, PlayerPauseEvent playerPauseEvent,
+        public PauseButtonEvents(IPauseButtonView pauseButton, PlayerPauseEvent playerPauseEvent,
             PlayerUnpauseEvent playerUnpauseEvent)
         {
             _pauseButton = pauseButton;

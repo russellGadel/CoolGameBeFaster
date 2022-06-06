@@ -21,11 +21,11 @@ namespace ScenesBootstrapper.MainScene.Events
         [Inject] private readonly LoadSavedDataEvent _loadSavedDataEvent;
 
 
-        [Inject] private AttemptToPlayEvent _attemptToPlayView;
+        [Inject] private AttemptToPlayWindowEvents _attemptToPlayView;
         [Inject] private GameOverEvent _gameOverEvent;
-        [Inject] private PauseButtonEvent _pauseButtonEvent;
-        [Inject] private StartWindowEvent _startWindowEvent;
-        [Inject] private PlayerAccelerationButtonEvent _playerAccelerationButtonEvent;
+        [Inject] private PauseButtonEvents _pauseButtonEvents;
+        [Inject] private StartWindowEvents _startWindowEvents;
+        [Inject] private PlayerAccelerationButtonEvents _playerAccelerationButtonEvents;
 
 
         private void AddEvents()
@@ -37,9 +37,9 @@ namespace ScenesBootstrapper.MainScene.Events
 
             _eventsLoader.AddEvent(_attemptToPlayView);
             _eventsLoader.AddEvent(_gameOverEvent);
-            _eventsLoader.AddEvent(_pauseButtonEvent);
-            _eventsLoader.AddEvent(_startWindowEvent);
-            _eventsLoader.AddEvent(_playerAccelerationButtonEvent);
+            _eventsLoader.AddEvent(_pauseButtonEvents);
+            _eventsLoader.AddEvent(_startWindowEvents);
+            _eventsLoader.AddEvent(_playerAccelerationButtonEvents);
         }
     }
 }

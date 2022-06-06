@@ -5,12 +5,12 @@ using ScenesLoader;
 
 namespace CustomEvents
 {
-    public sealed class LoadMainSceneEventLoader : ICustomEventLoader
+    public sealed class LoadMainSceneEvent : ICustomEventLoader
     {
         private readonly ICustomScenesLoader _scenesLoader;
         private readonly LoadingSceneBootstrapper _loadingSceneBootstrapper;
         
-        public LoadMainSceneEventLoader(ICustomScenesLoader scenesLoader,
+        public LoadMainSceneEvent(ICustomScenesLoader scenesLoader,
             LoadingSceneBootstrapper loadingSceneBootstrapper)
         {
             _scenesLoader = scenesLoader;

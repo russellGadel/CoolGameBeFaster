@@ -10,14 +10,14 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class PlayerAccelerationButtonEvent : ICustomEventLoader
+    public sealed class PlayerAccelerationButtonEvents : ICustomEventLoader
     {
         private readonly IPlayerAccelerationButtonView _playerAccelerationButton;
         private readonly PlayerAccelerationButtonSettings _playerAccelerationButtonSettings;
         private readonly ICustomInvokerService _invokerService;
 
         [Inject]
-        private PlayerAccelerationButtonEvent(IPlayerAccelerationButtonView playerAccelerationButton,
+        private PlayerAccelerationButtonEvents(IPlayerAccelerationButtonView playerAccelerationButton,
             PlayerAccelerationButtonSettings playerAccelerationButtonSettings
             , ICustomInvokerService invokerService)
         {

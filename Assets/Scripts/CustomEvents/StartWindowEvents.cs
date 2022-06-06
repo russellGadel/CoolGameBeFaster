@@ -14,7 +14,7 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class StartWindowEvent : ICustomEventLoader
+    public sealed class StartWindowEvents : ICustomEventLoader
     {
         private readonly IStartWindowView _startWindowView;
         private readonly IUpperGamePlayPanelView _upperGamePlayPanelView;
@@ -25,7 +25,7 @@ namespace CustomEvents
 
 
         [Inject]
-        private StartWindowEvent(IUpperGamePlayPanelView upperGamePlayPanelView
+        private StartWindowEvents(IUpperGamePlayPanelView upperGamePlayPanelView
             , IPlayerControllerPresenter playerControllerPresenter
             , IStartWindowView startWindowView
             , IPlayerAccelerationButtonView playerAccelerationButtonView

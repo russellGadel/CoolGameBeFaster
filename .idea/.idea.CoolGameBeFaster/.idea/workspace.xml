@@ -2,47 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEventLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEventLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadMainSceneEventLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEventLoader.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadingSceneCustomEventsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneEventsInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadingSceneCustomEventsInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneEventsInstaller.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadingWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/LoadingWindowEvents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowEvents.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/PrivacyPolicyWindowEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/PrivacyPolicyWindowEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/RemoteConfigDataEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/RemoteConfigDataEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/RemoteConfigDataEvents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/RemoteConfigDataEvents.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/SetGameTypeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SetGameTypeEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/SetGameTypeEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SetGameTypeEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/UpdateGameWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/Events/UpdateGameWindowEvents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayWindowEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayWindowEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEventLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEventLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadMainSceneEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowDualEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowEvents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadingWindowDualEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartGameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartGameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/GameOverSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/GameOverSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/AttemptToPlayEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/AttemptToPlayEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameOverEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameOverEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameOverEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameOverEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PauseButtonEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PauseButtonEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PauseButtonEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PlayerPauseEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerPauseEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PlayerPauseEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PlayerUnpauseEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/GameTime/PlayerUnpauseEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/GameTime/PlayerUnpauseEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadSavedDataEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/LoadSavedDataEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/LoadSavedDataEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneEventsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneEventsInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsBootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/MainSceneEventsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/PlayerAccelerationButtonEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/PlayerAccelerationButtonEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PlayerAccelerationButtonEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/SaveDataEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SaveDataEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/SaveDataEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SaveDataEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/StartGameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartGameEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/StartGameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartGameEvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/StartWindowEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Events/StartWindowEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
@@ -196,7 +177,7 @@
       <workItem from="1653810119594" duration="597000" />
       <workItem from="1654497523639" duration="954000" />
       <workItem from="1654498506756" duration="14260000" />
-      <workItem from="1654516979616" duration="2285000" />
+      <workItem from="1654516979616" duration="2729000" />
     </task>
     <servers />
   </component>

@@ -6,17 +6,17 @@ namespace CustomEvents
 {
     public sealed class StartGameEvent : IBootstrapper
     {
-        private readonly StartWindowEvent _startWindowEvent;
+        private readonly StartWindowEvents _startWindowEvents;
 
         [Inject]
-        private StartGameEvent(StartWindowEvent startWindowEvent)
+        private StartGameEvent(StartWindowEvents startWindowEvents)
         {
-            _startWindowEvent = startWindowEvent;
+            _startWindowEvents = startWindowEvents;
         }
 
         IEnumerator IBootstrapper.Execute()
         {
-            _startWindowEvent.Execute();
+            _startWindowEvents.Execute();
 
             yield return null;
         }

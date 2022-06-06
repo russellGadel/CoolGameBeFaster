@@ -8,11 +8,11 @@ namespace ScenesBootstrapper.MainScene
 {
     public sealed class MainSceneBootstrapper : ISceneBootstrapper
     {
-        [Inject] private readonly LoadingWindowEvents _loadingWindowEvents;
+        [Inject] private readonly LoadingWindowDualEvents _loadingWindowDualEvents;
 
         public void Enter()
         {
-            _loadingWindowEvents.Execute();
+            _loadingWindowDualEvents.Execute();
 
             AddBootstrapItems();
             AddObserversToEndBootstrap();
@@ -49,7 +49,7 @@ namespace ScenesBootstrapper.MainScene
 
         private void EndBootstrapEventObservers()
         {
-            _loadingWindowEvents.Undo();
+            _loadingWindowDualEvents.Undo();
         }
     }
 }

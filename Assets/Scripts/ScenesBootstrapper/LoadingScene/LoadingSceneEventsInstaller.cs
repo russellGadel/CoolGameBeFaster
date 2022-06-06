@@ -20,7 +20,7 @@ namespace ScenesBootstrapper.LoadingScene
         private void BindLoadingWindowEvents()
         {
             Container
-                .Bind<LoadingWindowEvents>()
+                .Bind<LoadingWindowDualEvents>()
                 .AsSingle();
         }
 
@@ -42,7 +42,7 @@ namespace ScenesBootstrapper.LoadingScene
         private void BindPrivacyPolicyWindowEvent()
         {
             Container
-                .Bind<PrivacyPolicyWindowEvent>()
+                .Bind<PrivacyPolicyWindowEvents>()
                 .AsSingle();
         }
 

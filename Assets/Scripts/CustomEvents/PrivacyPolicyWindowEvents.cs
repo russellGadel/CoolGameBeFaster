@@ -7,20 +7,20 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class PrivacyPolicyWindowEvent : ICustomDualEvent
+    public sealed class PrivacyPolicyWindowEvents : ICustomDualEvent
         , ICustomEventLoader
     {
         private readonly IPrivacyPolicyViewModel _privacyPolicyViewModel;
-        private readonly LoadingWindowEvents _loadingWindowEvents;
+        private readonly LoadingWindowDualEvents _loadingWindowDualEvents;
         private readonly ISaveDataService _saveDataService;
 
         [Inject]
-        public PrivacyPolicyWindowEvent(IPrivacyPolicyViewModel privacyPolicyViewModel
-            , LoadingWindowEvents loadingWindowEvents
+        public PrivacyPolicyWindowEvents(IPrivacyPolicyViewModel privacyPolicyViewModel
+            , LoadingWindowDualEvents loadingWindowDualEvents
             , ISaveDataService saveDataService)
         {
             _privacyPolicyViewModel = privacyPolicyViewModel;
-            _loadingWindowEvents = loadingWindowEvents;
+            _loadingWindowDualEvents = loadingWindowDualEvents;
             _saveDataService = saveDataService;
         }
 
@@ -31,12 +31,12 @@ namespace CustomEvents
                 AddObserversToAcceptButton();
                 AddObserversToDeclineButton();
 
-                _loadingWindowEvents.Undo();
+                _loadingWindowDualEvents.Undo();
                 Execute();
 
                 yield return new WaitWhile(() => _privacyPolicyViewModel.IsAcceptAgreement() == false);
 
-                _loadingWindowEvents.Execute();
+                _loadingWindowDualEvents.Execute();
             }
 
             yield return null;

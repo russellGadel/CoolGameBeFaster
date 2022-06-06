@@ -77,7 +77,7 @@ namespace ECS.Systems.Events
         {
             _mainSceneServices
                 .MainSceneEventsService
-                .AttemptToPlayEvent.Execute(currentPoints, maxPoints);
+                .AttemptToPlayWindowEvents.Execute(currentPoints, maxPoints);
                  }
 
         private void ExecuteGameOverEvent(ref CurrentPointsGotByPlayerCounterComponent currentPoints,

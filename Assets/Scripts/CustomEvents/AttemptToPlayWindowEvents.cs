@@ -9,13 +9,13 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class AttemptToPlayEvent : ICustomEventLoader
+    public sealed class AttemptToPlayWindowEvents : ICustomEventLoader
     {
         private readonly IAttemptToPlayView _attemptToPlayView;
         private readonly IUnityAdsService _unityAdsService;
 
         [Inject]
-        public AttemptToPlayEvent(IAttemptToPlayView attemptToPlayView
+        public AttemptToPlayWindowEvents(IAttemptToPlayView attemptToPlayView
             , IUnityAdsService unityAdsService)
         {
             _attemptToPlayView = attemptToPlayView;

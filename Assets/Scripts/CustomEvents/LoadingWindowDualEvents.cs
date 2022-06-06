@@ -6,13 +6,13 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class LoadingWindowEvents : ICustomDualEvent
+    public sealed class LoadingWindowDualEvents : ICustomDualEvent
     {
         private readonly ILoadingWindowView _loadingWindowView;
         private readonly ILoadingIndicatorView _loadingIndicatorView;
 
         [Inject]
-        public LoadingWindowEvents(ILoadingWindowView loadingWindowView
+        public LoadingWindowDualEvents(ILoadingWindowView loadingWindowView
             , ILoadingIndicatorView loadingIndicatorView)
         {
             _loadingWindowView = loadingWindowView;
