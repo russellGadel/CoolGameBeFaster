@@ -1,5 +1,5 @@
-﻿using System;
-using Core.InstallersExecutor;
+﻿using Core.InstallersExecutor;
+using UnityEngine.Events;
 
 namespace CustomUI.PauseButton
 {
@@ -7,8 +7,9 @@ namespace CustomUI.PauseButton
     {
         void SetPlayView();
         void SetPauseView();
-        void AddObserverToPressButtonEvent(Action observer);
+        void SubscribeToPressButtonEvent(UnityAction observer);
         void Activate();
         void Deactivate();
+        void UnsubscribeFromPressButtonEvent(UnityAction observer);
     }
 }

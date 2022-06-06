@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.EventsLoader;
 using CustomUI.PauseButton;
 using Zenject;
@@ -6,6 +7,7 @@ using Zenject;
 namespace CustomEvents.GameTime
 {
     public sealed class PauseButtonEvents : ICustomEventLoader
+        , IDisposable
     {
         private readonly IPauseButtonView _pauseButton;
         private readonly PlayerPauseEvent _playerPauseEvent;
@@ -13,8 +15,9 @@ namespace CustomEvents.GameTime
 
 
         [Inject]
-        public PauseButtonEvents(IPauseButtonView pauseButton, PlayerPauseEvent playerPauseEvent,
-            PlayerUnpauseEvent playerUnpauseEvent)
+        public PauseButtonEvents(IPauseButtonView pauseButton
+            , PlayerPauseEvent playerPauseEvent
+            , PlayerUnpauseEvent playerUnpauseEvent)
         {
             _pauseButton = pauseButton;
             _playerPauseEvent = playerPauseEvent;
@@ -24,13 +27,24 @@ namespace CustomEvents.GameTime
 
         public IEnumerator Load()
         {
-            AddObserversToPressPauseButtonEvent();
+            SubscribeToPressPauseButtonEvent();
             yield return null;
         }
 
-        private void AddObserversToPressPauseButtonEvent()
+        void IDisposable.Dispose()
         {
-            _pauseButton.AddObserverToPressButtonEvent(PressPauseButtonEventObservers);
+            UnsubscribeFromPressPauseButtonEvent();
+        }
+
+
+        private void SubscribeToPressPauseButtonEvent()
+        {
+            _pauseButton.SubscribeToPressButtonEvent(PressPauseButtonEventObservers);
+        }
+
+        private void UnsubscribeFromPressPauseButtonEvent()
+        {
+            _pauseButton.UnsubscribeFromPressButtonEvent(PressPauseButtonEventObservers);
         }
 
         private int _clickPauseButtonCounter = 0;
@@ -39,15 +53,16 @@ namespace CustomEvents.GameTime
         {
             _clickPauseButtonCounter += 1;
 
-            if (_clickPauseButtonCounter == 1)
+            switch (_clickPauseButtonCounter)
             {
-                _playerPauseEvent.Execute();
-            }
-            else if (_clickPauseButtonCounter == 2)
-            {
-                _playerUnpauseEvent.Execute();
+                case 1:
+                    _playerPauseEvent.Execute();
+                    break;
+                case 2:
+                    _playerUnpauseEvent.Execute();
 
-                _clickPauseButtonCounter = 0;
+                    _clickPauseButtonCounter = 0;
+                    break;
             }
         }
     }

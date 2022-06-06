@@ -622,7 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98eb85c115049468cedefcd91eade4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameBootstrapperData: {fileID: 11400000, guid: 60f839cc25e61f743821c5900333c62c, type: 2}
 --- !u!1001 &221658761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2746,7 +2745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4114792, y: 0.716}
   m_AnchorMax: {x: 1, y: 0.82600003}
-  m_AnchoredPosition: {x: 138.12, y: -217.67908}
+  m_AnchoredPosition: {x: 138.11998, y: -217.67908}
   m_SizeDelta: {x: -420.01, y: 20.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1189275145
@@ -5783,8 +5782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2647ed49fbd147b5b57a813f2705001f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playImage: {fileID: 6051740239920808331}
-  _pauseImage: {fileID: 6051740240635215157}
+  _playImage: {fileID: 6051740239920808333}
+  _pauseImage: {fileID: 6051740240635215159}
 --- !u!1 &3031301851346640292
 GameObject:
   m_ObjectHideFlags: 0

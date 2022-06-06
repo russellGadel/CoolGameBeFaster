@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CustomUI.PauseButton
 {
     [RequireComponent(typeof(Button))]
-    public sealed class PauseButtonView : MonoBehaviour, IPauseButtonView
+    public sealed class PauseButtonView : MonoBehaviour
+        , IPauseButtonView
     {
         private Button _button;
 
@@ -32,10 +33,16 @@ namespace CustomUI.PauseButton
             OpenPauseImage();
         }
 
-        public void AddObserverToPressButtonEvent(Action observer)
+        public void SubscribeToPressButtonEvent(UnityAction observer)
         {
-            _button.onClick.AddListener(() => observer());
+            _button.onClick.AddListener(observer);
         }
+
+        public void UnsubscribeFromPressButtonEvent(UnityAction observer)
+        {
+            _button.onClick.RemoveListener(observer);
+        }
+
 
         public void Activate()
         {
@@ -48,28 +55,29 @@ namespace CustomUI.PauseButton
         }
 
 
-        [SerializeField] private Image _playImage;
+        [SerializeField] private GameObject _playImage;
 
         private void OpenPlayImage()
         {
-            _playImage.gameObject.SetActive(true);
+            _playImage.SetActive(true);
         }
 
         private void ClosePlayImage()
         {
-            _playImage.gameObject.SetActive(false);
+            _playImage.SetActive(false);
         }
 
-        [SerializeField] private Image _pauseImage;
+
+        [SerializeField] private GameObject _pauseImage;
 
         private void OpenPauseImage()
         {
-            _pauseImage.gameObject.SetActive(true);
+            _pauseImage.SetActive(true);
         }
 
         private void ClosePauseImage()
         {
-            _pauseImage.gameObject.SetActive(false);
+            _pauseImage.SetActive(false);
         }
     }
 }
