@@ -2,7 +2,6 @@
 using ECS.References;
 using ECS.References.MainScene;
 using ECS.Systems;
-using ECS.Systems.Events;
 using ECS.Systems.Events.Player;
 using Leopotam.Ecs;
 using UnityEngine;
