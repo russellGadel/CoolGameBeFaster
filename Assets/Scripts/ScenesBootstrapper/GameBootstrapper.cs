@@ -1,15 +1,35 @@
-﻿using UnityEngine;
+﻿using ScenesLoader;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace ScenesBootstrapper
 {
     public sealed class GameBootstrapper : MonoBehaviour
     {
-        [Inject] private ISceneBootstrapper _bootstrapper;
+        [Inject] private readonly ICustomScenesLoader _scenesLoader;
+        [Inject] private readonly ISceneBootstrapper _sceneBootstrapper;
 
-        private void Awake()
+        private static bool wasAtLoadingScene = false;
+
+        public void Awake()
         {
-            _bootstrapper.Enter();
+            if (SceneManager.GetActiveScene().name == ScenesNaming.LoadingScene.ToString())
+            {
+                wasAtLoadingScene = true;
+                _sceneBootstrapper.Enter();
+            }
+            else
+            {
+                if (wasAtLoadingScene == true)
+                {
+                    _sceneBootstrapper.Enter();
+                }
+                else
+                {
+                    _scenesLoader.LoadScene(ScenesNaming.LoadingScene);
+                }
+            }
         }
     }
 }

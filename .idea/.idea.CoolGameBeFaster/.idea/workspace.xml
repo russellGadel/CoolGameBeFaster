@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="" />
+    <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/GameBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/GameBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/CustomScenesLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/CustomScenesLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/ICustomScenesLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/ICustomScenesLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +34,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/f1/f4b801f8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomUI/Points/IPlayerPointsViewsGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/b2950971b8d943c59b4fb85c70515275ac00/45/0f65f7b0/02000009pdb.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapperInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/TransformComponent/TransformProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/BaseMonoProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/ConversionSystemExtension.cs" root0="SKIP_HIGHLIGHTING" />
@@ -150,7 +161,8 @@
       <workItem from="1653730675371" duration="11046000" />
       <workItem from="1653810119594" duration="597000" />
       <workItem from="1654497523639" duration="954000" />
-      <workItem from="1654498506756" duration="5666000" />
+      <workItem from="1654498506756" duration="14260000" />
+      <workItem from="1654516979616" duration="1682000" />
     </task>
     <servers />
   </component>

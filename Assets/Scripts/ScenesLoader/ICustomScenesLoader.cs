@@ -5,8 +5,7 @@ namespace ScenesLoader
 {
     public interface ICustomScenesLoader
     {
-        IEnumerator LoadScene(ScenesNaming sceneNaming, ISceneBootstrapper currentSceneBootstrapper);
+        void LoadScene(ScenesNaming sceneNaming);
         IEnumerator LoadSceneAsync(ScenesNaming sceneNaming, ISceneBootstrapper currentSceneBootstrapper);
-        bool IsLoaded(ScenesNaming sceneName);
     }
 }

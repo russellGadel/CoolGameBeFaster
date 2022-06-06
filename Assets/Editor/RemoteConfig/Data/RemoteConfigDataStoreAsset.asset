@@ -12,19 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0e47b37a-8072-422f-8757-70ec52b23aa9\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"GameVersion\",\r\n      \"type\": \"string\",\r\n     
-    \"value\": \"1.0.0\"\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0e47b37a-8072-422f-8757-70ec52b23aa9\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"GameVersion\",\r\n      \"type\": \"string\",\r\n     
-    \"value\": \"1.0.0\"\r\n    }\r\n  }\r\n]"
-  _environments: "[\r\n  {\r\n    \"projectId\": \"fbdaed5c-a110-4991-8f97-188d4cc95309\",\r\n   
-    \"name\": \"development\",\r\n    \"id\": \"c00befba-47a2-449f-9850-49019aa0f28f\",\r\n   
-    \"isDefault\": false,\r\n    \"createdAt\": \"2022-05-20T11:49:32Z\",\r\n   
-    \"updatedAt\": \"2022-05-20T11:49:32Z\"\r\n  },\r\n  {\r\n    \"projectId\":
-    \"fbdaed5c-a110-4991-8f97-188d4cc95309\",\r\n    \"name\": \"production\",\r\n   
-    \"id\": \"45cca2e8-97fe-45f4-b4ca-c13731a51e91\",\r\n    \"isDefault\": true,\r\n   
-    \"createdAt\": \"2022-05-13T09:08:29Z\",\r\n    \"updatedAt\": \"2022-05-13T09:08:29Z\"\r\n 
-    }\r\n]"
+  _rsKeyList: '[]'
+  _rsLastCachedKeyList: '[]'
+  _environments: '[]'
   _rulesList: '[]'
   _lastCachedRulesList: '[]'
