@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.InstallersExecutor;
+using UnityEngine.Events;
 
 namespace CustomUI.AttemptToPlay
 {
@@ -7,8 +8,14 @@ namespace CustomUI.AttemptToPlay
     {
         void Open();
         void Close();
-        void AddObserverToRepeatButton(Action observer);
-        void AddObserverToAdvertisingButton(Action observer);
+
+        void SubscribeToRepeatButton(UnityAction observer);
+        void UnsubscribeFromRepeatButton(UnityAction observer);
+
+        void SubscribeToAdvertisingButton(UnityAction observer);
+        void UnsubscribeToAdvertisingButton(UnityAction observer);
+
+
         void SetCurrentPointsAmount(double points);
         void SetMaxPointsAmount(double points);
         void SetAdvertisementButtonInteractableValue(bool value);

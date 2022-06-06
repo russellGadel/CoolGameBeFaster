@@ -3,30 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/PrivacyPolicyWindowEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/StartWindowEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/AttemptToPlayWindowEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayViewInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/AttemptToPlayViewInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/IPrivacyPolicyViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/IPrivacyPolicyPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/IPrivacyPolicyViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/IPrivacyPolicyPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PrivacyPolicy/PrivacyPolicyPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/IReferencesListWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/IReferencesListWindowPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/IReferencesListWindowViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/IReferencesListWindowPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/ReferencesList/ReferencesListWindowPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGameViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGamePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGameViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGamePresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGamePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGamePresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionViewModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/IAttemptToPlayView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AttemptToPlay/IAttemptToPlayView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +24,12 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.leopotam.ecs@1966a4c1fd/src/EcsWorld.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntityReference/MonoEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/4f/4eca092c/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/ea/c3796565/InvokableCallList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/IServiceForCustomCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/97/d1c276db/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/90/1eebe6e4/UnityEventBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/f1/f4b801f8/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/7d/1c5325b4/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomUI/Points/IPlayerPointsViewsGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/b2950971b8d943c59b4fb85c70515275ac00/45/0f65f7b0/02000009pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/LoadingScene/LoadingSceneBootstrapperInstaller.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/ConversionSystemExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/ConvertToEntity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcb9dac8ae3a488693b0f4cd5b0db0be287150/66/3a65a867/IObserver`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/MonoProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Tags/Player/PlayerTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ads@4.1.0/Runtime/Advertisement/Platform/Editor/EditorPlatform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -178,7 +161,7 @@
       <workItem from="1653810119594" duration="597000" />
       <workItem from="1654497523639" duration="954000" />
       <workItem from="1654498506756" duration="14260000" />
-      <workItem from="1654516979616" duration="4182000" />
+      <workItem from="1654516979616" duration="7100000" />
     </task>
     <servers />
   </component>

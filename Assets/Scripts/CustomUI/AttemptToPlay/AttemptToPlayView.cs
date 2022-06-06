@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CustomUI.AttemptToPlay
 {
-    public sealed class AttemptToPlayView : MonoBehaviour, IAttemptToPlayView
+    public sealed class AttemptToPlayView : MonoBehaviour
+        , IAttemptToPlayView
     {
         [SerializeField] private Button _repeatButton;
         [SerializeField] private Button _advertisingButton;
@@ -30,14 +31,25 @@ namespace CustomUI.AttemptToPlay
         }
 
 
-        public void AddObserverToRepeatButton(Action observer)
+        public void SubscribeToRepeatButton(UnityAction observer)
         {
-            _repeatButton.onClick.AddListener(() => observer());
+            _repeatButton.onClick.AddListener(observer);
         }
 
-        public void AddObserverToAdvertisingButton(Action observer)
+        public void UnsubscribeFromRepeatButton(UnityAction observer)
         {
-            _advertisingButton.onClick.AddListener(() => observer());
+            _repeatButton.onClick.RemoveListener(observer);
+        }
+
+
+        public void SubscribeToAdvertisingButton(UnityAction observer)
+        {
+            _advertisingButton.onClick.AddListener(observer);
+        }
+
+        public void UnsubscribeToAdvertisingButton(UnityAction observer)
+        {
+            _advertisingButton.onClick.RemoveListener(observer);
         }
 
 

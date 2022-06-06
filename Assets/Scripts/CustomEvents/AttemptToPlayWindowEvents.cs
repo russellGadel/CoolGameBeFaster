@@ -42,7 +42,7 @@ namespace CustomEvents
 
         private void AddObserversToAdvertisementButton()
         {
-            _attemptToPlayView.AddObserverToAdvertisingButton(AdvertisingButtonObservers);
+            _attemptToPlayView.SubscribeToAdvertisingButton(AdvertisingButtonObservers);
         }
 
         private void AdvertisingButtonObservers()
@@ -53,7 +53,7 @@ namespace CustomEvents
 
         private void AddObserverToRepeatGameButton()
         {
-            _attemptToPlayView.AddObserverToRepeatButton(RepeatGameButtonObservers);
+            _attemptToPlayView.SubscribeToRepeatButton(RepeatGameButtonObservers);
         }
 
         private void RepeatGameButtonObservers()
