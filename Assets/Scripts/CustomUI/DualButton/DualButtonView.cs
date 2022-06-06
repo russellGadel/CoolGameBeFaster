@@ -16,45 +16,6 @@ namespace CustomUI.DualButton
             _button.onClick.AddListener(PressButton);
         }
 
-        private int _pressCounter = 0;
-
-        private void PressButton()
-        {
-            _pressCounter += 1;
-
-            if (_pressCounter == 1)
-            {
-                _firstKeyStroke?.Invoke();
-            }
-            else
-            {
-                ZeroingPressCounter();
-                _secondKeyStroke?.Invoke();
-            }
-        }
-
-        private void ZeroingPressCounter()
-        {
-            _pressCounter = 0;
-        }
-
-        private delegate void Observer();
-
-        private Observer _firstKeyStroke = null;
-
-        public void AddObserverToFirstKeyStroke(Action observer)
-        {
-            _firstKeyStroke += () => observer();
-        }
-
-        private Observer _secondKeyStroke = null;
-
-        public void AddObserverToSecondKeyStroke(Action observer)
-        {
-            _secondKeyStroke += () => observer();
-        }
-
-
         public void Activate()
         {
             gameObject.SetActive(true);
@@ -63,6 +24,32 @@ namespace CustomUI.DualButton
         public void Deactivate()
         {
             gameObject.SetActive(false);
+        }
+
+
+        private int _pressCounter = 0;
+
+        public event Action FirstKeyStrokeEvent;
+        public event Action SecondKeyStrokeEvent;
+
+        private void PressButton()
+        {
+            _pressCounter += 1;
+
+            if (_pressCounter == 1)
+            {
+                FirstKeyStrokeEvent?.Invoke();
+            }
+            else
+            {
+                ZeroingPressCounter();
+                SecondKeyStrokeEvent?.Invoke();
+            }
+        }
+
+        private void ZeroingPressCounter()
+        {
+            _pressCounter = 0;
         }
     }
 }

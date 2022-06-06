@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Globalization;
 using Core.EventsLoader;
 using CustomUI.PlayerAccelerationButton;
@@ -14,7 +15,8 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class StartWindowEvents : ICustomEventLoader
+    public sealed class StartWindowEvents : ICustomEventLoader,
+        IDisposable
     {
         private readonly IStartWindowView _startWindowView;
         private readonly IUpperGamePlayPanelView _upperGamePlayPanelView;
@@ -42,8 +44,8 @@ namespace CustomEvents
 
         public IEnumerator Load()
         {
-            AddObserversToStartButton();
-            AddObserversToPressOnReferencesListButtonEvent();
+            SubscribeToStartButton();
+            SubscribeToPressOnReferencesListButtonEvent();
             SetMaxPointsAtStartView();
 
             yield return null;
@@ -53,12 +55,24 @@ namespace CustomEvents
         {
             _startWindowView.Open();
         }
-
-
-        private void AddObserversToStartButton()
+        
+        void IDisposable.Dispose()
         {
-            _startWindowView.AddObserversToPressStartGameButton(ObserversPressStartButtonEvent);
+            UnsubscribeFromStartButton();
+            UnsubscribeFromPressOnReferencesListButtonEvent();
         }
+
+
+        private void SubscribeToStartButton()
+        {
+            _startWindowView.SubscribeToPressStartGameButton(ObserversPressStartButtonEvent);
+        }
+
+        private void UnsubscribeFromStartButton()
+        {
+            _startWindowView.UnsubscribeFromPressStartGameButton(ObserversPressStartButtonEvent);
+        }
+
 
         private void ObserversPressStartButtonEvent()
         {
@@ -77,15 +91,23 @@ namespace CustomEvents
             startGameEntity.Replace(new StartGameEcsEvent());
         }
 
-        private void AddObserversToPressOnReferencesListButtonEvent()
+        private void SubscribeToPressOnReferencesListButtonEvent()
         {
             _startWindowView
-                .AddObserversToFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
+                .SubscribeToFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
 
             _startWindowView
-                .AddObserversToSecondPressOnReferencesListButton(_referencesListWindowPresenter.Close);
+                .SubscribeToSecondPressOnReferencesListButton(_referencesListWindowPresenter.Close);
         }
 
+        private void UnsubscribeFromPressOnReferencesListButtonEvent()
+        {
+            _startWindowView
+                .UnsubscribeFromFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
+
+            _startWindowView
+                .UnsubscribeFromSecondPressOnReferencesListButton(_referencesListWindowPresenter.Close);
+        }
 
         private void SetMaxPointsAtStartView()
         {

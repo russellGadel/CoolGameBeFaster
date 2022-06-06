@@ -4,8 +4,8 @@ namespace CustomUI.DualButton
 {
     public interface IDualButtonView
     {
-        void AddObserverToFirstKeyStroke(Action observer);
-        void AddObserverToSecondKeyStroke(Action observer);
+        event Action FirstKeyStrokeEvent;
+        event Action SecondKeyStrokeEvent;
         void Activate();
         void Deactivate();
     }
