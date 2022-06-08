@@ -15,8 +15,6 @@ namespace CustomEvents
         {
             _scenesLoader = scenesLoader;
             _loadingSceneBootstrapper = loadingSceneBootstrapper;
-            
-            
         }
 
         public IEnumerator Load()
