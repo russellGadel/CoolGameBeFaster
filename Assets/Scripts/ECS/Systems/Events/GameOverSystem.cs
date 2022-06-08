@@ -9,6 +9,7 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Events
 {
+    // One Frame Event
     public sealed class GameOverSystem : IEcsRunSystem
     {
         private readonly EcsFilter<GameOverComponentEvent> _gameOverEvent = null;
@@ -17,22 +18,22 @@ namespace ECS.Systems.Events
         private readonly MainSceneServices _mainSceneServices = null;
         private readonly MainSceneData _mainSceneData = null;
 
+
         public void Run()
         {
-            foreach (var idx in _gameOverEvent)
+            foreach (int idx in _gameOverEvent)
             {
                 ref EcsEntity gameOverEvent = ref _gameOverEvent.GetEntity(idx);
                 gameOverEvent.Del<GameOverComponentEvent>();
-
-                float delayTime = _mainSceneData.gamePlaySettings.timeDelayBeforeGameOverPlayer;
-
+                
                 _mainSceneServices
                     .CustomInvokerService
-                    .CustomInvoke(() => DelayGameOver(idx), delayTime);
+                    .CustomInvoke(() => DelayGameOver(in idx),
+                        _mainSceneData.gamePlaySettings.timeDelayBeforeGameOverPlayer);
             }
         }
 
-        private void DelayGameOver(int idx)
+        private void DelayGameOver(in int idx)
         {
             _mainSceneServices.GameTimeService.Pause();
 
@@ -45,22 +46,22 @@ namespace ECS.Systems.Events
             ref CurrentPointsGotByPlayerCounterComponent currentPoints = ref _points.Get2(0);
             ref MaxPointsAmountGotByPlayer maxPoints = ref _points.Get3(0);
 
-            SetMaxPoints(ref currentPoints.Value, ref maxPoints.Value);
+            SetMaxPoints(in currentPoints.Value, ref maxPoints.Value);
 
-            if (IsCanTakeAttemptToPlay(ref attemptCounter))
+            if (IsCanTakeAttemptToPlay(in attemptCounter))
             {
-                ExecuteAttemptToPlayEvent(ref currentPoints.Value, ref maxPoints.Value);
+                ExecuteAttemptToPlayEvent(in currentPoints.Value, in maxPoints.Value);
             }
             else
             {
-                ExecuteGameOverEvent(ref currentPoints, ref maxPoints);
+                ExecuteGameOverEvent(in currentPoints.Value, in maxPoints.Value);
             }
 
             _mainSceneServices.MainSceneEventsService.SaveDataEvent.Execute();
         }
 
 
-        private void SetMaxPoints(ref double currentPoints, ref double maxPoints)
+        private void SetMaxPoints(in double currentPoints, ref double maxPoints)
         {
             if (currentPoints > maxPoints)
             {
@@ -68,30 +69,30 @@ namespace ECS.Systems.Events
             }
         }
 
+        
+        private bool IsCanTakeAttemptToPlay(in AttemptToPlayGameCounter attemptCounter)
+        {
+            return attemptCounter.Value == _mainSceneData.gamePlaySettings.amountOfAttemptToPlayGame;
+        }
+        
 
         private readonly EcsFilter<PointsTag
             , CurrentPointsGotByPlayerCounterComponent
             , MaxPointsAmountGotByPlayer> _points = null;
 
-        private void ExecuteAttemptToPlayEvent(ref double currentPoints, ref double maxPoints)
+        private void ExecuteAttemptToPlayEvent(in double currentPoints, in double maxPoints)
         {
             _mainSceneServices
                 .MainSceneEventsService
                 .AttemptToPlayWindowEvents.Execute(currentPoints, maxPoints);
-                 }
+        }
 
-        private void ExecuteGameOverEvent(ref CurrentPointsGotByPlayerCounterComponent currentPoints,
-            ref MaxPointsAmountGotByPlayer maxPoints)
+        private void ExecuteGameOverEvent(in double currentPoints, in double maxPoints)
         {
             _mainSceneServices
                 .MainSceneEventsService
                 .GameOverWindowEvents
-                .Execute(currentPoints.Value, maxPoints.Value);
-        }
-
-        private bool IsCanTakeAttemptToPlay(ref AttemptToPlayGameCounter attemptCounter)
-        {
-            return attemptCounter.Value == _mainSceneData.gamePlaySettings.amountOfAttemptToPlayGame;
+                .Execute(currentPoints, maxPoints);
         }
 
 
