@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnityEngine.Events;
 
 namespace CustomUI.UpdateGame
 {
@@ -6,7 +6,10 @@ namespace CustomUI.UpdateGame
     {
         void OpenView();
         void CloseView();
+
+        void SubscribeToUpdateButton(UnityAction observer);
+        void UnsubscribeFromPressUpdateButton(UnityAction observer);
+
         void GoToAppStore();
-        void AddObserverToUpdateButton(Action observer);
     }
 }

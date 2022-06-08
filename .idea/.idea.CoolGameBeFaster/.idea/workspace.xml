@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StartWindow/IStartWindowView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StartWindow/IStartWindowView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StartWindow/StartWindowView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StartWindow/StartWindowView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/UpdateGameWindowEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGamePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/IUpdateGameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGamePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/UpdateGame/UpdateGameView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +167,7 @@
       <workItem from="1654498506756" duration="14260000" />
       <workItem from="1654516979616" duration="12634000" />
       <workItem from="1654530674026" duration="2577000" />
-      <workItem from="1654673819493" duration="9446000" />
+      <workItem from="1654673819493" duration="9866000" />
     </task>
     <servers />
   </component>

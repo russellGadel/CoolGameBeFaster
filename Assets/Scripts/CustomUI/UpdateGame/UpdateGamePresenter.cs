@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnityEngine.Events;
 
 namespace CustomUI.UpdateGame
 {
@@ -7,11 +7,12 @@ namespace CustomUI.UpdateGame
         private readonly IUpdateGameView _view;
         private readonly IUpdateGameModel _model;
 
-        public UpdateGamePresenter(IUpdateGameView view, IUpdateGameModel model)
+        public UpdateGamePresenter(in IUpdateGameView view, in IUpdateGameModel model)
         {
             _view = view;
             _model = model;
         }
+
 
         public void OpenView()
         {
@@ -23,10 +24,17 @@ namespace CustomUI.UpdateGame
             _view.Close();
         }
 
-        public void AddObserverToUpdateButton(Action observer)
+
+        public void SubscribeToUpdateButton(UnityAction observer)
         {
-            _view.AddObserverToPressUpdateButtonEvent(observer);
+            _view.SubscribeToPressUpdateButton(observer);
         }
+
+        public void UnsubscribeFromPressUpdateButton(UnityAction observer)
+        {
+            _view.UnsubscribeFromPressUpdateButton(observer);
+        }
+
 
         public void GoToAppStore()
         {
