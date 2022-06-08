@@ -7,9 +7,9 @@ namespace CustomUI.Points
     {
         [SerializeField] private PlayerPointsView _playerPointsView;
 
-        public void UpdatePoints(double value)
+        public void UpdatePoints(in double value)
         {
-            _playerPointsView.UpdatePoints(value);
+            _playerPointsView.UpdatePoints(in value);
         }
     }
 }

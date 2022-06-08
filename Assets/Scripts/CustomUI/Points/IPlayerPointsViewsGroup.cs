@@ -2,6 +2,6 @@
 {
     public interface IPlayerPointsViewsGroup
     {
-        void UpdatePoints(double value);
+        void UpdatePoints(in double value);
     }
 }

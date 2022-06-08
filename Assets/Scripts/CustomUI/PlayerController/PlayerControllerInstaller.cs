@@ -27,7 +27,7 @@ namespace CustomUI.PlayerController
 
         private void InstallMobilePresenter()
         {
-            mobileView.Construct(mobileSettings);
+            mobileView.Construct(in mobileSettings);
             BindMobilePresenter();
         }
 

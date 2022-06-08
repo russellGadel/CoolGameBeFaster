@@ -8,7 +8,7 @@ namespace CustomUI.Points
     {
         [SerializeField] private TextMeshProUGUI _pointsTable;
 
-        public void UpdatePoints(double value)
+        public void UpdatePoints(in double value)
         {
             _pointsTable.SetText(value.ToString(CultureInfo.InvariantCulture));
         }
