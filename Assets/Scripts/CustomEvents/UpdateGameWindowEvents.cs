@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.EventsLoader;
 using CustomUI.UpdateGame;
 using Services.ApplicationService;
@@ -9,6 +10,7 @@ using Zenject;
 namespace CustomEvents
 {
     public sealed class UpdateGameWindowEvents : ICustomEventLoader
+        , IDisposable
     {
         private readonly IUpdateGamePresenter _updateGamePresenter;
         private readonly IApplicationService _applicationService;
@@ -26,9 +28,9 @@ namespace CustomEvents
 
         public IEnumerator Load()
         {
-            if (UnityEngine.Application.version != _remoteConfigData.GameVersion)
+            if (Application.version != _remoteConfigData.GameVersion)
             {
-                AddObserversToUpdateButton();
+                SubscribeToUpdateButton();
                 _updateGamePresenter.OpenView();
 
                 bool exitFromGame = true;
@@ -38,9 +40,20 @@ namespace CustomEvents
             yield return null;
         }
 
-        private void AddObserversToUpdateButton()
+        public void Dispose()
+        {
+            UnsubscribeFromUpdateButton();
+        }
+
+
+        private void SubscribeToUpdateButton()
         {
             _updateGamePresenter.SubscribeToUpdateButton(UpdateButtonObservers);
+        }
+
+        private void UnsubscribeFromUpdateButton()
+        {
+            _updateGamePresenter.UnsubscribeFromPressUpdateButton(UpdateButtonObservers);
         }
 
         private void UpdateButtonObservers()
