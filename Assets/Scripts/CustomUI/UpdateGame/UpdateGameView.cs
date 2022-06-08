@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CustomUI.UpdateGame
@@ -20,9 +20,14 @@ namespace CustomUI.UpdateGame
 
         [SerializeField] private Button _updateButton;
 
-        public void AddObserverToPressUpdateButtonEvent(Action observer)
+        public void SubscribeToPressUpdateButton(UnityAction observer)
         {
-            _updateButton.onClick.AddListener(() => observer());
+            _updateButton.onClick.AddListener(observer);
+        }
+
+        public void UnsubscribeFromPressUpdateButton(UnityAction observer)
+        {
+            _updateButton.onClick.RemoveListener(observer);
         }
     }
 }
