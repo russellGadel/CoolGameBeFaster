@@ -2,7 +2,8 @@
 
 namespace CustomUI.UpperGamePlayPanel
 {
-    public sealed class UpperGamePlayPanelView : MonoBehaviour, IUpperGamePlayPanelView
+    public sealed class UpperGamePlayPanelView : MonoBehaviour
+        , IUpperGamePlayPanelView
     {
         public void Open()
         {
