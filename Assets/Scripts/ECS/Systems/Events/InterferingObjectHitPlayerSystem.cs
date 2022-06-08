@@ -6,14 +6,15 @@ using Services.SaveData;
 
 namespace ECS.Systems.Events
 {
-    public sealed class InterferingObjectHitPlayerSystem : IEcsRunSystem, ISaveData
+    // One Frame
+    public sealed class InterferingObjectHitPlayerSystem : IEcsRunSystem
     {
         private readonly EcsFilter<InterferingObjectHitPlayerEvent> _hitPlayerEvent = null;
         private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game = null;
 
         public void Run()
         {
-            foreach (var idx in _hitPlayerEvent)
+            foreach (int idx in _hitPlayerEvent)
             {
                 ref EcsEntity gameEntity = ref _game.GetEntity(0);
                 gameEntity.Replace(new GameOverComponentEvent());
