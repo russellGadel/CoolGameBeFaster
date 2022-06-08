@@ -18,6 +18,6 @@ namespace CustomUI.StartWindow
         void SubscribeToSecondPressOnReferencesListButton(Action observer);
         void UnsubscribeFromSecondPressOnReferencesListButton(Action observer);
 
-        void SetMaxPoints(string maxPoints);
+        void SetMaxPoints(in string maxPoints);
     }
 }

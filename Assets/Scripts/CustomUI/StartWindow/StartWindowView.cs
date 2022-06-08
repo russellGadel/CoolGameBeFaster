@@ -68,7 +68,7 @@ namespace CustomUI.StartWindow
         [SerializeField] private TextMeshProUGUI _maxPointsTable;
 
 
-        public void SetMaxPoints(string maxPoints)
+        public void SetMaxPoints(in string maxPoints)
         {
             _maxPointsTable.SetText(maxPoints);
         }
