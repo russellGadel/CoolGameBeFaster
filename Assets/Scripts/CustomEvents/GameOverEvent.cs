@@ -21,7 +21,7 @@ namespace CustomEvents
 
         public IEnumerator Load()
         {
-            AddObserversToRepeatButton();
+            SubscribeToRepeatButton();
             yield return null;
         }
 
@@ -29,13 +29,13 @@ namespace CustomEvents
         {
             _gameOverView.SetCurrentPointsAmount(currentPoints);
             _gameOverView.SetMaxPointsAmount(maxPoints);
-            
+
             _gameOverView.Open();
         }
 
-        private void AddObserversToRepeatButton()
+        private void SubscribeToRepeatButton()
         {
-            _gameOverView.AddObserverToRepeatButton(RepeatButtonObservers);
+            _gameOverView.SubscribeToRepeatButton(RepeatButtonObservers);
         }
 
         private void RepeatButtonObservers()

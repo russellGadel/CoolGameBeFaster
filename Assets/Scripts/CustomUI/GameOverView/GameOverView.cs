@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace CustomUI.GameOverView
 {
-    public sealed class GameOverView : MonoBehaviour, IGameOverView
+    public sealed class GameOverView : MonoBehaviour
+        , IGameOverView
     {
         [SerializeField] private Button _repeatButton;
 
@@ -26,16 +28,16 @@ namespace CustomUI.GameOverView
             gameObject.SetActive(false);
         }
 
-        public void AddObserverToRepeatButton(Action observer)
+        public void SubscribeToRepeatButton(Action observer)
         {
             _repeatButton.onClick.AddListener(() => observer());
         }
-        
+
         [SerializeField] private TextMeshProUGUI _currentPointsText;
 
         public void SetCurrentPointsAmount(double points)
         {
-            _currentPointsText.SetText(points.ToString());
+            _currentPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }
 
 
@@ -43,7 +45,7 @@ namespace CustomUI.GameOverView
 
         public void SetMaxPointsAmount(double points)
         {
-            _maxPointsText.SetText(points.ToString());
+            _maxPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }
     }
 }
