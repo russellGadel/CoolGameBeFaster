@@ -45,7 +45,8 @@ namespace CustomEvents
         public IEnumerator Load()
         {
             SubscribeToStartButton();
-            SubscribeToPressOnReferencesListButtonEvent();
+            SubscribeToPressOnReferencesListButton();
+
             SetMaxPointsAtStartView();
 
             yield return null;
@@ -55,26 +56,26 @@ namespace CustomEvents
         {
             _startWindowView.Open();
         }
-        
+
         void IDisposable.Dispose()
         {
             UnsubscribeFromStartButton();
-            UnsubscribeFromPressOnReferencesListButtonEvent();
+            UnsubscribeFromPressOnReferencesListButton();
         }
 
 
         private void SubscribeToStartButton()
         {
-            _startWindowView.SubscribeToPressStartGameButton(ObserversPressStartButtonEvent);
+            _startWindowView.SubscribeToPressStartGameButton(ObserversPressStartButton);
         }
 
         private void UnsubscribeFromStartButton()
         {
-            _startWindowView.UnsubscribeFromPressStartGameButton(ObserversPressStartButtonEvent);
+            _startWindowView.UnsubscribeFromPressStartGameButton(ObserversPressStartButton);
         }
 
 
-        private void ObserversPressStartButtonEvent()
+        private void ObserversPressStartButton()
         {
             _upperGamePlayPanelView.Open();
             _playerControllerPresenter.OpenView();
@@ -91,7 +92,7 @@ namespace CustomEvents
             startGameEntity.Replace(new StartGameEcsEvent());
         }
 
-        private void SubscribeToPressOnReferencesListButtonEvent()
+        private void SubscribeToPressOnReferencesListButton()
         {
             _startWindowView
                 .SubscribeToFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
@@ -100,7 +101,7 @@ namespace CustomEvents
                 .SubscribeToSecondPressOnReferencesListButton(_referencesListWindowPresenter.Close);
         }
 
-        private void UnsubscribeFromPressOnReferencesListButtonEvent()
+        private void UnsubscribeFromPressOnReferencesListButton()
         {
             _startWindowView
                 .UnsubscribeFromFirstPressOnReferencesListButton(_referencesListWindowPresenter.Open);
@@ -119,7 +120,7 @@ namespace CustomEvents
             return _saveDataService
                 .GetData()
                 .maxPointsAmountGotByPlayer
-                .ToString(CultureInfo.CurrentCulture);
+                .ToString(CultureInfo.InvariantCulture);
         }
     }
 }
