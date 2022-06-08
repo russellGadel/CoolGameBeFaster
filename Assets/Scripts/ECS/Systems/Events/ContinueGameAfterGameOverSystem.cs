@@ -14,7 +14,7 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idx in _continueGameEvent)
+            foreach (int idx in _continueGameEvent)
             {
                 _mainSceneServices.GameTimeService.Unpause();
 
