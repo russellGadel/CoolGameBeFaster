@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Globalization;
+using TMPro;
 using UnityEngine;
 
 namespace CustomUI.Points
@@ -9,7 +10,7 @@ namespace CustomUI.Points
 
         public void UpdatePoints(double value)
         {
-            _pointsTable.SetText(value.ToString());
+            _pointsTable.SetText(value.ToString(CultureInfo.InvariantCulture));
         }
     }
 }

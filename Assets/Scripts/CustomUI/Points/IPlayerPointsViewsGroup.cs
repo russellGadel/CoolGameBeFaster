@@ -1,6 +1,4 @@
-﻿using UnityEngine.PlayerLoop;
-
-namespace CustomUI.Points
+﻿namespace CustomUI.Points
 {
     public interface IPlayerPointsViewsGroup
     {
