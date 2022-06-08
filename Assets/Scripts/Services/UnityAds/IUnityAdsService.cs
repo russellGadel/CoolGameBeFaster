@@ -6,7 +6,7 @@ namespace Services.UnityAds
     public interface IUnityAdsService : ICustomInstaller
     {
         void ShowRewardedVideo();
-        void SubscribeToCompletedWatchingRewardedVideoEvent(Action observer);
-        void UnsubscribeFromCompletedWatchingRewardedVideoEvent(Action observer);
+        void SubscribeToCompletedWatchingRewardedVideo(Action observer);
+        void UnsubscribeFromCompletedWatchingRewardedVideo(Action observer);
     }
 }

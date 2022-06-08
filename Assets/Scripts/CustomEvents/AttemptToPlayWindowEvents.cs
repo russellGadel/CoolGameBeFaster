@@ -24,7 +24,7 @@ namespace CustomEvents
             _unityAdsService = unityAdsService;
         }
 
-        public void Execute(double currentPoints, double maxPoints)
+        public void Execute(in double currentPoints, in double maxPoints)
         {
             _attemptToPlayView.SetCurrentPointsAmount(currentPoints);
             _attemptToPlayView.SetMaxPointsAmount(maxPoints);
@@ -36,7 +36,7 @@ namespace CustomEvents
         {
             SubscribeToAdvertisementButton();
             SubscribeToRepeatGameButton();
-            SubscribeToCompletedWatchingRewardedVideoEvent();
+            SubscribeToCompletedWatchingRewardedVideo();
 
             yield return null;
         }
@@ -45,7 +45,7 @@ namespace CustomEvents
         {
             UnsubscribeFromAdvertisementButton();
             UnsubscribeFromRepeatGameButton();
-            UnsubscribeFromCompletedWatchingRewardedVideoEvent();
+            UnsubscribeFromCompletedWatchingRewardedVideo();
         }
 
 
@@ -84,21 +84,21 @@ namespace CustomEvents
         }
 
 
-        private void SubscribeToCompletedWatchingRewardedVideoEvent()
+        private void SubscribeToCompletedWatchingRewardedVideo()
         {
             _unityAdsService
-                .SubscribeToCompletedWatchingRewardedVideoEvent
-                    (ObserversOfCompletedWatchingRewardedVideoEvent);
+                .SubscribeToCompletedWatchingRewardedVideo
+                    (ObserversOfCompletedWatchingRewardedVideo);
         }
 
-        private void UnsubscribeFromCompletedWatchingRewardedVideoEvent()
+        private void UnsubscribeFromCompletedWatchingRewardedVideo()
         {
             _unityAdsService
-                .UnsubscribeFromCompletedWatchingRewardedVideoEvent
-                    (ObserversOfCompletedWatchingRewardedVideoEvent);
+                .UnsubscribeFromCompletedWatchingRewardedVideo
+                    (ObserversOfCompletedWatchingRewardedVideo);
         }
 
-        private void ObserversOfCompletedWatchingRewardedVideoEvent()
+        private void ObserversOfCompletedWatchingRewardedVideo()
         {
             EcsEntity entity = WorldHandler.GetWorld().NewEntity();
             entity.Replace(new ContinueGameAfterGameOverEvent());

@@ -88,12 +88,12 @@ namespace Services.UnityAds
 
         private event Action CompletedWatchingRewardedVideoEvent;
 
-        public void SubscribeToCompletedWatchingRewardedVideoEvent(Action observer)
+        public void SubscribeToCompletedWatchingRewardedVideo(Action observer)
         {
             CompletedWatchingRewardedVideoEvent += observer;
         }
 
-        public void UnsubscribeFromCompletedWatchingRewardedVideoEvent(Action observer)
+        public void UnsubscribeFromCompletedWatchingRewardedVideo(Action observer)
         {
             CompletedWatchingRewardedVideoEvent += observer;
         }
