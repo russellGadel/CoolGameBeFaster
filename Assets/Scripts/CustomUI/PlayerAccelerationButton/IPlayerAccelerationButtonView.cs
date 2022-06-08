@@ -4,8 +4,12 @@ namespace CustomUI.PlayerAccelerationButton
 {
     public interface IPlayerAccelerationButtonView
     {
-        void AddObserverToOnPointerDownEvent(Action observer);
-        void AddObserverOnPointerUpEvent(Action observer);
+        void SubscribeToOnPointerDownEvent(Action observer);
+        void UnsubscribeFromOnPointerDownEvent(Action observer);
+
+        void SubscribeOnPointerUpEvent(Action observer);
+        void UnsubscribeFromOnPointerUpEvent(Action observer);
+
         void Open();
         void Close();
     }

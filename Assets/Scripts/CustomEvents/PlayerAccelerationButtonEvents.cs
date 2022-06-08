@@ -46,7 +46,7 @@ namespace CustomEvents
 
         private void AddObserversToOnPointerDownEvent()
         {
-            _playerAccelerationButton.AddObserverToOnPointerDownEvent(PointerDownOnButtonObservers);
+            _playerAccelerationButton.SubscribeToOnPointerDownEvent(PointerDownOnButtonObservers);
         }
 
         private int _clickAccelerationButtonCounter = 0;
@@ -94,7 +94,7 @@ namespace CustomEvents
 
         private void AddObserversToOnPointerUpEvent()
         {
-            _playerAccelerationButton.AddObserverOnPointerUpEvent(PointerUpOnButtonObservers);
+            _playerAccelerationButton.SubscribeOnPointerUpEvent(PointerUpOnButtonObservers);
         }
 
         private void PointerUpOnButtonObservers()

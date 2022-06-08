@@ -4,23 +4,35 @@ using UnityEngine.EventSystems;
 
 namespace CustomUI.PlayerAccelerationButton
 {
-    public sealed class PlayerAccelerationButtonView : EventTrigger, IPlayerAccelerationButtonView
+    public sealed class PlayerAccelerationButtonView :
+        EventTrigger
+        , IPlayerAccelerationButtonView
     {
-        private delegate void Observer();
+        private event Action OnPointerDownObservers = null;
 
-        private event Observer OnPointerDownObservers = null;
-
-        public void AddObserverToOnPointerDownEvent(Action observer)
+        public void SubscribeToOnPointerDownEvent(Action observer)
         {
-            OnPointerDownObservers += () => observer();
+            OnPointerDownObservers += observer;
         }
 
-        private event Observer OnPointerUpObservers = null;
-
-        public void AddObserverOnPointerUpEvent(Action observer)
+        public void UnsubscribeFromOnPointerDownEvent(Action observer)
         {
-            OnPointerUpObservers += () => observer();
+            OnPointerDownObservers -= observer;
         }
+
+
+        private event Action OnPointerUpObservers = null;
+
+        public void SubscribeOnPointerUpEvent(Action observer)
+        {
+            OnPointerUpObservers += observer;
+        }
+
+        public void UnsubscribeFromOnPointerUpEvent(Action observer)
+        {
+            OnPointerUpObservers += observer;
+        }
+
 
         public void Open()
         {
