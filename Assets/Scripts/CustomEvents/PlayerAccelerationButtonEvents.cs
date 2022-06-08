@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.CustomInvoker;
 using Core.EventsLoader;
 using CustomUI.PlayerAccelerationButton;
@@ -11,6 +12,7 @@ using Zenject;
 namespace CustomEvents
 {
     public sealed class PlayerAccelerationButtonEvents : ICustomEventLoader
+        , IDisposable
     {
         private readonly IPlayerAccelerationButtonView _playerAccelerationButton;
         private readonly PlayerAccelerationButtonSettings _playerAccelerationButtonSettings;
@@ -30,9 +32,15 @@ namespace CustomEvents
         {
             GetPlayerEntity();
 
-            AddObserversToOnPointerDownEvent();
-            AddObserversToOnPointerUpEvent();
+            SubscribeToOnPointerDownEvent();
+            SubscribeToOnPointerUpEvent();
             yield return null;
+        }
+
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromOnPointerDownEvent();
+            UnsubscribeFromOnPointerUpEvent();
         }
 
 
@@ -44,10 +52,16 @@ namespace CustomEvents
         }
 
 
-        private void AddObserversToOnPointerDownEvent()
+        private void SubscribeToOnPointerDownEvent()
         {
             _playerAccelerationButton.SubscribeToOnPointerDownEvent(PointerDownOnButtonObservers);
         }
+
+        private void UnsubscribeFromOnPointerDownEvent()
+        {
+            _playerAccelerationButton.UnsubscribeFromOnPointerDownEvent(PointerDownOnButtonObservers);
+        }
+
 
         private int _clickAccelerationButtonCounter = 0;
 
@@ -79,22 +93,27 @@ namespace CustomEvents
             return _playerAccelerationButtonSettings.delayTimeForZeroingDoubleClick;
         }
 
-        private static void SetFirstAccelerationSpeed()
+        private void SetFirstAccelerationSpeed()
         {
             _player.GetEntity(0)
                 .Replace(new PlayerFirstAccelerationSpeedEvent());
         }
 
-        private static void SetSecondAccelerationSpeed()
+        private void SetSecondAccelerationSpeed()
         {
             _player.GetEntity(0)
                 .Replace(new PlayerSecondAccelerationSpeedEvent());
         }
 
 
-        private void AddObserversToOnPointerUpEvent()
+        private void SubscribeToOnPointerUpEvent()
         {
             _playerAccelerationButton.SubscribeOnPointerUpEvent(PointerUpOnButtonObservers);
+        }
+
+        private void UnsubscribeFromOnPointerUpEvent()
+        {
+            _playerAccelerationButton.UnsubscribeFromOnPointerUpEvent(PointerUpOnButtonObservers);
         }
 
         private void PointerUpOnButtonObservers()
@@ -102,7 +121,7 @@ namespace CustomEvents
             SetNormalSpeed();
         }
 
-        private static void SetNormalSpeed()
+        private void SetNormalSpeed()
         {
             _player.GetEntity(0)
                 .Replace(new PlayerNormalSpeedEvent());
