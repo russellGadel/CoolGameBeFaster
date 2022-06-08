@@ -7,7 +7,7 @@ namespace CustomUI.PlayerController.Mobile
     {
         private readonly IPlayerControllerMobileView _mobileView;
 
-        public PlayerControllerMobilePresenter(IPlayerControllerMobileView mobileView)
+        public PlayerControllerMobilePresenter(in IPlayerControllerMobileView mobileView)
         {
             _mobileView = mobileView;
         }

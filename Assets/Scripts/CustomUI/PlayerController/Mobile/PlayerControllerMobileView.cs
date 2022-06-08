@@ -12,7 +12,7 @@ namespace CustomUI.PlayerController.Mobile
     {
         private PlayerControllerMobileSettings _mobileSettings;
 
-        public void Construct(PlayerControllerMobileSettings mobileSettings)
+        public void Construct(in PlayerControllerMobileSettings mobileSettings)
         {
             _mobileSettings = mobileSettings;
         }
@@ -40,8 +40,6 @@ namespace CustomUI.PlayerController.Mobile
 
         public void OnDrag(PointerEventData ped)
         {
-            Debug.Log("On drag");
-
             Vector2 pos;
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_backgroundImg.rectTransform,
@@ -51,18 +49,12 @@ namespace CustomUI.PlayerController.Mobile
             {
                 _inputVector = SolveInputVector(pos);
 
-                Debug.Log("Input vector " + _inputVector);
-
                 if (_inputVector.magnitude > 1.0f)
                 {
                     _inputVector = _inputVector.normalized;
                 }
 
-                Debug.Log("Input vector normalized " + _inputVector);
-
-
                 var delta = _backgroundImg.rectTransform.sizeDelta;
-
 
                 _controllerImg.rectTransform.anchoredPosition = new Vector2(
                     _inputVector.x * (delta.x / _mobileSettings.dividerPosX)
