@@ -11,29 +11,28 @@ namespace CustomUI.PrivacyPolicy
         }
 
         [SerializeField] private PrivacyPolicyView _view;
+        [SerializeField] private PrivacyPolicySettings _settings;
 
         private void BindPresenter()
         {
             Container
                 .Bind<IPrivacyPolicyPresenter>()
                 .To<PrivacyPolicyPresenter>()
-                .FromMethod(() => InstallPresenter(_view, InstallModel(_settings)))
+                .FromMethod(() => InstallPresenter(_view, InstallModel(in _settings)))
                 .AsSingle();
         }
 
 
-        private PrivacyPolicyPresenter InstallPresenter(IPrivacyPolicyView view
-            , IPrivacyPolicyModel model)
+        private PrivacyPolicyPresenter InstallPresenter(in IPrivacyPolicyView view
+            , in IPrivacyPolicyModel model)
         {
-            return new PrivacyPolicyPresenter(view, model);
+            return new PrivacyPolicyPresenter(in view, in model);
         }
 
-    
-        [SerializeField] private PrivacyPolicySettings _settings;
 
-        private IPrivacyPolicyModel InstallModel(PrivacyPolicySettings settings)
+        private IPrivacyPolicyModel InstallModel(in PrivacyPolicySettings settings)
         {
-            return new PrivacyPolicyModel(settings);
+            return new PrivacyPolicyModel(in settings);
         }
     }
 }

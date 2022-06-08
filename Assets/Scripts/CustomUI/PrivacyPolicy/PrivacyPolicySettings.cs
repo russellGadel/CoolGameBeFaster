@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CustomUI.PrivacyPolicy
 {
-    public sealed class PrivacyPolicySettings : MonoBehaviour
+    [Serializable]
+    public struct PrivacyPolicySettings
     {
         public string termsAndConditionsURL;
         public string privacyPolicyURL;

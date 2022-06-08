@@ -10,7 +10,7 @@ namespace CustomUI.PrivacyPolicy
         private readonly IPrivacyPolicyView _view;
         private readonly IPrivacyPolicyModel _model;
 
-        public PrivacyPolicyPresenter(IPrivacyPolicyView view
+        public PrivacyPolicyPresenter(in IPrivacyPolicyView view
             , in IPrivacyPolicyModel model)
         {
             _view = view;

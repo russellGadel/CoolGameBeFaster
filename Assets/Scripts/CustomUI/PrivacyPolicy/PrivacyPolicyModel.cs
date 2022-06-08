@@ -6,25 +6,24 @@ namespace CustomUI.PrivacyPolicy
     {
         private readonly PrivacyPolicySettings _settings;
 
-        public PrivacyPolicyModel(PrivacyPolicySettings settings)
+        public PrivacyPolicyModel(in PrivacyPolicySettings settings)
         {
             _settings = settings;
         }
-        
-        
+
+
         public void OpenTermsAndConditionsURL()
         {
             OpenURL(_settings.termsAndConditionsURL);
         }
-        
+
         public void OpenPrivacyPolicyURL()
         {
             OpenURL(_settings.privacyPolicyURL);
         }
-        
-        
-        
-        private void OpenURL(string url)
+
+
+        private void OpenURL(in string url)
         {
             try
             {
@@ -32,14 +31,14 @@ namespace CustomUI.PrivacyPolicy
             }
             catch
             {
-                Debug.Log("Must open connect to internet connection");  
+                Debug.Log("Must open connect to internet connection");
             }
         }
 
 
         private bool _isAcceptedAgreement = false;
         public bool IsAcceptedAgreement => _isAcceptedAgreement;
-        
+
         public void UserAcceptPrivacyPolicy()
         {
             _isAcceptedAgreement = true;
