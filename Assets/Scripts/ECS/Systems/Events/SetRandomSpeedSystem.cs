@@ -13,7 +13,7 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idx in _filter)
+            foreach (int idx in _filter)
             {
                 ref SpeedRangeComponent speedRangeComponent = ref _filter.Get2(idx);
                 ref SpeedComponent speedComponent = ref _filter.Get3(idx);
