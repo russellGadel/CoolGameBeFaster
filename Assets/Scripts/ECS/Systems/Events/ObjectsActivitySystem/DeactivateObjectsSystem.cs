@@ -1,9 +1,7 @@
-﻿using ECS.Components;
-using ECS.Components.GameObjectComponent;
+﻿using ECS.Components.GameObjectComponent;
 using ECS.Events;
 using ECS.Tags;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace ECS.Systems.Events.ObjectsActivitySystem
 {
@@ -14,7 +12,7 @@ namespace ECS.Systems.Events.ObjectsActivitySystem
 
         public void Run()
         {
-            foreach (var idx in _objects)
+            foreach (int idx in _objects)
             {
                 ref EcsEntity entity = ref _objects.GetEntity(idx);
 
