@@ -12,9 +12,9 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idxMain in _deactivatePointsEvent)
+            foreach (int idxEvent in _deactivatePointsEvent)
             {
-                foreach (var idxElements in _points)
+                foreach (int idxElements in _points)
                 {
                     ref EcsEntity pointEntity =
                         ref _points.GetEntity(idxElements);
@@ -22,7 +22,7 @@ namespace ECS.Systems.Events
                     pointEntity.Replace(new DeactivateObjectEvent());
                 }
 
-                ref EcsEntity pointsEntity = ref _deactivatePointsEvent.GetEntity(idxMain);
+                ref EcsEntity pointsEntity = ref _deactivatePointsEvent.GetEntity(idxEvent);
                 pointsEntity.Del<DeactivateActivePointsEvent>();
             }
         }
