@@ -1,5 +1,4 @@
 ﻿using ECS.Components;
-using ECS.Components.BlockSpawnDuration;
 using ECS.Events;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace ECS.Systems.Events.ObjectsActivitySystem
 
         public void Run()
         {
-            foreach (var idx in _filter)
+            foreach (int idx in _filter)
             {
                 ref EcsEntity entity = ref _filter.GetEntity(idx);
 
