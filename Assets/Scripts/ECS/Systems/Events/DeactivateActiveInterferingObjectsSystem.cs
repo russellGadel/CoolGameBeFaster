@@ -13,9 +13,9 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idxMain in _deactivateInterferingObjectsEvent)
+            foreach (int idxEvent in _deactivateInterferingObjectsEvent)
             {
-                foreach (var idxElements in _interferingObjects)
+                foreach (int idxElements in _interferingObjects)
                 {
                     ref EcsEntity interferingObjectEntity =
                         ref _interferingObjects.GetEntity(idxElements);
@@ -23,7 +23,8 @@ namespace ECS.Systems.Events
                     interferingObjectEntity.Replace(new DeactivateObjectEvent());
                 }
 
-                ref EcsEntity interferingObjectsEntity = ref _deactivateInterferingObjectsEvent.GetEntity(idxMain);
+                ref EcsEntity interferingObjectsEntity =
+                    ref _deactivateInterferingObjectsEvent.GetEntity(idxEvent);
                 interferingObjectsEntity.Del<DeactivateInterferingObjectsEvent>();
             }
         }
