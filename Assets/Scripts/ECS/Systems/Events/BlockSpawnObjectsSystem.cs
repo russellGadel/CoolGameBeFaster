@@ -11,7 +11,7 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var i in _ecsFilter)
+            foreach (int i in _ecsFilter)
             {
                 ref EcsEntity entity = ref _ecsFilter.GetEntity(i);
                 ref BlockSpawnDurationComponent block = ref _ecsFilter.Get1(i);
