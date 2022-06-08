@@ -16,15 +16,15 @@ namespace CustomEvents
             _saveDataService = saveDataService;
         }
 
-        public void Execute()
-        {
-            _saveDataService.Save();
-        }
-
         public IEnumerator Load()
         {
             Execute();
             yield return null;
+        }
+
+        public void Execute()
+        {
+            _saveDataService.Save();
         }
     }
 }
