@@ -8,7 +8,7 @@ namespace CustomUI.GameOverView
         void Open();
         void Close();
         void SubscribeToRepeatButton(Action observer);
-        void SetCurrentPointsAmount(double points);
-        void SetMaxPointsAmount(double points);
+        void SetCurrentPointsAmount(in double points);
+        void SetMaxPointsAmount(in double points);
     }
 }

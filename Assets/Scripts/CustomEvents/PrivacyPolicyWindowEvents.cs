@@ -62,7 +62,7 @@ namespace CustomEvents
         private void AddObserversToAcceptButton()
         {
             _privacyPolicyPresenter
-                .AddObserverToAcceptButton(AcceptButtonObservers);
+                .SubscribeToAcceptButton(AcceptButtonObservers);
         }
 
         private void AcceptButtonObservers()
@@ -76,7 +76,7 @@ namespace CustomEvents
 
         private void AddObserversToDeclineButton()
         {
-            _privacyPolicyPresenter.AddObserverToDeclineButton(DeclineButtonObservers);
+            _privacyPolicyPresenter.SubscribeToDeclineButton(DeclineButtonObservers);
         }
 
         private void DeclineButtonObservers()

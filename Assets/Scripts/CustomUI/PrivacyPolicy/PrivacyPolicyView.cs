@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CustomUI.PrivacyPolicy
@@ -17,37 +18,56 @@ namespace CustomUI.PrivacyPolicy
             gameObject.SetActive(false);
         }
 
-    
+        
         [SerializeField] private Button _termsAndConditionsButton;
-    
-        public void AddObserverToTermsAndConditionsButton(Action observerAction)
+
+        public void SubscribeToTermsAndConditionsButton(UnityAction observer)
         {
-            _termsAndConditionsButton.onClick.AddListener(() => observerAction());
+            _termsAndConditionsButton.onClick.AddListener(observer);
         }
 
-    
+        public void UnsubscribeFromTermsAndConditionsButton(UnityAction observer)
+        {
+            _termsAndConditionsButton.onClick.RemoveListener(observer);
+        }
+
 
         [SerializeField] private Button _privacyPolicyButton;
 
-        public void AddObserverToPrivacyPolicyButton(Action observerAction)
+        public void SubscribeToPrivacyPolicyButton(UnityAction observer)
         {
-            _privacyPolicyButton.onClick.AddListener(() => observerAction());
+            _privacyPolicyButton.onClick.AddListener(observer);
         }
 
-    
+        public void UnsubscribeFromPrivacyPolicyButton(UnityAction observer)
+        {
+            _privacyPolicyButton.onClick.RemoveListener(observer);
+        }
+
+
         [SerializeField] private Button _acceptButton;
-    
-        public void AddObserverToAcceptButton(Action observerAction)
+
+        public void SubscribeToAcceptButton(UnityAction observer)
         {
-            _acceptButton.onClick.AddListener(() => observerAction());
+            _acceptButton.onClick.AddListener(observer);
         }
 
-    
+        public void UnsubscribeFromAcceptButton(UnityAction observer)
+        {
+            _acceptButton.onClick.RemoveListener(observer);
+        }
+
+
         [SerializeField] private Button _declineButton;
 
-        public void AddObserverToDeclineButton(Action observerAction)
+        public void SubscribeToDeclineButton(UnityAction observer)
         {
-            _declineButton.onClick.AddListener(() => observerAction());
+            _declineButton.onClick.AddListener(observer);
+        }
+
+        public void UnsubscribeFromDeclineButton(UnityAction observer)
+        {
+            _declineButton.onClick.RemoveListener(observer);
         }
     }
 }

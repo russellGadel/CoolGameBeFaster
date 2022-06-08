@@ -1,14 +1,17 @@
 ﻿using System;
+using UnityEngine.Events;
 
 namespace CustomUI.PrivacyPolicy
 {
-    public sealed class PrivacyPolicyPresenter : IPrivacyPolicyPresenter
+    public sealed class PrivacyPolicyPresenter :
+        IPrivacyPolicyPresenter,
+        IDisposable
     {
         private readonly IPrivacyPolicyView _view;
         private readonly IPrivacyPolicyModel _model;
 
         public PrivacyPolicyPresenter(IPrivacyPolicyView view
-            , IPrivacyPolicyModel model)
+            , in IPrivacyPolicyModel model)
         {
             _view = view;
             _model = model;
@@ -28,14 +31,25 @@ namespace CustomUI.PrivacyPolicy
         }
 
 
-        public void AddObserverToAcceptButton(Action observer)
+        public void SubscribeToAcceptButton(UnityAction observer)
         {
-            _view.AddObserverToAcceptButton(observer);
+            _view.SubscribeToAcceptButton(observer);
         }
 
-        public void AddObserverToDeclineButton(Action observer)
+        public void UnsubscribeFromAcceptButton(UnityAction observer)
         {
-            _view.AddObserverToDeclineButton(observer);
+            _view.UnsubscribeFromAcceptButton(observer);
+        }
+
+
+        public void SubscribeToDeclineButton(UnityAction observer)
+        {
+            _view.SubscribeToDeclineButton(observer);
+        }
+
+        public void UnsubscribeFromDeclineButton(UnityAction observer)
+        {
+            _view.UnsubscribeFromDeclineButton(observer);
         }
 
 
@@ -44,27 +58,44 @@ namespace CustomUI.PrivacyPolicy
             _model.UserAcceptPrivacyPolicy();
         }
 
-
         public bool IsAcceptAgreement()
         {
             return _model.IsAcceptedAgreement;
         }
 
 
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromTermsAndConditionsButton();
+            UnsubscribeFromPrivacyPolicyButton();
+        }
+
+
         private void AddObserversToView()
         {
-            AddObserverToTermsAndConditionsButton();
-            AddObserverToPrivacyPolicyButton();
+            SubscribeToTermsAndConditionsButton();
+            SubscribeToPrivacyPolicyButton();
         }
 
-        private void AddObserverToTermsAndConditionsButton()
+        private void SubscribeToTermsAndConditionsButton()
         {
-            _view.AddObserverToTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
+            _view.SubscribeToTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
         }
 
-        private void AddObserverToPrivacyPolicyButton()
+        private void UnsubscribeFromTermsAndConditionsButton()
         {
-            _view.AddObserverToPrivacyPolicyButton(_model.OpenPrivacyPolicyURL);
+            _view.UnsubscribeFromTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
+        }
+
+
+        private void SubscribeToPrivacyPolicyButton()
+        {
+            _view.SubscribeToPrivacyPolicyButton(_model.OpenPrivacyPolicyURL);
+        }
+
+        private void UnsubscribeFromPrivacyPolicyButton()
+        {
+            _view.UnsubscribeFromPrivacyPolicyButton(_model.OpenPrivacyPolicyURL);
         }
     }
 }

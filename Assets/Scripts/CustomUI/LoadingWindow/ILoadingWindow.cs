@@ -1,9 +1,9 @@
-﻿namespace  CustomUI.LoadingWindow
+﻿namespace CustomUI.LoadingWindow
 {
     public interface ILoadingWindowView
     {
         void Open();
         void Close();
-        void SetGameVersion(string gameVersion);
+        void SetGameVersion(in string gameVersion);
     }
 }

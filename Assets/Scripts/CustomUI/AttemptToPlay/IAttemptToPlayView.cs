@@ -16,8 +16,8 @@ namespace CustomUI.AttemptToPlay
         void UnsubscribeFromAdvertisingButton(UnityAction observer);
 
 
-        void SetCurrentPointsAmount(double points);
-        void SetMaxPointsAmount(double points);
-        void SetAdvertisementButtonInteractableValue(bool value);
+        void SetCurrentPointsAmount(in double points);
+        void SetMaxPointsAmount(in double points);
+        void SetAdvertisementButtonInteractableValue(in bool value);
     }
 }

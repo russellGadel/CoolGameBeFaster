@@ -35,7 +35,7 @@ namespace CustomUI.GameOverView
 
         [SerializeField] private TextMeshProUGUI _currentPointsText;
 
-        public void SetCurrentPointsAmount(double points)
+        public void SetCurrentPointsAmount(in double points)
         {
             _currentPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }
@@ -43,7 +43,7 @@ namespace CustomUI.GameOverView
 
         [SerializeField] private TextMeshProUGUI _maxPointsText;
 
-        public void SetMaxPointsAmount(double points)
+        public void SetMaxPointsAmount(in double points)
         {
             _maxPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }

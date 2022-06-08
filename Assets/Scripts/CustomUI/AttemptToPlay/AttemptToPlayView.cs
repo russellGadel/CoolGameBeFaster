@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -55,20 +56,21 @@ namespace CustomUI.AttemptToPlay
 
         [SerializeField] private TextMeshProUGUI _currentPointsText;
 
-        public void SetCurrentPointsAmount(double points)
+        public void SetCurrentPointsAmount(in double points)
         {
-            _currentPointsText.SetText(points.ToString());
+            _currentPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }
 
 
         [SerializeField] private TextMeshProUGUI _maxPointsText;
+        private IAttemptToPlayView _attemptToPlayViewImplementation;
 
-        public void SetMaxPointsAmount(double points)
+        public void SetMaxPointsAmount(in double points)
         {
-            _maxPointsText.SetText(points.ToString());
+            _maxPointsText.SetText(points.ToString(CultureInfo.InvariantCulture));
         }
 
-        public void SetAdvertisementButtonInteractableValue(bool value)
+        public void SetAdvertisementButtonInteractableValue(in bool value)
         {
             _advertisingButton.interactable = value;
         }

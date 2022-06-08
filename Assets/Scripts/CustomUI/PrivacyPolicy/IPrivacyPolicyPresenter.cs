@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using UnityEngine.Events;
 
 namespace CustomUI.PrivacyPolicy
 {
@@ -6,8 +6,13 @@ namespace CustomUI.PrivacyPolicy
     {
         void Open();
         void Close();
-        void AddObserverToAcceptButton(Action observer);
-        void AddObserverToDeclineButton(Action observer);
+        
+        void SubscribeToAcceptButton(UnityAction observer);
+        void UnsubscribeFromAcceptButton(UnityAction observer);
+        
+        void SubscribeToDeclineButton(UnityAction observer);
+        void UnsubscribeFromDeclineButton(UnityAction observer);
+        
         void UserAcceptPrivacyPolicy();
         bool IsAcceptAgreement();
     }

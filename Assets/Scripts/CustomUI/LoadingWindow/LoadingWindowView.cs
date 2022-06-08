@@ -18,7 +18,7 @@ namespace CustomUI.LoadingWindow
 
         [SerializeField] private TextMeshProUGUI _gameVersion;
 
-        public void SetGameVersion(string gameVersion)
+        public void SetGameVersion(in string gameVersion)
         {
             _gameVersion.SetText(gameVersion);
         }

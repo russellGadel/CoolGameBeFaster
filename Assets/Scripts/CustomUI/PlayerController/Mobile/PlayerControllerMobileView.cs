@@ -38,27 +38,27 @@ namespace CustomUI.PlayerController.Mobile
         [SerializeField] private Image _backgroundImg;
         [SerializeField] private Image _controllerImg;
 
+        private Vector2 _dragPosition = new Vector2();
+
         public void OnDrag(PointerEventData ped)
         {
-            Vector2 pos;
-
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_backgroundImg.rectTransform,
                     ped.position,
                     ped.pressEventCamera,
-                    out pos))
+                    out _dragPosition))
             {
-                _inputVector = SolveInputVector(pos);
+                SolveInputVector(_dragPosition, ref _inputVector);
 
                 if (_inputVector.magnitude > 1.0f)
                 {
                     _inputVector = _inputVector.normalized;
                 }
 
-                var delta = _backgroundImg.rectTransform.sizeDelta;
+                Vector2 delta = _backgroundImg.rectTransform.sizeDelta;
 
-                _controllerImg.rectTransform.anchoredPosition = new Vector2(
-                    _inputVector.x * (delta.x / _mobileSettings.dividerPosX)
-                    , _inputVector.y * (delta.y / _mobileSettings.dividerPosY));
+                _controllerImg.rectTransform.anchoredPosition.Set(
+                    _inputVector.x * (delta.x / _mobileSettings.dividerPosX),
+                    _inputVector.y * (delta.y / _mobileSettings.dividerPosY));
             }
         }
 
@@ -75,14 +75,12 @@ namespace CustomUI.PlayerController.Mobile
             _controllerImg.rectTransform.anchoredPosition = Vector2.zero;
         }
 
-        private Vector2 SolveInputVector(Vector2 pos)
+        private void SolveInputVector(in Vector2 pos, ref Vector2 inputVector)
         {
-            var sizeDelta = _backgroundImg.rectTransform.sizeDelta;
+            Vector2 sizeDelta = _backgroundImg.rectTransform.sizeDelta;
+            pos.Set(pos.x / (sizeDelta.x), pos.y / (sizeDelta.y));
 
-            pos.x = (pos.x / (sizeDelta.x));
-            pos.y = (pos.y / (sizeDelta.y));
-
-            return new Vector2(pos.x * _mobileSettings.multiplicityPosX + _mobileSettings.plusPosX,
+            inputVector.Set(pos.x * _mobileSettings.multiplicityPosX + _mobileSettings.plusPosX,
                 pos.y * _mobileSettings.multiplicityPosY -
                 _mobileSettings.minusPosY);
         }
