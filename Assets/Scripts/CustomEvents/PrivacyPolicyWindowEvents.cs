@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.EventsLoader;
 using CustomUI.PrivacyPolicy;
 using Services.SaveData;
@@ -9,6 +10,7 @@ namespace CustomEvents
 {
     public sealed class PrivacyPolicyWindowEvents : ICustomDualEvent
         , ICustomEventLoader
+        , IDisposable
     {
         private readonly IPrivacyPolicyPresenter _privacyPolicyPresenter;
         private readonly LoadingWindowDualEvents _loadingWindowDualEvents;
@@ -28,8 +30,8 @@ namespace CustomEvents
         {
             if (UserHasAgreedPrivacyPolicy() == false)
             {
-                AddObserversToAcceptButton();
-                AddObserversToDeclineButton();
+                SubscribeToAcceptButton();
+                SubscribeToDeclineButton();
 
                 _loadingWindowDualEvents.Undo();
                 Execute();
@@ -53,16 +55,28 @@ namespace CustomEvents
         }
 
 
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromAcceptButton();
+            UnsubscribeToDeclineButton();
+        }
+
         private bool UserHasAgreedPrivacyPolicy()
         {
             return _saveDataService.GetData().isAgreedPrivacyPolicy;
         }
 
 
-        private void AddObserversToAcceptButton()
+        private void SubscribeToAcceptButton()
         {
             _privacyPolicyPresenter
                 .SubscribeToAcceptButton(AcceptButtonObservers);
+        }
+
+        private void UnsubscribeFromAcceptButton()
+        {
+            _privacyPolicyPresenter
+                .UnsubscribeFromAcceptButton(AcceptButtonObservers);
         }
 
         private void AcceptButtonObservers()
@@ -74,9 +88,14 @@ namespace CustomEvents
         }
 
 
-        private void AddObserversToDeclineButton()
+        private void SubscribeToDeclineButton()
         {
             _privacyPolicyPresenter.SubscribeToDeclineButton(DeclineButtonObservers);
+        }
+
+        private void UnsubscribeToDeclineButton()
+        {
+            _privacyPolicyPresenter.UnsubscribeFromDeclineButton(DeclineButtonObservers);
         }
 
         private void DeclineButtonObservers()
