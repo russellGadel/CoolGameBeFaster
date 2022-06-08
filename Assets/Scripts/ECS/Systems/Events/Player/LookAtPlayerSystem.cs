@@ -18,10 +18,9 @@ namespace ECS.Systems.Events.Player
 
         public void Run()
         {
-            foreach (var idx in _objects)
+            foreach (int  idx in _objects)
             {
                 ref EcsEntity objectEntity = ref _objects.GetEntity(idx);
-                ref TransformComponent objectsTransform = ref _objects.Get2(idx);
                 ref TransformComponent playerTransform = ref _player.Get2(0);
                 ref Rigidbody2DComponent objectRigidbody2D = ref _objects.Get3(idx);
 
