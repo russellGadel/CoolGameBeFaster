@@ -1,13 +1,19 @@
-﻿using System;
+﻿using UnityEngine.Events;
 
-namespace  CustomUI.ReferencesList
+namespace CustomUI.ReferencesList
 {
     public interface IReferencesListWindowView
     {
-        void AddObserversToTermsAndConditionsButton(Action observer);
-        void AddObserversToPrivacyPolicyButton(Action observer);
-        void AddObserversToFeedbackButton(Action observer);
         void Open();
         void Close();
+
+        void SubscribeToTermsAndConditionsButton(UnityAction observer);
+        void UnsubscribeFromTermsAndConditionsButton(UnityAction observer);
+
+        void SubscribeToPrivacyPolicyButton(UnityAction observer);
+        void UnsubscribeFromPrivacyPolicyButton(UnityAction observer);
+
+        void SubscribeToFeedbackButton(UnityAction observer);
+        void UnsubscribeFromFeedbackButton(UnityAction observer);
     }
 }

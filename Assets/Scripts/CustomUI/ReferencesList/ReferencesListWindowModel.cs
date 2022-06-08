@@ -7,7 +7,7 @@ namespace CustomUI.ReferencesList
     {
         private readonly ReferencesListSettings _settings;
 
-        public ReferencesListWindowModel(ReferencesListSettings settings)
+        public ReferencesListWindowModel(in ReferencesListSettings settings)
         {
             _settings = settings;
         }
@@ -31,7 +31,7 @@ namespace CustomUI.ReferencesList
         }
 
 
-        private void OpenURL(string url)
+        private void OpenURL(in string url)
         {
             try
             {

@@ -22,12 +22,11 @@ namespace CustomUI.ReferencesList
         }
 
 
-        [SerializeField] private ReferencesListSettings settings;
+        [SerializeField] private ReferencesListSettings _settings;
 
         private IReferencesListWindowModel InstallModel()
         {
-            ReferencesListWindowModel model = new ReferencesListWindowModel(settings);
-            return model;
+            return new ReferencesListWindowModel(_settings);
         }
     }
 }

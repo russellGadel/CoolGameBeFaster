@@ -2,11 +2,11 @@
 {
     public sealed class ReferencesListWindowPresenter : IReferencesListWindowPresenter
     {
-        private IReferencesListWindowView _view;
-        private IReferencesListWindowModel _model;
+        private readonly IReferencesListWindowView _view;
+        private readonly IReferencesListWindowModel _model;
 
-        public ReferencesListWindowPresenter(IReferencesListWindowModel model
-            , IReferencesListWindowView view)
+        public ReferencesListWindowPresenter(in IReferencesListWindowModel model
+            , in IReferencesListWindowView view)
         {
             _view = view;
             _model = model;
@@ -30,7 +30,7 @@
 
         private void AddObserversToTermsAndConditionsButton()
         {
-            _view.AddObserversToTermsAndConditionsButton(TermsAndConditionsButtonObservers);
+            _view.SubscribeToTermsAndConditionsButton(TermsAndConditionsButtonObservers);
         }
 
         private void TermsAndConditionsButtonObservers()
@@ -41,7 +41,7 @@
 
         private void AddObserversToPrivacyPolicyButton()
         {
-            _view.AddObserversToPrivacyPolicyButton(PrivacyPolicyButtonObservers);
+            _view.SubscribeToPrivacyPolicyButton(PrivacyPolicyButtonObservers);
         }
 
         private void PrivacyPolicyButtonObservers()
@@ -52,7 +52,7 @@
 
         private void AddObserversToFeedbackButton()
         {
-            _view.AddObserversToFeedbackButton(FeedbackButtonObservers);
+            _view.SubscribeToFeedbackButton(FeedbackButtonObservers);
         }
 
         private void FeedbackButtonObservers()
