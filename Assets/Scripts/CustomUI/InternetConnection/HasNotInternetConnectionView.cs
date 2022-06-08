@@ -2,7 +2,8 @@
 
 namespace CustomUI.InternetConnection
 {
-    public sealed class HasNotInternetConnectionView : MonoBehaviour, IHasNotInternetConnectionView
+    public sealed class HasNotInternetConnectionView : MonoBehaviour
+        , IHasNotInternetConnectionView
     {
         public void Open()
         {

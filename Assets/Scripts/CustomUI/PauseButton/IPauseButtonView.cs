@@ -8,8 +8,8 @@ namespace CustomUI.PauseButton
         void SetPlayView();
         void SetPauseView();
         void SubscribeToPressButtonEvent(UnityAction observer);
+        void UnsubscribeFromPressButtonEvent(UnityAction observer);
         void Activate();
         void Deactivate();
-        void UnsubscribeFromPressButtonEvent(UnityAction observer);
     }
 }
