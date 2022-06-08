@@ -16,14 +16,14 @@ namespace ECS.Systems.Events.Player
 
         public void Run()
         {
-            foreach (var idx in _spawnPlayerEvent)
+            foreach (int idx in _spawnPlayerEvent)
             {
                 ref GameObjectComponent playerObject = ref _player.Get3(0);
-                DeactivatePlayer(ref playerObject);
+                DeactivatePlayer(in playerObject);
 
                 SetForPlayerSpawnPosition();
 
-                ActivatePlayer(ref playerObject);
+                ActivatePlayer(in playerObject);
 
                 ref EcsEntity spawnPlayerEventEntity = ref _spawnPlayerEvent.GetEntity(idx);
                 spawnPlayerEventEntity.Del<SpawnPlayerAtInitPositionEvent>();
@@ -31,7 +31,7 @@ namespace ECS.Systems.Events.Player
         }
 
 
-        private static void DeactivatePlayer(ref GameObjectComponent playerObject)
+        private void DeactivatePlayer(in GameObjectComponent playerObject)
         {
             playerObject.gameObject.SetActive(false);
         }
@@ -44,7 +44,7 @@ namespace ECS.Systems.Events.Player
             playerTransform.value.position = spawnPoint.value.position;
         }
 
-        private static void ActivatePlayer(ref GameObjectComponent playerObject)
+        private void ActivatePlayer(in GameObjectComponent playerObject)
         {
             playerObject.gameObject.SetActive(true);
         }

@@ -15,7 +15,7 @@ namespace ECS.Systems.Events.Player
 
         public void Run()
         {
-            foreach (var idx in _event)
+            foreach (int idx in _event)
             {
                 ref SpeedComponent speed = ref _player.Get2(0);
                 speed.value = _mainSceneData.playerSettings.normalSpeed;
