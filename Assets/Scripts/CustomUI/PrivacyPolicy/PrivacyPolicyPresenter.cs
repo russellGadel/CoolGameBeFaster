@@ -77,14 +77,14 @@ namespace CustomUI.PrivacyPolicy
             SubscribeToPrivacyPolicyButton();
         }
 
-        private void SubscribeToTermsAndConditionsButton()
-        {
-            _view.SubscribeToTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
-        }
-
         private void UnsubscribeFromTermsAndConditionsButton()
         {
             _view.UnsubscribeFromTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
+        }
+
+        private void SubscribeToTermsAndConditionsButton()
+        {
+            _view.SubscribeToTermsAndConditionsButton(_model.OpenTermsAndConditionsURL);
         }
 
 

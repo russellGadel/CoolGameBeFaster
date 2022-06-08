@@ -1,6 +1,9 @@
-﻿namespace CustomUI.ReferencesList
+﻿using System;
+
+namespace CustomUI.ReferencesList
 {
     public sealed class ReferencesListWindowPresenter : IReferencesListWindowPresenter
+        , IDisposable
     {
         private readonly IReferencesListWindowView _view;
         private readonly IReferencesListWindowModel _model;
@@ -11,9 +14,9 @@
             _view = view;
             _model = model;
 
-            AddObserversToTermsAndConditionsButton();
-            AddObserversToPrivacyPolicyButton();
-            AddObserversToFeedbackButton();
+            SubscribeToTermsAndConditionsButton();
+            SubscribeToPrivacyPolicyButton();
+            SubscribeToFeedbackButton();
         }
 
 
@@ -28,7 +31,7 @@
         }
 
 
-        private void AddObserversToTermsAndConditionsButton()
+        private void SubscribeToTermsAndConditionsButton()
         {
             _view.SubscribeToTermsAndConditionsButton(TermsAndConditionsButtonObservers);
         }
@@ -39,7 +42,7 @@
         }
 
 
-        private void AddObserversToPrivacyPolicyButton()
+        private void SubscribeToPrivacyPolicyButton()
         {
             _view.SubscribeToPrivacyPolicyButton(PrivacyPolicyButtonObservers);
         }
@@ -50,7 +53,7 @@
         }
 
 
-        private void AddObserversToFeedbackButton()
+        private void SubscribeToFeedbackButton()
         {
             _view.SubscribeToFeedbackButton(FeedbackButtonObservers);
         }
@@ -58,6 +61,29 @@
         private void FeedbackButtonObservers()
         {
             _model.OpenFeedbackURL();
+        }
+
+
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromTermsAndConditionsButton();
+            UnsubscribeToPrivacyPolicyButton();
+            UnsubscribeToFeedbackButton();
+        }
+
+        private void UnsubscribeFromTermsAndConditionsButton()
+        {
+            _view.UnsubscribeFromTermsAndConditionsButton(TermsAndConditionsButtonObservers);
+        }
+
+        private void UnsubscribeToPrivacyPolicyButton()
+        {
+            _view.UnsubscribeFromPrivacyPolicyButton(PrivacyPolicyButtonObservers);
+        }
+
+        private void UnsubscribeToFeedbackButton()
+        {
+            _view.UnsubscribeFromFeedbackButton(FeedbackButtonObservers);
         }
     }
 }
