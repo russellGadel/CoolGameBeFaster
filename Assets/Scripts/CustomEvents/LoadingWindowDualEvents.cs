@@ -35,9 +35,9 @@ namespace CustomEvents
         }
 
 
-        private static string GetGameVersion()
+        private string GetGameVersion()
         {
-            return "Version: " + Application.version;
+            return $"Version {Application.version}";
         }
     }
 }
