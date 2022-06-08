@@ -40,7 +40,7 @@ namespace CustomEvents
 
         private void AddObserversToUpdateButton()
         {
-            _updateGamePresenter.SubscribeToUpdateButton(UpdateButtonObservers);
+            _updateGamePresenter.AddObserverToUpdateButton(UpdateButtonObservers);
         }
 
         private void UpdateButtonObservers()

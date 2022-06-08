@@ -6,7 +6,7 @@ namespace CustomUI.UpdateGame
     {
         private readonly UpdateGameSettings _settings;
 
-        public UpdateGameModel(in UpdateGameSettings settings)
+        public UpdateGameModel(UpdateGameSettings settings)
         {
             _settings = settings;
         }
