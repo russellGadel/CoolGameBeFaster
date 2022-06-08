@@ -22,7 +22,7 @@ namespace ScenesBootstrapper.MainScene.Events
 
 
         [Inject] private AttemptToPlayWindowEvents _attemptToPlayView;
-        [Inject] private GameOverEvent _gameOverEvent;
+        [Inject] private GameOverWindowEvents _gameOverWindowEvents;
         [Inject] private PauseButtonEvents _pauseButtonEvents;
         [Inject] private StartWindowEvents _startWindowEvents;
         [Inject] private PlayerAccelerationButtonEvents _playerAccelerationButtonEvents;
@@ -36,7 +36,7 @@ namespace ScenesBootstrapper.MainScene.Events
             //
 
             _eventsLoader.AddEvent(_attemptToPlayView);
-            _eventsLoader.AddEvent(_gameOverEvent);
+            _eventsLoader.AddEvent(_gameOverWindowEvents);
             _eventsLoader.AddEvent(_pauseButtonEvents);
             _eventsLoader.AddEvent(_startWindowEvents);
             _eventsLoader.AddEvent(_playerAccelerationButtonEvents);

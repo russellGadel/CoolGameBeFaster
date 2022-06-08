@@ -3496,7 +3496,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1590424058}
   - component: {fileID: 1590424060}
-  - component: {fileID: 1590424059}
   m_Layer: 0
   m_Name: ReferencesList
   m_TagString: Untagged
@@ -3518,24 +3517,6 @@ Transform:
   m_Father: {fileID: 1164831406}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1590424059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590424057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0caea57899cc4349a527176920f106a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  termsAndConditionsTable: 
-  termsAndConditionsURL: 
-  privacyPolicyTable: 
-  privacyPolicyURL: 
-  feedbackTable: 
-  feedbackURL: 
 --- !u!114 &1590424060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3549,7 +3530,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 3704992487288681907}
-  settings: {fileID: 1590424059}
+  _settings:
+    termsAndConditionsTable: Terms&Conditions
+    termsAndConditionsURL: 
+    privacyPolicyTable: Privacy Policy
+    privacyPolicyURL: 
+    feedbackTable: Feedback
+    feedbackURL: 
 --- !u!1 &1603982254
 GameObject:
   m_ObjectHideFlags: 0

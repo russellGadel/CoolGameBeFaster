@@ -85,7 +85,7 @@ namespace ECS.Systems.Events
         {
             _mainSceneServices
                 .MainSceneEventsService
-                .GameOverEvent
+                .GameOverWindowEvents
                 .Execute(currentPoints.Value, maxPoints.Value);
         }
 

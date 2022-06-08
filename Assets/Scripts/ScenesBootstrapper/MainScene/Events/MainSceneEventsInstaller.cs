@@ -46,7 +46,7 @@ namespace ScenesBootstrapper.MainScene.Events
 
         private void BindGameOver()
         {
-            Container.Bind<GameOverEvent>().AsSingle();
+            Container.Bind<GameOverWindowEvents>().AsSingle();
         }
 
         private void BindPlayerAccelerationButton()

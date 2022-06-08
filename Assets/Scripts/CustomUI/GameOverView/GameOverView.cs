@@ -3,6 +3,7 @@ using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CustomUI.GameOverView
@@ -28,10 +29,17 @@ namespace CustomUI.GameOverView
             gameObject.SetActive(false);
         }
 
-        public void SubscribeToRepeatButton(Action observer)
+
+        public void SubscribeToRepeatButton(UnityAction observer)
         {
-            _repeatButton.onClick.AddListener(() => observer());
+            _repeatButton.onClick.AddListener(observer);
         }
+
+        public void UnsubscribeFromRepeatButton(UnityAction observer)
+        {
+            _repeatButton.onClick.RemoveListener(observer);
+        }
+
 
         [SerializeField] private TextMeshProUGUI _currentPointsText;
 

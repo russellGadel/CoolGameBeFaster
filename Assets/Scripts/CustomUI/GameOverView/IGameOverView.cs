@@ -1,5 +1,5 @@
-﻿using System;
-using Core.InstallersExecutor;
+﻿using Core.InstallersExecutor;
+using UnityEngine.Events;
 
 namespace CustomUI.GameOverView
 {
@@ -7,7 +7,10 @@ namespace CustomUI.GameOverView
     {
         void Open();
         void Close();
-        void SubscribeToRepeatButton(Action observer);
+
+        void SubscribeToRepeatButton(UnityAction observer);
+        void UnsubscribeFromRepeatButton(UnityAction observer);
+
         void SetCurrentPointsAmount(in double points);
         void SetMaxPointsAmount(in double points);
     }

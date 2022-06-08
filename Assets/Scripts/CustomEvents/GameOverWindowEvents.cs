@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.EventsLoader;
 using CustomUI.GameOverView;
 using ECS.Events;
@@ -8,12 +9,13 @@ using Zenject;
 
 namespace CustomEvents
 {
-    public sealed class GameOverEvent : ICustomEventLoader
+    public sealed class GameOverWindowEvents : ICustomEventLoader
+        , IDisposable
     {
         private readonly IGameOverView _gameOverView;
 
         [Inject]
-        public GameOverEvent(IGameOverView gameOverView)
+        public GameOverWindowEvents(IGameOverView gameOverView)
         {
             _gameOverView = gameOverView;
         }
@@ -25,7 +27,7 @@ namespace CustomEvents
             yield return null;
         }
 
-        public void Execute(double currentPoints, double maxPoints)
+        public void Execute(in double currentPoints, in double maxPoints)
         {
             _gameOverView.SetCurrentPointsAmount(currentPoints);
             _gameOverView.SetMaxPointsAmount(maxPoints);
@@ -33,9 +35,19 @@ namespace CustomEvents
             _gameOverView.Open();
         }
 
+        void IDisposable.Dispose()
+        {
+            UnsubscribeFromRepeatButton();
+        }
+
         private void SubscribeToRepeatButton()
         {
             _gameOverView.SubscribeToRepeatButton(RepeatButtonObservers);
+        }
+
+        private void UnsubscribeFromRepeatButton()
+        {
+            _gameOverView.UnsubscribeFromRepeatButton(RepeatButtonObservers);
         }
 
         private void RepeatButtonObservers()
