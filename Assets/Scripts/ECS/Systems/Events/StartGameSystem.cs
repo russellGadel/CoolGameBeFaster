@@ -16,10 +16,10 @@ namespace ECS.Systems.Events
     public sealed class StartGameSystem : IEcsRunSystem
     {
         private readonly EcsFilter<StartGameEcsEvent> _startGameEvent = null;
-        private readonly MainSceneServices _mainSceneServices;
-        private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game;
+        private readonly MainSceneServices _mainSceneServices = null;
+        private readonly EcsFilter<GameTag, AttemptToPlayGameCounter> _game = null;
 
-        private const int _firstAttempt = 1;
+        private readonly int _firstAttempt = 1;
 
         public void Run()
         {
@@ -39,26 +39,28 @@ namespace ECS.Systems.Events
             }
         }
 
-        private readonly EcsFilter<InterferingObjectsTag> _interferingObjects = null;
+        private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
 
-        private void PrepareInterferingObjects()
+        private void SpawnPlayerAtInitPosition()
         {
-            ref EcsEntity interferingObjectsEntity = ref _interferingObjects.GetEntity(0);
-            interferingObjectsEntity.Replace(new SpawnEvent());
+            ref EcsEntity playerEntity = ref _player.GetEntity(0);
+            playerEntity.Replace(new SpawnPlayerAtInitPositionEvent());
         }
+
 
         private readonly EcsFilter<PointsTag
             , CurrentPointsGotByPlayerCounterComponent
             , SpawnedPointsCounterComponent> _pointsTag = null;
-        private readonly MainSceneUIViews _mainSceneUIViews = null;
 
+        private readonly MainSceneUIViews _mainSceneUIViews = null;
+        
         private void PreparePoints()
         {
             ref EcsEntity pointsEntity = ref _pointsTag.GetEntity(0);
 
             ref CurrentPointsGotByPlayerCounterComponent pointsCounter = ref _pointsTag.Get2(0);
             pointsCounter.Value = 0;
-            _mainSceneUIViews.PlayerPointsViewsGroup.UpdatePoints(pointsCounter.Value);
+            _mainSceneUIViews.PlayerPointsViewsGroup.UpdatePoints(in pointsCounter.Value);
 
             ref SpawnedPointsCounterComponent spawnedPointsCounter = ref _pointsTag.Get3(0);
             spawnedPointsCounter.Value = 0;
@@ -66,12 +68,13 @@ namespace ECS.Systems.Events
             pointsEntity.Replace(new SpawnEvent());
         }
 
-        private readonly EcsFilter<PlayerTag, TransformComponent> _player = null;
-
-        private void SpawnPlayerAtInitPosition()
+        
+        private readonly EcsFilter<InterferingObjectsTag> _interferingObjects = null;
+        
+        private void PrepareInterferingObjects()
         {
-            ref EcsEntity playerEntity = ref _player.GetEntity(0);
-            playerEntity.Replace(new SpawnPlayerAtInitPositionEvent());
+            ref EcsEntity interferingObjectsEntity = ref _interferingObjects.GetEntity(0);
+            interferingObjectsEntity.Replace(new SpawnEvent());
         }
     }
 }
