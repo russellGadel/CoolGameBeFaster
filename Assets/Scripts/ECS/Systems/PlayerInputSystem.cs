@@ -11,17 +11,16 @@ namespace ECS.Systems
         private readonly EcsFilter<PlayerTag, DirectionComponent>
             _ecsFilter = null;
 
-        private readonly IPlayerControllerPresenter _playerController;
+        private readonly IPlayerControllerPresenter _playerController = null;
 
         public void Run()
         {
-            foreach (var entity in _ecsFilter)
+            foreach (int entity in _ecsFilter)
             {
                 ref DirectionComponent directionComponent = ref _ecsFilter.Get2(entity);
                 ref Vector3 direction = ref directionComponent.Direction;
 
-                direction.x = _playerController.GetInputVector().x;
-                direction.y = _playerController.GetInputVector().y;
+                direction = _playerController.GetInputVector();
             }
         }
     }

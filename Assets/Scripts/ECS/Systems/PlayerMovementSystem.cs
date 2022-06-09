@@ -19,7 +19,7 @@ namespace ECS.Systems
 
         public void Run()
         {
-            foreach (var entity in _ecsFilter)
+            foreach (int entity in _ecsFilter)
             {
                 ref Rigidbody2DComponent rigidbody2DComponent = ref _ecsFilter.Get3(entity);
                 ref SpeedComponent speedComponent = ref _ecsFilter.Get4(entity);
