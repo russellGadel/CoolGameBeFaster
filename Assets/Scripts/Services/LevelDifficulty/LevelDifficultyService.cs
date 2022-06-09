@@ -4,7 +4,7 @@
     {
         private readonly LevelDifficultySettings _settings;
 
-        public LevelDifficultyService(LevelDifficultySettings settings)
+        public LevelDifficultyService(in LevelDifficultySettings settings)
         {
             _settings = settings;
         }

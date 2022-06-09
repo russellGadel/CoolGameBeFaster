@@ -22,7 +22,7 @@ namespace CustomEvents
 
             yield return _remoteConfigDataForLoader.Load();
         }
-
+        
         private void ThenHasInternetConnection()
         {
             _remoteConfigDataForLoader.Reload();

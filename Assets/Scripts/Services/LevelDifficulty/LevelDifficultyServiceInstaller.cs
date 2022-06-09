@@ -6,7 +6,7 @@ namespace Services.LevelDifficulty
     public sealed class LevelDifficultyServiceInstaller : MonoInstaller
     {
         [SerializeField] private LevelDifficultySettings _settings;
-        
+
         public override void InstallBindings()
         {
             BindService();
