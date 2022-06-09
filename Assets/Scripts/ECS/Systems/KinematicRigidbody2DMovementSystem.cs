@@ -11,21 +11,21 @@ namespace ECS.Systems
     // Fixed Update
     public sealed class KinematicRigidbody2DMovementSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<KinematicRigidbody2DTag, MoveToComponent
-                , TransformComponent, SpeedComponent, ActiveObjectTag>
-            _bodies;
+        private readonly EcsFilter<KinematicRigidbody2DTag, ActiveObjectTag
+                , MoveToComponent, TransformComponent, SpeedComponent>
+            _bodies = null;
 
         public void Run()
         {
-            foreach (var idx in _bodies)
+            foreach (int idx in _bodies)
             {
-                ref MoveToComponent moveToComponent = ref _bodies.Get2(idx);
-                ref TransformComponent transformComponent = ref _bodies.Get3(idx);
-                ref SpeedComponent speedComponent = ref _bodies.Get4(idx);
+                ref MoveToComponent moveToComponent = ref _bodies.Get3(idx);
+                ref TransformComponent transformComponent = ref _bodies.Get4(idx);
+                ref SpeedComponent speedComponent = ref _bodies.Get5(idx);
 
                 transformComponent
                     .value
-                    .Translate(moveToComponent.Value * speedComponent.value * Time.fixedDeltaTime);
+                    .Translate(moveToComponent.Value * speedComponent.value);
             }
         }
     }
