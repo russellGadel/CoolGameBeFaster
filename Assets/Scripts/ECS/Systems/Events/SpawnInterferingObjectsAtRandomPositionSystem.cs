@@ -24,7 +24,7 @@ namespace ECS.Systems.Events
     public sealed class SpawnInterferingObjectsAtRandomPositionSystem : IEcsRunSystem
     {
         private readonly EcsFilter<InterferingObjectsTag, SpawnEvent>
-            .Exclude<BlockSpawnDurationComponent> _interferingObjectsMain = null;
+            .Exclude<BlockSpawnDurationComponent> _spawnInterferingObjectsEvent = null;
 
         private readonly EcsFilter<PointsTag, SpawnedPointsCounterComponent> _spawnedPointsCounter = null;
 
@@ -42,13 +42,15 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idxMain in _interferingObjectsMain)
+            foreach (int idxEvent in _spawnInterferingObjectsEvent)
             {
-                double points = GetSpawnedPointsAmount();
-                LevelDifficulty levelDifficulty = GetLevelDifficulty(points);
+                GetSpawnedPointsAmount(out double points);
+                GetLevelDifficulty(in points, out LevelDifficulty levelDifficulty);
 
-                int spawnObjectsAmountAtSameTime =
-                    GetSpawnObjectsRandomAmountAtSameTime(ref levelDifficulty);
+                GetSpawnObjectsRandomAmountAtSameTime(in levelDifficulty, out int spawnObjectsAmountAtSameTime);
+
+                ref PositionsPoolComponent positionsPoolComponent = ref _spawnPositions.Get2(0);
+                ref List<float3> positions = ref positionsPoolComponent.Positions;
 
                 int spawnedObjectsCounter = 0;
                 foreach (var idxElements in _inactiveInterferingObjectsElements)
@@ -59,9 +61,9 @@ namespace ECS.Systems.Events
                     ref TransformComponent interferingObjectsTransform =
                         ref _inactiveInterferingObjectsElements.Get4(idxElements);
 
-                    interferingObjectsTransform.value.position = GetRandomPosition();
+                    interferingObjectsTransform.value.position = GetRandomPosition(in positions);
 
-                    ZeroingInterferingObjectRotation(idxElements);
+                    ZeroingInterferingObjectRotation(in idxElements);
 
                     interferingObjectEntity
                         .Replace(new SetRandomSpeedEvent())
@@ -79,50 +81,49 @@ namespace ECS.Systems.Events
                     }
                 }
 
-                ref EcsEntity entity = ref _interferingObjectsMain.GetEntity(idxMain);
+                ref EcsEntity entity = ref _spawnInterferingObjectsEvent.GetEntity(idxEvent);
                 entity.Get<BlockSpawnDurationComponent>().Timer =
-                    GetInterferingObjectsRandomSpawnDelay(ref levelDifficulty);
+                    GetInterferingObjectsRandomSpawnDelay(in levelDifficulty);
             }
         }
 
-        private static float GetInterferingObjectsRandomSpawnDelay(ref LevelDifficulty levelDifficulty)
+        private void GetSpawnedPointsAmount(out double points)
         {
-            return Random.Range(levelDifficulty.interferingObjectsSpawnDelayMin,
-                levelDifficulty.interferingObjectsSpawnDelayMax);
+            ref SpawnedPointsCounterComponent pointsComponent = ref _spawnedPointsCounter.Get2(0);
+            points = pointsComponent.Value;
         }
 
-        private static int GetSpawnObjectsRandomAmountAtSameTime(ref LevelDifficulty levelDifficulty)
+        private void GetLevelDifficulty(in double points, out LevelDifficulty levelDifficulty)
         {
-            return Random.Range(levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMin,
+            levelDifficulty = _mainSceneServices
+                .LevelDifficultyService
+                .GetDifficulty(in points);
+        }
+
+
+        private void GetSpawnObjectsRandomAmountAtSameTime(in LevelDifficulty levelDifficulty,
+            out int spawnObjectsAmountAtSameTime)
+        {
+            spawnObjectsAmountAtSameTime = Random.Range(levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMin,
                 levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMax);
         }
 
-        private double GetSpawnedPointsAmount()
+        private Vector3 GetRandomPosition(in List<float3> positions)
         {
-            ref SpawnedPointsCounterComponent pointsComponent = ref _spawnedPointsCounter.Get2(0);
-            return pointsComponent.Value;
-        }
-
-
-        private Vector3 GetRandomPosition()
-        {
-            ref PositionsPoolComponent positionsPoolComponent = ref _spawnPositions.Get2(0);
-            ref List<float3> positions = ref positionsPoolComponent.Positions;
             return positions[Random.Range(0, positions.Count)];
         }
 
-        private void ZeroingInterferingObjectRotation(int idxElements)
+        private void ZeroingInterferingObjectRotation(in int idxElements)
         {
             ref Rigidbody2DComponent interferingObjectsRigidbody =
                 ref _inactiveInterferingObjectsElements.Get5(idxElements);
             interferingObjectsRigidbody.value.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        private LevelDifficulty GetLevelDifficulty(double points)
+        private float GetInterferingObjectsRandomSpawnDelay(in LevelDifficulty levelDifficulty)
         {
-            return _mainSceneServices
-                .LevelDifficultyService
-                .GetDifficulty(points);
+            return Random.Range(levelDifficulty.interferingObjectsSpawnDelayMin,
+                levelDifficulty.interferingObjectsSpawnDelayMax);
         }
     }
 }

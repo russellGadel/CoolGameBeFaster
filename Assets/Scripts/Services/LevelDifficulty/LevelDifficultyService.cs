@@ -12,7 +12,7 @@
         private const int FirstDifficultyIndex = 0;
         private int _lastDifficultyIndex = FirstDifficultyIndex;
 
-        public LevelDifficulty GetDifficulty(double spawnedPointsAmount)
+        public LevelDifficulty GetDifficulty(in double spawnedPointsAmount)
         {
             if (spawnedPointsAmount > _settings.settings[_lastDifficultyIndex].spawnedPointsAmount)
             {
