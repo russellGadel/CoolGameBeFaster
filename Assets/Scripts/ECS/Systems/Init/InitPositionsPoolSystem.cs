@@ -16,13 +16,13 @@ namespace ECS.Systems.Init
         private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag, PositionsPoolComponent>
             _objectsPositionsPool = null;
 
-        private readonly MainSceneData _mainSceneData;
+        private readonly MainSceneData _mainSceneData = null;
 
         public void Init()
         {
             ref CameraBorderCornersComponent cameraBorderCornersComponent = ref _camera.Get1(0);
 
-            foreach (var entity in _objectsPositionsPool)
+            foreach (int entity in _objectsPositionsPool)
             {
                 ref PositionsPoolComponent positionsPoolComponent = ref _objectsPositionsPool.Get2(entity);
 
@@ -30,19 +30,20 @@ namespace ECS.Systems.Init
                 ref InterferingObjectsAppearingPositionSettings positionsSettings =
                     ref _mainSceneData.interferingObjectsAppearingPositionSettings;
 
-                FillLeftBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, ref positionsPool,
-                    ref positionsSettings);
-                FillTopBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, ref positionsPool,
-                    ref positionsSettings);
-                FillBottomBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, ref positionsPool,
-                    ref positionsSettings);
-                FillRightBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, ref positionsPool,
-                    ref positionsSettings);
+                FillLeftBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, in positionsSettings,
+                    ref positionsPool);
+                FillTopBorderSidePositions(cameraBorderCornersComponent.topLeftCorner, in positionsSettings,
+                    ref positionsPool);
+                FillBottomBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, in positionsSettings,
+                    ref positionsPool);
+                FillRightBorderSidePositions(cameraBorderCornersComponent.bottomRightCorner, in positionsSettings,
+                    ref positionsPool);
             }
         }
 
-        private void FillLeftBorderSidePositions(float3 topLeftCorner, ref List<float3> positionsPool,
-            ref InterferingObjectsAppearingPositionSettings positionSettings)
+        private void FillLeftBorderSidePositions(in float3 topLeftCorner
+            , in InterferingObjectsAppearingPositionSettings positionSettings,
+            ref List<float3> positionsPool)
         {
             float startXPoint = topLeftCorner.x - positionSettings.indentOutOfCameraBorder;
 
@@ -56,8 +57,9 @@ namespace ECS.Systems.Init
             }
         }
 
-        private void FillTopBorderSidePositions(float3 topLeftCorner, ref List<float3> positionsPool,
-            ref InterferingObjectsAppearingPositionSettings positionSettings)
+        private void FillTopBorderSidePositions(in float3 topLeftCorner
+            , in InterferingObjectsAppearingPositionSettings positionSettings,
+            ref List<float3> positionsPool)
         {
             float startYPoint = topLeftCorner.y + positionSettings.indentOutOfCameraBorder;
 
@@ -71,8 +73,9 @@ namespace ECS.Systems.Init
             }
         }
 
-        private void FillBottomBorderSidePositions(float3 bottomRightCorner, ref List<float3> positionsPool,
-            ref InterferingObjectsAppearingPositionSettings positionSettings)
+        private void FillBottomBorderSidePositions(in float3 bottomRightCorner
+            , in InterferingObjectsAppearingPositionSettings positionSettings,
+            ref List<float3> positionsPool)
         {
             float startYPoint = bottomRightCorner.y - positionSettings.indentOutOfCameraBorder;
 
@@ -86,8 +89,9 @@ namespace ECS.Systems.Init
             }
         }
 
-        private void FillRightBorderSidePositions(float3 bottomRightCorner, ref List<float3> positionsPool,
-            ref InterferingObjectsAppearingPositionSettings positionSettings)
+        private void FillRightBorderSidePositions(in float3 bottomRightCorner
+            , in InterferingObjectsAppearingPositionSettings positionSettings,
+            ref List<float3> positionsPool)
         {
             float startXPoint = bottomRightCorner.x + positionSettings.indentOutOfCameraBorder;
 

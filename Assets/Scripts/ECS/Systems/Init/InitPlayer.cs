@@ -12,7 +12,7 @@ namespace ECS.Systems.Init
 
         public void Init()
         {
-            foreach (var idx in _player)
+            foreach (int idx in _player)
             {
                 ref SpeedComponent speed = ref _player.Get2(idx);
                 speed.value = _mainSceneData.playerSettings.normalSpeed;

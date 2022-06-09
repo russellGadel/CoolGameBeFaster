@@ -11,7 +11,7 @@ namespace ECS.Systems.Init
        
         public void Init()
         {
-            foreach (var idx in _positions)
+            foreach (int idx in _positions)
             {
                 ref PositionsPoolComponent positionsPoolComponent = ref _positions.Get1(idx);
                 positionsPoolComponent.Positions = new List<float3>();

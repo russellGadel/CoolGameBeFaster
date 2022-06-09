@@ -5,15 +5,15 @@ using Leopotam.Ecs;
 
 namespace ECS.Systems.Init
 {
-    public sealed class InitPointsSystem : IEcsInitSystem
+    public sealed class InitPointSystem : IEcsInitSystem
     {
-        private readonly EcsFilter<PointTag, GameObjectComponent> _points = null;
+        private readonly EcsFilter<PointTag, GameObjectComponent> _allPoints = null;
 
         public void Init()
         {
-            foreach (var idx in _points)
+            foreach (int idx in _allPoints)
             {
-                ref EcsEntity entity = ref _points.GetEntity(idx);
+                ref EcsEntity entity = ref _allPoints.GetEntity(idx);
                 entity.Get<DeactivateObjectEvent>();
             }
         }

@@ -11,7 +11,7 @@ namespace ECS.Systems.Init
 
         public void Init()
         {
-            foreach (var idx in _interferingObjects)
+            foreach (int idx in _interferingObjects)
             {
                 ref EcsEntity entity = ref _interferingObjects.GetEntity(idx);
                 entity.Get<DeactivateObjectEvent>();

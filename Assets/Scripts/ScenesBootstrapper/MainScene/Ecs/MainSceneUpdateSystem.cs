@@ -81,7 +81,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 //
                 .Add(new InitInterferingObjectsPoolSystem())
                 //
-                .Add(new InitPointsSystem())
+                .Add(new InitPointSystem())
                 //
                 .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
                 //

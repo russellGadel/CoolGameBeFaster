@@ -6,7 +6,9 @@ using Services.SaveData;
 
 namespace ECS.Systems.Init
 {
-    public sealed class InitPointsEntitySystem : IEcsInitSystem, ISavedDataReader, ISaveData
+    public sealed class InitPointsEntitySystem : IEcsInitSystem
+        , ISavedDataReader
+        , ISaveData
     {
         private readonly EcsWorld _world = null;
         private readonly MainSceneServices _mainSceneServices = null;
@@ -30,12 +32,12 @@ namespace ECS.Systems.Init
 
             ref MaxPointsAmountGotByPlayer maxPointsAmount = ref points.Get<MaxPointsAmountGotByPlayer>();
 
-            Load(ref maxPointsAmount);
+            LoadSavedData(ref maxPointsAmount);
 
             _mainSceneServices.SaveDataService.AddSaveEventObservers(Save);
         }
 
-        private void Load(ref MaxPointsAmountGotByPlayer maxPointsAmount)
+        private void LoadSavedData(ref MaxPointsAmountGotByPlayer maxPointsAmount)
         {
             maxPointsAmount.Value = _mainSceneServices.SaveDataService.GetData().maxPointsAmountGotByPlayer;
         }
@@ -47,7 +49,7 @@ namespace ECS.Systems.Init
         {
             ref SaveData saveData = ref _mainSceneServices.SaveDataService.GetData();
 
-            foreach (var idx in _points)
+            foreach (int idx in _points)
             {
                 ref MaxPointsAmountGotByPlayer maxPointsAmount = ref _points.Get2(idx);
                 saveData.maxPointsAmountGotByPlayer = maxPointsAmount.Value;

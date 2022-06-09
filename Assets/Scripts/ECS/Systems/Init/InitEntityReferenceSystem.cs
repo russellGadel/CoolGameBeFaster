@@ -9,7 +9,7 @@ namespace ECS.Systems.Init
 
         public void Init()
         {
-            foreach (var idx in _filter)
+            foreach (int idx in _filter)
             {
                 ref EcsEntity entity = ref _filter.GetEntity(idx);
                 ref InitializeEntityMonoRequest monoRequest = ref _filter.Get1(idx);
