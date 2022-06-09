@@ -18,21 +18,24 @@ namespace Services.SaveData
             Debug.Log("Saved data");
         }
 
-        private delegate void Observer();
+        private event Action _saveObservers = null;
 
-        private event Observer _saveObservers = null;
-
-        public void AddSaveEventObservers(Action observer)
+        public void SubscribeToSaveEvent(Action observer)
         {
-            _saveObservers += () => observer();
+            _saveObservers += observer;
+        }
+
+        public void UnsubscribeFromSaveEvent(Action observer)
+        {
+            _saveObservers -= observer;
         }
 
         public void Load()
         {
             base.Load(ref _data, SaveFileName);
-            Debug.Log("LoadData");
+            Debug.Log("LoadedData");
         }
-        
+
         public ref SaveData GetData()
         {
             return ref _data;

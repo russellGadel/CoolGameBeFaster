@@ -1,4 +1,5 @@
-﻿using ECS.Components.PointsComponents;
+﻿using System;
+using ECS.Components.PointsComponents;
 using ECS.References.MainScene;
 using ECS.Tags.Points;
 using Leopotam.Ecs;
@@ -9,6 +10,7 @@ namespace ECS.Systems.Init
     public sealed class InitPointsEntitySystem : IEcsInitSystem
         , ISavedDataReader
         , ISaveData
+        , IDisposable
     {
         private readonly EcsWorld _world = null;
         private readonly MainSceneServices _mainSceneServices = null;
@@ -34,7 +36,12 @@ namespace ECS.Systems.Init
 
             LoadSavedData(ref maxPointsAmount);
 
-            _mainSceneServices.SaveDataService.AddSaveEventObservers(Save);
+            _mainSceneServices.SaveDataService.SubscribeToSaveEvent(Save);
+        }
+
+        void IDisposable.Dispose()
+        {
+            _mainSceneServices.SaveDataService.UnsubscribeFromSaveEvent(Save);
         }
 
         private void LoadSavedData(ref MaxPointsAmountGotByPlayer maxPointsAmount)

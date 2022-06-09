@@ -4,7 +4,8 @@ namespace Services.SaveData
 {
     public interface ISaveDataService
     {
-        void AddSaveEventObservers(Action observer);
+        void SubscribeToSaveEvent(Action observer);
+        void UnsubscribeFromSaveEvent(Action observer);
         ref SaveData GetData();
     }
 }
