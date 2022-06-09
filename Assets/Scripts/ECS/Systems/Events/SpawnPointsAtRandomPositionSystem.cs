@@ -19,7 +19,7 @@ namespace ECS.Systems.Events
     public sealed class SpawnPointsAtRandomPositionSystem : IEcsRunSystem
     {
         private readonly EcsFilter<PointsTag, SpawnEvent>
-            .Exclude<BlockSpawnDurationComponent> _pointsMain = null;
+            .Exclude<BlockSpawnDurationComponent> _spawnPointsEvents = null;
 
         private readonly EcsFilter<PointsTag, SpawnedPointsCounterComponent> _spawnedPointsCounter = null;
 
@@ -27,36 +27,36 @@ namespace ECS.Systems.Events
             , SpawnAreaSizeComponent
             , PolygonCollider2DComponent> _spawnPositions = null;
 
-        private MainSceneServices _mainSceneServices;
+        private readonly MainSceneServices _mainSceneServices = null;
 
         private readonly EcsFilter<PointTag
             , InactiveObjectTag
             , TransformComponent> _inactivePointsElements = null;
 
+        private readonly int _attemptsToFindPointPosition = 3;
 
         public void Run()
         {
-            foreach (var mainIdx in _pointsMain)
+            foreach (int idxEvent in _spawnPointsEvents)
             {
                 ref SpawnAreaSizeComponent spawnAreaSize = ref _spawnPositions.Get2(0);
                 ref PolygonCollider2DComponent spawnAreaCollider = ref _spawnPositions.Get3(0);
 
                 ref SpawnedPointsCounterComponent spawnedPoints = ref _spawnedPointsCounter.Get2(0);
-                LevelDifficulty levelDifficulty = GetLevelDifficulty(spawnedPoints.Value);
 
+                GetLevelDifficulty(in spawnedPoints.Value, out LevelDifficulty levelDifficulty);
 
-                int spawnPointsAmountAtSameTime = GetSpawnPointsRandomAmountAtSameTime(ref levelDifficulty);
+                int spawnPointsAmountAtSameTime = GetSpawnPointsRandomAmountAtSameTime(in levelDifficulty);
 
                 int spawnedPointsAtSameTimeCounter = 0;
-                int attemptsToFindPosition = 3;
-                foreach (var idxElements in _inactivePointsElements)
+                foreach (int idxElements in _inactivePointsElements)
                 {
                     ref EcsEntity pointEntity = ref _inactivePointsElements.GetEntity(idxElements);
                     ref TransformComponent pointTransform = ref _inactivePointsElements.Get3(idxElements);
 
-                    for (int i = 0; i < attemptsToFindPosition; i++)
+                    for (int i = 0; i < _attemptsToFindPointPosition; i++)
                     {
-                        Vector3 position = GetRandomPosition(ref spawnAreaSize);
+                        Vector2 position = GetRandomPosition(in spawnAreaSize);
 
                         if (spawnAreaCollider.value.OverlapPoint(position))
                         {
@@ -66,7 +66,7 @@ namespace ECS.Systems.Events
                                 .Replace(new ActivateObjectEvent())
                                 .Replace(new DelayTimeDeactivateObjectComponent()
                                 {
-                                    Timer = GetRandomPointLifeTime(ref levelDifficulty)
+                                    Timer = GetRandomPointLifeTime(in levelDifficulty)
                                 });
 
 
@@ -83,40 +83,40 @@ namespace ECS.Systems.Events
                     }
                 }
 
-                ref EcsEntity mainEntity = ref _pointsMain.GetEntity(mainIdx);
-                float timer = GetPointsRandomSpawnDelay(ref levelDifficulty);
+                ref EcsEntity mainEntity = ref _spawnPointsEvents.GetEntity(idxEvent);
+                float timer = GetPointsRandomSpawnDelay(in levelDifficulty);
                 mainEntity.Get<BlockSpawnDurationComponent>().Timer = timer;
             }
         }
 
 
-        private LevelDifficulty GetLevelDifficulty(double points)
+        private void GetLevelDifficulty(in double points, out LevelDifficulty levelDifficulty)
         {
-            return _mainSceneServices
+            levelDifficulty = _mainSceneServices
                 .LevelDifficultyService
                 .GetDifficulty(points);
         }
 
-        private static int GetSpawnPointsRandomAmountAtSameTime(ref LevelDifficulty levelDifficulty)
+        private int GetSpawnPointsRandomAmountAtSameTime(in LevelDifficulty levelDifficulty)
         {
             return Random.Range(levelDifficulty.spawnedPointsAmountAtSameTimeMin,
                 levelDifficulty.spawnedPointsAmountAtSameTimeMax);
         }
 
-        private static Vector3 GetRandomPosition(ref SpawnAreaSizeComponent spawnAreaSize)
+        private Vector2 GetRandomPosition(in SpawnAreaSizeComponent spawnAreaSize)
         {
             float randomX = Random.Range(spawnAreaSize.MinX, spawnAreaSize.MaxX);
             float randomY = Random.Range(spawnAreaSize.MinY, spawnAreaSize.MaxY);
 
-            return new Vector3(randomX, randomY, 0);
+            return new Vector2(randomX, randomY);
         }
 
-        private static float GetRandomPointLifeTime(ref LevelDifficulty levelDifficulty)
+        private float GetRandomPointLifeTime(in LevelDifficulty levelDifficulty)
         {
             return Random.Range(levelDifficulty.pointsLifeTimeMin, levelDifficulty.pointsLifeTimeMax);
         }
 
-        private static float GetPointsRandomSpawnDelay(ref LevelDifficulty levelDifficulty)
+        private float GetPointsRandomSpawnDelay(in LevelDifficulty levelDifficulty)
         {
             return Random.Range(levelDifficulty.pointsSpawnDelayMin, levelDifficulty.pointsSpawnDelayMax);
         }

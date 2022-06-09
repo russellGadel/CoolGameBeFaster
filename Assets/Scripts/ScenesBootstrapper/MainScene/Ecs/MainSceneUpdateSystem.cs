@@ -86,8 +86,8 @@ namespace ScenesBootstrapper.MainScene.Ecs
                 .Add(new InitObjectsSpawnAreaOnPolygonCollider2D())
                 //
                 .Add(new InitPlayer())
-                //
-
+                
+                
                 //Last System at INIT
                 .Add(new InitGameEntitySystem())
                 // 

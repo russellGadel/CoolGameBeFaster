@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/ILevelDifficultyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/ILevelDifficultyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficultyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficultyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnPointsAtRandomPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnPointsAtRandomPositionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/CustomCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Tags/Map/MapTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/db/a33d8128/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4c5a6552ee3e423aa509a1d67235df501b800/5f/b0003361/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Components/UserCamera/UserCameraPresenter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BabySleepWhiteNoise/BabySleepWhiteNoise/Assets/Systems/Events/Events/PrivacyPolicyWindowEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.leopotam.ecs@1966a4c1fd/src/EcsEntity.cs" root0="SKIP_HIGHLIGHTING" />
@@ -164,7 +164,7 @@
       <workItem from="1654516979616" duration="12634000" />
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
-      <workItem from="1654771124598" duration="481000" />
+      <workItem from="1654771124598" duration="2547000" />
     </task>
     <servers />
   </component>
