@@ -4,9 +4,7 @@
     {
         public void Quit()
         {
-            UnityEngine
-                .Application
-                .Quit();
+            UnityEngine.Application.Quit();
         }
     }
 }

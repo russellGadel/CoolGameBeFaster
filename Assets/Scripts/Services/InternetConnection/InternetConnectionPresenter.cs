@@ -11,8 +11,8 @@ namespace Services.InternetConnection
         private IInternetConnectionModel _model;
         private IHasNotInternetConnectionView _hasNotConnectionView;
 
-        public void Construct(IInternetConnectionModel model
-            , IHasNotInternetConnectionView hasNotConnectionView)
+        public void Construct(in IInternetConnectionModel model
+            , in IHasNotInternetConnectionView hasNotConnectionView)
         {
             _model = model;
             _hasNotConnectionView = hasNotConnectionView;
@@ -21,28 +21,28 @@ namespace Services.InternetConnection
         public void CheckInternetConnection([CanBeNull] Action thenHasInternetConnection,
             [CanBeNull] Action thenHasNotInternetConnection)
         {
-            void HasInternetConnectionObservers()
-            {
-                _hasNotConnectionView.Close();
-                thenHasInternetConnection?.Invoke();
-            }
-
-            _model
-                .AddOnlyOneObserverToHasInternetConnectionEvent(HasInternetConnectionObservers);
+            _model.AddOnlyOneObserverToHasInternetConnectionEvent(() =>
+                HasInternetConnectionObservers(thenHasInternetConnection));
 
 
-            void HasNotInternetConnectionObservers()
-            {
-                _hasNotConnectionView.Open();
-                StartCoroutine(_model.CheckInternetConnectionWithDelay());
-                thenHasNotInternetConnection?.Invoke();
-            }
-
-            _model.AddOnlyOneObserverToHasNotInternetConnectionEvent(
-                HasNotInternetConnectionObservers);
+            _model.AddOnlyOneObserverToHasNotInternetConnectionEvent(() =>
+                HasNotInternetConnectionObservers(thenHasNotInternetConnection));
 
 
             StartCoroutine(_model.CheckInternetConnection());
+        }
+
+        private void HasInternetConnectionObservers(in Action thenHasInternetConnection)
+        {
+            _hasNotConnectionView.Close();
+            thenHasInternetConnection?.Invoke();
+        }
+
+        private void HasNotInternetConnectionObservers(in Action thenHasNotInternetConnection)
+        {
+            _hasNotConnectionView.Open();
+            StartCoroutine(_model.CheckInternetConnectionWithDelay());
+            thenHasNotInternetConnection?.Invoke();
         }
     }
 }

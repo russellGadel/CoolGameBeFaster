@@ -9,5 +9,7 @@ namespace Services.InternetConnection
         IEnumerator CheckInternetConnection();
         void AddOnlyOneObserverToHasInternetConnectionEvent(Action observer);
         void AddOnlyOneObserverToHasNotInternetConnectionEvent(Action observer);
+        void RemoveObserverFromHasInternetConnectionEvent();
+        void RemoveObserverFromHasNotInternetConnectionEvent();
     }
 }

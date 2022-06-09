@@ -11,7 +11,7 @@ namespace ScenesLoader
         {
             SceneManager.LoadScene(sceneNaming.ToString());
         }
-        
+
         public IEnumerator LoadSceneAsync(ScenesNaming sceneNaming, ISceneBootstrapper currentSceneBootstrapper)
         {
             currentSceneBootstrapper.Exit();

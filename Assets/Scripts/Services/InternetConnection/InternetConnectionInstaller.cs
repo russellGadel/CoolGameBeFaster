@@ -19,7 +19,7 @@ namespace Services.InternetConnection
                 .AsSingle();
         }
 
-        [SerializeField] private InternetConnectionPresenter presenter;
+        [SerializeField] private InternetConnectionPresenter _presenter;
 
         [SerializeField] private HasNotInternetConnectionView _hasNotConnectionView;
 
@@ -27,8 +27,8 @@ namespace Services.InternetConnection
         {
             InternetConnectionModel model = InstallModel();
 
-            presenter.Construct(model, _hasNotConnectionView);
-            return presenter;
+            _presenter.Construct(model, _hasNotConnectionView);
+            return _presenter;
         }
 
 

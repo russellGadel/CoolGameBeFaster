@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -9,14 +10,13 @@ namespace Services.InternetConnection
     public sealed class InternetConnectionModel : IInternetConnectionModel
     {
         private readonly InternetConnectionSettings _settings;
+        private int _attemptsToConnectToServerCounter;
 
-        public InternetConnectionModel(InternetConnectionSettings settings)
+        public InternetConnectionModel(in InternetConnectionSettings settings)
         {
             _settings = settings;
             _attemptsToConnectToServerCounter = 0;
         }
-
-        private int _attemptsToConnectToServerCounter;
 
         public IEnumerator CheckInternetConnectionWithDelay()
         {
@@ -38,9 +38,9 @@ namespace Services.InternetConnection
                 url = Path.Combine(_settings.secondURLForCheckInternetConnection);
             }
 
-            var request = UnityWebRequest.Get(url);
+            using UnityWebRequest request = UnityWebRequest.Get(url);
             yield return request.SendWebRequest();
-
+            
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Has internet Connection");
@@ -57,20 +57,28 @@ namespace Services.InternetConnection
         }
 
 
-        private delegate void Observer();
-
-        private event Observer HasInternetConnectionEvent;
+        private event Action HasInternetConnectionEvent;
 
         public void AddOnlyOneObserverToHasInternetConnectionEvent(Action observer)
         {
-            HasInternetConnectionEvent = () => observer();
+            HasInternetConnectionEvent = observer;
         }
 
-        private event Observer HasNotInternetConnectionEvent;
+        public void RemoveObserverFromHasInternetConnectionEvent()
+        {
+            HasInternetConnectionEvent = null;
+        }
+
+        private event Action HasNotInternetConnectionEvent;
 
         public void AddOnlyOneObserverToHasNotInternetConnectionEvent(Action observer)
         {
-            HasNotInternetConnectionEvent = () => observer();
+            HasNotInternetConnectionEvent = observer;
+        }
+
+        public void RemoveObserverFromHasNotInternetConnectionEvent()
+        {
+            HasNotInternetConnectionEvent = null;
         }
     }
 }

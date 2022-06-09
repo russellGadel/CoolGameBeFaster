@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/BootstrapExecutor/BootstrapExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BootstrapExecutor/BootstrapExecutor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/BootstrapExecutor/IBootstrapExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BootstrapExecutor/IBootstrapExecutor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/MainSceneBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/CustomScenesLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesLoader/CustomScenesLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/ApplicationService/ApplicationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/ApplicationService/ApplicationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/IInternetConnectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/IInternetConnectionModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionPresenter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +168,7 @@
       <workItem from="1654516979616" duration="12634000" />
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
-      <workItem from="1654771124598" duration="8195000" />
+      <workItem from="1654771124598" duration="9963000" />
     </task>
     <servers />
   </component>
