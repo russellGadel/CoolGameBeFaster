@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66cae80fd9a472599872e33714acc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePlaySettings: {fileID: 0}
+  gamePlaySettings: {fileID: 1905795951}
   interferingObjectsAppearingPositionSettings: {fileID: 1445364992}
   playerSettings: {fileID: 1654138387}
 --- !u!114 &51167844
@@ -3756,7 +3756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8047918, y: 0.04170371}
   m_AnchorMax: {x: 0.966125, y: 0.32318524}
-  m_AnchoredPosition: {x: 45.80005, y: -18.30249}
+  m_AnchoredPosition: {x: 45.80005, y: -18.302612}
   m_SizeDelta: {x: -10, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754272756

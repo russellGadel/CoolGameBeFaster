@@ -8,12 +8,12 @@ namespace ECS.Triggers
 {
     public class InterferingObjectHitPlayerTrigger : MonoBehaviour
     {
+        [SerializeField] private MonoEntity _playerMonoEntity;
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.CompareTag(UnityTags.InterferingObject.ToString()))
             {
-                MonoEntity playerMonoEntity = gameObject.GetComponent<MonoEntity>();
-                playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
+                _playerMonoEntity.Entity.Replace(new InterferingObjectHitPlayerEvent());
 
                 MonoEntity interferingObjectEntity = col.gameObject.GetComponent<MonoEntity>();
                 interferingObjectEntity.Entity.Replace(new DeactivateObjectEvent());
