@@ -21,12 +21,12 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private MainSceneUIViews _mainSceneUIViews;
 
 
-        public void Construct(ref EcsWorld world
-            , ref StaticData staticData
-            , ref MainSceneData mainSceneData
-            , ref MainSceneUIViews mainSceneUIViews
-            , ref MainSceneServices mainSceneServices
-            , ref RuntimeData runtimeData)
+        public void Construct(in EcsWorld world
+            , in StaticData staticData
+            , in MainSceneData mainSceneData
+            , in MainSceneUIViews mainSceneUIViews
+            , in MainSceneServices mainSceneServices
+            , in RuntimeData runtimeData)
         {
             _world = world;
 

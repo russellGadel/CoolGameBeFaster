@@ -19,8 +19,10 @@ namespace ScenesBootstrapper.MainScene.Ecs
         private MainSceneData _mainSceneData;
         private RuntimeData _runtimeData;
 
-        public void Construct(ref EcsWorld world, ref StaticData staticData, ref MainSceneData mainSceneData,
-            ref RuntimeData runtimeData)
+        public void Construct(in EcsWorld world
+            , in StaticData staticData
+            , in MainSceneData mainSceneData
+            , in RuntimeData runtimeData)
         {
             _world = world;
 

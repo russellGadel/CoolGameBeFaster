@@ -14,7 +14,7 @@ namespace ScenesBootstrapper.MainScene.Ecs
         [SerializeField] private MainSceneData _mainSceneData;
         [SerializeField] private MainSceneUIViews _mainSceneUIViews;
         [SerializeField] private MainSceneServices _mainSceneServices;
-        private RuntimeData _runtimeData = new RuntimeData();
+        private readonly RuntimeData _runtimeData = new RuntimeData();
 
         [SerializeField] private MainSceneFixedUpdateSystem mainSceneFixedUpdateSystem;
         [SerializeField] private MainSceneUpdateSystem mainSceneUpdateSystem;
@@ -24,9 +24,10 @@ namespace ScenesBootstrapper.MainScene.Ecs
         {
             _world = new EcsWorld();
 
-            mainSceneUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _mainSceneUIViews
-                , ref _mainSceneServices, ref _runtimeData);
-            mainSceneFixedUpdateSystem.Construct(ref _world, ref _staticData, ref _mainSceneData, ref _runtimeData);
+            mainSceneUpdateSystem.Construct(_world, _staticData, _mainSceneData, _mainSceneUIViews, _mainSceneServices,
+                _runtimeData);
+
+            mainSceneFixedUpdateSystem.Construct(_world, _staticData, _mainSceneData, _runtimeData);
 
             _ecsLoaded = true;
 
