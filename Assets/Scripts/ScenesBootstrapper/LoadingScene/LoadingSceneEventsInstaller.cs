@@ -62,7 +62,9 @@ namespace ScenesBootstrapper.LoadingScene
 
         private void BindSetGameTypeEvent()
         {
-            Container.Bind<SetGameTypeEvent>().AsSingle();
+            Container
+                .Bind<SetGameTypeEvent>()
+                .AsSingle();
         }
     }
 }
