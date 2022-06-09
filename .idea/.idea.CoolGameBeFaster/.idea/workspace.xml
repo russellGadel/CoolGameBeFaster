@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/UnityAds/UnityAdsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/UnityAds/UnityAdsService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcb9dac8ae3a488693b0f4cd5b0db0be287150/66/3a65a867/IObserver`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.voody.unileo@bbaed2aec8/Runtime/MonoHelpers/MonoProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ECS/Tags/Player/PlayerTag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcb9dac8ae3a488693b0f4cd5b0db0be287150/23/3345b23f/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ads@4.1.0/Runtime/Advertisement/Platform/Editor/EditorPlatform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5406a456cf734443b3d02a7d123287f1299290/95/c47ff8eb/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/SaveData/ISaveData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -163,7 +163,7 @@
       <workItem from="1654516979616" duration="12634000" />
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
-      <workItem from="1654771124598" duration="11254000" />
+      <workItem from="1654771124598" duration="11564000" />
     </task>
     <servers />
   </component>
