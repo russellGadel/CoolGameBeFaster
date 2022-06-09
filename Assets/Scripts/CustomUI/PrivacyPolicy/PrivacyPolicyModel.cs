@@ -25,14 +25,7 @@ namespace CustomUI.PrivacyPolicy
 
         private void OpenURL(in string url)
         {
-            try
-            {
-                Application.OpenURL(url);
-            }
-            catch
-            {
-                Debug.Log("Must open connect to internet connection");
-            }
+            Application.OpenURL(url);
         }
 
 
