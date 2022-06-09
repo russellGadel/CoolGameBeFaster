@@ -23,7 +23,7 @@ namespace ECS.Systems.Events
 
         public void Run()
         {
-            foreach (var idx in _startGameEvent)
+            foreach (int idx in _startGameEvent)
             {
                 SpawnPlayerAtInitPosition();
                 PreparePoints();
