@@ -32,14 +32,17 @@ namespace Core.BootstrapExecutor
         {
             return _isDone;
         }
+        
+        private event Action ThenEndLoading;
 
-        private delegate void Observers();
-
-        private event Observers _thenEndLoading;
-
-        public void AddObserverToEndBootstrapEvent(Action observer)
+        public void SubscribeToEndBootstrapEvent(Action observer)
         {
-            _thenEndLoading += () => observer();
+            ThenEndLoading += observer;
+        }
+
+        public void UnsubscribeFromEndBootstrapEvent(Action observer)
+        {
+            ThenEndLoading -= observer;
         }
 
         private IEnumerator ExecuteCoroutine()
@@ -50,7 +53,7 @@ namespace Core.BootstrapExecutor
             }
 
             _isDone = true;
-            _thenEndLoading?.Invoke();
+            ThenEndLoading?.Invoke();
         }
     }
 }

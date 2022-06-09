@@ -8,6 +8,7 @@ namespace Core.BootstrapExecutor
         void Execute();
         bool IsDone();
         void Clear();
-        void AddObserverToEndBootstrapEvent(Action observer);
+        void SubscribeToEndBootstrapEvent(Action observer);
+        void UnsubscribeFromEndBootstrapEvent(Action observer);
     }
 }

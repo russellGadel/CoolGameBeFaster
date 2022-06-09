@@ -1,4 +1,5 @@
-﻿using Core.BootstrapExecutor;
+﻿using System;
+using Core.BootstrapExecutor;
 using CustomEvents;
 using ScenesBootstrapper.MainScene.Ecs;
 using ScenesBootstrapper.MainScene.Events;
@@ -6,7 +7,9 @@ using Zenject;
 
 namespace ScenesBootstrapper.MainScene
 {
-    public sealed class MainSceneBootstrapper : ISceneBootstrapper
+    public sealed class MainSceneBootstrapper :
+        ISceneBootstrapper
+        , IDisposable
     {
         [Inject] private readonly LoadingWindowDualEvents _loadingWindowDualEvents;
 
@@ -22,6 +25,12 @@ namespace ScenesBootstrapper.MainScene
 
         public void Exit()
         {
+        }
+
+        void IDisposable.Dispose()
+        {
+            _bootstrapsExecutor
+                .UnsubscribeFromEndBootstrapEvent(EndBootstrapEventObservers);
         }
 
 
@@ -44,7 +53,7 @@ namespace ScenesBootstrapper.MainScene
         private void AddObserversToEndBootstrap()
         {
             _bootstrapsExecutor
-                .AddObserverToEndBootstrapEvent(EndBootstrapEventObservers);
+                .SubscribeToEndBootstrapEvent(EndBootstrapEventObservers);
         }
 
         private void EndBootstrapEventObservers()
