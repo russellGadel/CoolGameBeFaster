@@ -15,8 +15,8 @@ namespace Services.UnityAds
         private UnityAdsSettings _settings;
         private IInternetConnectionService _internetConnectionService;
 
-        public void Construct(UnityAdsSettings settings
-            , IInternetConnectionService internetConnectionService)
+        public void Construct(in UnityAdsSettings settings
+            , in IInternetConnectionService internetConnectionService)
         {
             _internetConnectionService = internetConnectionService;
             _settings = settings;
@@ -95,7 +95,7 @@ namespace Services.UnityAds
 
         public void UnsubscribeFromCompletedWatchingRewardedVideo(Action observer)
         {
-            CompletedWatchingRewardedVideoEvent += observer;
+            CompletedWatchingRewardedVideoEvent -= observer;
         }
 
         void IUnityAdsShowListener.OnUnityAdsShowComplete(string placementId,
