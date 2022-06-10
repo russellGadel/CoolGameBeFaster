@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Core.InstallersExecutor
 {
-    public class CustomInstallersExecutorInstaller : MonoInstaller
+    public sealed class CustomInstallersExecutorInstaller : MonoInstaller
     {
         [SerializeField] private CustomInstallersExecutor _executor;
 

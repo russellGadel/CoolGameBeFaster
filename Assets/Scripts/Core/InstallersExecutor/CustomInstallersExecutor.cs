@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Core.InstallersExecutor
 {
-    public class CustomInstallersExecutor : MonoBehaviour, ICustomInstallersExecutor
+    public sealed class CustomInstallersExecutor : MonoBehaviour
+        , ICustomInstallersExecutor
     {
         private readonly List<ICustomInstaller> _events = new List<ICustomInstaller>();
 
-        public void AddInstaller(ICustomInstaller customEvent)
+        public void AddInstaller(in ICustomInstaller customEvent)
         {
             _events.Add(customEvent);
         }

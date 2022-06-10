@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoaderInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/CustomEventsLoaderInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventsLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/EventsLoader/ICustomEventsLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/CustomInstallersExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/CustomInstallersExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/CustomInstallersExecutorInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/CustomInstallersExecutorInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/ICustomInstallersExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InstallersExecutor/ICustomInstallersExecutor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
       <workItem from="1654771124598" duration="12416000" />
-      <workItem from="1654850597869" duration="1778000" />
+      <workItem from="1654850597869" duration="1830000" />
     </task>
     <servers />
   </component>

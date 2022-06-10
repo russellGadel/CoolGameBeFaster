@@ -2,7 +2,7 @@
 {
     public interface ICustomInstallersExecutor
     {
-        void AddInstaller(ICustomInstaller customEvent);
+        void AddInstaller(in ICustomInstaller customEvent);
         void Execute();
         void Clear();
         bool IsDone();
