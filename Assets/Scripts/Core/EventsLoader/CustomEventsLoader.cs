@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Core.EventsLoader
 {
-    public class CustomEventsLoader : MonoBehaviour, ICustomEventsLoader
+    public sealed class CustomEventsLoader : MonoBehaviour
+        , ICustomEventsLoader
     {
         private readonly List<ICustomEventLoader> _events = new List<ICustomEventLoader>();
 
-        public void AddEvent(ICustomEventLoader customEventLoader)
+        public void AddEvent(in ICustomEventLoader customEventLoader)
         {
             _events.Add(customEventLoader);
         }

@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Core.EventsLoader
 {
-    public class CustomEventsLoaderInstaller : MonoInstaller
+    public sealed class CustomEventsLoaderInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
