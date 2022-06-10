@@ -10,7 +10,7 @@ namespace Core.BootstrapExecutor
     {
         private readonly List<IBootstrapper> _events = new List<IBootstrapper>();
 
-        public void Add(IBootstrapper bootstrap)
+        public void Add(in IBootstrapper bootstrap)
         {
             _events.Add(bootstrap);
         }
