@@ -9,7 +9,7 @@ namespace Core
         protected void Save(T savingData, string fileName)
         {
             string path = Path.Combine(Application.persistentDataPath + "/" + fileName);
-            
+
             BinaryFormatter bfFlow = new BinaryFormatter();
 
             if (File.Exists(path))
@@ -17,10 +17,8 @@ namespace Core
                 File.Delete(path);
             }
 
-            FileStream saveFile = File.Create(path);
-
+            using FileStream saveFile = File.Create(path);
             bfFlow.Serialize(saveFile, savingData);
-            saveFile.Close();
         }
 
         protected void Load(ref T savedGameData, string fileName)
@@ -30,10 +28,9 @@ namespace Core
             if (File.Exists(path))
             {
                 BinaryFormatter bfFlowAutomatically = new BinaryFormatter();
-                FileStream automaticallySaveFile = File.Open(path, FileMode.Open);
+                using FileStream automaticallySaveFile = File.Open(path, FileMode.Open);
 
                 savedGameData = (T) bfFlowAutomatically.Deserialize(automaticallySaveFile);
-                automaticallySaveFile.Close();
             }
         }
     }
