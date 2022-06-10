@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Core.BootstrapExecutor
 {
-    public class BootstrapExecutorInstaller : MonoInstaller
+    public sealed class BootstrapExecutorInstaller : MonoInstaller
     {
         [SerializeField] private BootstrapExecutor _executor;
         public override void InstallBindings()

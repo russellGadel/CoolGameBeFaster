@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Core.BootstrapExecutor
 {
-    public class BootstrapExecutor : MonoBehaviour
+    public sealed class BootstrapExecutor : MonoBehaviour
         , IBootstrapExecutor
     {
         private readonly List<IBootstrapper> _events = new List<IBootstrapper>();
