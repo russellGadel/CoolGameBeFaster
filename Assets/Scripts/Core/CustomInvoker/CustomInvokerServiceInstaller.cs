@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Core.CustomInvoker
 {
-    public class CustomInvokerServiceInstaller : MonoInstaller
+    public sealed class CustomInvokerServiceInstaller : MonoInstaller
     {
         [SerializeField] private CustomInvokerService _service;
 

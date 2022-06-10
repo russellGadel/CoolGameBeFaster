@@ -5,12 +5,13 @@ using UnityEngine;
 
 namespace Core.CustomInvoker
 {
-    public class CustomInvokerService : MonoBehaviour, ICustomInvokerServiceForInvokers
+    public sealed class CustomInvokerService : MonoBehaviour
+        , ICustomInvokerServiceForInvokers
         , ICustomInvokerService
     {
         private readonly List<CustomInvoker> _freeInvokers = new List<CustomInvoker>();
 
-        public void CustomInvoke(Action action, float delayTime)
+        public void CustomInvoke(Action action, in float delayTime)
         {
             if (_freeInvokers.Count != 0)
             {
@@ -26,7 +27,7 @@ namespace Core.CustomInvoker
             }
         }
 
-        void ICustomInvokerServiceForInvokers.AddFreeInvoker(ref CustomInvoker invoker)
+        void ICustomInvokerServiceForInvokers.AddFreeInvoker(in CustomInvoker invoker)
         {
             _freeInvokers.Add(invoker);
         }

@@ -2,6 +2,6 @@
 {
     public interface ICustomInvokerServiceForInvokers
     {
-        void AddFreeInvoker(ref CustomInvoker invoker);
+        void AddFreeInvoker(in CustomInvoker invoker);
     }
 }

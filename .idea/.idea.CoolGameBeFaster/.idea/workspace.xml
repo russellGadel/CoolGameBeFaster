@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/CustomCoroutine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/CustomCoroutine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/CustomCoroutinesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/CustomCoroutinesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/ICustomCoroutinesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/ICustomCoroutinesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/IServiceForCustomCoroutine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomCoroutine/IServiceForCustomCoroutine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvoker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvoker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvokerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvokerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvokerServiceInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/CustomInvokerServiceInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/ICustomInvokerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/ICustomInvokerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/ICustomInvokerServiceForInvokers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CustomInvoker/ICustomInvokerServiceForInvokers.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +169,7 @@
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
       <workItem from="1654771124598" duration="12416000" />
-      <workItem from="1654850597869" duration="1472000" />
+      <workItem from="1654850597869" duration="1677000" />
     </task>
     <servers />
   </component>
