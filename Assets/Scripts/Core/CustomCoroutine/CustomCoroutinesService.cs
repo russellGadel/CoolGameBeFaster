@@ -10,7 +10,7 @@ namespace Core.CustomCoroutine
     {
         private readonly List<CustomCoroutine> _freeCoroutines = new List<CustomCoroutine>();
 
-        public void StartCustomCoroutine(ICustomCoroutineClient customCoroutineClient)
+        public void StartCustomCoroutine(in ICustomCoroutineClient customCoroutineClient)
         {
             CustomCoroutine customCoroutine;
 
@@ -27,7 +27,7 @@ namespace Core.CustomCoroutine
             customCoroutine.StartCustomCoroutine(customCoroutineClient);
         }
 
-        void IServiceForCustomCoroutine.AddFreeCoroutine(CustomCoroutine coroutine)
+        void IServiceForCustomCoroutine.AddFreeCoroutine(in CustomCoroutine coroutine)
         {
             _freeCoroutines.Add(coroutine);
         }

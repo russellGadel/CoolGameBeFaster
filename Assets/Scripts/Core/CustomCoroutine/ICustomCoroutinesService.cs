@@ -2,6 +2,6 @@
 {
     public interface ICustomCoroutinesService
     {
-        void StartCustomCoroutine(ICustomCoroutineClient customCoroutineClient);
+        void StartCustomCoroutine(in ICustomCoroutineClient customCoroutineClient);
     }
 }

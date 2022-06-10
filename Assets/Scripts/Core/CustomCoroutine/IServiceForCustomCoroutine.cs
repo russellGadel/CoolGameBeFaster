@@ -2,6 +2,6 @@
 {
     public interface IServiceForCustomCoroutine
     {
-        void AddFreeCoroutine(CustomCoroutine coroutine);
+        void AddFreeCoroutine(in CustomCoroutine coroutine);
     }
 }
