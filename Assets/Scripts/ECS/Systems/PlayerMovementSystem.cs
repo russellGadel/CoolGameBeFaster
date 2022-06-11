@@ -24,15 +24,13 @@ namespace ECS.Systems
                 ref Rigidbody2DComponent rigidbody2DComponent = ref _ecsFilter.Get3(entity);
                 ref SpeedComponent speedComponent = ref _ecsFilter.Get4(entity);
                 ref DirectionComponent directionComponent = ref _ecsFilter.Get5(entity);
-                
+
                 ref Rigidbody2D rigidbody = ref rigidbody2DComponent.value;
                 ref float speed = ref speedComponent.value;
 
                 ref Vector3 direction = ref directionComponent.Direction;
 
-
                 rigidbody.AddForce(direction * speed);
-
             }
         }
     }
