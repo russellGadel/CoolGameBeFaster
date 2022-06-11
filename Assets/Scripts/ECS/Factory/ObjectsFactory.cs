@@ -8,7 +8,7 @@ namespace ECS.Factory
         [SerializeField] private GameObject _prefab;
         [SerializeField] private int _elementsAmount;
 
-        public void Awake()
+        public void Start()
         {
             for (int i = 0; i < _elementsAmount; i++)
             {

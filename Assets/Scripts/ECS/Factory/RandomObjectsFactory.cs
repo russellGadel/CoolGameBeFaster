@@ -9,7 +9,7 @@ namespace ECS.Factory
         [SerializeField] private int _instantiateElementsAmount;
 
 
-        public void Awake()
+        public void Start()
         {
             for (int i = 0; i < _instantiateElementsAmount; i++)
             {

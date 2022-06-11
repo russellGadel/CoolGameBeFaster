@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PlayerController/PlayerControllerInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PlayerController/PlayerControllerInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InternetConnection/InternetConnectionModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/ObjectsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/ObjectsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/RandomObjectsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/RandomObjectsFactory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +168,7 @@
       <workItem from="1654673819493" duration="9866000" />
       <workItem from="1654771124598" duration="12416000" />
       <workItem from="1654850597869" duration="4470000" />
-      <workItem from="1654936413555" duration="8403000" />
+      <workItem from="1654936413555" duration="8852000" />
     </task>
     <servers />
   </component>
