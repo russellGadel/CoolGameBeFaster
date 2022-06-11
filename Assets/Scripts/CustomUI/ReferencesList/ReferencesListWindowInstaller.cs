@@ -10,14 +10,13 @@ namespace CustomUI.ReferencesList
             BindPresenter();
         }
 
-        [SerializeField] private ReferencesListWindowView _view;
 
         private void BindPresenter()
         {
             Container
                 .Bind<IReferencesListWindowPresenter>()
                 .To<ReferencesListWindowPresenter>()
-                .FromInstance(new ReferencesListWindowPresenter(InstallModel(), _view))
+                .FromInstance(new ReferencesListWindowPresenter(InstallModel(), InstallView()))
                 .AsSingle();
         }
 
@@ -27,6 +26,14 @@ namespace CustomUI.ReferencesList
         private IReferencesListWindowModel InstallModel()
         {
             return new ReferencesListWindowModel(_settings);
+        }
+
+        [SerializeField] private ReferencesListWindowView _view;
+
+        private ReferencesListWindowView InstallView()
+        {
+            _view.Construct(_settings);
+            return _view;
         }
     }
 }

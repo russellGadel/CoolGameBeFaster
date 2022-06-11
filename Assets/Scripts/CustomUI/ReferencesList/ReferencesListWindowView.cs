@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -7,6 +8,12 @@ namespace CustomUI.ReferencesList
     public sealed class ReferencesListWindowView : MonoBehaviour
         , IReferencesListWindowView
     {
+        public void Construct(in ReferencesListSettings referencesListSettings)
+        {
+            SetText(referencesListSettings.termsAndConditionsTable, referencesListSettings.privacyPolicyTable,
+                referencesListSettings.feedbackTable);
+        }
+
         public void Open()
         {
             gameObject.SetActive(true);
@@ -43,7 +50,7 @@ namespace CustomUI.ReferencesList
             _privacyPolicyButton.onClick.RemoveListener(observer);
         }
 
-        
+
         [SerializeField] private Button _feedbackButton;
 
         public void SubscribeToFeedbackButton(UnityAction observer)
@@ -54,6 +61,17 @@ namespace CustomUI.ReferencesList
         public void UnsubscribeFromFeedbackButton(UnityAction observer)
         {
             _feedbackButton.onClick.RemoveListener(observer);
+        }
+
+        [SerializeField] private TextMeshProUGUI _termsAndConditionsText;
+        [SerializeField] private TextMeshProUGUI _privacyPolicyText;
+        [SerializeField] private TextMeshProUGUI _feedbackText;
+
+        private void SetText(in string termsAndConditions, in string privacyPolicy, in string feedback)
+        {
+            _termsAndConditionsText.SetText(termsAndConditions);
+            _privacyPolicyText.SetText(privacyPolicy);
+            _feedbackText.SetText(feedback);
         }
     }
 }
