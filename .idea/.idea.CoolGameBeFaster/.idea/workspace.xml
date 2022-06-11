@@ -3,57 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StaticData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StaticData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Palettes/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileMap/Palettes/Map.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_10.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_10.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_11.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_11.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_14.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_14.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_15.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_15.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_16.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_16.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_17.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_17.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_18.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_18.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_19.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_19.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_20.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_20.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_21.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_21.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_22.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_22.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_23.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_23.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileMap/Tiles/Terrain (32x32)_9.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +166,7 @@
       <workItem from="1654530674026" duration="2577000" />
       <workItem from="1654673819493" duration="9866000" />
       <workItem from="1654771124598" duration="12416000" />
-      <workItem from="1654850597869" duration="3267000" />
+      <workItem from="1654850597869" duration="4470000" />
     </task>
     <servers />
   </component>
