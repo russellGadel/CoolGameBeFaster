@@ -39,7 +39,7 @@ SpriteAtlas:
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 0
-      enableTightPacking: 1
+      enableTightPacking: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
@@ -51,9 +51,11 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 1be05e63d6f94b54182631b50c6b4db0, type: 3}
   - {fileID: 21300000, guid: 514a3226e595e1d4ba14cdf4fb6f1029, type: 3}
+  - {fileID: 21300000, guid: dd3a769f9473b9149a4d8b0596cb4b71, type: 3}
   m_PackedSpriteNamesToIndex:
   - PlaypO
   - PauseO
+  - wifi
   m_RenderDataMap: {}
   m_Tag: UIElements
   m_IsVariant: 0
