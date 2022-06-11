@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 8890734090611752991}
   - component: {fileID: 8275621436799453369}
   m_Layer: 0
-  m_Name: arrowPrefab
+  m_Name: arrowPrefabLowLevel
   m_TagString: InterferingObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     MinSpeed: 0.05
-    MaxSpeed: 0.2
+    MaxSpeed: 0.15
 --- !u!114 &8890734090611752991
 MonoBehaviour:
   m_ObjectHideFlags: 0
