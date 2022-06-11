@@ -10,7 +10,7 @@ namespace CustomUI.PlayerController
     {
         public override void InstallBindings()
         {
-           /* if (Application.platform == RuntimePlatform.WindowsEditor ||
+            if (Application.platform == RuntimePlatform.WindowsEditor ||
                 Application.platform == RuntimePlatform.WindowsPlayer)
             {
                 InstallPCPresenter();
@@ -18,8 +18,7 @@ namespace CustomUI.PlayerController
             else
             {
                 InstallMobilePresenter();
-            }*/
-           InstallMobilePresenter();
+            }
         }
 
 
