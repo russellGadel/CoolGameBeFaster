@@ -3709,9 +3709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd6fb2d95f9410b9407427b81c6b51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 1.5
-  firstAccelerationSpeed: 4
-  secondAccelerationSpeed: 7
+  normalSpeed: 3
+  firstAccelerationSpeed: 6
+  secondAccelerationSpeed: 8
 --- !u!1 &1691475757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,8 +4150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6ae1482c5a465e86523e91cd351236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplicityPosX: 2.8
-  multiplicityPosY: 2.8
+  multiplicityPosX: 10
+  multiplicityPosY: 10
   plusPosX: 1
   minusPosY: 1
   dividerPosX: 15.4
