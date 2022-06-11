@@ -9,6 +9,7 @@ namespace  ViewObjects.LoadingIndicator
 
         public void Open()
         {
+            Debug.Log("Open loading window");
             gameObject.SetActive(true);
             ringEffect.Play();
         }

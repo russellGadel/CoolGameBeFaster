@@ -1,10 +1,12 @@
-﻿namespace Services.ApplicationService
+﻿using UnityEngine;
+
+namespace Services.ApplicationService
 {
     public class ApplicationService : IApplicationService
     {
         public void Quit()
         {
-            UnityEngine.Application.Quit();
+            Application.Quit();
         }
     }
 }

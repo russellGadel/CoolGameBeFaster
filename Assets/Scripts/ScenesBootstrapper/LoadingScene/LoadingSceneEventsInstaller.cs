@@ -15,8 +15,7 @@ namespace ScenesBootstrapper.LoadingScene
             BindUpdateGameWindowEvents();
             BindSetGameTypeEvent();
         }
-
-
+        
         private void BindLoadingWindowEvents()
         {
             Container

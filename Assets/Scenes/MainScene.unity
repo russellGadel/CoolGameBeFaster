@@ -1894,7 +1894,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1120054715
+  m_SortingLayerID: 86949141
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &706247572
@@ -3201,7 +3201,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1120054715
+  m_SortingLayerID: 86949141
   m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1307127132
@@ -4183,8 +4183,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905471382}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 86949141
+  m_SortingLayer: 1
   m_SortingOrder: 100
 --- !u!1 &1905795949
 GameObject:
@@ -4486,7 +4486,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1120054715
+  m_SortingLayerID: 86949141
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &2034557213
