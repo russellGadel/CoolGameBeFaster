@@ -1,4 +1,6 @@
-﻿namespace Services.LevelDifficulty
+﻿using ECS.Components.LevelDifficulty;
+
+namespace Services.LevelDifficulty
 {
     public sealed class LevelDifficultyService : ILevelDifficultyService
     {

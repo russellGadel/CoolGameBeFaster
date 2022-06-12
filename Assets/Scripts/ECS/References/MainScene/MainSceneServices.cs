@@ -1,6 +1,7 @@
 ﻿using Core.CustomInvoker;
 using ScenesBootstrapper.MainScene.Events;
 using Services.GameTime;
+using Services.InterferingObjectsService;
 using Services.LevelDifficulty;
 using Services.SaveData;
 using UnityEngine;
@@ -15,5 +16,6 @@ namespace ECS.References.MainScene
         [Inject] public MainSceneEventsService MainSceneEventsService;
         [Inject] public ISaveDataService SaveDataService;
         [Inject] public ICustomInvokerService CustomInvokerService;
+        [Inject] public IInterferingObjectsService InterferingObjectsService;
     }
 }

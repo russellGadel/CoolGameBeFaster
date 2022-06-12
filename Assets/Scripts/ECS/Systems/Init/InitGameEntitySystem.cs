@@ -1,5 +1,6 @@
 ﻿using ECS.Components;
 using ECS.Components.GameStatus;
+using ECS.Components.LevelDifficulty;
 using ECS.Tags;
 using Leopotam.Ecs;
 
@@ -15,6 +16,7 @@ namespace ECS.Systems.Init
             {
                 Value = 1
             };
+
 
             EcsEntity game = _world.NewEntity()
                 .Replace(new GameTag())

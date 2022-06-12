@@ -1,5 +1,5 @@
 ﻿using System;
-using ECS.Components.LevelDifficultyComponent;
+using ECS.Components.LevelDifficulty;
 
 namespace Services.LevelDifficulty
 {

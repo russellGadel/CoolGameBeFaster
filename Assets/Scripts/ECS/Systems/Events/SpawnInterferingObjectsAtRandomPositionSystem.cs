@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ECS.Components.BlockSpawnDuration;
-using ECS.Components.LevelDifficultyComponent;
+using ECS.Components.EntityReference;
 using ECS.Components.MoveTo;
 using ECS.Components.PointsComponents;
 using ECS.Components.PositionsPool;
@@ -8,10 +8,8 @@ using ECS.Components.Rigidbody2DComponent;
 using ECS.Components.TransformComponent;
 using ECS.Events;
 using ECS.References.MainScene;
-using ECS.Tags;
 using ECS.Tags.InterferingObjects.InterferingObjectsAppearingPositionsGridTag;
 using ECS.Tags.InterferingObjects.InterferingObjectsTag;
-using ECS.Tags.InterferingObjects.InterferingObjectTag;
 using ECS.Tags.Points;
 using Leopotam.Ecs;
 using Services.LevelDifficulty;
@@ -30,12 +28,6 @@ namespace ECS.Systems.Events
 
         private readonly MainSceneServices _mainSceneServices = null;
 
-        private readonly EcsFilter<InterferingObjectTag
-            , LevelDifficultyComponent
-            , InactiveObjectTag
-            , TransformComponent
-            , Rigidbody2DComponent> _inactiveInterferingObjectsElements = null;
-
         private readonly EcsFilter<InterferingObjectsAppearingPositionsGridTag
             , PositionsPoolComponent> _spawnPositions = null;
 
@@ -46,39 +38,36 @@ namespace ECS.Systems.Events
             {
                 GetSpawnedPointsAmount(out double points);
                 GetLevelDifficulty(in points, out LevelDifficulty levelDifficulty);
+                Debug.Log($"levelDifficulty {levelDifficulty.name}");
 
                 GetSpawnObjectsRandomAmountAtSameTime(in levelDifficulty, out int spawnObjectsAmountAtSameTime);
 
                 ref PositionsPoolComponent positionsPoolComponent = ref _spawnPositions.Get2(0);
                 ref List<float3> positions = ref positionsPoolComponent.Positions;
 
-                int spawnedObjectsCounter = 0;
-                foreach (var idxElements in _inactiveInterferingObjectsElements)
+                for (int spawnedObjects = 0; spawnedObjects < spawnObjectsAmountAtSameTime; spawnedObjects++)
                 {
-                    ref EcsEntity interferingObjectEntity =
-                        ref _inactiveInterferingObjectsElements.GetEntity(idxElements);
+                    GetInterferingObjectEntity(in levelDifficulty, out MonoEntity interferingObjectMonoEntity);
 
-                    ref TransformComponent interferingObjectsTransform =
-                        ref _inactiveInterferingObjectsElements.Get4(idxElements);
+                    if (interferingObjectMonoEntity == null)
+                    {
+                        break;
+                    }
 
-                    interferingObjectsTransform.value.position = GetRandomPosition(in positions);
+                    ref TransformComponent transform = ref interferingObjectMonoEntity.Entity.Get<TransformComponent>();
 
-                    ZeroingInterferingObjectRotation(in idxElements);
+                    transform.value.position = GetRandomPosition(in positions);
 
-                    interferingObjectEntity
+                    ZeroingInterferingObjectRotation(in interferingObjectMonoEntity.Entity.Get<Rigidbody2DComponent>());
+
+                    interferingObjectMonoEntity.Entity
                         .Replace(new SetRandomSpeedEvent())
                         .Replace(new LookAtPlayerEvent())
                         .Replace(new ActivateObjectEvent())
                         .Replace(new MoveToComponent()
                         {
-                            Value = interferingObjectsTransform.value.up
+                            Value = transform.value.up
                         });
-
-                    spawnedObjectsCounter += 1;
-                    if (spawnedObjectsCounter == spawnObjectsAmountAtSameTime)
-                    {
-                        break;
-                    }
                 }
 
                 ref EcsEntity entity = ref _spawnInterferingObjectsEvent.GetEntity(idxEvent);
@@ -108,15 +97,31 @@ namespace ECS.Systems.Events
                 levelDifficulty.spawnInterferingObjectsAmountAtSameTimeMax);
         }
 
+
+        private void GetInterferingObjectEntity(in LevelDifficulty levelDifficulty,
+            out MonoEntity interferingObjectEntity)
+        {
+            MonoEntity entity = _mainSceneServices.InterferingObjectsService
+                .GetInterferingObject(levelDifficulty.name);
+
+            if (entity != null)
+            {
+                interferingObjectEntity = entity;
+            }
+            else
+            {
+                interferingObjectEntity = null;
+            }
+        }
+
+
         private Vector3 GetRandomPosition(in List<float3> positions)
         {
             return positions[Random.Range(0, positions.Count)];
         }
 
-        private void ZeroingInterferingObjectRotation(in int idxElements)
+        private void ZeroingInterferingObjectRotation(in Rigidbody2DComponent interferingObjectsRigidbody)
         {
-            ref Rigidbody2DComponent interferingObjectsRigidbody =
-                ref _inactiveInterferingObjectsElements.Get5(idxElements);
             interferingObjectsRigidbody.value.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 

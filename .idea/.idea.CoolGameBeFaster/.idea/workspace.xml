@@ -2,10 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefab.prefab.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntitiesPool.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntitiesPool/EntitiesPoolComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntitiesPool/EntitiesPoolComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntitiesPool/EntitiesPoolProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/EntitiesPool/EntitiesPoolProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficulty.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/ObjectsFactoryWithEntitiesPool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Factory/ObjectsFactoryWithEntitiesPool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Pool.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Pool/EntitiesPool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Pool/EntitiesPool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/IInterferingObjectsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/IInterferingObjectsService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/InterferingObjectsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/InterferingObjectsService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/InterferingObjectsServiceInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/InterferingObjectsService/InterferingObjectsServiceInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefabLowLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefabLowLevel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefabMiddleLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/arrowPrefabMiddleLevel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/circlPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/circlPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/trianglePrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/InterferingObjects/trianglePrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ViewObjects/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyNaming.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficulty/LevelDifficultyNaming.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyNaming.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficulty/LevelDifficultyNaming.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Components/LevelDifficultyComponent/LevelDifficultyProvider.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/References/MainScene/MainSceneServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Events/SpawnInterferingObjectsAtRandomPositionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/InitGameEntitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ECS/Systems/Init/InitGameEntitySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScenesBootstrapper/MainScene/Ecs/MainSceneUpdateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficulty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficultyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/LevelDifficulty/LevelDifficultyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +204,8 @@
       <workItem from="1654771124598" duration="12416000" />
       <workItem from="1654850597869" duration="4470000" />
       <workItem from="1654936413555" duration="10947000" />
-      <workItem from="1654949672242" duration="4111000" />
+      <workItem from="1654949672242" duration="4419000" />
+      <workItem from="1655018601262" duration="19853000" />
     </task>
     <servers />
   </component>

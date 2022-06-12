@@ -1,4 +1,4 @@
-﻿namespace ECS.Components.LevelDifficultyComponent
+﻿namespace ECS.Components.LevelDifficulty
 {
     public enum LevelDifficultyNaming
     {
