@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SetGameTypeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEvents/SetGameTypeEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigDataInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigDataInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +173,7 @@
       <workItem from="1654949672242" duration="4419000" />
       <workItem from="1655018601262" duration="20450000" />
       <workItem from="1655058033186" duration="1411000" />
+      <workItem from="1655189790154" duration="1460000" />
     </task>
     <servers />
   </component>

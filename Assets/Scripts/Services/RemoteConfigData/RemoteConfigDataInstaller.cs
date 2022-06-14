@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using UnityEngine;
+using Zenject;
 
 namespace Services.RemoteConfigData
 {
@@ -11,8 +12,8 @@ namespace Services.RemoteConfigData
             BindRemoteConfigDataForLoader();
             BindSettings();
         }
-
-        private readonly RemoteConfigSettings _settings = new RemoteConfigSettings();
+        
+        [SerializeField] private RemoteConfigSettings _settings;
 
         private RemoteConfigData _remoteConfigData;
 

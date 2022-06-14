@@ -38,12 +38,12 @@ namespace CustomEvents
 
         private void SetDevelopmentState()
         {
-            _remoteConfigSettings.SetCurrentEnvironmentId(RemoteConfigSettings.DevelopmentEnvironmentId);
+            _remoteConfigSettings.SetCurrentEnvironmentId(_remoteConfigSettings.DevelopmentEnvironmentId);
         }
 
         private void SetProductionState()
         {
-            _remoteConfigSettings.SetCurrentEnvironmentId(RemoteConfigSettings.ProductionEnvironmentId);
+            _remoteConfigSettings.SetCurrentEnvironmentId(_remoteConfigSettings.ProductionEnvironmentId);
         }
     }
 }

@@ -1415,6 +1415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842338978}
   - component: {fileID: 1842338979}
+  - component: {fileID: 1842338980}
   m_Layer: 0
   m_Name: RemoteConfig
   m_TagString: Untagged
@@ -1448,6 +1449,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a8ca1962474875923d34fa7d60cec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settings: {fileID: 1842338980}
+--- !u!114 &1842338980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842338977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241b6537dc41407982bbb50744a56616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _developmentEnvironmentId: c00befba-47a2-449f-9850-49019aa0f28f
+  _productionEnvironmentId: 45cca2e8-97fe-45f4-b4ca-c13731a51e91
 --- !u!1 &1856900276
 GameObject:
   m_ObjectHideFlags: 0
