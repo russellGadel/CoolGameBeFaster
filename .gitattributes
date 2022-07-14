@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+MemoryProfilerMobile.snap filter=lfs diff=lfs merge=lfs -text
+ProfilerMobile.data filter=lfs diff=lfs merge=lfs -text
