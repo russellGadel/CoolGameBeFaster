@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a1dd3e-aeb0-4959-97e9-313270f4b591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoolGameBeFaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/RemoteConfig/Data/RemoteConfigDataStoreAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigDataInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/RemoteConfigData/RemoteConfigDataInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +174,15 @@
       <workItem from="1655018601262" duration="20450000" />
       <workItem from="1655058033186" duration="1411000" />
       <workItem from="1655189790154" duration="3375000" />
+      <workItem from="1655361259087" duration="1316000" />
+      <workItem from="1655455937466" duration="2962000" />
+      <workItem from="1655485589886" duration="18810000" />
+      <workItem from="1655620034619" duration="2184000" />
+      <workItem from="1655732020629" duration="1833000" />
+      <workItem from="1655914409124" duration="1235000" />
+      <workItem from="1656057517365" duration="3016000" />
+      <workItem from="1657025322212" duration="2712000" />
+      <workItem from="1657618081380" duration="12501000" />
     </task>
     <servers />
   </component>
